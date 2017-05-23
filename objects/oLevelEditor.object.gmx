@@ -167,7 +167,7 @@ if (global.testLevel != "")
     /*
     status = EDIT;
     levelName = global.testLevel;
-    file = file_text_open_read("levels/" + string_lower(levelName)+".lvl");
+    file = file_text_open_read(working_directory + "levels/" + string_lower(levelName)+".lvl");
     if (file)
     {
         for (j = 0; j &lt; 32; j += 1)
@@ -197,7 +197,7 @@ if (global.testLevel != "")
     
             status = EDIT;
             levelName = global.testLevel;
-            file = file_text_open_read("levels/test.tmp");
+            file = file_text_open_read(working_directory + "levels/test.tmp");
             // file = file_text_open_read("levels/" + string_lower(levelName)+".lvl");
             if (file)
             {
@@ -249,7 +249,7 @@ if (global.testLevel != "")
                     for (i = 0; i &lt; signNamesNum; i += 1)
                     {
                         signNames[i] = file_text_read_string(file);
-		          if (i &lt; signNamesNum-1) file_text_readln(file);
+          if (i &lt; signNamesNum-1) file_text_readln(file);
                     }
                 }
                 file_text_close(file);
@@ -307,7 +307,8 @@ if (global.testLevel != "")
     instance_create(x, y, oEditButton);
     instance_create(x+320-32, y, oNewButton);
     instance_create(x+320-32, y, oTestButton);
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -594,7 +595,7 @@ else
     exitNamesID = 0;
     signNames[0] = "";
     signNamesID = 0;
-    file = file_text_open_write("levels/" + string_lower(levelName)+".lvl");
+    file = file_text_open_write(working_directory + "levels/" + string_lower(levelName)+".lvl");
     for (j = 0; j &lt; 32; j += 1)
     {
         for (i = 0; i &lt; 40; i += 1)
@@ -654,14 +655,15 @@ else
 if (status == EXIT)
 {
     global.titleStart = 2;
-    if (file_exists("levels/test.tmp")) file_delete("levels/test.tmp");
+    if (file_exists(working_directory + "levels/test.tmp")) file_delete(working_directory + "levels/test.tmp");
     room_goto(rTitle);
 }
 else if (status == NEW)
 {
     global.testLevel = "";
     room_restart();
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -714,14 +716,15 @@ else if (status == NEW)
             <string>if (status == EXIT)
 {
     global.titleStart = 2;
-    if (file_exists("levels/test.tmp")) file_delete("levels/test.tmp");
+    if (file_exists(working_directory + "levels/test.tmp")) file_delete(working_directory + "levels/test.tmp");
     room_goto(rTitle);
 }
 else if (status == NEW)
 {
     global.testLevel = "";
     room_restart();
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -940,7 +943,7 @@ else
         if (levelName != "")
         {
             status = EDIT;
-            file = file_text_open_read("levels/" + string_lower(levelName)+".lvl");
+            file = file_text_open_read(working_directory + "levels/" + string_lower(levelName)+".lvl");
             if (file)
             {
                 for (j = 0; j &lt; 32; j += 1)
@@ -991,7 +994,7 @@ else
                     for (i = 0; i &lt; signNamesNum; i += 1)
                     {
                         signNames[i] = file_text_read_string(file);
-		          if (i &lt; signNamesNum-1) file_text_readln(file);
+          if (i &lt; signNamesNum-1) file_text_readln(file);
                     }
                 }
                 file_text_close(file);
@@ -1254,7 +1257,8 @@ else if (status == INFO_NEXT)
         nextLevel = string_delete(nextLevel , string_length(nextLevel), 1);
     }
     else nextLevel += scrGetChar(keyboard_key);
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

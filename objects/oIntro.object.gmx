@@ -30,11 +30,13 @@ fadeOut = false;
 fadeLevel = 1;
 // instance_create(-32, 184, oPDummy3);
 
+randomize();
+
 drawStatus = 0;
 alarm[11] = 20;
 
 str = "";
-n = rand(1,8);
+n = round(random_range(1,8));
 switch (n)
 {
     case 1: { str1 = "AS THE MOON BURNED BRIGHT ABOVE,"; break; }
@@ -46,7 +48,7 @@ switch (n)
     case 7: { str1 = "AS I RECALLED MY FATHER'S LAST WORDS,"; break; }
     case 8: { str1 = "MY MEMORY SLIPPING AWAY FROM ME,"; break; }
 }
-n = rand(1,8);
+n = round(random_range(1,8));
 switch (n)
 {
     case 1: { str2 = "I STRODE VALIANTLY TOWARD MY DESTINY,"; break; }
@@ -58,7 +60,7 @@ switch (n)
     case 7: { str2 = "I DISMOUNTED MY CAMEL,"; break; }
     case 8: { str2 = "I SQUINTED INTO THE DARKNESS,"; break; }
 }
-n = rand(1,8);
+n = round(random_range(1,8));
 switch (n)
 {
     case 1: { str3 = "AND THOUGHT OF HER ONE LAST TIME."; break; }
@@ -255,7 +257,7 @@ else if (fadeOut)
             <kind>1</kind>
             <string>draw_set_color(c_black);
 draw_set_alpha(fadeLevel);
-draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+320, view_yview[0]+240, false);
+draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+global.display_w, view_yview[0]+global.display_h, false);
 draw_set_alpha(1);
 
 if (drawStatus &gt; 0)
@@ -263,7 +265,7 @@ if (drawStatus &gt; 0)
     draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
     strLen = string_length(str1)*8;
-    n = 320 - strLen;
+    n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(n, 116-16, str1);
 }
@@ -272,7 +274,7 @@ if (drawStatus &gt; 1)
     draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
     strLen = string_length(str2)*8;
-    n = 320 - strLen;
+    n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(n, 116, str2);
 }
@@ -281,7 +283,7 @@ if (drawStatus &gt; 2)
     draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
     strLen = string_length(str3)*8;
-    n = 320 - strLen;
+    n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(n, 116+16, str3);
 }

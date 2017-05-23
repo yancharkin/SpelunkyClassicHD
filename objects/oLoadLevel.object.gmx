@@ -69,7 +69,7 @@ for (j = 0; j &lt; 32; j += 1)
 // load level list
 if (not global.customLevel)
 {
-    tempFile = file_find_first("levels\*.lvl", 0);
+    tempFile = file_find_first(working_directory + "levels/*.lvl", 0);
     while (tempFile != "")
     {
         if (string_char_at(tempFile, 0) != "!")

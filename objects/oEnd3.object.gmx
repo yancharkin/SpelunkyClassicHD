@@ -266,7 +266,8 @@ if (fadeOut)
 {
     if (fadeLevel &lt; 1) fadeLevel += 0.1;
     else drawStatus = 8;
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -345,7 +346,7 @@ if (fadeOut)
 {
     draw_set_color(c_black);
     draw_set_alpha(fadeLevel);
-    draw_rectangle(0, 0, 320, 240, false);
+    draw_rectangle(-global.room_offset, 0, global.display_w, 240, false);
     draw_set_alpha(1);
 }
 
@@ -354,10 +355,11 @@ if (drawStatus == 8)
     draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
     strLen = string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8;
-    n = 320 - strLen;
+    n = global.display_w - strLen;
     n = ceil(n / 2);
-    draw_text(n, 116, string("YOU SHALL BE REMEMBERED AS A HERO."));
-}</string>
+    draw_text(n-global.room_offset, 116, string("YOU SHALL BE REMEMBERED AS A HERO."));
+}
+</string>
           </argument>
         </arguments>
       </action>

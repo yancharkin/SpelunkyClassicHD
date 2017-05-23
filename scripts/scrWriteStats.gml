@@ -21,8 +21,8 @@
     
 ***********************************************************************************/
 
-file_delete("stats.txt");
-file = file_text_open_write("stats.txt");
+file_delete(working_directory + "stats.txt");
+file = file_text_open_write(working_directory + "stats.txt");
 
 file_text_write_string(file, "+---------------------------+");
 file_text_writeln(file);

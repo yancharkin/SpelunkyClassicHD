@@ -59,7 +59,8 @@ global.joyFlareVal = 4;
 global.joyPayVal = 6;
 global.joyStartVal = 10;
 
-file = file_text_open_read("settings.cfg");
+file = file_text_open_read(working_directory + "settings.cfg");
+
 if (file)
 {
     str = file_text_read_string(file);
@@ -89,7 +90,7 @@ if (global.musicVol < 0) global.musicVol = 0;
 if (global.soundVol > 17) global.soundVol = 17;
 if (global.soundVol < 0) global.soundVol = 0;
 
-file = file_text_open_read("keys.cfg");
+file = file_text_open_read(working_directory + "keys.cfg");
 if (file)
 {
     global.keyUpVal = real(file_text_read_string(file));
@@ -118,7 +119,7 @@ if (file)
     file_text_close(file);
 }
 
-file = file_text_open_read("gamepad.cfg");
+file = file_text_open_read(working_directory + "gamepad.cfg");
 if (file)
 {
     global.joyJumpVal = real(file_text_read_string(file));

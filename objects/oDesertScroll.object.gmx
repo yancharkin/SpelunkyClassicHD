@@ -65,7 +65,8 @@ if (isRoom("rCredits1")) sprite_index = sDesertNight;</string>
             <kind>1</kind>
             <string>if (scroll) x += 1;
 
-if (x &gt; 320) instance_destroy();</string>
+if (x &gt; global.display_w) instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>

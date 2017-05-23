@@ -25,13 +25,122 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrReadStats();
-scrInit();
-global.fullscreen = false;
+            <string>py = 0; // player Y coord
 
-instance_destroy();
-//instance_create(0,0,oScreenFirst)
-//instance_create(0,0,oScreenLast)
+// screen base(view_wview and view_hview)
+screen_x = 0;
+screen_y = 0;
+//screen_w = 960//browser_height*(960/720) //960//320;
+screen_w = display_get_width();
+//screen_h = 720//browser_height//720//240;
+screen_h = display_get_height();
+screen_scale =  1; //global.screenScale;
+enabled = true;
+
+// pause
+pSurf = -1 surface_create(screen_w,screen_h);  //    MJD
+canPause = true;
+paused = false;
+
+// create a surface for the whole screen to be drawn on
+screen = -1; //surface_create(screen_w,screen_h);
+darkSurf = surface_create(screen_w,screen_h);
+
+/*
+if (screen)
+{
+    surface_set_target(screen);
+    draw_clear(c_black);
+}
+*/
+// set up rooms
+aspect_ratio = (screen_w/screen_h);
+//show_debug_message("Aspect ratio: " + string(aspect_ratio));
+
+if (aspect_ratio &gt; 1.71)
+{
+    w = 430 * screen_scale;
+}
+else if (aspect_ratio &gt; 1.6)
+{
+    w = 405 * screen_scale;
+}
+else if (aspect_ratio &gt; 1.5)
+{
+    w = 384 * screen_scale;   
+}
+else if (aspect_ratio &gt; 1.4)
+{
+    w = 360 * screen_scale; 
+}
+else if (aspect_ratio &gt; 1.3)
+{
+    w = 320 * screen_scale; 
+}
+else if (aspect_ratio = 1.2)
+{
+    w = 300 * screen_scale; 
+}
+else
+{
+    w = 320 * screen_scale; 
+}
+
+h = 240 * screen_scale;
+
+global.room_offset = ((w - 320)/2);
+
+//room_set_view(ind, vind, vis, xview, yview, wview, hview, xport, yport, wport, hport, hborder, vborder, hspeed, vspeed, obj);
+room_set_view(rIntro,0,true,0,0,w,h,0,0,w,h,128,0,-1,-1,oPDummy3);
+room_set_view(rCredits1,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
+room_set_view(rCredits2,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
+room_set_view(rTitle,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
+room_set_view(rHighscores,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rSun,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rMoon,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rStars,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rLevelEditor,0,true,0,0,w,h,0,0,w,h,0,0,-1,-1,noone);
+room_set_view(rLoadLevel,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rTutorial,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rLevel,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rLevel2,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rLevel3,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rOlmec,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rTransition1,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition1x,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition2,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition2x,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition3,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition3x,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rTransition4,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rEnd,0,true,0,0,w,h,0,0,w,h,0,0,0,0,oPDummy);
+room_set_view(rEnd2,0,true,-2*global.room_offset,0,w,h,-2*global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rEnd3,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+room_set_view(rEndCustom,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
+
+conf_x = (w - 160)/2;
+conf_y = (h - 120 - 32)/2;
+
+room_set_view(rKeyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
+room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
+
+// this will destroy the screen object if surfaces are not supported on the graphics card, reverting to the viewport method
+/*if (screen == -1) game_end2();
+else*/
+
+window_set_size(screen_w, screen_h);
+window_set_fullscreen(true);
+
+view_wview[0] = w;
+view_wport[0] = w;
+view_hview[0] = h;
+view_hport[0] = h;
+surface_resize(application_surface, w, h);
+
+global.display_w = w;
+global.display_h =h;
+
+room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -52,69 +161,148 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>py = 0; // player Y coord
+            <string>scrReadStats();
+scrInit();
+global.fullscreen = true;
 
-// screen base(view_wview and view_hview)
-screen_x = 0;
-screen_y = 0;
-screen_w = 960//browser_height*(960/720) //960//320;
-screen_h = 720//browser_height//720//240;
-screen_scale =  1; //global.screenScale;
-
-enabled = true;
-
-// pause
-pSurf = -1 surface_create(screen_w,screen_h);  //    MJD
-canPause = true;
-paused = false;
-
-// create a surface for the whole screen to be drawn on
-screen = -1; //surface_create(screen_w,screen_h);
-darkSurf = surface_create(screen_w,screen_h);
-
-/*
-if (screen)
-{
-    surface_set_target(screen);
-    draw_clear(c_black);
-}
-*/
-// set up rooms
-var w,h;
-w = 320 * screen_scale;
-h = 240 * screen_scale;
-room_set_view(rIntro,0,true,0,0,320,240,0,0,w,h,128,0,-1,-1,oPDummy3);
-room_set_view(rCredits1,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rCredits2,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTitle,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rHighscores,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rSun,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rMoon,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rStars,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rLevelEditor,0,true,0,0,320,240,0,0,w,h,0,0,-1,-1,noone);
-room_set_view(rLoadLevel,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rTutorial,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel2,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel3,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rOlmec,0,true,0,0,320,240,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rTransition1,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition1x,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition2,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition2x,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition3,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition3x,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rTransition4,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rEnd,0,true,0,0,320,240,0,0,w,h,0,0,0,0,oPDummy);
-room_set_view(rEnd2,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rEnd3,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-room_set_view(rEndCustom,0,true,0,0,320,240,0,0,w,h,0,0,0,0,noone);
-
-// this will destroy the screen object if surfaces are not supported on the graphics card, reverting to the viewport method
-/*if (screen == -1) game_end2();
-else*/
- room_goto_next();
+instance_destroy();
+//instance_create(0,0,oScreenFirst)
+//instance_create(0,0,oScreenLast)
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>113</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_reverse_xdir</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>119</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_path</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>8</kind>
+            <path>-1</path>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>120</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_linear_step</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>120</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_linear_step</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>109</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move_to</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

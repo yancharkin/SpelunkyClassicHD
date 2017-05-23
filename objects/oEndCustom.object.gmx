@@ -351,7 +351,7 @@ if (fadeOut)
 {
     draw_set_color(c_black);
     draw_set_alpha(fadeLevel);
-    draw_rectangle(0, 0, 320, 240, false);
+    draw_rectangle(-global.room_offset, 0, global.display_w, 240, false);
     draw_set_alpha(1);
 }
 
@@ -363,7 +363,8 @@ if (drawStatus == 8)
     n = 320 - strLen;
     n = ceil(n / 2);
     draw_text(n, 116, string("YOU SHALL BE REMEMBERED AS A HERO."));
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

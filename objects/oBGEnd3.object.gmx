@@ -25,8 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xOff = -64;
-x -= 64;</string>
+            <string>//xOff = -64;
+//x -= 64;
+if (isRoom("rEnd3"))
+{
+    // do nothing
+}
+else
+{
+    xOff = -48;
+    x = -48;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -54,9 +64,20 @@ x -= 64;</string>
 }
 else if (instance_exists(oCamel))
 {
-    x = view_xview[0] + xOff;
-    xOff += 0.02;
-}</string>
+    if (oCamel.status == 2)
+    {
+        // do nothing
+    }
+    else if (oCamel.x &lt;= 160)
+    {
+        // do nothing
+        
+        // or original:
+        x = view_xview[0] + xOff;
+        xOff += 0.02;
+    }
+}
+</string>
           </argument>
         </arguments>
       </action>

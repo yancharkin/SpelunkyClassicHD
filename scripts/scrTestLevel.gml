@@ -26,7 +26,7 @@
     exitNamesID = 0;
     signNames[0] = "";
     signNamesID = 0;
-    file = file_text_open_write("levels/test.tmp");
+    file = file_text_open_write(working_directory + "levels/test.tmp");
     for (j = 0; j < 32; j += 1)
     {
         for (i = 0; i < 40; i += 1)

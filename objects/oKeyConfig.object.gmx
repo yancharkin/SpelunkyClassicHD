@@ -47,7 +47,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>file = file_text_open_write("keys.cfg");
+            <string>file = file_text_open_write(working_directory + "keys.cfg");
 file_text_write_string(file, string(global.keyUpVal));
 file_text_writeln(file);
 file_text_write_string(file, string(global.keyDownVal));
@@ -71,7 +71,8 @@ file_text_writeln(file);
 file_text_write_string(file, string(global.keyFlareVal));
 file_text_writeln(file);
 file_text_write_string(file, string(global.keyPayVal));
-file_text_close(file);</string>
+file_text_close(file);
+</string>
           </argument>
         </arguments>
       </action>
@@ -339,7 +340,8 @@ else if (status == 11)
 }
 
 status += 1;
-if (status &gt; 11) room_goto(rInit);</string>
+if (status &gt; 11) room_goto(rTitle);
+</string>
           </argument>
         </arguments>
       </action>

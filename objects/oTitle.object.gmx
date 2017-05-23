@@ -41,7 +41,8 @@ global.customLevel = false;
 global.testLevel = "";
 global.prevCustomLevel = "";
 
-view_xview[0] = 320;
+//view_xview[0] = 320;
+view_xview[0] = 320 - global.room_offset;
 
 global.newMoney = false;
 global.newKills = false;
@@ -59,7 +60,10 @@ ini_close()
 
 //show_message(string(global.tunnel1)+"#"+string(global.tunnel2))
 
+//debug
 //global.tunnel1 = 0;
+//global.tunnel2 = 1;
+
 // Tunnel Man
 if (global.tunnel1 == 0 or (global.tunnel1 &gt; 0 and global.tunnel2 == 0))
 {
@@ -82,7 +86,28 @@ if (global.tunnel1 == 0 or (global.tunnel1 &gt; 0 and global.tunnel2 == 0))
     } 
 }
 else
-{
+{   
+    with (oBrickSmooth)
+    {
+    instance_destroy();
+    }
+    
+    instance_create(304, 112, oBrick);
+    instance_create(288, 112, oBrick);
+    instance_create(272, 112, oBrick);
+    instance_create(256, 128, oBrick);    
+    instance_create(256, 32, oBrick);
+    instance_create(256, 48, oBrick);
+    instance_create(256, 64, oBrick);
+    instance_create(256, 80, oBrick);
+    instance_create(256, 96, oBrick);
+    instance_create(256, 112, oBrick);
+    instance_create(272, 48, oBrick);
+    instance_create(272, 64, oBrick);
+    instance_create(272, 80, oBrick);
+    instance_create(272, 96, oBrick);
+    instance_create(288, 96, oBrick);
+    instance_create(304, 96, oBrick);
     instance_create(320, 96, oBrick);
     instance_create(336, 96, oBrick);
 }
@@ -163,7 +188,8 @@ if (global.firstTime)
             <kind>1</kind>
             <string>instance_create(320+280, -32, oPDummy4);
 with oScreen { canPause = true; }
-playSound(global.musTitle);
+//playSound(global.musTitle);
+audio_play_sound(global.musTitle, 10, true);
 </string>
           </argument>
         </arguments>
@@ -281,12 +307,13 @@ alarm[1] = 100;
 
 if (instance_exists(oPlayer1))
 {
-    if (oPlayer1.x &lt;= 320 and view_xview[0] &gt; 0)
+//    if (oPlayer1.x &lt;= 320 and view_xview[0] &gt; 0)
+    if (oPlayer1.x &lt;= (320 - global.room_offset) and view_xview[0] &gt; 0)
     {
         view_xview[0] -= 8;
     }
-    
-    if (oPlayer1.x &gt; 320 and view_xview[0] &lt; 320)
+  
+    if (oPlayer1.x &gt; (320 - global.room_offset) and view_xview[0] &lt; (320 - global.room_offset))
     {
         view_xview[0] += 8;
     }
@@ -322,7 +349,8 @@ if (fadeOut)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(oFlare) and needDark)
+            <string>
+if (instance_exists(oFlare) and needDark)
 {
     dist = 160 - oFlare.y;
     if (dist &lt; 0) dist = 0;
@@ -341,16 +369,70 @@ draw_text(320+96, 96, "V1.1 (C)2009");
 if (instance_exists(oPlayer1))
 {
     player = instance_nearest(0, 0, oPlayer1);
+
+    if (player.x &gt; (324 - global.room_offset))
+    {
+        draw_set_font(global.myFontSmall);
+        draw_set_color(c_yellow);
+        draw_text(324 - global.room_offset, 4, string("F4 - CONTROLS"));
+    }
+    
     if (player.x &lt; 256 and view_xview[0] &lt;= 1)
     {
         draw_set_font(global.myFontSmall);
         draw_set_color(c_white);
         strLen = string_length("WELCOME TO THE SHORTCUT HOUSE!")*8;
-        n = 320 - strLen;
+        n = global.display_w - strLen;
         n = ceil(n / 2);
         draw_text(n, 224, string("WELCOME TO THE SHORTCUT HOUSE!"));
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="116">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//room_goto(rJoyConfig);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="115">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_goto(rKeyConfig);
 </string>
           </argument>
         </arguments>
@@ -373,7 +455,9 @@ if (instance_exists(oPlayer1))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>stopAllMusic();
+            <string>// original:
+/*
+stopAllMusic();
 global.tofu = true;
 global.currLevel = 1;
 global.gameStart = true;
@@ -381,6 +465,7 @@ global.customLevel = false;
 global.firstCustomLevel = "";
 global.testLevel = "";
 room_goto(rLoadLevel);
+*/
 </string>
           </argument>
         </arguments>
@@ -403,9 +488,12 @@ room_goto(rLoadLevel);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>stopAllMusic();
+            <string>// original:
+/*
+stopAllMusic();
 global.testLevel = "";
 room_goto(rLevelEditor);
+*/
 </string>
           </argument>
         </arguments>

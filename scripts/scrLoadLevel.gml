@@ -22,9 +22,8 @@
 ***********************************************************************************/
 
 if (global.customLevel) levelName = global.nextCustomLevel;
-
-if (global.testLevel != "") file = file_text_open_read("levels/test.tmp");
-else file = file_text_open_read("levels/" + string_lower(levelName)+".lvl");
+if (global.testLevel != "") file = file_text_open_read(working_directory + "levels/test.tmp");
+else file = file_text_open_read(working_directory + "levels/" + string_lower(levelName)+".lvl");
 if (file)
 {
     window_set_cursor(cr_none);

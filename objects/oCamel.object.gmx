@@ -61,6 +61,9 @@ else if (global.isTunnelMan) sprite_index = sCamelTunnel;</string>
 }
 else if (status == 1)
 {
+    // do nothing
+
+    // or original:
     x -= 0.01;
 }
 else if (status == 2)
@@ -68,7 +71,8 @@ else if (status == 2)
     x -= 2;
 }
 
-if (isRoom("rCredits1") and x &lt; -64) oCredits1.fadeOut = true;</string>
+if (isRoom("rCredits1") and x &lt; -64) oCredits1.fadeOut = true;
+</string>
           </argument>
         </arguments>
       </action>

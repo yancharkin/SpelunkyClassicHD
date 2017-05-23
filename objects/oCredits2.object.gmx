@@ -32,7 +32,7 @@ fadeLevel = 1;
 drawStatus = 0;
 scrollStart = false;
 scrolling = false;
-oScreen.canPause = false;
+//oScreen.canPause = false;
 
 stopAllMusic();
 </string>
@@ -289,8 +289,9 @@ alarm[1] = 16;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(320, 144, oCamel);
-instance_create(320+64, 144-16, oCaravan);</string>
+            <string>instance_create(global.display_w, 144, oCamel);
+instance_create(global.display_w+64, 144-16, oCaravan);
+</string>
           </argument>
         </arguments>
       </action>
@@ -473,7 +474,7 @@ if (fadeIn or fadeOut)
 {
     draw_set_color(c_black);
     draw_set_alpha(fadeLevel);
-    draw_rectangle(0, 0, 320, 240, false);
+    draw_rectangle(0, 0, global.display_w, 240, false);
     draw_set_alpha(1);
 }
 

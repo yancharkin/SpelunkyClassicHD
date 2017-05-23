@@ -993,6 +993,7 @@
       <sprite>sprites\sLogoS</sprite>
     </sprites>
     <sprite>sprites\sYYScreen</sprite>
+    <sprite>sprites\sprite818</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTemp</background>
@@ -1699,7 +1700,7 @@
     <object>objects\yyScreen</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rMasterControllerInit</room>
+    <room>rooms\rGameMakerIntro_room</room>
     <room>rooms\rScreenInit</room>
     <room>rooms\rIntro</room>
     <room>rooms\rCredits1</room>

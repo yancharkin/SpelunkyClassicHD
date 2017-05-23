@@ -115,7 +115,7 @@ if (joyPressed or keyboard_check_pressed(vk_escape))
     status += 1;
     if (gamepad.attackPressed) gamepad.attackPressed = false;
     if (gamepad.startPressed) gamepad.startPressed = false;
-    if (status &gt; 8) room_goto(rInit);
+    if (status &gt; 8) room_goto(rTitle);
 }
 </string>
           </argument>
@@ -139,7 +139,7 @@ if (joyPressed or keyboard_check_pressed(vk_escape))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>file = file_text_open_write("gamepad.cfg");
+            <string>file = file_text_open_write(working_directory + "gamepad.cfg");
 file_text_write_string(file, string(global.joyJumpVal));
 file_text_writeln(file);
 file_text_write_string(file, string(global.joyAttackVal));
@@ -157,7 +157,8 @@ file_text_writeln(file);
 file_text_write_string(file, string(global.joyPayVal));
 file_text_writeln(file);
 file_text_write_string(file, string(global.joyStartVal));
-file_text_close(file);</string>
+file_text_close(file);
+</string>
           </argument>
         </arguments>
       </action>

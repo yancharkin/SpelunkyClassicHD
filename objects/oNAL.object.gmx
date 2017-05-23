@@ -50,6 +50,14 @@ soundson=1
 */
 keyboard_set_map(ord("Y"), ord("Z"));
 
+for (var i = 0; i &lt; 4; i++;)
+{
+    if gamepad_is_connected(i)
+    {
+        show_debug_message("Gamepad connected: " + string(gamepad_get_description(i)));
+    }
+}
+
 room_goto_next()
 instance_destroy();
 </string>
