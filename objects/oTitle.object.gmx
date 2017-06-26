@@ -41,7 +41,6 @@ global.customLevel = false;
 global.testLevel = "";
 global.prevCustomLevel = "";
 
-//view_xview[0] = 320;
 view_xview[0] = 320 - global.room_offset;
 
 global.newMoney = false;
@@ -58,12 +57,6 @@ tSaves = ini_read_real("highscore","value4",0);
 
 ini_close()
 
-//show_message(string(global.tunnel1)+"#"+string(global.tunnel2))
-
-//debug
-//global.tunnel1 = 0;
-//global.tunnel2 = 1;
-
 // Tunnel Man
 if (global.tunnel1 == 0 or (global.tunnel1 &gt; 0 and global.tunnel2 == 0))
 {
@@ -78,10 +71,27 @@ if (global.tunnel1 == 0 or (global.tunnel1 &gt; 0 and global.tunnel2 == 0))
     {
         instance_create(128, 112, oLevel9Sign);
         instance_create(144, 128, oXShortcut9);
+        
+        trans_dir = working_directory + "translations/" + global.lang
+        trans_img_dir = trans_dir + "/images/"
+        
+        if (global.lang != "En")
+        {
+            sLevel9SignNew = sprite_add(trans_img_dir + "level9_sign.png", 1, false, false, 0, 0);
+            oLevel9Sign.sprite_index = sLevel9SignNew;
+        }
+            
         if (global.tunnel1 == 0)
         {
             instance_create(192, 112, oLevel13Sign);
             instance_create(208, 128, oXShortcut13);
+            
+            if (global.lang != "En")
+            {
+                sLevel13SignNew = sprite_add(trans_img_dir + "level13_sign.png", 1, false, false, 0, 0);
+                oLevel13Sign.sprite_index = sLevel13SignNew;
+            }
+            
         }
     } 
 }
@@ -327,6 +337,7 @@ if (fadeOut)
         room_goto(rCredits1);
     }
 }
+
 </string>
           </argument>
         </arguments>
@@ -369,22 +380,22 @@ draw_text(320+96, 96, "V1.1 (C)2009");
 if (instance_exists(oPlayer1))
 {
     player = instance_nearest(0, 0, oPlayer1);
-
+    
     if (player.x &gt; (324 - global.room_offset))
     {
         draw_set_font(global.myFontSmall);
         draw_set_color(c_yellow);
-        draw_text(324 - global.room_offset, 4, string("F4 - CONTROLS"));
+        draw_text(324 - global.room_offset, 4, global.F4Controls);
     }
     
     if (player.x &lt; 256 and view_xview[0] &lt;= 1)
     {
         draw_set_font(global.myFontSmall);
         draw_set_color(c_white);
-        strLen = string_length("WELCOME TO THE SHORTCUT HOUSE!")*8;
+        strLen = string_length(global.WelcomeToTheShortcutHouse)*8;
         n = global.display_w - strLen;
         n = ceil(n / 2);
-        draw_text(n, 224, string("WELCOME TO THE SHORTCUT HOUSE!"));
+        draw_text(n, 224, string(global.WelcomeToTheShortcutHouse));
     }
 }
 </string>

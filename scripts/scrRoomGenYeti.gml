@@ -154,7 +154,7 @@ else if (roomPath == 4) // shop
     switch(rand(1,7))
     {
         case 1: { shopType = "General"; break; }
-        case 2: { shopType = "Bomb"; break; }
+        case 2: { shopType = global.Bomb; break; }
         case 3: { shopType = "Weapon"; break; }
         case 4: { shopType = "Rare"; break; }
         case 5: { shopType = "Clothing"; break; }
@@ -171,7 +171,7 @@ else if (roomPath == 5) // shop
     switch(rand(1,7))
     {
         case 1: { shopType = "General"; break; }
-        case 2: { shopType = "Bomb"; break; }
+        case 2: { shopType = global.Bomb; break; }
         case 3: { shopType = "Weapon"; break; }
         case 4: { shopType = "Rare"; break; }
         case 5: { shopType = "Clothing"; break; }
@@ -399,7 +399,7 @@ for (j = 0; j < 8; j += 1)
         {
             obj = instance_create(xpos, ypos, oSign);
             if (shopType == "General") obj.sprite_index = sSignGeneral;
-            else if (shopType == "Bomb") obj.sprite_index = sSignBomb;
+            else if (shopType == global.Bomb) obj.sprite_index = sSignBomb;
             else if (shopType == "Weapon") obj.sprite_index = sSignWeapon;
             else if (shopType == "Clothing") obj.sprite_index = sSignClothing;
             else if (shopType == "Rare") obj.sprite_index = sSignRare;

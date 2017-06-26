@@ -218,8 +218,8 @@ if (instance_exists(oPlayer1))
         if (not oLevel.musicFade)
         {
             oLevel.musicFade = true;
-            global.message = "A CHILL RUNS UP YOUR SPINE...";
-            global.message2 = "LET'S GET OUT OF HERE!";
+            global.message = global.AChillRunsUpYourSpine;
+            global.message2 = global.LetSGetOutOfHere;
             global.messageTimer = 200;
         }
     }
@@ -394,13 +394,13 @@ if (global.messageTimer &gt; 0)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, "GAME OVER");
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.GameOver);
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, "FINAL SCORE:");
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, global.FinalScore);
             }
             if (drawStatus &gt; 2)
             {
@@ -414,13 +414,13 @@ if (global.messageTimer &gt; 0)
                 {
                     if (global.testLevel != "")
                     {
-                        if (global.gamepadOn) str = "PRESS " + scrGetJoy(global.joyAttackVal) + " TO EDIT LEVEL.";
-                        else str = "PRESS " + scrGetKey(global.keyAttackVal) + " TO EDIT LEVEL.";
+                        if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ToEditLevel;
+                        else str = global.Press + scrGetKey(global.keyAttackVal) + global.ToEditLevel;
                     }
                     else
                     {
-                        if (global.gamepadOn) str = "PRESS " + scrGetJoy(global.joyAttackVal) + " TO LOAD ANOTHER LEVEL.";
-                        else str = "PRESS " + scrGetKey(global.keyAttackVal) + " TO LOAD ANOTHER LEVEL.";
+                        if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ToLoadAnotherLevel;
+                        else str = global.Press + scrGetKey(global.keyAttackVal) + global.ToLoadAnotherLevel;
                     }
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
@@ -429,8 +429,8 @@ if (global.messageTimer &gt; 0)
                 }
                 else
                 {
-                    if (global.gamepadOn) str = "PRESS " + scrGetJoy(global.joyAttackVal) + " FOR HIGH SCORES.";
-                    else str = "PRESS " + scrGetKey(global.keyAttackVal) + " FOR HIGH SCORES.";
+                    if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ForHighScores;
+                    else str = global.Press + scrGetKey(global.keyAttackVal) + global.ForHighScores;
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
@@ -444,14 +444,14 @@ if (global.messageTimer &gt; 0)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, "FINISHED!");
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                if (oSunRoom.highscore) str = "YOU SET A NEW RECORD!";
-                else str = "BETTER LUCK NEXT TIME...";
+                if (oSunRoom.highscore) str = global.YouSetANewRecord;
+                else str = global.BetterLuckNextTime;
                 strLen = string_length(str)*8;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);
@@ -466,14 +466,14 @@ if (global.messageTimer &gt; 0)
                 {
                     draw_set_font(global.myFont);
                     draw_set_color(c_yellow);
-                    draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, "FINISHED!");
+                    draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
                 }
                 if (drawStatus &gt; 1)
                 {
                     draw_set_font(global.myFontSmall);
                     draw_set_color(c_yellow);
-                    if (oMoonRoom.highscore) str = "YOU SET A NEW RECORD!";
-                    else str = "BETTER LUCK NEXT TIME...";
+                    if (oMoonRoom.highscore) str = global.YouSetANewRecord;
+                    else str = global.BetterLuckNextTime;
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
@@ -487,14 +487,14 @@ if (global.messageTimer &gt; 0)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, "FINISHED!");
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                if (oStarsRoom.highscore) str = "YOU SET A NEW RECORD!";
-                else str = "BETTER LUCK NEXT TIME...";
+                if (oStarsRoom.highscore) str = global.YouSetANewRecord;
+                else str = global.BetterLuckNextTime;
                 strLen = string_length(str)*8;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);

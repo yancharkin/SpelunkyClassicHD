@@ -43,7 +43,7 @@
 makeActive()
 setCollisionBounds(-4, -4, 4, 4)
 cost = 10000;
-buyMessage = "A TELEPORTER FOR $" + string(cost) + ".";</string>
+buyMessage = global.ATeleporterForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

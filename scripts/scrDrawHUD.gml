@@ -95,7 +95,7 @@ if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
         else if (oPlayer1.pickupItemType== "Shotgun") draw_sprite(sShotgunRight, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Bow") draw_sprite(sBowDisp, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Sceptre") draw_sprite(sSceptreRight, -1, vxv+8+8, vyv+24+8);
-        else if (oPlayer1.pickupItemType== "Flare") draw_sprite(sFlare, -1, vxv+8+8, vyv+24+8);
+        else if (oPlayer1.pickupItemType== global.Flare) draw_sprite(sFlare, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Key") draw_sprite(sKeyRight, -1, vxv+8+8, vyv+24+8);
     }
     

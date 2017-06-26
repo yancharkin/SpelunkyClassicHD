@@ -28,8 +28,8 @@ if (holdItem.type == "Udjat Eye")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT THE UDJAT EYE!";
-    global.message2 = "YOU FEEL AWAKENED.";
+    global.message = global.YouGotTheUdjatEye;
+    global.message2 = global.YouFeelAwakened;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Ankh")
@@ -39,8 +39,8 @@ else if (holdItem.type == "Ankh")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT THE ANKH!";
-    global.message2 = "YOU FEEL PROTECTED.";
+    global.message = global.YouGotTheAnkh;
+    global.message2 = global.YouFeelProtected;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Crown")
@@ -50,8 +50,8 @@ else if (holdItem.type == "Crown")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT THE HEDJET!";
-    global.message2 = "IT GLOWS A BRILLIANT WHITE.";
+    global.message = global.YouGotTheHedjet;
+    global.message2 = global.ItGlowsABrilliantWhite;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Kapala")
@@ -61,8 +61,8 @@ else if (holdItem.type == "Kapala")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT THE KAPALA!";
-    global.message2 = "IT THIRSTS FOR BLOOD...";
+    global.message = global.YouGotTheKapala;
+    global.message2 = global.ItThirstsForBlood;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Bomb Bag")
@@ -73,7 +73,7 @@ else if (holdItem.type == "Bomb Bag")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT 3 MORE BOMBS!";
+    global.message = global.YouGot3MoreBombs;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -85,7 +85,7 @@ else if (holdItem.type == "Bomb Box")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT 12 MORE BOMBS!";
+    global.message = global.YouGot12MoreBombs;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -96,7 +96,7 @@ else if (holdItem.type == "Paste")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT STICKY BOMBS!";
+    global.message = global.YouGotStickyBombs;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -108,7 +108,7 @@ else if (holdItem.type == "Rope Pile")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT 3 MORE ROPES!";
+    global.message = global.YouGot3MoreRopes;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -119,8 +119,8 @@ else if (holdItem.type == "Parachute")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT A PARACHUTE!";
-    global.message2 = "IT WILL DEPLOY AUTOMATICALLY.";
+    global.message = global.YouGotAParachute;
+    global.message2 = global.ItWillDeployAutomatically;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Spectacles")
@@ -130,8 +130,8 @@ else if (holdItem.type == "Spectacles")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT SPECTACLES!";
-    global.message2 = "YOUR EYESIGHT SEEMS IMPROVED...";
+    global.message = global.YouGotSpectacles;
+    global.message2 = global.YourEyesightSeemsImproved;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Gloves")
@@ -141,8 +141,8 @@ else if (holdItem.type == "Gloves")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT CLIMBING GLOVES!";
-    if (oPlayer1.pickupItemType == "Web Cannon") global.message2 = "YOUR SPIDER SENSE TINGLES!";
+    global.message = global.YouGotClimbingGloves;
+    if (oPlayer1.pickupItemType == "Web Cannon") global.message2 = global.YourSpiderSenseTingles;
     else global.message2 = "";
     global.messageTimer = 120;
 }
@@ -153,7 +153,7 @@ else if (holdItem.type == "Mitt")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT A PITCHER'S MITT!";
+    global.message = global.YouGotAPitcherSMitt;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -164,7 +164,7 @@ else if (holdItem.type == "Compass")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT A COMPASS!";
+    global.message = global.YouGotACompass;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -175,8 +175,8 @@ else if (holdItem.type == "Spring Shoes")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT SPRING SHOES!";
-    global.message2 = "YOU FEEL BOUNCY.";
+    global.message = global.YouGotSpringShoes;
+    global.message2 = global.YouFeelBouncy;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Spike Shoes")
@@ -186,7 +186,7 @@ else if (holdItem.type == "Spike Shoes")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT SPIKE SHOES!";
+    global.message = global.YouGotSpikeShoes;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -197,8 +197,8 @@ else if (holdItem.type == "Jordans")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT JORDANS!";
-    global.message2 = "YOU FEEL LIGHT ON YOUR FEET.";
+    global.message = global.YouGotJordans;
+    global.message2 = global.YouFeelLightOnYourFeet;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Cape")
@@ -208,7 +208,7 @@ else if (holdItem.type == "Cape")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT A CAPE!";
+    global.message = global.YouGotACape;
     global.message2 = "";
     global.messageTimer = 120;
     if (global.hasJetpack)
@@ -227,7 +227,7 @@ else if (holdItem.type == "Jetpack")
     with holdItem { instance_destroy(); }
     playSound(global.sndPickup);
     holdItem = 0;
-    global.message = "YOU GOT A JETPACK!";
+    global.message = global.YouGotAJetpack;
     global.message2 = "";
     global.messageTimer = 120;
     if (global.hasCape)
@@ -246,7 +246,7 @@ else if (holdItem.type == "Machete" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A MACHETE!";
+    global.message = global.YouGotAMachete;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -256,8 +256,8 @@ else if (holdItem.type == "Mattock" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A MATTOCK!";
-    global.message2 = "IT SEEMS A BIT RUSTY.";
+    global.message = global.YouGotAMattock;
+    global.message2 = global.ItSeemsABitRusty;
     global.messageTimer = 120;
 }
 else if (holdItem.type == "Pistol" and holdItem.cost > 0)
@@ -266,7 +266,7 @@ else if (holdItem.type == "Pistol" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A PISTOL!";
+    global.message = global.YouGotAPistol;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -276,7 +276,7 @@ else if (holdItem.type == "Web Cannon" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A WEB CANNON!";
+    global.message = global.YouGotAWebCannon;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -286,7 +286,7 @@ else if (holdItem.type == "Teleporter" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A TELEPORTER!";
+    global.message = global.YouGotATeleporter;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -296,7 +296,7 @@ else if (holdItem.type == "Shotgun" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT A SHOTGUN!";
+    global.message = global.YouGotAShotgun;
     global.message2 = "";
     global.messageTimer = 120;
 }
@@ -306,7 +306,7 @@ else if (holdItem.type == "Bow" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU GOT THE BOW AND ARROWS!";
+    global.message = global.YouGotTheBowAndArrows;
     global.message2 = "";
     global.messageTimer = 120;
     //global.arrows += 8;
@@ -318,7 +318,7 @@ else if (holdItem.type == "Damsel" and holdItem.cost > 0)
     holdItem.forSale = false;
     //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
     playSound(global.sndPickup);
-    global.message = "YOU MUST BE IN LOVE!";
+    global.message = global.YouMustBeInLove;
     global.message2 = "";
     global.messageTimer = 120;
 }

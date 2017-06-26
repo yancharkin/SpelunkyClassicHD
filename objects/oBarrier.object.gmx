@@ -77,7 +77,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.type == "Bomb")
+            <string>if (other.type == global.Bomb)
 {
     with other
     {

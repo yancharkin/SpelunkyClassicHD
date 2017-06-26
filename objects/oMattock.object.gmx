@@ -43,7 +43,7 @@
 makeActive()
 setCollisionBounds(-4, -6, 4, 6)
 cost = 8000;
-buyMessage = "A MATTOCK FOR $" + string(cost) + ".";</string>
+buyMessage = global.AMattockForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

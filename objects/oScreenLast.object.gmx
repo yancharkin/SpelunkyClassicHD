@@ -339,14 +339,12 @@ with(oScreen)
             <kind>1</kind>
             <string>with(oScreen)
 {
-    screen_w = 320//960//browser_height*(960/720)
-    screen_h = 240//720//browser_height
-    
+
     global.pSurf2=0
     
-    if (not surface_exists(pSurf)) pSurf = surface_create(screen_w, screen_h);
-    if (not surface_exists(screen)) screen = surface_create(screen_w, screen_h);
-    if (not surface_exists(darkSurf)) darkSurf = surface_create(screen_w, screen_h);
+    if (not surface_exists(pSurf)) pSurf = surface_create(global.display_w, global.display_h);
+    if (not surface_exists(screen)) screen = surface_create(global.display_w, global.display_h);
+    if (not surface_exists(darkSurf)) darkSurf = surface_create(global.display_w, global.display_h);
         
     if (checkStartPressed())
     {
@@ -361,7 +359,7 @@ with(oScreen)
                     if (global.darkLevel) draw_set_alpha(1);
                     else draw_set_alpha(0.9);
                     draw_set_color(c_black);
-                    draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false);
+                    draw_rectangle(0, 0, global.display_w*screen_scale, global.display_h*screen_scale, false);
                     draw_set_alpha(1);
                     if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 0);
                     if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 0);
@@ -392,17 +390,17 @@ with(oScreen)
                     
                     draw_set_font(global.myFont);
                     draw_set_color(c_white);
-                    draw_text(112, 200, "PAUSED");
+                    draw_text(112, 200, global.Paused);
                     draw_set_font(global.myFontSmall);
                     if (isLevel())
                     {
                         n = 128-24;
                         if (global.currLevel &lt; 1) draw_text(40, n-24, "TUTORIAL CAVE");
                         else if (isRoom("rLoadLevel")) draw_text(40, n-24, "LEVEL: " + global.customLevelName + " BY " + global.customLevelAuthor);
-                        else draw_text(40, n-24, "LEVEL " + string(global.currLevel));
+                        else draw_text(40, n-24, global.Level + string(global.currLevel));
                         draw_text(40, n-16, "DEPTH: " + string(174.8*(global.currLevel-1)+(py+8)*0.34) + " FEET");
-                        draw_text(40, n, "MONEY: " + string(global.money));
-                        draw_text(40, n+8, "KILLS: " + string(global.kills));
+                        draw_text(40, n, global.Money2 + string(global.money));
+                        draw_text(40, n+8, global.Kills2 + string(global.kills));
                         s = global.xtime;
                         s = floor(s / 1000);
                         m = 0;
@@ -423,7 +421,7 @@ with(oScreen)
                         }
                         if (s2 &lt; 10) str2 = "0" + string(s2);
                         else str2 = string(s2);
-                        draw_text(40, n+16, "TIME:  " + string(m) + ":" + str + " / " + string(m2) + ":" + str2);
+                        draw_text(40, n+16, global.Time2 + string(m) + ":" + str + " / " + string(m2) + ":" + str2);
                         draw_text(40, n+24, "SAVES: " + string(global.damsels));
                         if (global.gamepadOn) draw_text(24, 216, "START-RETURN  BOMB-DIE  ROPE-QUIT/RESET");
                         else draw_text(40, 216, "ESC-RETURN  F1-DIE  F9-QUIT/RESET");
@@ -438,9 +436,9 @@ with(oScreen)
                     
                     global.pSurf2=1
                     //draw_surface_stretched(pSurf,screen_x,screen_y,window_get_width(),window_get_height());
-                    //draw_surface_stretched(pSurf,screen_x,screen_y,screen_w*screen_scale*(window_get_width()/view_wview[0]),screen_h*screen_scale*(window_get_height()/view_hview[0]));
+                    //draw_surface_stretched(pSurf,screen_x,screen_y,global.display_w*screen_scale*(window_get_width()/view_wview[0]),global.display_h*screen_scale*(window_get_height()/view_hview[0]));
                     
-                    //if view_current=0 draw_surface_stretched(pSurf,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale);
+                    //if view_current=0 draw_surface_stretched(pSurf,screen_x,screen_y,global.display_w*screen_scale,global.display_h*screen_scale);
                     
                     paused = true;
                 }

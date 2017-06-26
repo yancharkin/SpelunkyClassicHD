@@ -163,7 +163,7 @@ if (fired == 0)
     {
         obj = collision_line(x+8, y+8, (x+8)-xAct, y+8, oItem, 0, 0);
         if (abs(obj.xVel) &gt; 0 or abs(obj.yVel) &gt; 0) firing = true;
-        if (obj.type == "Rope") firing = true;
+        if (obj.type == global.Rope) firing = true;
     }
     
     if (collision_line(x+8, y+8, (x+8)-xAct, y+8, oTreasure, 0, 0))

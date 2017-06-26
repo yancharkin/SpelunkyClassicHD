@@ -154,7 +154,7 @@ else
     {
         room_goto(rEndCustom);
     }
-    msg = "NO SUCH LEVEL EXISTS!"
+    msg = global.NoSuchLevelExists
     msgTimer = 60;
 }
 

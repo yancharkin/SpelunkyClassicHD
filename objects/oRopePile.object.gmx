@@ -44,7 +44,7 @@ makeActive();
 setCollisionBounds(-6, -5, 6, 5);
 
 cost = 2500;
-buyMessage = "EXTRA ROPE FOR $" + string(cost) + ".";</string>
+buyMessage = global.ExtraRopeForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

@@ -259,7 +259,7 @@ playSound(global.sndJetpack);</string>
 }
 else if (global.sacrificePit)
 {
-    global.message = "I CAN HEAR PRAYERS TO KALI!";
+    global.message = global.ICanHearPrayersToKali;
     global.message2 = "";
     global.messageTimer = 200;
 }</string>
@@ -338,45 +338,45 @@ climbSndToggle = not climbSndToggle;</string>
 }
 else if (global.snakePit)
 {
-    global.message = "I HEAR SNAKES... I HATE SNAKES!";
+    global.message = global.IHearSnakesIHateSnakes;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.cemetary and global.darkLevel)
 {
-    global.message = "THE DEAD ARE RESTLESS!";
+    global.message = global.TheDeadAreRestless;
     global.message2 = "";
     global.messageTimer = 200;
     if (global.lake) alarm[4] = 210;
 }
 else if (global.lake)
 {
-    global.message = "I CAN HEAR RUSHING WATER...";
+    global.message = global.ICanHearRushingWater;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.yetiLair)
 {
-    global.message = "IT SMELLS LIKE WET FUR IN HERE!";
+    global.message = global.ItSmellsLikeWetFurInHere;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.alienCraft)
 {
-    global.message = "THERE'S A PSYCHIC PRESENCE HERE!";
+    global.message = global.ThereSAPsychicPresenceHere;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.cityOfGold)
 {
-    global.message = "IT'S THE LEGENDARY CITY OF GOLD!";
+    global.message = global.ItSTheLegendaryCityOfGold;
     global.message2 = "";
     global.messageTimer = 200;
     if (global.sacrificePit) alarm[4] = 210;
 }
 else if (global.sacrificePit)
 {
-    global.message = "I CAN HEAR PRAYERS TO KALI!";
+    global.message = global.ICanHearPrayersToKali;
     global.message2 = "";
     global.messageTimer = 200;
 }</string>
@@ -407,61 +407,61 @@ else if (global.sacrificePit)
 }
 else if (global.darkLevel)
 {
-    if (global.hasCrown) global.message = "THE HEDJET SHINES BRIGHTLY.";
-    else global.message = "I CAN'T SEE A THING!";
+    if (global.hasCrown) global.message = global.TheHedjetShinesBrightly;
+    else global.message = global.ICanTSeeAThing;
     if (global.hasCrown) global.message2 = "";
-    else global.message2 = "I'D BETTER USE THESE FLARES!";
+    else global.message2 = global.IDBetterUseTheseFlares;
     global.messageTimer = 200;
     alarm[1] = 210;
 }
 else if (global.blackMarket)
 {
-    global.message = "WELCOME TO THE BLACK MARKET!";
+    global.message = global.WelcomeToTheBlackMarket;
     global.message2 = "";
     global.messageTimer = 200;
     alarm[1] = 210;
 }
 else if (global.snakePit)
 {
-    global.message = "I HEAR SNAKES... I HATE SNAKES!";
+    global.message = global.IHearSnakesIHateSnakes;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.cemetary)
 {
-    global.message = "THE DEAD ARE RESTLESS!";
+    global.message = global.TheDeadAreRestless;
     global.message2 = "";
     global.messageTimer = 200;
     if (global.lake) alarm[1] = 210;
 }
 else if (global.lake)
 {
-    global.message = "I CAN HEAR RUSHING WATER...";
+    global.message = global.ICanHearRushingWater;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.yetiLair)
 {
-    global.message = "IT SMELLS LIKE WET FUR IN HERE!";
+    global.message = global.ItSmellsLikeWetFurInHere;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.alienCraft)
 {
-    global.message = "THERE'S A PSYCHIC PRESENCE HERE!";
+    global.message = global.ThereSAPsychicPresenceHere;
     global.message2 = "";
     global.messageTimer = 200;
 }
 else if (global.cityOfGold)
 {
-    global.message = "IT'S THE LEGENDARY CITY OF GOLD!";
+    global.message = global.ItSTheLegendaryCityOfGold;
     global.message2 = "";
     global.messageTimer = 200;
     if (global.sacrificePit) alarm[1] = 210;
 }
 else if (global.sacrificePit)
 {
-    global.message = "I CAN HEAR PRAYERS TO KALI!";
+    global.message = global.ICanHearPrayersToKali;
     global.message2 = "";
     global.messageTimer = 200;
 }</string>
@@ -1245,7 +1245,7 @@ if (not dead and
             holdItem = 0;
             pickupItemType = "";
         }
-        else if (holdItem.type == "Bomb")
+        else if (holdItem.type == global.Bomb)
         {
             if (holdItem.armed)
             {
@@ -1259,7 +1259,7 @@ if (not dead and
             
             global.pickupItem = pickupItemType;
         }
-        else if (holdItem.type == "Rope")
+        else if (holdItem.type == global.Rope)
         {
             global.rope += 1;
             with holdItem { instance_destroy(); }
@@ -1375,7 +1375,7 @@ if (not dead and
             holdItem = 0;
             pickupItemType = "";
         }
-        else if (holdItem.type == "Bomb")
+        else if (holdItem.type == global.Bomb)
         {
             if (holdItem.armed)
             {
@@ -1389,7 +1389,7 @@ if (not dead and
             
             global.pickupItem = pickupItemType;
         }
-        else if (holdItem.type == "Rope")
+        else if (holdItem.type == global.Rope)
         {
             global.rope += 1;
             with holdItem { instance_destroy(); }
@@ -1926,7 +1926,7 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
             }
             else if (holdItem.cost &gt; global.money)
             {
-                global.message = "YOU HAVEN'T GOT ENOUGH MONEY!";
+                global.message = global.YouHaventGotEnoughMoney;
                 global.message2 = "";
                 global.messageTimer = 80;
                 with holdItem { held = false; }
@@ -1958,19 +1958,19 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
                 if (isRealLevel()) global.diceGamesPlayed += 1;
                 bet = 1000 + global.currLevel * 500;
                 global.money -= 1000 + global.currLevel * 500;
-                global.message = "YOU BET $" + string(1000 + global.currLevel * 500) + "!";
-                global.message2 = "NOW ROLL THE DICE!";
+                global.message = global.YouBetS + string(1000 + global.currLevel * 500) + "!";
+                global.message2 = global.NowRollTheDice;
                 global.messageTimer = 200;
             }
             else if (bet &gt; 0)
             {
-                global.message = "ONE BET AT A TIME!";
-                global.message2 = "PLEASE ROLL THE DICE!";
+                global.message = global.OneBetAtATime;
+                global.message2 = global.PleaseRollTheDice;
                 global.messageTimer = 200;
             }
             else
             {
-                global.message = "YOU NEED $" + string(1000 + global.currLevel * 500) + " TO BET!";
+                global.message = global.YouNeedS + string(1000 + global.currLevel * 500) + " TO BET!";
                 global.message2 = "";
                 global.messageTimer = 200;
             }
@@ -1999,17 +1999,17 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
                     }
                     global.money -= getKissValue();
                     global.plife += 1;
-                    if (global.isDamsel) global.message = "NOW AIN'T HE SWEET!";
-                    else global.message = "NOW AIN'T SHE SWEET!";
+                    if (global.isDamsel) global.message = global.NowAintHeSweet;
+                    else global.message = global.NowAintSheSweet;
                     global.message2 = "";
                     global.messageTimer = 200;
                 }
             }
             else
             {
-                if (n == 0) global.message = "YOU NEED $" + string(getKissValue()) + "!";
-                else global.message = "YOU NEED $" + string(obj.cost) + "!";
-                global.message2 = "GET OUTTA HERE, DEADBEAT!";
+                if (n == 0) global.message = global.YouNeedS + string(getKissValue()) + "!";
+                else global.message = global.YouNeedS + string(obj.cost) + "!";
+                global.message2 = global.GetOuttaHereDeadbeat;
                 global.messageTimer = 200;
             }
         }
@@ -2505,8 +2505,8 @@ if (isLevel() or isRoom("rSun") or isRoom("rMoon") or isRoom("rStars"))
             active = true;
             dead = false;
             global.hasAnkh = false;
-            global.message = "THE ANKH SHATTERS!";
-            global.message2 = "YOU HAVE BEEN REVIVED!";
+            global.message = global.TheAnkhShatters;
+            global.message2 = global.YouHaveBeenRevived;
             global.messageTimer = 150;
             playSound(global.sndTeleport);
         }
@@ -2702,7 +2702,7 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oBombBag, 0, 0) and not dead and not
         disp.sprite_index = sBombsGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = "YOU GOT 3 MORE BOMBS!";
+        global.message = global.YouGot3MoreBombs;
         global.message2 = "";
         global.messageTimer = 120;
     }
@@ -2718,7 +2718,7 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oBombBox, 0, 0) and not dead and not
         disp.sprite_index = sBombsGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = "YOU GOT 12 MORE BOMBS!";
+        global.message = global.YouGot12MoreBombs;
         global.message2 = "";
         global.messageTimer = 120;
     }
@@ -2734,7 +2734,7 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oRopePile, 0, 0) and not dead and no
         disp.sprite_index = sRopeGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = "YOU GOT 3 MORE ROPES!";
+        global.message = global.YouGot3MoreRopes;
         global.message2 = "";
         global.messageTimer = 120;
     }

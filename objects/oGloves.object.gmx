@@ -45,7 +45,7 @@ setCollisionBounds(-6, -6, 6, 8);
 
 cost = 8000;
 shopDesc = "CLIMBING GLOVES";
-buyMessage = "CLIMBING GLOVES FOR $" + string(cost) + ".";</string>
+buyMessage = global.ClimbingGlovesForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

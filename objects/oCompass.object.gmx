@@ -44,7 +44,7 @@ makeActive();
 setCollisionBounds(-6, -6, 6, 6);
 
 cost = 3000;
-buyMessage = "A COMPASS FOR $" + string(cost) + ".";</string>
+buyMessage = global.ACompassForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

@@ -43,7 +43,7 @@
 makeActive();
 setCollisionBounds(-4, -4, 4, 4);
 cost = 15000;
-buyMessage = "A SHOTGUN FOR $" + string(cost) + ".";</string>
+buyMessage = global.AShotgunForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

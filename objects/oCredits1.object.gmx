@@ -396,24 +396,24 @@ else if (drawStatus == 2)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(16, 16, "A GAME BY");
+    draw_text(16, 16, global.AGameBy);
     // draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
-    draw_text(64, 32, "DEREK YU");
+    draw_text(32, 32, "DEREK YU");
 }
 else if (drawStatus == 3)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(16, 16, "PLATFORM ENGINE");
+    draw_text(16, 16, global.PlatformEngine);
     draw_set_color(c_white);
     draw_text(16, 24, "MARTIN PIECYK");
     draw_set_color(c_yellow);
-    draw_text(16, 40, "SOUND EFFECTS MADE USING");
+    draw_text(16, 40, global.SoundEffectsMadeUsing);
     draw_set_color(c_white);
     draw_text(16, 48, "DR PETTER'S SFXR");
     draw_set_color(c_yellow);
-    draw_text(16, 64, "SCREEN SCALING CODE");
+    draw_text(16, 64, global.ScreenScalingCode);
     draw_set_color(c_white);
     draw_text(16, 72, "CHEVYRAY");
 }
@@ -421,7 +421,7 @@ else if (drawStatus == 4)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(16, 16, "MUSIC BY");
+    draw_text(16, 16, global.MusicBy);
     draw_set_color(c_white);
     draw_text(32, 32, "GEORGE BUZINKAI");
     draw_text(32, 48, "JONATHAN PERRY");
@@ -430,28 +430,28 @@ else if (drawStatus == 5)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(16, 16, "BETA TESTING BY");
+    draw_text(16, 16, global.BetaTestingBy);
     draw_set_color(c_white);
     draw_text(16, 24, "ANNABELLE K.");
     draw_text(16, 32, "BENZIDO");
     draw_text(16, 40, "CHUTUP");
     draw_text(16, 48, "CORPUS");
     draw_text(16, 56, "GENERALVALTER");
-    draw_text(16, 64, "GUERT");
+    draw_text(16, 64, global.Guert);
     draw_text(16, 72, "GRAHAM GORING");
     draw_text(16, 80, "HAOWAN");
     draw_text(16, 88, "HIDEOUS");
     draw_text(16, 96, "INANE");
     //
     draw_text(128, 24, "INCREPARE");
-    draw_text(128, 32, "KAO");
+    draw_text(128, 32, global.Kao);
     draw_text(128, 40, "MARK JOHNS");
     draw_text(128, 48, "MELLY");
     draw_text(128, 56, "PAUL ERES");
     draw_text(128, 64, "SUPER JOE");
     draw_text(128, 72, "TANTAN");
     draw_text(128, 80, "TEAM QUIGGAN");
-    draw_text(128, 88, "TERRY");
+    draw_text(128, 88, global.Terry);
     draw_text(128, 96, "XION");
     draw_text(128, 104, "ZAPHOS");
 }
@@ -459,10 +459,10 @@ else if (drawStatus == 6)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(16, 16, "THANKS FOR PLAYING!");
+    draw_text(16, 16, global.ThanksForPlaying);
     // draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
-    draw_text(32, 32, "SEE YOU NEXT ADVENTURE!");
+    draw_text(32, 32, global.SeeYouNextAdventure);
 }
 
 if (fadeIn or fadeOut)

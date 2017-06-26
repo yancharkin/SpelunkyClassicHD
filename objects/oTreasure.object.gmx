@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = "None";
+            <string>type = global.None;
 held = false;
 LEFT = 18;
 RIGHT = 19;

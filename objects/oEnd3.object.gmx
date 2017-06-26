@@ -293,13 +293,13 @@ if (fadeOut)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_yellow);
-    draw_text(64, 32, "YOU MADE IT!");
+    draw_text(64, 32, global.YouMadeIt);
 }
 if (drawStatus &gt; 1)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(64, 64, "FINAL SCORE:");
+    draw_text(64, 64, global.FinalScore);
 }
 if (drawStatus &gt; 2)
 {
@@ -320,7 +320,7 @@ if (drawStatus &gt; 4)
 
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(64, 96, "TIME: ");
+    draw_text(64, 96, global.Time2);
     draw_set_color(c_white);
     if (s &lt; 10) draw_text(96+24, 96, string(m) + ":0" + string(s));
     else draw_text(96+24, 96, string(m) + ":" + string(s));
@@ -329,7 +329,7 @@ if (drawStatus &gt; 5)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
-    draw_text(64, 96+8, "KILLS: ");
+    draw_text(64, 96+8, global.Kills2);
     draw_set_color(c_white);
     draw_text(96+24, 96+8, global.kills);
 }
@@ -354,10 +354,10 @@ if (drawStatus == 8)
 {
     draw_set_font(global.myFontSmall);
     draw_set_color(c_white);
-    strLen = string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8;
+    strLen = string_length(global.YouShallBeRememberedAsAHero)*8;
     n = global.display_w - strLen;
     n = ceil(n / 2);
-    draw_text(n-global.room_offset, 116, string("YOU SHALL BE REMEMBERED AS A HERO."));
+    draw_text(n-global.room_offset, 116, string(global.YouShallBeRememberedAsAHero));
 }
 </string>
           </argument>

@@ -75,8 +75,8 @@ type = "Altar";</string>
 if (defile)
 {
 
-    global.message = "YOU DARE DEFILE MY ALTAR?";
-    global.message2 = "I WILL PUNISH YOU!";
+    global.message = global.YouDareDefileMyAltar;
+    global.message2 = global.IWillPunishYou;
     global.messageTimer = 200;
     scrShake(10);
     global.favor -= 16;

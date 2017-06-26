@@ -99,7 +99,7 @@ if (isLevel())
             global.idols += 1;
             playSound(global.sndCoin);
             instance_create(x, y-8, oBigCollect);
-            global.message = "PLEASURE DOING BUSINESS!";
+            global.message = global.PleasureDoingBusiness;
             global.message2 = "";
             global.messageTimer = 100;
             instance_destroy();

@@ -28,7 +28,7 @@ kRightReleased = checkRightReleased();
 kUp = checkUp();
 kDown = checkDown();
   
-//key "run"
+//key global.Run
 if canRun
     kRun = 0;
 // kRun=runKey

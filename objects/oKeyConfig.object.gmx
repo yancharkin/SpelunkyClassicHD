@@ -96,141 +96,141 @@ file_text_close(file);
             <kind>1</kind>
             <string>draw_set_font(global.myFontSmall);
 draw_set_color(c_yellow);
-strLen = string_length("PRESS KEY FOR")*8;
+strLen = string_length(global.PressKeyFor)*8;
 n = 160 - strLen;
 n = ceil(n / 2);
-draw_text(n, 32, "PRESS KEY FOR");
-draw_text(8, 96, "ESC TO KEEP SAME.");
-draw_text(8, 104, "CURRENT: ");
+draw_text(n, 32, global.PressKeyFor);
+draw_text(8, 96, global.EscToKeepSame);
+draw_text(8, 104, global.Current);
 
 if (status == 0)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("UP")*16;
+    strLen = string_length(global.Up)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "UP");
+    draw_text(n, 40, global.Up);
     currVal = global.keyUpVal;
 }
 else if (status == 1)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("DOWN")*16;
+    strLen = string_length(global.Down)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "DOWN");
+    draw_text(n, 40, global.Down);
     currVal = global.keyDownVal;
 }
 else if (status == 2)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("LEFT")*16;
+    strLen = string_length(global.Left)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "LEFT");
+    draw_text(n, 40, global.Left);
     currVal = global.keyLeftVal;
 }
 else if (status == 3)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("RIGHT")*16;
+    strLen = string_length(global.Right)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "RIGHT");
+    draw_text(n, 40, global.Right);
     currVal = global.keyRightVal;
 }
 else if (status == 4)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("JUMP")*16;
+    strLen = string_length(global.Jump)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "JUMP");
+    draw_text(n, 40, global.Jump);
     currVal = global.keyJumpVal;
 }
 else if (status == 5)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("ACTION")*16;
+    strLen = string_length(global.Action)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "ACTION");
+    draw_text(n, 40, global.Action);
     currVal = global.keyAttackVal;
 }
 else if (status == 6)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("SWITCH")*16;
+    strLen = string_length(global.Switch)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "SWITCH");
+    draw_text(n, 40, global.Switch);
     currVal = global.keyItemVal;
 }
 else if (status == 7)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("RUN")*16;
+    strLen = string_length(global.Run)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "RUN");
+    draw_text(n, 40, global.Run);
     currVal = global.keyRunVal;
 }
 else if (status == 8)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("BOMB")*16;
+    strLen = string_length(global.Bomb)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "BOMB");
+    draw_text(n, 40, global.Bomb);
     currVal = global.keyBombVal;
 }
 else if (status == 9)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("ROPE")*16;
+    strLen = string_length(global.Rope)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "ROPE");
+    draw_text(n, 40, global.Rope);
     currVal = global.keyRopeVal;
 }
 else if (status == 10)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("FLARE")*16;
+    strLen = string_length(global.Flare)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "FLARE");
+    draw_text(n, 40, global.Flare);
     currVal = global.keyFlareVal;
 }
 else if (status == 11)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("PURCHASE")*16;
+    strLen = string_length(global.Purchase)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "PURCHASE");
+    draw_text(n, 40, global.Purchase);
     currVal = global.keyPayVal;
 }
 
 draw_set_font(global.myFontSmall);
 switch (currVal)
 {
-    case vk_up: { draw_text(80, 104, "UP ARR"); break; }
-    case vk_down: { draw_text(80, 104, "DOWN ARR"); break; }
-    case vk_left: { draw_text(80, 104, "LEFT ARR"); break; }
-    case vk_right: { draw_text(80, 104, "RIGHT ARR"); break; }
+    case vk_up: { draw_text(80, 104, global.UpArr); break; }
+    case vk_down: { draw_text(80, 104, global.DownArr); break; }
+    case vk_left: { draw_text(80, 104, global.LeftArr); break; }
+    case vk_right: { draw_text(80, 104, global.RightArr); break; }
     case vk_shift: { draw_text(80, 104, "SHIFT"); break; }
     case vk_control: { draw_text(80, 104, "CTRL"); break; }
     case vk_alt: { draw_text(80, 104, "ALT"); break; }

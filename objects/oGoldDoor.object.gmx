@@ -43,8 +43,8 @@
     }
     else
     {
-        global.message = "THE SCEPTRE FITS...";
-        global.message2 = "BUT NOTHING IS HAPPENING!";
+        global.message = global.TheSceptreFits;
+        global.message2 = global.ButNothingIsHappening;
         global.messageTimer = 100;
     }
 }</string>

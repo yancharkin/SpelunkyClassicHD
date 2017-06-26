@@ -55,7 +55,7 @@ if canRun
     yOffset=120
   else
     yOffset=143
-  //draw the "flySpeed" bar, which shows how much speed the character has acquired while holding the "run" button
+  //draw the "flySpeed" bar, which shows how much speed the character has acquired while holding the global.Run button
   //draw_healthbar(view_xview[0]+224+xOffset,view_yview[0]+432+yOffset,view_xview[0]+400+xOffset,view_yview[0]+450+yOffset,flySpeed,make_color_rgb(0,64,128),c_blue,c_aqua,0,1,1)
 }
 */

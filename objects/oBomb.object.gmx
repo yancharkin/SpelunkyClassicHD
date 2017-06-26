@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = "Bomb";
+            <string>type = global.Bomb;
 makeActive();
 setCollisionBounds(-4, -4, 4, 4);</string>
           </argument>

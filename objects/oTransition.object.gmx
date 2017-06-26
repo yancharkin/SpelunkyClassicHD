@@ -569,51 +569,51 @@ if (instance_exists(oTunnelMan))
     person = instance_nearest(176, 176, oTunnelMan);
     if (person.talk == 1)
     {
-        strLen = string_length("HEY THERE! I'M THE TUNNEL MAN!")*8;
+        strLen = string_length(global.HeyThereImTheTunnelMan)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!");
-        strLen = string_length("I DIG SHORTCUTS.")*8;
+        draw_text(n, 208, global.HeyThereImTheTunnelMan);
+        strLen = string_length(global.IDigShortcuts)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 216, "I DIG SHORTCUTS.");
+        draw_text(n, 216, global.IDigShortcuts);
     }
     else if (person.talk == 2)
     {
-        strLen = string_length("CAN YOU LEND ME A LITTLE MONEY?")*8;
+        strLen = string_length(global.CanYouLendMeALittleMoney)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?");
-        if (isRoom("rTransition1x") or isRoom("rTransition3x")) strLen = string_length("I NEED $" + string(global.tunnel1) + " FOR A NEW SHORTCUT.")*8;
-        else strLen = string_length("I NEED $" + string(global.tunnel2) + " FOR A NEW SHORTCUT.")*8;
+        draw_text(n, 208, global.CanYouLendMeALittleMoney);
+        if (isRoom("rTransition1x") or isRoom("rTransition3x")) strLen = string_length(global.INeedS + string(global.tunnel1) + global.ForANewShortcut)*8;
+        else strLen = string_length(global.INeedS + string(global.tunnel2) + global.ForANewShortcut)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        if (isRoom("rTransition1x") or isRoom("rTransition3x")) draw_text(n, 216, "I NEED $" + string(global.tunnel1) + " FOR A NEW SHORTCUT.");
-        else draw_text(n, 216, "I NEED $" + string(global.tunnel2) + " FOR A NEW SHORTCUT.");
+        if (isRoom("rTransition1x") or isRoom("rTransition3x")) draw_text(n, 216, global.INeedS + string(global.tunnel1) + global.ForANewShortcut);
+        else draw_text(n, 216, global.INeedS + string(global.tunnel2) + global.ForANewShortcut);
         draw_set_color(c_yellow);
         draw_text(n, 224, "DONATE: " + string(oTunnelMan.donate));
         draw_set_color(c_white);
     }
     else if (person.talk == 3)
     {
-        strLen = string_length("THANKS! YOU WON'T REGRET IT!")*8;
+        strLen = string_length(global.ThanksYouWontRegretIt)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!");
+        draw_text(n, 216, global.ThanksYouWontRegretIt);
     }
     else if (person.talk == 4)
     {
-        strLen = string_length("I'LL NEVER GET THIS SHORTCUT BUILT!")*8;
+        strLen = string_length(global.IllNeverGetThisShortcutBuilt)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!");
+        draw_text(n, 216, global.IllNeverGetThisShortcutBuilt);
     }
     else if (person.talk == 5)
     {
-        strLen = string_length("ONE SHORTCUT, COMING UP!")*8;
+        strLen = string_length(global.OneShortcutComingUp)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 216, "ONE SHORTCUT, COMING UP!");
+        draw_text(n, 216, global.OneShortcutComingUp);
     }
 }
 else if (instance_exists(oDamselKiss))
@@ -621,10 +621,10 @@ else if (instance_exists(oDamselKiss))
     person = instance_nearest(176, 176, oDamselKiss);
     if (person.kissed)
     {
-        strLen = string_length("MY HERO!")*8;
+        strLen = string_length(global.MyHero)*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(n, 216, "MY HERO!");
+        draw_text(n, 216, global.MyHero);
     }
 }
 /* debug
@@ -636,18 +636,18 @@ else
 */
 
 draw_set_color(c_yellow);
-if (global.customLevel) draw_text(32, 48, global.customLevelName + " COMPLETED!");
-else if (global.currLevel-1 &lt; 1) draw_text(32, 48, "TUTORIAL CAVE COMPLETED!");
-else draw_text(32, 48, "LEVEL " + string(global.currLevel-1) + " COMPLETED!");
+if (global.customLevel) draw_text(32, 48, global.customLevelName + global.Completed);
+else if (global.currLevel-1 &lt; 1) draw_text(32, 48, global.TutorialCaveCompleted);
+else draw_text(32, 48, global.Level + string(global.currLevel-1) + global.Completed);
 draw_set_color(c_white);
-draw_text(32, 64, "TIME  = ");
-draw_text(32, 80, "LOOT  = ");
-draw_text(32, 96, "KILLS = ");
-draw_text(32, 112, "MONEY = ");
+draw_text(32, 64, global.Time3);
+draw_text(32, 80, global.Loot);
+draw_text(32, 96, global.Kills3);
+draw_text(32, 112, global.Money3);
 
 if (drawLoot &gt;= 1 and not isLoot)
 {
-    draw_text(96, 80, "NONE");
+    draw_text(96, 80, global.None);
 }
 
 if (drawLoot &gt; -2)
@@ -684,7 +684,7 @@ if (drawLoot == 2)
 {
     if (not isKills)
     {
-        draw_text(96, 96, "NONE");
+        draw_text(96, 96, global.None);
     }
     draw_text(96, 112, "$" + string(moneyCount) + " / $" + string(global.money));
 }

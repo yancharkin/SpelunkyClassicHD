@@ -186,8 +186,8 @@ strLen = string_length("PRESS BUTTON FOR")*8;
 n = 160 - strLen;
 n = ceil(n / 2);
 draw_text(n, 32, "PRESS BUTTON FOR");
-draw_text(8, 96, "ESC TO KEEP SAME.");
-draw_text(8, 104, "CURRENT: ");
+draw_text(8, 96, global.EscToKeepSame);
+draw_text(8, 104, global.Current);
 
 if (not joystick_exists(1))
 {
@@ -199,80 +199,80 @@ if (status == 0)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("JUMP")*16;
+    strLen = string_length(global.Jump)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "JUMP");
+    draw_text(n, 40, global.Jump);
     currVal = global.joyJumpVal;
 }
 else if (status == 1)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("ACTION")*16;
+    strLen = string_length(global.Action)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "ACTION");
+    draw_text(n, 40, global.Action);
     currVal = global.joyAttackVal;
 }
 else if (status == 2)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("SWITCH")*16;
+    strLen = string_length(global.Switch)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "SWITCH");
+    draw_text(n, 40, global.Switch);
     currVal = global.joyItemVal;
 }
 else if (status == 3)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("RUN")*16;
+    strLen = string_length(global.Run)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "RUN");
+    draw_text(n, 40, global.Run);
     currVal = global.joyRunVal;
 }
 else if (status == 4)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("BOMB")*16;
+    strLen = string_length(global.Bomb)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "BOMB");
+    draw_text(n, 40, global.Bomb);
     currVal = global.joyBombVal;
 }
 else if (status == 5)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("ROPE")*16;
+    strLen = string_length(global.Rope)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "ROPE");
+    draw_text(n, 40, global.Rope);
     currVal = global.joyRopeVal;
 }
 else if (status == 6)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("FLARE")*16;
+    strLen = string_length(global.Flare)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "FLARE");
+    draw_text(n, 40, global.Flare);
     currVal = global.joyFlareVal;
 }
 else if (status == 7)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("PURCHASE")*16;
+    strLen = string_length(global.Purchase)*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "PURCHASE");
+    draw_text(n, 40, global.Purchase);
     currVal = global.joyPayVal;
 }
 else if (status == 8)

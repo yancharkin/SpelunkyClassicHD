@@ -21,40 +21,41 @@
     
 ***********************************************************************************/
 
-switch(rand(1,32))
+n = round(random_range(1,32));
+switch(n)
 {
-    case 1: { return "AHKMED"; }
-    case 2: { return "TERRY"; }
-    case 3: { return "SMITHY"; }
-    case 4: { return "LEON"; }
-    case 5: { return "ALI"; }
-    case 6: { return "ELBERT"; }
-    case 7: { return "KAO"; }
-    case 8: { return "DUKE"; }
-    case 9: { return "TONY"; }
-    case 10: { return "GUERT"; }
-    case 11: { return "PANCHO"; }
-    case 12: { return "EARL"; }
-    case 13: { return "IVAN"; }
-    case 14: { return "OLLIE"; }
-    case 15: { return "SPOONY"; }
-    case 16: { return "BOB"; }
-    case 17: { return "RUDY"; }
-    case 18: { return "JIMBO"; }
-    case 19: { return "TOR"; }
-    case 20: { return "WILLY"; }
-    case 21: { return "HAMISH"; }
-    case 22: { return "LAZLO"; }
-    case 23: { return "WANG"; }
-    case 24: { return "HERBIE"; }
-    case 25: { return "ANDY"; }
-    case 26: { return "DONG"; }
-    case 27: { return "LEMMY"; }
-    case 28: { return "BARNEY"; }
-    case 29: { return "LOU"; }
-    case 30: { return "TARN"; }
-    case 31: { return "SLASH"; }
-    case 32: { return "BROM"; }
+    case 1: { return global.Ahkmed; }
+    case 2: { return global.Terry; }
+    case 3: { return global.Smithy; }
+    case 4: { return global.Leon; }
+    case 5: { return global.Ali; }
+    case 6: { return global.Elbert; }
+    case 7: { return global.Kao; }
+    case 8: { return global.Duke; }
+    case 9: { return global.Tony; }
+    case 10: { return global.Guert; }
+    case 11: { return global.Pancho; }
+    case 12: { return global.Earl; }
+    case 13: { return global.Ivan; }
+    case 14: { return global.Ollie; }
+    case 15: { return global.Spoony; }
+    case 16: { return global.Bob; }
+    case 17: { return global.Rudy; }
+    case 18: { return global.Jimbo; }
+    case 19: { return global.Tor; }
+    case 20: { return global.Willy; }
+    case 21: { return global.Hamish; }
+    case 22: { return global.Lazlo; }
+    case 23: { return global.Wang; }
+    case 24: { return global.Herbie; }
+    case 25: { return global.Andy; }
+    case 26: { return global.Dong; }
+    case 27: { return global.Lemmy; }
+    case 28: { return global.Barney; }
+    case 29: { return global.Lou; }
+    case 30: { return global.Tarn; }
+    case 31: { return global.Slash; }
+    case 32: { return global.Brom; }
 }
 
-return "AHKMED";
+//return global.Ahkmed;

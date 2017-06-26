@@ -63,7 +63,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = "Flare";
+            <string>type = global.Flare;
 makeActive();
 setCollisionBounds(-4, -4, 4, 4);
 xVel = 0;

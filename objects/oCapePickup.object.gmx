@@ -44,7 +44,7 @@ makeActive();
 setCollisionBounds(-6, -6, 6, 6);
 
 cost = 12000;
-buyMessage = "A CAPE FOR $" + string(cost) + ".";</string>
+buyMessage = global.ACapeForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>
