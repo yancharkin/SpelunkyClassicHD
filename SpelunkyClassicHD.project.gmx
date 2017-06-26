@@ -48,8 +48,8 @@
       <sound>sound\mIce</sound>
       <sound>sound\mLush</sound>
       <sound>sound\mTemple</sound>
-      <sound>sound\mTitle</sound>
       <sound>sound\mVictory</sound>
+      <sound>sound\mTitle</sound>
     </sounds>
     <sound>sound\xalien</sound>
     <sound>sound\xarrowtrap</sound>

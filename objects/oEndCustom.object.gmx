@@ -200,11 +200,12 @@ alarm[2] = 50;</string>
             <kind>1</kind>
             <string>drawStatus = 1;
 alarm[1] = 50;
-playMusic(global.musVictory, false);
+audio_play_sound(global.musVictory, 10, false);
 with oMenu
 {
     visible = true;
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

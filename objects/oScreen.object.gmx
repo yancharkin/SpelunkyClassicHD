@@ -30,9 +30,7 @@
 // screen base(view_wview and view_hview)
 screen_x = 0;
 screen_y = 0;
-//screen_w = 960//browser_height*(960/720) //960//320;
 screen_w = display_get_width();
-//screen_h = 720//browser_height//720//240;
 screen_h = display_get_height();
 screen_scale =  1; //global.screenScale;
 enabled = true;
@@ -55,7 +53,6 @@ if (screen)
 */
 // set up rooms
 aspect_ratio = (screen_w/screen_h);
-//show_debug_message("Aspect ratio: " + string(aspect_ratio));
 
 if (aspect_ratio &gt; 1.71)
 {
@@ -138,7 +135,7 @@ view_hport[0] = h;
 surface_resize(application_surface, w, h);
 
 global.display_w = w;
-global.display_h =h;
+global.display_h = h;
 
 room_goto_next();
 </string>
@@ -642,7 +639,8 @@ scrWriteStats();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///NEW
+            <string>/*
+///NEW
 
 //pSurf
 //darkSurf
@@ -721,6 +719,7 @@ else
         draw_set_alpha(1);
     }
 }
+*/
 </string>
           </argument>
         </arguments>

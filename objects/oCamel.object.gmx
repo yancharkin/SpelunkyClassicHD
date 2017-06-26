@@ -55,7 +55,7 @@ else if (global.isTunnelMan) sprite_index = sCamelTunnel;</string>
     x -= 1;
     if (x &lt;= 160)
     {
-        playMusic(global.musCredits, false);
+        audio_play_sound(global.musCredits, 10, false);
         status = 1;
     }
 }
