@@ -1,42 +1,43 @@
-This Application was made using GameMaker. GameMaker is the intellectual property of YoYo Games Ltd, a company of the United Kingdom.
+Spelunky® User License v1.1b
+Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+Last Updated on December 25th, 2009
 
-THIS END USER LICENSE AGREEMENT APPLIES TO ALL USE OF THIS APPLICATION.
+1. Preamble
 
-Scope
------
-You may:
+As of December 25th, 2009, I'm releasing the .gmk files for Spelunky and the Spelunky configuration program to the public.  The game and the source code are being provided to you for the purpose of learning, entertainment, and sharing with the Spelunky community.
 
-Install and use this Application for personal, or commercial use [provided you have paid any license fee, if this applies];
+I'm interested in seeing what you guys create!  Happy Spelunky-ing!
 
-You must not:
+2. Definitions
 
-use, copy, transfer, distribute modify, adapt, merge, translate, decompile, disassemble, or reverse engineer the Application or part of it except as expressly permitted by this Licence;
-remove, modify, or tamper with any copyright, trademark or other notice;
-use the Application for any illegal, unlawful or immoral purposes.
+"Mossmouth" is defined as Derek Yu and Mossmouth, LLC.
 
+The "Game" is defined as the Spelunky game, its program, and all related files, including, but not limited to, the Spelunky configuration program.
 
-Term
-----
-This License will end automatically if you breach any of the terms.
-When this License ends you must stop all use of the Application and destroy and erase any copies you have.
+The "Source Code" is defined as the .gmk files for Spelunky and the Spelunky configuration program, and all of the objects, scripts, sprites, and tiles contained within those files.
 
+"Covered Works" are defined as the Game, the Source Code, and any modified versions of the Game and the Source Code.
 
-Liability
----------
+3. Rights Granted
 
-YoYo Games Limited (“YoYo Games) is not involved in the creation of this Application except only that it was made using GameMaker. YoYo Games warrants only that GameMaker will function satisfactorily if used properly and on the correct operating system.
-YoYo Games does not warrant that the operation of the Appication will be uninterrupted or error free or that errors can be corrected. You install and use the Application at your own risk and in no event will YoYo Games be liable to you for any loss or damage of any kind (except personal injury or death arising from YoYo Games’ negligence) including lost profits or other consequential loss arising from the use of or inability to use the Application or from errors or deficiencies in it whether caused by negligence or otherwise.
-To the maximum extent permitted by law, YoYo Games Limited excludes liability for all warranties, conditions and other terms which but for this notice would have effect.
+The rights granted under this license are granted for the duration of the copyright.
 
+You may modify and redistribute the Game and its Source Code under the following conditions:
 
-General
--------
+  (1) This license and any appropriate copyright notices in the Source Code are kept intact.
 
-All copyright and other intellectual property rights in GameMaker and parts of it included in the Application belong to and vest in YoYo Games. All rights of YoYo Games are hereby asserted and reserved.
-All trade marks are the property of their respective owners and YoYo Games makes no warranty or representation in respect of and has no responsibility and excludes all liability for any trade mark or third party content.
-The rights granted in this license are non-exclusive.
-This license does not affect your statutory rights as a consumer.
-This License is governed by English Law and the parties submit to the exclusive jurisdiction of the English Courts.
-If you have a problem with this Application please contact the person who made it, not YoYo Games.
+  (2) You may not sell Covered Works.
 
-Click “ACCEPT” and accept these terms to install and use this Application. If you do not accept them terms you may not continue with the installation and you must not install, use or run this software on this or any other computer.
+  (3) You must display an appropriate copyright notice somewhere in the beginning of all Covered Works and in any documentation accompanying such Covered Works.
+
+  (4) If you share a modified version of either the Game or its Source Code with others, you must not present it as an unmodified, or official, version of the Game or the Source code.  Please make it apparent that it is a mod.
+
+By accepting this license you are agreeing not to restrict or prevent Mossmouth from modifying or adding to Spelunky in any way.
+
+4. Disclaimer of Warranty
+
+The Game and its Source Code are provided WITHOUT WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+5. Limitation of Liability
+
+In no event, unless required by applicable law or agreed to in writing will any copyright holders be liable to you for damages, including any general, special, incidental, or consequential damages arising out of the use or inability to use the Game, the Source Code, or modified versions of the Game or the Source Code, even if such holder has been advised of the possibility of such damages.  Such damages include, but are not limited to, loss of data or data being rendered inaccurate.

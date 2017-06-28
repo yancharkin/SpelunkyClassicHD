@@ -184,4 +184,6 @@ if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
     draw_set_font(global.myFontSmall);
     draw_set_color(c_yellow);
     if (global.collect > 0) draw_text(moneyX, vyv+8+16, "+" + string(global.collect));
+
 }
+

@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>olmecDead = false;
-doorOpen = false;</string>
+            <string>global.olmecDead = false;
+global.doorOpen = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -49,9 +50,10 @@ doorOpen = false;</string>
           <argument>
             <kind>1</kind>
             <string>//if (not olmecDead and not doorOpen)
-if (olmecDead and not doorOpen)
+//if (global.olmecDead = false and not global.doorOpen)
+if (global.olmecDead = true and not global.doorOpen)
 {
-    doorOpen = true;
+    global.doorOpen = true;
     obj = instance_place(640, 544, oEntrance);
     with obj { instance_destroy(); }
     instance_create(640, 544, oXEnd);
@@ -66,7 +68,8 @@ if (olmecDead and not doorOpen)
         with brick { invincible = true; }
     }
     playSound(global.sndThump);
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

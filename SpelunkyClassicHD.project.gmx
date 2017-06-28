@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="24" name="datafiles">
+  <datafiles number="50" name="datafiles">
     <datafile>
       <name>settings.cfg</name>
       <exists>-1</exists>
@@ -1029,6 +1029,14 @@
     </sprites>
     <sprite>sprites\sYYScreen</sprite>
     <sprite>sprites\sprite818</sprite>
+    <sprites name="TouchInput">
+      <sprite>sprites\TouchArrowsSemiTr</sprite>
+      <sprite>sprites\TouchButtons1SemiTr</sprite>
+      <sprite>sprites\TouchButtons2SemiTr</sprite>
+      <sprite>sprites\TouchArrowsOp</sprite>
+      <sprite>sprites\TouchButtons1Op</sprite>
+      <sprite>sprites\TouchButtons2Op</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgTemp</background>
@@ -1220,6 +1228,7 @@
       </scripts>
     </scripts>
     <script>scripts\scrInit.gml</script>
+    <script>scripts\scrTouchInputEnable.gml</script>
     <script>scripts\scrCheckCollisions.gml</script>
     <script>scripts\scrGetFavorMsg.gml</script>
     <script>scripts\scrCreateBlood.gml</script>
@@ -1238,7 +1247,6 @@
     <script>scripts\initMusic.gml</script>
     <script>scripts\draw_surface_pSurf.gml</script>
     <script>scripts\gmitf.gml</script>
-    <script>scripts\script146.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Basis">

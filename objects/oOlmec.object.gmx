@@ -11,6 +11,20 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -25,7 +39,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shopWall = false;
+            <string>type = "Olmec";
+shopWall = false;
 makeActive();
 setCollisionBounds(2, 0, 62, 64);
 xVel = 0
@@ -91,7 +106,8 @@ view_object[0] = oOlmec;
     obj.facing = 1;
     obj.status = 2;
     instance_destroy();
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -121,7 +137,9 @@ oPlayer1.active = true;
 status = 0;
 counter = 100;
 playMusic(global.musBoss, true);
-//playSound(global.sndBoss);</string>
+alarm[6] = 20;
+//playSound(global.sndBoss);
+</string>
           </argument>
         </arguments>
       </action>
@@ -147,7 +165,8 @@ playMusic(global.musBoss, true);
 status = BOUNCE;
 playSound(global.sndBigJump);
 playSound(global.sndAlert);
-alarm[6] = 20;</string>
+alarm[5] = 20;
+</string>
           </argument>
         </arguments>
       </action>
@@ -328,7 +347,7 @@ if (collision_point(x, y+64, oLava, 0, 0)) status = DROWNING;
 if (collision_point(x, y-2, oLava, 0, 0))
 {
     global.enemyKills[21] += 1;
-    oFinalBoss.olmecDead = true;
+    global.olmecDead = true;
     global.kills += 1;
     instance_destroy();
 }

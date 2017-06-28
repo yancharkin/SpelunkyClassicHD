@@ -1875,6 +1875,46 @@ else if (kAttackPressed)
     }
 }
 
+if (global.mobileBuild == true)
+{
+    if (keyboard_check_pressed(ord('F')))
+        if (global.touchControlsVisible == 1)
+        {
+            global.touchControlsVisible = 2;
+        }
+        else if (global.touchControlsVisible == 2)
+        {
+            global.touchControlsVisible = 0;
+        }
+        else if (global.touchControlsVisible == 0)
+        {
+            global.touchControlsVisible = 1;
+        }
+    
+        // debug rooms (touch device)
+        /*
+        {
+            // debug Olmec fight
+            //global.currLevel = 16;
+            //room_goto(rTransition4);
+            //room_goto(rCredits1);
+            //room_goto(rCredits2);
+            //room_goto(rSun);
+            //room_goto(rMoon);
+            //room_goto(rStars);
+            //room_goto(rTransition1);
+            //room_goto(rTransition1x);
+            //room_goto(rTransition2);
+            //room_goto(rTransition2x);
+            //room_goto(rTransition3);
+            //room_goto(rTransition3x);
+            //room_goto(rTransition4);
+            //room_goto(rEnd);
+            //room_goto(rEndCustom);
+        }
+        */
+}
+
 /*
 if (isLevel() and kFlarePressed and active and not dead and not stunned)
 {
@@ -3159,7 +3199,8 @@ else if (sprite_index == sPExit or sprite_index == sDamselExit or sprite_index =
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.plife=99
+            <string>// debug
+//global.plife=99
 </string>
           </argument>
         </arguments>

@@ -23,6 +23,10 @@
 
 initMusic()
 
+global.mobileBuild = false;
+global.touchControlsVisible = 1;
+global.lang = "En";
+
 startGame = false;
 window_set_cursor(cr_none);
 
@@ -33,7 +37,6 @@ global.gamepadOn = false;
 global.screenScale = 1;
 global.musicVol = 15;
 global.soundVol = 15;
-global.lang = "En";
 
 global.keyUpVal = vk_up;
 global.keyDownVal = vk_down;
@@ -81,8 +84,13 @@ if (file)
     global.musicVol = real(file_text_read_string(file));
     file_text_readln(file);
     global.soundVol = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.lang = file_text_read_string(file);
+    
+    if (global.mobileBuild == false)
+    {
+        file_text_readln(file);
+        global.lang = file_text_read_string(file);
+    }
+    
     file_text_close(file);
 }
 
@@ -429,8 +437,8 @@ global.ShotgunChallengeBeginsIn = "SHOTGUN CHALLENGE BEGINS IN";
 global.ChangingRoom = "CHANGING ROOM";
 global.LadyInRed = "LADY IN RED...";
 global.TopDefilers = "TOP DEFILERS";
-global.Money2 = "MONEY: ";
-global.Kills2 = "KILLS: ";
+global.Money2 = "MONEY:  ";
+global.Kills2 = "KILLS:  ";
 global.Saves = "SAVES:  ";
 global.Time2 = "TIME:  ";
 global.Plays = "PLAYS:  ";

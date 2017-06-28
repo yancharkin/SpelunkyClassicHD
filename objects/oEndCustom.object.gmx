@@ -248,6 +248,7 @@ with oMenu
         if (gamepad.attackPressed) gamepad.attackPressed = false;
         if (gamepad.startPressed) gamepad.startPressed = false;
         scrClearGlobals();
+        global.touchControlsVisible = 1;
         room_goto(rHighscores);
     }
 }
@@ -273,7 +274,35 @@ if (fadeOut)
 {
     if (fadeLevel &lt; 1) fadeLevel += 0.1;
     else drawStatus = 8;
-}</string>
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///TouchInput
+if (global.mobileBuild == true)
+{
+    scrTouchInputEnable();
+}
+</string>
           </argument>
         </arguments>
       </action>

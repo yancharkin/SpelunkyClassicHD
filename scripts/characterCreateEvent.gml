@@ -64,7 +64,16 @@ xAccLimit = 9;             // limits the xAcc
 yAccLimit = 6;             // limits the yAcc
 runAcc = 3;                // the running acceleration
 
-initialJumpAcc = -2;       // relates to how high the character will jump
+// quick and dirty solution for touch devices
+if (global.mobileBuild != true)
+{
+    initialJumpAcc = -2;  // relates to how high the character will jump
+}
+else
+{   
+    initialJumpAcc = -4;
+}
+
 jumpTimeTotal = 10;        // how long the user must hold the jump button to get the maximum jump height
 
 climbAcc = 0.6;            // how fast the character will climb

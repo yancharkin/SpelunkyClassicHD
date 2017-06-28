@@ -160,7 +160,7 @@ room_goto_next();
             <kind>1</kind>
             <string>scrReadStats();
 scrInit();
-global.fullscreen = true;
+//global.fullscreen = true;
 
 instance_destroy();
 //instance_create(0,0,oScreenFirst)

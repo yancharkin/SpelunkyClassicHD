@@ -381,11 +381,14 @@ if (instance_exists(oPlayer1))
 {
     player = instance_nearest(0, 0, oPlayer1);
     
-    if (player.x &gt; (324 - global.room_offset))
+    if (global.mobileBuild != true)
     {
-        draw_set_font(global.myFontSmall);
-        draw_set_color(c_yellow);
-        draw_text(324 - global.room_offset, 4, global.F4Controls);
+    if (player.x &gt; (324 - global.room_offset))
+        {
+            draw_set_font(global.myFontSmall);
+            draw_set_color(c_yellow);
+            draw_text(324 - global.room_offset, 4, global.F4Controls);
+        }
     }
     
     if (player.x &lt; 256 and view_xview[0] &lt;= 1)
@@ -398,6 +401,29 @@ if (instance_exists(oPlayer1))
         draw_text(n, 224, string(global.WelcomeToTheShortcutHouse));
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="121">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_end();
 </string>
           </argument>
         </arguments>
@@ -421,6 +447,10 @@ if (instance_exists(oPlayer1))
           <argument>
             <kind>1</kind>
             <string>//room_goto(rJoyConfig);
+
+// debug Olmec fight
+//global.currLevel = 16;
+//room_goto(rTransition4);
 </string>
           </argument>
         </arguments>

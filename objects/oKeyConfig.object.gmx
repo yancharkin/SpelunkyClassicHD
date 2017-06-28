@@ -203,6 +203,7 @@ else if (status == 9)
     draw_text(n, 40, global.Rope);
     currVal = global.keyRopeVal;
 }
+/*
 else if (status == 10)
 {
     draw_set_font(global.myFont);
@@ -213,7 +214,8 @@ else if (status == 10)
     draw_text(n, 40, global.Flare);
     currVal = global.keyFlareVal;
 }
-else if (status == 11)
+*/
+else if (status == 10)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
@@ -329,18 +331,20 @@ else if (status == 9)
 {
     global.keyRopeVal = keyboard_key;
 }
+/*
 else if (status == 10)
 {
     global.keyFlareVal = keyboard_key;
 }
-else if (status == 11)
+*/
+else if (status == 10)
 {
     global.keyPayVal = keyboard_key;
 }
 }
 
 status += 1;
-if (status &gt; 11) room_goto(rTitle);
+if (status &gt; 10) room_goto(rTitle);
 </string>
           </argument>
         </arguments>

@@ -32,7 +32,7 @@ fadeLevel = 1;
 drawStatus = 0;
 scrollStart = false;
 scrolling = false;
-oScreen.canPause = false;
+//oScreen.canPause = false;
 
 stopAllMusic();
 </string>
@@ -366,6 +366,7 @@ else if (fadeOut)
         scrClearGlobals();
         global.drawHUD = false;
         global.gameStart = false;
+        global.touchControlsVisible = 1;
         room_goto(rHighscores);
     }
 }
