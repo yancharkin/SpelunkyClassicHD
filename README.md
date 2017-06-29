@@ -4,7 +4,7 @@ A game by [Derek Yu](http://www.mossmouth.com/)
 Ported from **GameMaker 8.1** to **GameMaker Studio** by [Darius Kazemi](http://tinysubversions.com/2012/07/spelunky-html5/) and [YoYo Games](https://www.yoyogames.com/) (as far as I can tell).
 
 Source code was published in **Humble Weekly Bundle: Play and Create with GameMaker**.
-According to [Spelunky User License](https://github.com/yancharkin/SpelunkyClassicHD/blob/master/help.rtf) it's totally legal to distribute source code and binaries. If I'm wrong let me know.
+According to [Spelunky User License](https://github.com/yancharkin/SpelunkyClassicHD/blob/master/LICENSE) it's totally legal to distribute source code and binaries. If I'm wrong let me know.
 
 ## Things I have implemented:
 - Support for different aspect ratios (originally 4:3 only)
