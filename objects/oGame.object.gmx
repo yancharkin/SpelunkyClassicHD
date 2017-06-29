@@ -32,6 +32,8 @@ globalvar debug;
 debug = false;
 global.ghostExists = false;
 
+paused = false;
+
 damsel = false;
 idol = false;
 altar = false;
@@ -391,6 +393,48 @@ if (global.mobileBuild == true)
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause
+if (paused)
+{   
+    strLen = string_length(global.Paused)*16;
+    posX = ceil((global.display_w - strLen) / 2);
+    draw_set_font(global.myFont);
+    draw_set_color(c_white);
+    
+    if (global.mobileBuild)
+    {
+        draw_text(posX, 112, global.Paused);
+    }
+    else
+    {
+        draw_text(posX, 100, global.Paused);
+        strLen = string_length(global.EscReturnF10Quit)*8;
+        posX = ceil((global.display_w - strLen) / 2);
+        draw_set_font(global.myFontSmall);
+        draw_text(posX, 120, global.EscReturnF10Quit);
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -671,6 +715,30 @@ draw_text(oPlayer1.x, oPlayer1.y-48, string(oPlayer1.y-oXMarket.y));
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="121">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Exit
+game_end();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="77">
       <action>
         <libid>1</libid>
@@ -710,6 +778,41 @@ else
     }
     else if (isRoom("rTitle")) playMusic(global.musTitle, true);
 }</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pause
+if (not paused)
+{
+    instance_deactivate_all(true);
+    audio_pause_all();
+    paused = true;
+}
+else
+{
+    paused = false;
+    instance_activate_all();
+    audio_resume_all();
+}
+</string>
           </argument>
         </arguments>
       </action>

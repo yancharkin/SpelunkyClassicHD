@@ -303,7 +303,7 @@ alarm[1] = 100;
             if (gamepad.attackPressed) gamepad.attackPressed = false;
             if (gamepad.startPressed) gamepad.startPressed = false;
             global.titleStart = 2;
-            room_restart();
+            //room_restart();
         }
     }
     else
@@ -311,7 +311,7 @@ alarm[1] = 100;
         if (gamepad.attackPressed) gamepad.attackPressed = false;
         if (gamepad.startPressed) gamepad.startPressed = false;
         global.titleStart = 2;
-        room_restart();
+        //room_restart();
     }
 }
 
