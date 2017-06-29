@@ -239,10 +239,10 @@ else
     if (file)
     {
         charset = file_text_read_string(file);
-        file_text_readln(file);
-        n_char = real(file_text_read_string(file));
         file_text_close(file);
     }
+    
+    n_char = string_length(charset);
 
     Font_lang = sprite_add(trans_dir + "/charset/charset.png", n_char, false, false, 0, 0);
     FontSmall_lang = sprite_add(trans_dir + "/charset/charset_small.png", n_char, false, false, 0, 0);
