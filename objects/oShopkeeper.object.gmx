@@ -220,8 +220,8 @@ if (status == IDLE or status == FOLLOW)
         if (item.cost &gt; 0)
         {
             global.message = item.buyMessage;
-            if (global.gamepadOn) global.message2 = global.Press + scrGetJoy(global.joyPayVal) + " TO PURCHASE.";
-            else global.message2 = global.Press + scrGetKey(global.keyPayVal) + " TO PURCHASE.";
+            if (global.gamepadOn) global.message2 = global.Press + scrGetJoy(global.joyPayVal) + global.ToPurchase;
+            else global.message2 = global.Press + scrGetKey(global.keyPayVal) + global.ToPurchase;
             global.messageTimer = 200;
         }
     }

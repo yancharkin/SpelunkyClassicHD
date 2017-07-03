@@ -44,7 +44,7 @@ makeActive()
 setCollisionBounds(-4, -6, 4, 8)
 
 cost = 50000;
-buyMessage = "AN ANKH FOR $" + string(cost) + ".";</string>
+buyMessage = global.AnAnkhForS + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

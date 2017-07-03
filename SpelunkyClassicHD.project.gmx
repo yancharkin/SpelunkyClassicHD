@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="50" name="datafiles">
+  <datafiles number="74" name="datafiles">
     <datafile>
       <name>settings.cfg</name>
       <exists>-1</exists>
