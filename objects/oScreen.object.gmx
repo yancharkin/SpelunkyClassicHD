@@ -126,7 +126,8 @@ room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,
 else*/
 
 window_set_size(screen_w, screen_h);
-window_set_fullscreen(true);
+window_set_position(0, 0);
+//window_set_fullscreen(true);
 
 view_wview[0] = w;
 view_wport[0] = w;

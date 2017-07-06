@@ -74,7 +74,7 @@
     <option_android_package_company>companyname</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>spelunky</option_android_package_product>
-    <option_android_permission_flags>0</option_android_permission_flags>
+    <option_android_permission_flags>16</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
@@ -224,7 +224,7 @@
     <option_audioGroupCount>1</option_audioGroupCount>
     <option_author></option_author>
     <option_backimage>nil</option_backimage>
-    <option_borderless>False</option_borderless>
+    <option_borderless>True</option_borderless>
     <option_changed>false</option_changed>
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
@@ -352,9 +352,9 @@
     <option_linux_long_desc>Spelunky Classic HD</option_linux_long_desc>
     <option_linux_maintainer_email></option_linux_maintainer_email>
     <option_linux_scale>-1</option_linux_scale>
-    <option_linux_screenkey>0</option_linux_screenkey>
+    <option_linux_screenkey>-1</option_linux_screenkey>
     <option_linux_short_desc>Spelunky Classic HD</option_linux_short_desc>
-    <option_linux_sizeable>0</option_linux_sizeable>
+    <option_linux_sizeable>-1</option_linux_sizeable>
     <option_linux_splash_png>Configs\Default\linux\splash.png</option_linux_splash_png>
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
     <option_linux_sync>0</option_linux_sync>
@@ -377,7 +377,7 @@
     <option_mac_enable_steam>0</option_mac_enable_steam>
     <option_mac_fullscreen>0</option_mac_fullscreen>
     <option_mac_icon_png>Configs\Default\mac\icon512.png</option_mac_icon_png>
-    <option_mac_interpolate>-1</option_mac_interpolate>
+    <option_mac_interpolate>0</option_mac_interpolate>
     <option_mac_major_version>1</option_mac_major_version>
     <option_mac_menu_dock>0</option_mac_menu_dock>
     <option_mac_minor_version>1</option_mac_minor_version>
@@ -386,10 +386,10 @@
     <option_mac_screenkey>-1</option_mac_screenkey>
     <option_mac_showcursor>-1</option_mac_showcursor>
     <option_mac_signing_identity>Developer ID Application:</option_mac_signing_identity>
-    <option_mac_sizeable>0</option_mac_sizeable>
+    <option_mac_sizeable>-1</option_mac_sizeable>
     <option_mac_splash_png>Configs\Default\mac\splash.png</option_mac_splash_png>
     <option_mac_steam_app_id>0</option_mac_steam_app_id>
-    <option_mac_sync>1</option_mac_sync>
+    <option_mac_sync>0</option_mac_sync>
     <option_mac_texture_page>2048</option_mac_texture_page>
     <option_noborder>false</option_noborder>
     <option_nobuttons>false</option_nobuttons>
@@ -449,7 +449,7 @@
     <option_shortcircuit>True</option_shortcircuit>
     <option_showcursor>False</option_showcursor>
     <option_showprogress>1</option_showprogress>
-    <option_sizeable>False</option_sizeable>
+    <option_sizeable>True</option_sizeable>
     <option_stayontop>false</option_stayontop>
     <option_sync_vertex>0</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
