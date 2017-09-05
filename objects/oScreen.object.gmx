@@ -25,6 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>scrReadStats();
+scrInit();
+//global.fullscreen = true;
+
+instance_destroy();
+//instance_create(0,0,oScreenFirst)
+//instance_create(0,0,oScreenLast)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>py = 0; // player Y coord
 
 // screen base(view_wview and view_hview)
@@ -125,47 +152,28 @@ room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,
 /*if (screen == -1) game_end2();
 else*/
 
-window_set_size(screen_w, screen_h);
-window_set_position(0, 0);
-//window_set_fullscreen(true);
+// Fake fullscreen (borderless fullscreen window), Windows only.
+/*window_set_size(screen_w, screen_h);
+window_set_position(0, 0);*/
 
+if (global.fullscreen)
+{
+window_set_size(screen_w, screen_h);
+window_set_fullscreen(true);
+}
+
+
+window_set_size(800, 800/aspect_ratio);
+surface_resize(application_surface, w, h);
 view_wview[0] = w;
 view_wport[0] = w;
 view_hview[0] = h;
 view_hport[0] = h;
-surface_resize(application_surface, w, h);
 
 global.display_w = w;
 global.display_h = h;
 
 room_goto_next();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scrReadStats();
-scrInit();
-//global.fullscreen = true;
-
-instance_destroy();
-//instance_create(0,0,oScreenFirst)
-//instance_create(0,0,oScreenLast)
 </string>
           </argument>
         </arguments>

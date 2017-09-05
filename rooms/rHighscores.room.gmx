@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>if (global.lang != "En")
+  <code>if (global.lang != "english")
 {
     trans_dir = working_directory + "translations/" + global.lang
     trans_img_dir = trans_dir + "/images/"
@@ -630,6 +630,7 @@
     <instance objName="oHardBlock" x="432" y="208" name="inst_6DE82C55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oHardBlock" x="432" y="224" name="inst_B3ADCA78" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oHardBlock" x="432" y="240" name="inst_33DD8DDF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMenu" x="224" y="320" name="inst_39DB131C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgTitle" x="32" y="48" w="16" h="16" xo="16" yo="0" id="10000001" name="tile_0D4D6E39" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

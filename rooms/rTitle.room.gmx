@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>if (global.lang != "En")
+  <code>if (global.lang != "english")
 {
     trans_dir = working_directory + "translations/" + global.lang
     trans_img_dir = trans_dir + "/images/"
