@@ -25,7 +25,7 @@ initMusic()
 
 global.mobileBuild = false;
 global.touchControlsVisible = 1;
-global.lang = "En";
+global.lang = "english";
 
 startGame = false;
 window_set_cursor(cr_none);
@@ -226,9 +226,9 @@ gamepad = instance_create(0, 0, oGamepad);
 //                              Translations                                   //
 /////////////////////////////////////////////////////////////////////////////////
 
-trans_dir = working_directory + "translations/" + global.lang  
+trans_dir = working_directory + "translations/" + global.lang
 
-if (global.lang == "En")
+if (global.lang == "english")
 {
     global.myFont = font_add_sprite(sFont, ord(' '), false, 0);
     global.myFontSmall = font_add_sprite(sFontSmall, ord(' '), false, 0);   
@@ -236,6 +236,7 @@ if (global.lang == "En")
 else
 {   
     file = file_text_open_read(trans_dir + "/charset/charset");
+    
     if (file)
     {
         charset = file_text_read_string(file);
@@ -591,7 +592,7 @@ global.RightArr = "RIGHT ARR";
 
 /////////////////////////////////////////////////////////////////////////////////
 
-if (global.lang != "En")
+if (global.lang != "english")
 {
     file = file_text_open_read(trans_dir + "/text");
     if (file)
