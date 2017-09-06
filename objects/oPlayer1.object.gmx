@@ -3206,6 +3206,33 @@ else if (sprite_index == sPExit or sprite_index == sDamselExit or sprite_index =
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="16">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Toggle run (mobile)
+if (global.mobileBuild)
+{
+    global.toggleRun = !global.toggleRun;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="13">
       <action>
         <libid>1</libid>

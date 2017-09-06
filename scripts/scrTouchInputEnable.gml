@@ -26,8 +26,8 @@ virtual_key_add(global.display_w - vkey_size, global.display_h - vkey_size, vkey
 // Run
 virtual_key_add(global.display_w - vkey_size, global.display_h - (2.5*vkey_size), vkey_size, vkey_size, vk_shift);
 // Run + Jump
-virtual_key_add(global.display_w - vkey_size, global.display_h - (1.5*vkey_size), vkey_size, vkey_size/2, ord('Z'));
-virtual_key_add(global.display_w - vkey_size, global.display_h - (1.5*vkey_size), vkey_size, vkey_size/2, vk_shift);
+//virtual_key_add(global.display_w - vkey_size, global.display_h - (1.5*vkey_size), vkey_size, vkey_size/2, ord('Z'));
+//virtual_key_add(global.display_w - vkey_size, global.display_h - (1.5*vkey_size), vkey_size, vkey_size/2, vk_shift);
 // Switch
 virtual_key_add(global.display_w - (2.5*vkey_size), global.display_h - (2.5*vkey_size), vkey_size, vkey_size, ord('C'));
 // Action

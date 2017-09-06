@@ -24,6 +24,7 @@
 initMusic()
 
 global.mobileBuild = false;
+global.toggleRun = false;
 global.touchControlsVisible = 1;
 global.lang = "english";
 
