@@ -18,6 +18,7 @@ According to [Spelunky User License](LICENSE) it's totally legal to distribute s
 ## Bugs
 There was quite a few bugs and missing features in source code from Humble Bundle I fixed only some of them (and maybe added some more?). At least one bug was game breaking (impossibility to start final fight). I've partically fixed it and game now completable, but help is welcome.
 ## Links
+* Repositoies: [Bitbucket](https://bitbucket.org/yancharkin/spelunkyclassichd/src/master/), [Github](https://github.com/yancharkin/SpelunkyClassicHD), [Gitlab](https://gitlab.com/yancharkin/SpelunkyClassicHD)
 * Translations: [Bitbucket](https://bitbucket.org/yancharkin/spelunkyclassichdtranslations/src/master/), [Github](https://github.com/yancharkin/SpelunkyClassicHDTranslations), [Gitlab](https://gitlab.com/yancharkin/SpelunkyClassicHDTranslations)
 * [Game's page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
 
