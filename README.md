@@ -1,5 +1,8 @@
 ## Spelunky Classic HD
 
+**Main repository (for now): [Github](https://github.com/yancharkin/SpelunkyClassicHD) - report issues and make pull requests here**  
+**Mirrors: [Bitbucket](https://bitbucket.org/yancharkin/spelunkyclassichd), [Gitlab](https://gitlab.com/yancharkin/SpelunkyClassicHD)**
+
 ![screenshot](screenshots/screenshot_00.jpg)
 
 A game by [Derek Yu](http://www.mossmouth.com/)
