@@ -626,7 +626,7 @@ if ((kUp and platformCharacterIs(IN_AIR) and collision_point(x, y-8, oLadder, 0,
             if (not collision_point(x, y, oLadder, 0, 0) and
                 not collision_point(x, y, oLadderTop, 0, 0))
             {
-                y = ladder.y + 14;
+                y = ladder.y + 14 - (sprite_yoffset - 1);
             }
 
             xVel = 0;
