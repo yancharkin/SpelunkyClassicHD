@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<livearea style="a1" format-ver="01.00" content-rev="1">
+	<livearea-background>
+		<image>bg0.png</image>
+	</livearea-background>
+	
+	<gate>
+		<startup-image>startup.png</startup-image>
+	</gate>
+
+	<frame id="frame1">
+	</frame>
+	
+	<frame id="frame2">
+	</frame>
+	
+	<frame id="frame3">
+	</frame>
+
+</livearea>
+
+

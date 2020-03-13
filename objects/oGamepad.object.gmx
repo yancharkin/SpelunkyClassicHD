@@ -76,6 +76,8 @@ pay = false;
 payPressed = false;
 payReleased = false;
 
+select = false;
+
 count=0;
 </string>
           </argument>
@@ -99,422 +101,337 @@ count=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if global.gamepadOn{}
+            <string>///Do gamepad stuff.
 
-joyid=0        
+if (!global.gamepadOn) exit;
+
+/////////////
+// START
+/////////////
+
 startReleased = false;
 startPressed = false;
+if (start)
+{
+    if (scrNotTrigger(global.joyStartVal))
+        start = gamepad_button_check(global.joyid, global.joyStartVal);
+    else
+        start = gamepad_button_value(global.joyid, global.joyStartVal) &gt; 0.6;
+        
+    if (not start) startReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyStartVal))
+        start = gamepad_button_check(global.joyid, global.joyStartVal);
+    else
+        start = gamepad_button_value(global.joyid, global.joyStartVal) &gt; 0.6;
+        
+    if (start) startPressed = true;
+}
+
+/////////////
+// LEFT
+/////////////
+
 leftReleased = false;
 leftPressed = false;
+if (left)
+{
+    left = (gamepad_button_check(global.joyid, gp_padl) || gamepad_axis_value(global.joyid, gp_axislh) &lt; -0.6);
+
+    if (not left) leftReleased = true;
+}
+else
+{
+    left = (gamepad_button_check(global.joyid, gp_padl) || gamepad_axis_value(global.joyid, gp_axislh) &lt; -0.6);
+    
+    if (left) leftPressed = true;
+}
+
+/////////////
+// RIGHT
+/////////////
+
 rightReleased = false;
 rightPressed = false;
+if (right)
+{
+    right = (gamepad_button_check(global.joyid, gp_padr) || gamepad_axis_value(global.joyid, gp_axislh) &gt; 0.6);
+
+    if (not right) rightReleased = true;
+}
+else
+{
+    right = (gamepad_button_check(global.joyid, gp_padr) || gamepad_axis_value(global.joyid, gp_axislh) &gt; 0.6);
+    
+    if (right) rightPressed = true;
+}
+
+/////////////
+// UP
+/////////////
+
 upReleased = false;
 upPressed = false;
+if (up)
+{
+    up = (gamepad_button_check(global.joyid, gp_padu) || gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6);
+
+    if (not up) upReleased = true;
+}
+else
+{
+    up = (gamepad_button_check(global.joyid, gp_padu) || gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6);
+    
+    if (up) upPressed = true;
+}
+
+/////////////
+// DOWN
+/////////////
+
 downReleased = false;
 downPressed = false;
-jump_button=true;
+if (down)
+{
+    down = (gamepad_button_check(global.joyid, gp_padd) || gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6);
+
+    if (not down) downReleased = true;
+}
+else
+{
+    down = (gamepad_button_check(global.joyid, gp_padd) || gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6);
+    
+    if (down) downPressed = true;
+}
+
+/////////////
+// JUMP
+/////////////
+
 jumpReleased = false;
 jumpPressed = false;
+if (jump)
+{
+    if (scrNotTrigger(global.joyJumpVal))
+        jump = gamepad_button_check(global.joyid, global.joyJumpVal);
+    else
+        jump = gamepad_button_value(global.joyid, global.joyJumpVal) &gt; 0.6;
+    
+    if (not jump) jumpReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyJumpVal))
+        jump = gamepad_button_check(global.joyid, global.joyJumpVal);
+    else
+        jump = gamepad_button_value(global.joyid, global.joyJumpVal) &gt; 0.6;
+    
+    if (jump) jumpPressed = true;
+}
+
+/////////////
+// ATTACK
+/////////////
+
 attackReleased = false;
 attackPressed = false;
+if (attack)
+{
+    if (scrNotTrigger(global.joyAttackVal))
+        attack = gamepad_button_check(global.joyid, global.joyAttackVal);
+    else
+        attack = gamepad_button_value(global.joyid, global.joyAttackVal) &gt; 0.6;
+    
+    if (not attack) attackReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyAttackVal))
+        attack = gamepad_button_check(global.joyid, global.joyAttackVal);
+    else
+        attack = gamepad_button_value(global.joyid, global.joyAttackVal) &gt; 0.6;
+    
+    if (attack) attackPressed = true;
+}
+
+////////////
+// ITEM
+////////////
+
 itemReleased = false;
 itemPressed = false;
+if (item)
+{
+    if (scrNotTrigger(global.joyItemVal))
+        item = gamepad_button_check(global.joyid, global.joyItemVal);
+    else
+        item = gamepad_button_value(global.joyid, global.joyItemVal) &gt; 0.6;
+    
+    if (not item) itemReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyItemVal))
+        item = gamepad_button_check(global.joyid, global.joyItemVal);
+    else
+        item = gamepad_button_value(global.joyid, global.joyItemVal) &gt; 0.6;
+    
+    if (item) itemPressed = true;
+}
+
+////////////
+// RUN
+////////////
+
+if (scrNotTrigger(global.joyRunVal))
+    run = gamepad_button_check(global.joyid, global.joyRunVal);
+else
+    run = gamepad_button_value(global.joyid, global.joyRunVal) &gt; 0.6;
+
+////////////
+// BOMB
+////////////
+
 bombReleased = false;
 bombPressed = false;
+if (bomb)
+{
+    if (scrNotTrigger(global.joyBombVal))
+        bomb = gamepad_button_check(global.joyid, global.joyBombVal);
+    else
+        bomb = gamepad_button_check(global.joyid, global.joyBombVal) &gt; 0.6;
+    
+    if (not bomb) bombReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyBombVal))
+        bomb = gamepad_button_check(global.joyid, global.joyBombVal);
+    else
+        bomb = gamepad_button_check(global.joyid, global.joyBombVal) &gt; 0.6;
+    
+    if (bomb) bombPressed = true;
+}
+
+////////////
+// ROPE
+////////////
+
 ropeReleased = false;
 ropePressed = false;
+if (rope)
+{
+    if (scrNotTrigger(global.joyRopeVal))
+        rope = gamepad_button_check(global.joyid, global.joyRopeVal);
+    else
+        rope = gamepad_button_value(global.joyid, global.joyRopeVal) &gt; 0.6;
+    
+    if (not rope) ropeReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyRopeVal))
+        rope = gamepad_button_check(global.joyid, global.joyRopeVal);
+    else
+        rope = gamepad_button_value(global.joyid, global.joyRopeVal) &gt; 0.6;
+    
+    if (rope) ropePressed = true;
+}
+
+////////////
+// FLARE
+////////////
+
 flareReleased = false;
 flarePressed = false;
+if (flare)
+{
+    if (scrNotTrigger(global.joyFlareVal))
+        flare = gamepad_button_check(global.joyid, global.joyFlareVal);
+    else
+        flare = gamepad_button_value(global.joyid, global.joyFlareVal) &gt; 0.6;
+    
+    if (not flare) flareReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyFlareVal))
+        flare = gamepad_button_check(global.joyid, global.joyFlareVal);
+    else
+        flare = gamepad_button_value(global.joyid, global.joyFlareVal) &gt; 0.6;
+    
+    if (flare) flarePressed = true;
+}
+
+////////////
+// PAY
+////////////
+
 payReleased = false;
 payPressed = false;
-
-jump_button = false;
-attack_button = false;
-item_button = false;
-left_button = false;
-right_button = false;
-up_button = false;
-down_button = false;
-start_button = false;
-
-var i=0;
-for(var i=0;i&lt;4;i++)
+if (pay)
 {
-    if gamepad_is_connected(i)
-    {
-        if( gamepad_button_check(i, gp_start ) ) start_button=true;
-        if( gamepad_button_check(i, gp_face1 ) ) jump_button=true;
-        if( gamepad_button_check(i, gp_face2 ) ) attack_button=true;
-        if( gamepad_button_check(i, gp_face3 ) ) item_button=true;       
-    }
+    if (scrNotTrigger(global.joyPayVal))
+        pay = gamepad_button_check(global.joyid, global.joyPayVal);
+    else
+        pay = gamepad_button_value(global.joyid, global.joyPayVal) &gt; 0.6;
+    
+    if (not pay) payReleased = true;
+}
+else
+{
+    if (scrNotTrigger(global.joyPayVal))
+        pay = gamepad_button_check(global.joyid, global.joyPayVal);
+    else
+        pay = gamepad_button_value(global.joyid, global.joyPayVal) &gt; 0.6;
+    
+    if (pay) payPressed = true;
 }
 
+////////////
+// SELECT
+////////////
+select = gamepad_button_check_pressed(global.joyid, gp_select);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Detect new gamepads.
 
-i=0;
+var ev_type = ds_map_find_value(async_load, "event_type");
+var pad_ind = ds_map_find_value(async_load, "pad_index");
+
+if (ev_type == "gamepad discovered")
 {
-    if (start)
-    {       
-        if(start_button){
-            start=true;
-        }else{
-            start=false;
-            startReleased=true;
-        }
-    }
-    else
-    {       
-        if(start_button){
-            start=true;
-            startPressed=true;
-        }else{
-            start=false;
-        }
-    }
-    
-    /////////////
-    // LEFT
-    /////////////
-    
-    if (left)
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100) left = true;
-        else left = false;
-        if (not left) leftReleased = true;
-    }
-    else
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100) left = true;
-        else left = false;
-        if (left) leftPressed = true;
-    }
-    
-    /////////////
-    // RIGHT
-    /////////////
-    
-    if (right)
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102) right = true;
-        else right = false;
-        if (not right) rightReleased = true;
-    }
-    else
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102) right = true;
-        else right = false;
-        if (right) rightPressed = true;
-    }
-    
-    /////////////
-    // UP
-    /////////////
-    
-    if (up)
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104) up = true;
-        else up = false;
-        if (not up) upReleased = true;
-    }
-    else
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104) up = true;
-        else up = false;
-        if (up) upPressed = true;
-    }
-    
-    /////////////
-    // DOWN
-    /////////////
-    
-    if (down)
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98) down = true;
-        else down = false;
-        if (not down) downReleased = true;
-    }
-    else
-    {
-        if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98) down = true;
-        else down = false;
-        if (down) downPressed = true;
-    }
-    
-    /////////////
-    // DIAGONAL
-    /////////////
-    
-    if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 45) or joystick_direction(joyid) == 105)
-    {
-        right = true;
-        up = true;
-    }
-    
-    if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 135) or joystick_direction(joyid) == 99)
-    {
-        right = true;
-        down = true;
-    }
-    
-    if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 225) or joystick_direction(joyid) == 97)
-    {
-        left = true;
-        down = true;
-    }
-    
-    if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 315) or joystick_direction(joyid) == 103)
-    {
-        left = true;
-        up = true;
-    }
-    
-    /////////////
-    // JUMP
-    /////////////
-    
-    if(jump)
-    {
-        if(jump_button ){
-            jump = true;
-        }else{
-            jump = false;
-            jumpReleased=true;
-        }
-    }
-    else
-    {
-        if(jump_button ){
-            jump = true;
-            jumpPressed=true;
-        }else{
-            jump = false;
-        }
-    }
-    
-    /////////////
-    // ATTACK
-    /////////////
-    
-    if (attack)
-    {
-        if( attack_button ){
-            attack=true;
-        }else{
-            attack=false;
-            attackReleased=true;
-        }
-    }
-    else
-    {
-        if( attack_button ){
-            attack=true;
-            attackPressed=true;
-        }else{
-            attack=false;
-        }
-    }
-    
-    ////////////
-    // ITEM
-    ////////////
-    
-    if (item)
-    {
-        if( item_button ){
-            item=true;
-        }else{
-            item=false;
-            itemReleased=true;
-        }
-    }
-    else
-    {
-        if( item_button ){
-            item=true;
-            itemPressed=true;
-        }else{
-            item=false;
-        }
-    }
-    
-    
-    ////////////
-    // RUN
-    ////////////
-    
-    if (global.joyRunVal &gt; 0)
-        run = joystick_check_button(joyid,global.joyRunVal);
-    else if (global.joyRunVal == -1)
-    {
-        if (joystick_zpos(joyid) &gt; 0.1) run = true;
-        else run = false;
-    }
-    else if (global.joyRunVal == -2)
-    {
-        if (joystick_zpos(joyid) &lt; -0.1) run = true;
-        else run = false;
-    }
-    
-    ////////////
-    // BOMB
-    ////////////
-    
-    if (bomb)
-    {
-        if( gamepad_button_check_pressed(i, gp_face4 ) ){
-            bomb = true;
-        }        
-        if (global.joyBombVal &gt; 0)
-            bomb = joystick_check_button(joyid,global.joyBombVal);
-        else if (global.joyBombVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) bomb = true;
-            else bomb = false;
-        }
-        else if (global.joyBombVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) bomb = true;
-            else bomb = false;
-        }
-        
-        if (not bomb) bombReleased = true;
-    }
-    else
-    {
-        if (global.joyBombVal &gt; 0)
-            bomb = joystick_check_button(joyid,global.joyBombVal);
-        else if (global.joyBombVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) bomb = true;
-            else bomb = false;
-        }
-        else if (global.joyBombVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) bomb = true;
-            else bomb = false;
-        }
-        
-        if (bomb) bombPressed = true;
-    }
-    
-    ////////////
-    // ROPE
-    ////////////
-    
-    if (rope)
-    {
-        if (global.joyRopeVal &gt; 0)
-            rope = joystick_check_button(joyid,global.joyRopeVal);
-        else if (global.joyRopeVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) rope = true;
-            else rope = false;
-        }
-        else if (global.joyRopeVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) rope = true;
-            else rope = false;
-        }
-        
-        if (not rope) ropeReleased = true;
-    }
-    else
-    {
-        if (global.joyRopeVal &gt; 0)
-            rope = joystick_check_button(joyid,global.joyRopeVal);
-        else if (global.joyRopeVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) rope = true;
-            else rope = false;
-        }
-        else if (global.joyRopeVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) rope = true;
-            else rope = false;
-        }
-        
-        if (rope) ropePressed = true;
-    }
-    
-    ////////////
-    // FLARE
-    ////////////
-    
-    if (flare)
-    {
-        if (global.joyFlareVal &gt; 0)
-            flare = joystick_check_button(joyid,global.joyFlareVal);
-        else if (global.joyFlareVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) flare = true;
-            else flare = false;
-        }
-        else if (global.joyFlareVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) flare = true;
-            else flare = false;
-        }
-        
-        if (not flare) flareReleased = true;
-    }
-    else
-    {
-        if (global.joyFlareVal &gt; 0)
-            flare = joystick_check_button(joyid,global.joyFlareVal);
-        else if (global.joyFlareVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) flare = true;
-            else flare = false;
-        }
-        else if (global.joyFlareVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) flare = true;
-            else flare = false;
-        }
-        
-        if (flare) flarePressed = true;
-    }
-    
-    ////////////
-    // PAY
-    ////////////
-    
-    if (pay)
-    {
-        if (global.joyPayVal &gt; 0)
-            pay = joystick_check_button(joyid,global.joyPayVal);
-        else if (global.joyPayVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) pay = true;
-            else pay = false;
-        }
-        else if (global.joyPayVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) pay = true;
-            else pay = false;
-        }
-        
-        if (not pay) payReleased = true;
-    }
-    else
-    {
-       if (global.joyPayVal &gt; 0)
-            pay = joystick_check_button(joyid,global.joyPayVal);
-        else if (global.joyPayVal == -1)
-        {
-            if (joystick_zpos(joyid) &gt; 0.1) pay = true;
-            else pay = false;
-        }
-        else if (global.joyPayVal == -2)
-        {
-            if (joystick_zpos(joyid) &lt; -0.1) pay = true;
-            else pay = false;
-        }
-        
-        if (pay) payPressed = true;
-    }
+    global.gamepadOn = true;
+    global.joyid = pad_ind;
+    gamepad_set_button_threshold(global.joyid, 1); // we need this to be pretty high, as analogue triggers are treated like analogue triggers and not like buttons!
 }
-
-
+else
+{
+    global.gamepadOn = false;
+    global.joyid = -1;
+}
 </string>
           </argument>
         </arguments>

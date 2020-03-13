@@ -21,14 +21,21 @@
 
 switch (argument0)
 {
-    case 1: { return "B1"; break; }
-    case 2: { return "B2"; break; }
-    case 3: { return "B3"; break; }
-    case 4: { return "B4"; break; }
-    case 5: { return "B5"; break; }
-    case 6: { return "B6"; break; }
-    case 7: { return "B7"; break; }
-    case 8: { return "B8"; break; }
-    case 9: { return "B9"; break; }
-    default: { return "B" + string(argument0); break; }
+    // Xbox 360...
+    case gp_face1: return "(A)";
+    case gp_face2: return "(B)";
+    case gp_face3: return "(X)";
+    case gp_face4: return "(Y)";
+    case gp_start: return "(START)";
+    case gp_select: return "(BACK)";
+    case gp_stickl: return "(LSTICK)";
+    case gp_stickr: return "(RSTICK)";
+    case gp_shoulderl: return "(LB)";
+    case gp_shoulderr: return "(RB)";
+    case gp_shoulderlb: return "(LT)";
+    case gp_shoulderrb: return "(RT)";
+    case gp_padl: return "(LEFT)";
+    case gp_padr: return "(RIGHT)";
+    case gp_padu: return "(UP)";
+    case gp_padd: return "(DOWN)";
 }

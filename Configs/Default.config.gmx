@@ -310,6 +310,24 @@
     <option_ios_icon_57>Configs\Default\ios\icons\icon57.png</option_ios_icon_57>
     <option_ios_icon_72>Configs\Default\ios\icons\icon72.png</option_ios_icon_72>
     <option_ios_icon_76>Configs\Default\ios\icons\icon76.png</option_ios_icon_76>
+    <option_ios_icon_ipad_app_152>Configs\Default\ios\icons\app\ipad_152.png</option_ios_icon_ipad_app_152>
+    <option_ios_icon_ipad_app_76>Configs\Default\ios\icons\app\ipad_76.png</option_ios_icon_ipad_app_76>
+    <option_ios_icon_ipad_notification_20>Configs\Default\ios\icons\notification\ipad_20.png</option_ios_icon_ipad_notification_20>
+    <option_ios_icon_ipad_notification_40>Configs\Default\ios\icons\notification\ipad_40.png</option_ios_icon_ipad_notification_40>
+    <option_ios_icon_ipad_pro_app_167>Configs\Default\ios\icons\app\ipad_pro_167.png</option_ios_icon_ipad_pro_app_167>
+    <option_ios_icon_ipad_settings_29>Configs\Default\ios\icons\settings\ipad_29.png</option_ios_icon_ipad_settings_29>
+    <option_ios_icon_ipad_settings_58>Configs\Default\ios\icons\settings\ipad_58.png</option_ios_icon_ipad_settings_58>
+    <option_ios_icon_ipad_spotlight_40>Configs\Default\ios\icons\spotlight\ipad_40.png</option_ios_icon_ipad_spotlight_40>
+    <option_ios_icon_ipad_spotlight_80>Configs\Default\ios\icons\spotlight\ipad_80.png</option_ios_icon_ipad_spotlight_80>
+    <option_ios_icon_iphone_app_120>Configs\Default\ios\icons\app\iphone_120.png</option_ios_icon_iphone_app_120>
+    <option_ios_icon_iphone_app_180>Configs\Default\ios\icons\app\iphone_180.png</option_ios_icon_iphone_app_180>
+    <option_ios_icon_iphone_notification_40>Configs\Default\ios\icons\notification\iphone_40.png</option_ios_icon_iphone_notification_40>
+    <option_ios_icon_iphone_notification_60>Configs\Default\ios\icons\notification\iphone_60.png</option_ios_icon_iphone_notification_60>
+    <option_ios_icon_iphone_settings_58>Configs\Default\ios\icons\settings\iphone_58.png</option_ios_icon_iphone_settings_58>
+    <option_ios_icon_iphone_settings_87>Configs\Default\ios\icons\settings\iphone_87.png</option_ios_icon_iphone_settings_87>
+    <option_ios_icon_iphone_spotlight_120>Configs\Default\ios\icons\spotlight\iphone_120.png</option_ios_icon_iphone_spotlight_120>
+    <option_ios_icon_iphone_spotlight_80>Configs\Default\ios\icons\spotlight\iphone_80.png</option_ios_icon_iphone_spotlight_80>
+    <option_ios_icon_itunes_artwork_1024>Configs\Default\ios\icons\itunes\itunes_1024.png</option_ios_icon_itunes_artwork_1024>
     <option_ios_inmobi_enable>0</option_ios_inmobi_enable>
     <option_ios_inmobi_id></option_ios_inmobi_id>
     <option_ios_inmobi_test_enable>0</option_ios_inmobi_test_enable>
@@ -324,10 +342,22 @@
     <option_ios_iphone6_splash_portrait_png>Configs\Default\ios\iPhone6splashPortrait.png</option_ios_iphone6_splash_portrait_png>
     <option_ios_iphone6plus_splash_png>Configs\Default\ios\iPhone6Plussplash.png</option_ios_iphone6plus_splash_png>
     <option_ios_iphone6plus_splash_portrait_png>Configs\Default\ios\iPhone6PlussplashPortrait.png</option_ios_iphone6plus_splash_portrait_png>
+    <option_ios_iphone7_splash_png>Configs\Default\ios\iPhone7splash.png</option_ios_iphone7_splash_png>
+    <option_ios_iphone7_splash_portrait_png>Configs\Default\ios\iPhone7splashPortrait.png</option_ios_iphone7_splash_portrait_png>
+    <option_ios_iphone7plus_splash_png>Configs\Default\ios\iPhone7Plussplash.png</option_ios_iphone7plus_splash_png>
+    <option_ios_iphone7plus_splash_portrait_png>Configs\Default\ios\iPhone7PlussplashPortrait.png</option_ios_iphone7plus_splash_portrait_png>
+    <option_ios_iphone8_splash_png>Configs\Default\ios\iPhone8splash.png</option_ios_iphone8_splash_png>
+    <option_ios_iphone8_splash_portrait_png>Configs\Default\ios\iPhone8splashPortrait.png</option_ios_iphone8_splash_portrait_png>
+    <option_ios_iphone8plus_splash_png>Configs\Default\ios\iPhone8Plussplash.png</option_ios_iphone8plus_splash_png>
+    <option_ios_iphone8plus_splash_portrait_png>Configs\Default\ios\iPhone8PlussplashPortrait.png</option_ios_iphone8plus_splash_portrait_png>
     <option_ios_iphone_retina_splash_png>Configs\Default\ios\IphoneRetinasplash.png</option_ios_iphone_retina_splash_png>
     <option_ios_iphone_retina_splash_portrait_png>Configs\Default\ios\IphoneRetinasplashPortrait.png</option_ios_iphone_retina_splash_portrait_png>
     <option_ios_iphone_splash_png>Configs\Default\ios\iPhonesplash.png</option_ios_iphone_splash_png>
     <option_ios_iphone_splash_portrait_png>Configs\Default\ios\iPhonesplashPortrait.png</option_ios_iphone_splash_portrait_png>
+    <option_ios_iphonese_splash_png>Configs\Default\ios\iPhonesesplash.png</option_ios_iphonese_splash_png>
+    <option_ios_iphonese_splash_portrait_png>Configs\Default\ios\iPhonesesplashPortrait.png</option_ios_iphonese_splash_portrait_png>
+    <option_ios_iphonex_splash_png>Configs\Default\ios\iPhonexsplash.png</option_ios_iphonex_splash_png>
+    <option_ios_iphonex_splash_portrait_png>Configs\Default\ios\iPhonexsplashPortrait.png</option_ios_iphonex_splash_portrait_png>
     <option_ios_major_version>1</option_ios_major_version>
     <option_ios_minor_version>0</option_ios_minor_version>
     <option_ios_orient_landscape>-1</option_ios_orient_landscape>

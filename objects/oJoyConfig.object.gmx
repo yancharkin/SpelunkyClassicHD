@@ -189,7 +189,7 @@ draw_text(n, 32, "PRESS BUTTON FOR");
 draw_text(8, 96, global.EscToKeepSame);
 draw_text(8, 104, global.Current);
 
-if (not joystick_exists(1))
+if (not gamepad_is_connected(global.joyid) and string_length(gamepad_get_description(global.joyid)) &lt; 1)
 {
     draw_set_color(c_red);
     draw_text(8, 88, "NO GAMEPAD FOUND!");
@@ -287,23 +287,7 @@ else if (status == 8)
 }
 
 draw_set_font(global.myFontSmall);
-switch (currVal)
-{
-    case 1: { draw_text(80, 104, "B1"); break; }
-    case 2: { draw_text(80, 104, "B2"); break; }
-    case 3: { draw_text(80, 104, "B3"); break; }
-    case 4: { draw_text(80, 104, "B4"); break; }
-    case 5: { draw_text(80, 104, "B5"); break; }
-    case 6: { draw_text(80, 104, "B6"); break; }
-    case 7: { draw_text(80, 104, "B7"); break; }
-    case 8: { draw_text(80, 104, "B8"); break; }
-    case 9: { draw_text(80, 104, "B9"); break; }
-    case 10: { draw_text(80, 104, "B10"); break; }
-    case -1: { draw_text(80, 104, "LT (XB)"); break; }
-    case -2: { draw_text(80, 104, "RT (XB)"); break; }
-    default: { draw_text(80, 104, "B" + string(currVal)); break; }
-}
-
+draw_text(80, 104, scrGetJoy(currVal));
 </string>
           </argument>
         </arguments>
