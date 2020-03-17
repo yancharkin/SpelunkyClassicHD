@@ -27,11 +27,7 @@
             <kind>1</kind>
             <string>// gamepad
 
-globalvar joyid;
-
-joyid = 1;
-
-if (not joystick_exists(1) and joystick_exists(2)) joyid = 2;
+global.joyid = 0;
 
 //
 

@@ -338,6 +338,7 @@ if (fadeOut)
     }
 }
 
+if (gamepad.select) event_perform(ev_keypress, vk_f5);
 </string>
           </argument>
         </arguments>
@@ -446,7 +447,7 @@ if (instance_exists(oPlayer1))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//room_goto(rJoyConfig);
+            <string>room_goto(rJoyConfig);
 
 // debug Olmec fight
 //global.currLevel = 16;

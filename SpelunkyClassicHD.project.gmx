@@ -1239,6 +1239,7 @@
     <script>scripts\scrGetKey.gml</script>
     <script>scripts\scrGetChar.gml</script>
     <script>scripts\scrGetJoy.gml</script>
+    <script>scripts\scrNotTrigger.gml</script>
     <script>scripts\scrDrawHUD.gml</script>
     <script>scripts\rand.gml</script>
     <script>scripts\tile_add2.gml</script>

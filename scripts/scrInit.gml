@@ -52,15 +52,15 @@ global.keyRopeVal = ord('S');
 global.keyFlareVal = ord('F');
 global.keyPayVal = ord('P');
 
-global.joyJumpVal = 2;
-global.joyAttackVal = 1;
-global.joyItemVal = 3;
-global.joyRunVal = 5;
-global.joyBombVal = 7;
-global.joyRopeVal = 8;
-global.joyFlareVal = 4;
-global.joyPayVal = 6;
-global.joyStartVal = 10;
+global.joyJumpVal = gp_face1;
+global.joyAttackVal = gp_face2;
+global.joyItemVal = gp_face3;
+global.joyRunVal = gp_shoulderlb;
+global.joyBombVal = gp_shoulderl;
+global.joyRopeVal = gp_shoulderr;
+global.joyFlareVal = gp_face4;
+global.joyPayVal = gp_shoulderrb;
+global.joyStartVal = gp_start;
 
 file = file_text_open_read(working_directory + "settings.cfg");
 
@@ -216,12 +216,10 @@ SS_SetSoundVol(global.sndSlam, 2000 + 8000 * (global.soundVol/18));
 SS_SetSoundVol(global.sndPFall, 2000 + 8000 * (global.soundVol/18));
 SS_SetSoundVol(global.sndTFall, 2000 + 8000 * (global.soundVol/18));
 
-if (not joystick_exists(1) and not joystick_exists(2)) global.gamepadOn = false;
+global.gamepadOn = false;
 
 globalvar gamepad;
 gamepad = instance_create(0, 0, oGamepad);
-
-// if (not joystick_exists(1) and not joystick_exists(2)) global.gamepadOn = false;
 
 /////////////////////////////////////////////////////////////////////////////////
 //                              Translations                                   //

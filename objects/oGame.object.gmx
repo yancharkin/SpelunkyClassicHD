@@ -319,6 +319,9 @@ if (instance_exists(oPlayer1))
        }
     }
 }
+
+// GAMEPAD PAUSE
+if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perform(ev_keypress, vk_escape);
 </string>
           </argument>
         </arguments>
