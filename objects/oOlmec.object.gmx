@@ -100,11 +100,11 @@ view_object[0] = oOlmec;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with oCavemanWorship
+            <string>with (oCavemanWorship)
 {
-    obj = instance_create(x, y, oCaveman)
-    obj.facing = 1;
-    obj.status = 2;
+    obj = instance_create(x, y, oCaveman);
+    with (obj) facing = 1;
+    with (obj) status = 2;
     instance_destroy();
 }
 </string>
@@ -133,11 +133,10 @@ view_object[0] = oOlmec;
 view_vborder[0] = 64;
 view_xview[0] = 0;
 view_object[0] = oPlayer1;
-oPlayer1.active = true;
+with (oPlayer1) active = true;
 status = 0;
 counter = 100;
 playMusic(global.musBoss, true);
-alarm[6] = 20;
 //playSound(global.sndBoss);
 </string>
           </argument>
@@ -165,7 +164,7 @@ alarm[6] = 20;
 status = BOUNCE;
 playSound(global.sndBigJump);
 playSound(global.sndAlert);
-alarm[5] = 20;
+alarm[6] = 20;
 </string>
           </argument>
         </arguments>
