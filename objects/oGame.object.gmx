@@ -33,6 +33,7 @@ debug = false;
 global.ghostExists = false;
 
 paused = false;
+menuItemIndex = 0;
 
 damsel = false;
 idol = false;
@@ -326,6 +327,134 @@ if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perfor
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Check keyboard input in the menu
+
+//Pause
+if (keyboard_check_pressed(vk_escape) or
+        gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
+    if (not isRoom("rIntro")) {
+        if (not paused) {
+            instance_deactivate_all(true);
+            //audio_pause_all();
+            paused = true;
+        } else {
+            paused = false;
+            instance_activate_all();
+            //audio_resume_all();
+        }
+    }
+}
+
+if (paused) {
+    if (keyboard_check_pressed(global.keyDownVal) or
+            gamepad_button_check_pressed(global.joyid, gp_padd) or
+            keyboard_check_pressed(vk_down)) {
+        menuItemIndex += 1;
+        if (isRoom("rTitle")) {
+            if (menuItemIndex = 6) menuItemIndex = 0;
+        } else { 
+            if (menuItemIndex = 5) menuItemIndex = 0;
+        }
+    } else if (keyboard_check_pressed(global.keyUpVal) or
+            gamepad_button_check_pressed(global.joyid, gp_padu) or
+            keyboard_check_pressed(vk_up)) {
+        menuItemIndex -= 1;
+        if (isRoom("rTitle")) {
+            if (menuItemIndex = -1) menuItemIndex = 5;
+        } else {
+            if (menuItemIndex = -1) menuItemIndex = 4;
+        }
+    } else if (keyboard_check_pressed(global.keyJumpVal) or
+            gamepad_button_check_pressed(global.joyid, global.joyJumpVal)) {
+        paused = false;
+        instance_activate_all();
+    } else if (keyboard_check_pressed(global.keyAttackVal) or
+            gamepad_button_check_pressed(global.joyid, global.joyAttackVal) or
+            keyboard_check_pressed(vk_enter)) {
+        if (isRoom("rTitle")) {
+            switch (menuItemIndex) {
+                case 0: {
+                    paused = false;
+                    instance_activate_all();
+                    room_goto(rKeyConfig);
+                    break;
+                }
+                case 1: {
+                    paused = false;
+                    instance_activate_all();
+                    room_goto(rJoyConfig);
+                    break;
+                }
+                case 2: {
+                    global.toggleRunEnabled = !global.toggleRunEnabled;
+                    break;
+                }
+                case 3: {
+                    global.fullscreen = !global.fullscreen;
+                    if (global.fullscreen) {
+                        window_set_fullscreen(true);
+
+                    } else {
+                        window_set_fullscreen(false);
+                    }
+                    break;
+                }
+                case 4: {
+                    instance_activate_all();
+                    scrChangeLanguage();
+                    instance_deactivate_all(true);
+                    break;
+                }
+                case 5: { game_end(); break; }
+            }
+        } else {
+            switch (menuItemIndex) {
+                case 0: {
+                    global.toggleRunEnabled = !global.toggleRunEnabled;
+                    break;
+                }
+                case 1: {
+                    global.fullscreen = !global.fullscreen;
+                    if (global.fullscreen) {
+                        window_set_fullscreen(true);
+
+                    } else {
+                        window_set_fullscreen(false);
+                    }
+                    break;
+                }
+                case 2: {
+                    instance_activate_all();
+                    scrChangeLanguage();
+                    instance_deactivate_all(true);
+                    break;
+                }
+                case 3: { scrDie(); break; }
+                case 4: { game_end(); break; }
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -347,24 +476,15 @@ if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perfor
             <string>///Draw the HUD
 
 display_set_gui_size(global.display_w,global.display_h)
-
 scrDrawHUD()
 
-if (global.messageTimer &gt; 0)
-{
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_white);
-    strLen = string_length(global.message)*8;
-    n = global.display_w - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 216, string(global.message));
-
-    if (not isRoom("rTutorial")) draw_set_color(c_yellow);
-    strLen = string_length(global.message2)*8;
-    n = global.display_w - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 224, string(global.message2));
-
+if (global.messageTimer &gt; 0) {   
+    scrDrawTextHCentered(global.message, 'small', c_white, 216);
+    if (not isRoom("rTutorial")) {
+        scrDrawTextHCentered(global.message2, 'small', c_yellow, 224);
+    } else {
+        scrDrawTextHCentered(global.message2, 'small', c_white, 224);
+    }
     global.messageTimer -= 1;
 }
 </string>
@@ -412,28 +532,52 @@ if (global.mobileBuild == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Pause
+            <string>// Pause menu
 if (paused)
 {   
-    strLen = string_length(global.Paused)*16;
-    posX = ceil((global.display_w - strLen) / 2);
-    draw_set_font(global.myFont);
-    draw_set_color(c_white);
-    
-    if (global.mobileBuild)
-    {
-        draw_text(posX, 112, global.Paused);
-    }
-    else
-    {
-        draw_text(posX, 100, global.Paused);
-        strLen = string_length(global.EscReturnF10Quit)*8;
-        posX = ceil((global.display_w - strLen) / 2);
-        draw_set_font(global.myFontSmall);
-        draw_text(posX, 120, global.EscReturnF10Quit);
+    if (global.mobileBuild) {
+        scrDrawTextHCentered(global.Paused, 'large', c_white, 112);
+    } else {
+        color0 = c_white;
+        color1 = c_white;
+        color2 = c_white;
+        color3 = c_white;
+        color4 = c_white;
+        color5 = c_white;
+        switch (menuItemIndex) {
+            case 0: { color0 = c_yellow; break; }
+            case 1: { color1 = c_yellow; break; }
+            case 2: { color2 = c_yellow; break; }
+            case 3: { color3 = c_yellow; break; }
+            case 4: { color4 = c_yellow; break; }
+            case 5: { color5 = c_yellow; break; }
+        }
+        if (global.fullscreen) {
+            strFullscreen = "ON";
+        } else {
+            strFullscreen = "OFF";
+        }
+        if (global.toggleRunEnabled) {
+            strToggleRunEnabled = "ON";
+        } else {
+            strToggleRunEnabled = "OFF";
+        }
+        if (isRoom("rTitle")) {
+            scrDrawTextHCentered('KEYBOARD CONFIGURATION', 'small', color0, 60);
+            scrDrawTextHCentered('GAMEPAD CONFIGURATION', 'small', color1, 80);
+            scrDrawTextHCentered('TOGGLEABLE RUN BUTTON &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 100);
+            scrDrawTextHCentered('FULLSCREEN &lt;' + strFullscreen + '&gt;', 'small', color3, 120);
+            scrDrawTextHCentered('LANGUAGE &lt;' +  string_upper(global.lang) + '&gt;', 'small', color4, 140);
+            scrDrawTextHCentered('QUIT', 'small', color5, 160);
+        } else {
+            scrDrawTextHCentered('TOGGLEABLE RUN BUTTON &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 80);
+            scrDrawTextHCentered('FULLSCREEN &lt;' + strFullscreen + '&gt;', 'small', color1, 100);
+            scrDrawTextHCentered('LANGUAGE &lt;' +  string_upper(global.lang) + '&gt;', 'small', color2, 120);
+            scrDrawTextHCentered('DIE!', 'small', color3, 140);
+            scrDrawTextHCentered('QUIT', 'small', color4, 160);
+        }
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -718,30 +862,6 @@ draw_text(oPlayer1.x, oPlayer1.y-48, string(oPlayer1.y-oXMarket.y));
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="121">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Exit
-game_end();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="9" enumb="77">
       <action>
         <libid>1</libid>
@@ -781,41 +901,6 @@ else
     }
     else if (isRoom("rTitle")) playMusic(global.musTitle, true);
 }</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Pause
-if (not paused)
-{
-    instance_deactivate_all(true);
-    audio_pause_all();
-    paused = true;
-}
-else
-{
-    paused = false;
-    instance_activate_all();
-    audio_resume_all();
-}
-</string>
           </argument>
         </arguments>
       </action>
