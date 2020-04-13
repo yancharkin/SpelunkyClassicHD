@@ -10,26 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>0</showcolour>
-  <code>if (global.lang != "english")
-{
-    trans_dir = working_directory + "translations/" + global.lang
-    trans_img_dir = trans_dir + "/images/"
-    
-    sLevel5SignNew = sprite_add(trans_img_dir + "level5_sign.png", 1, false, false, 0, 0);
-    oLevel5Sign.sprite_index = sLevel5SignNew;
-    
-    sQuitSignNew = sprite_add(trans_img_dir + "quit_sign.png", 1, false, false, 0, 0);
-    oQuitSign.sprite_index = sQuitSignNew;
-    
-    sScoresSignNew = sprite_add(trans_img_dir + "scores_sign.png", 1, false, false, 0, 0);
-    oScoresSign.sprite_index = sScoresSignNew;
-    
-    sStartSignNew = sprite_add(trans_img_dir + "start_sign.png", 1, false, false, 0, 0);
-    oStartSign.sprite_index = sStartSignNew;
-    
-    sTutorialSignNew = sprite_add(trans_img_dir + "tutorial_sign.png", 1, false, false, 0, 0);
-    oTutorialSign.sprite_index = sTutorialSignNew;
-}</code>
+  <code>scrLoadLocalizedSprites();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -629,6 +610,7 @@
     <instance objName="oHardBlock" x="-48" y="208" name="inst_89E13E7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oHardBlock" x="-48" y="224" name="inst_2B5DC392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oHardBlock" x="-48" y="0" name="inst_76C54D25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oMenu" x="288" y="288" name="inst_93041799" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bgTitle" x="32" y="128" w="16" h="16" xo="64" yo="0" id="10000000" name="tile_05009657" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
