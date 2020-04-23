@@ -23,16 +23,22 @@
 
 initMusic()
 
-global.mobileBuild = false;
-global.toggleRunEnabled = false;
-global.toggleRun = false;
+//global.mobileBuild = false;
+global.mobileBuild = (os_type == os_android) or (os_type == os_ios);
 global.touchControlsVisible = 1;
-global.lang = "english";
+global.html5Build = !(os_browser == browser_not_a_browser);
 
-startGame = false;
+globalvar gamepad;
+gamepad = instance_create(0, 0, oGamepad);
+global.toggleRun = false;
 window_set_cursor(cr_none);
+startGame = false;
 
-global.fullscreen = true;
+// Defaults
+global.firstLaunch = true;
+global.locale = "en";
+global.fullscreen = false;
+global.toggleRunEnabled = false;
 global.graphicsHigh = true;
 global.downToRun = true;
 global.gamepadOn = false;
@@ -63,95 +69,10 @@ global.joyFlareVal = gp_face4;
 global.joyPayVal = gp_shoulderrb;
 global.joyStartVal = gp_start;
 
-file = file_text_open_read(working_directory + "settings.cfg");
-
-if (file)
-{
-    str = file_text_read_string(file);
-    if (str == "0") global.fullscreen = false;
-    file_text_readln(file);
-    str = file_text_read_string(file);
-    if (str == "0") global.graphicsHigh = false;
-    file_text_readln(file);
-    str = file_text_read_string(file);
-    if (str == "0") global.downToRun = false;
-    file_text_readln(file);
-    str = file_text_read_string(file);
-    if (str == "0") global.gamepadOn = false;
-    else global.gamepadOn = true;
-    file_text_readln(file);
-    global.screenScale = real(file_text_read_string(file));
-    global.screenScale = 1;
-    file_text_readln(file);
-    global.musicVol = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.soundVol = real(file_text_read_string(file));
-
-    if (global.mobileBuild == false)
-    {
-        file_text_readln(file);
-        global.lang = file_text_read_string(file);
-    }
-
-    file_text_close(file);
-}
-
 if (global.musicVol > 17) global.musicVol = 17;
 if (global.musicVol < 0) global.musicVol = 0;
 if (global.soundVol > 17) global.soundVol = 17;
 if (global.soundVol < 0) global.soundVol = 0;
-
-file = file_text_open_read(working_directory + "keys.cfg");
-if (file)
-{
-    global.keyUpVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyDownVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyLeftVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyRightVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyJumpVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyAttackVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyItemVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyRunVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyBombVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyRopeVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyFlareVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.keyPayVal = real(file_text_read_string(file));
-    file_text_close(file);
-}
-
-file = file_text_open_read(working_directory + "gamepad.cfg");
-if (file)
-{
-    global.joyJumpVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyAttackVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyItemVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyRunVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyBombVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyRopeVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyFlareVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyPayVal = real(file_text_read_string(file));
-    file_text_readln(file);
-    global.joyStartVal = real(file_text_read_string(file));
-    file_text_close(file);
-}
 
 SS_SetSoundVol(global.musTitle, 2000 + 8000 * (global.musicVol/18));
 SS_SetSoundVol(global.musCave, 2000 + 8000 * (global.musicVol/18));
@@ -217,9 +138,8 @@ SS_SetSoundVol(global.sndSlam, 2000 + 8000 * (global.soundVol/18));
 SS_SetSoundVol(global.sndPFall, 2000 + 8000 * (global.soundVol/18));
 SS_SetSoundVol(global.sndTFall, 2000 + 8000 * (global.soundVol/18));
 
-global.gamepadOn = false;
-
-globalvar gamepad;
-gamepad = instance_create(0, 0, oGamepad);
-
-scrSetLocale();
+configLoad();
+getLocales();
+setLocale();
+global.firstLaunch = false;
+configSave();

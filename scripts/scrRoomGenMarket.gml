@@ -126,7 +126,7 @@ else if (roomPath == 4) // shop
     while (shopType == "")
     {
         if (n == 1) { if (not oGame.genSupplyShop) { shopType = "General"; oGame.genSupplyShop = true; } }
-        else if (n == 2) { if (not oGame.genBombShop) { shopType = global.Bomb; oGame.genBombShop = true; } }
+        else if (n == 2) { if (not oGame.genBombShop) { shopType = "Bomb"; oGame.genBombShop = true; } }
         else if (n == 3) { if (not oGame.genWeaponShop) { shopType = "Weapon"; oGame.genWeaponShop = true; } }
         else if (n == 4) { if (not oGame.genRareShop) { shopType = "Rare"; oGame.genRareShop = true; } }
         else if (n == 5) { if (not oGame.genClothingShop) { shopType = "Clothing"; oGame.genClothingShop = true; } }
@@ -348,7 +348,7 @@ for (j = 0; j < 8; j += 1)
         {
             obj = instance_create(xpos, ypos, oSign);
             if (shopType == "General") obj.sprite_index = sSignGeneral;
-            else if (shopType == global.Bomb) obj.sprite_index = sSignBomb;
+            else if (shopType == "Bomb") obj.sprite_index = sSignBomb;
             else if (shopType == "Weapon") obj.sprite_index = sSignWeapon;
             else if (shopType == "Clothing") obj.sprite_index = sSignClothing;
             else if (shopType == "Rare") obj.sprite_index = sSignRare;

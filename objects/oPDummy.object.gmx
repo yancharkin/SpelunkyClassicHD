@@ -386,7 +386,7 @@ if (sprite_index != sPExit and sprite_index != sDamselExit and sprite_index != s
     else if (global.pickupItem == "Teleporter") draw_sprite(sTeleporter,-1,x+4,y+2);
     else if (global.pickupItem == "Shotgun") draw_sprite(sShotgunRight,-1,x+4,y+2);
     else if (global.pickupItem == "Bow") draw_sprite(sBowRight,-1,x+4,y+2);
-    else if (global.pickupItem == global.Flare) draw_sprite(sFlare,-1,x+4,y+2);
+    else if (global.pickupItem == "Flare") draw_sprite(sFlare,-1,x+4,y+2);
     else if (global.pickupItem == "Sceptre") draw_sprite(sSceptreRight,-1,x+4,y+2);
     else if (global.pickupItem == "Key") draw_sprite(sKeyRight,-1,x+4,y+2);
 }

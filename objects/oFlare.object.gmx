@@ -63,7 +63,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = tr("FLARE");
+            <string>type = "Flare";
 makeActive();
 setCollisionBounds(-4, -4, 4, 4);
 xVel = 0;
@@ -73,7 +73,8 @@ invincible = true;
 bounce = true;
 distToPlayer = 0;
 
-alarm[0] = 1;</string>
+alarm[0] = 1;
+</string>
           </argument>
         </arguments>
       </action>

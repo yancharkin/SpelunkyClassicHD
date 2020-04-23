@@ -45,7 +45,7 @@ else
     else if (itemType == "Teleporter") holdItem = instance_create(x, y, oTeleporter);
     else if (itemType == "Shotgun") holdItem = instance_create(x, y, oShotgun);
     else if (itemType == "Bow") holdItem = instance_create(x, y, oBow);
-    else if (itemType == global.Flare) holdItem = instance_create(x, y, oFlare);
+    else if (itemType == "Flare") holdItem = instance_create(x, y, oFlare);
     else if (itemType == "Sceptre") holdItem = instance_create(x, y, oSceptre);
     else if (itemType == "Key") holdItem = instance_create(x, y, oKey);
     else pickup = false;
