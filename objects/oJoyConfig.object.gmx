@@ -139,25 +139,7 @@ if (joyPressed or keyboard_check_pressed(vk_escape))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>file = file_text_open_write(working_directory + "gamepad.cfg");
-file_text_write_string(file, string(global.joyJumpVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyAttackVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyItemVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyRunVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyBombVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyRopeVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyFlareVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyPayVal));
-file_text_writeln(file);
-file_text_write_string(file, string(global.joyStartVal));
-file_text_close(file);
+            <string>joySave()
 </string>
           </argument>
         </arguments>
