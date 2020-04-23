@@ -59,10 +59,9 @@ for (i = 0; i < 22; i += 1)
 
 global.totalMonkeyKills = 0;
 
-file = file_text_open_read(working_directory + "stats.txt");
-
-if (file)
-{
+filePath = working_directory + "stats.txt";
+if (file_exists(filePath)) {
+    file = file_text_open_read(filePath);
     file_text_readln(file);
     file_text_readln(file);
     file_text_readln(file);
