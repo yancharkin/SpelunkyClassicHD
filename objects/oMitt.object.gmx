@@ -45,7 +45,7 @@ setCollisionBounds(-6, -6, 6, 8);
 
 cost = 4000;
 shopDesc = "PITCHER'S MITT";
-buyMessage = global.PitcherSMittForS + string(cost) + ".";</string>
+buyMessage = tr("PITCHER'S MITT FOR $") + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

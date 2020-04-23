@@ -43,7 +43,7 @@
 makeActive()
 setCollisionBounds(-4, -4, 4, 4)
 cost = 7000;
-buyMessage = global.AMacheteForS + string(cost) + ".";</string>
+buyMessage = tr("A MACHETE FOR $") + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

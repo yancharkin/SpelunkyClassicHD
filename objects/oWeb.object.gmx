@@ -157,7 +157,7 @@ other.yVel = 0;</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (not other.held and other.type != global.Rope)
+            <string>if (not other.held and other.type != tr("ROPE"))
 {
     other.xVel = 0;
     other.yVel = 0;

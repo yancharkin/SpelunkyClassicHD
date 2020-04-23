@@ -45,7 +45,7 @@ setCollisionBounds(-6, -2, 6, 6);
 
 cost = 3000;
 shopDesc = "BOMB PASTE";
-buyMessage = global.BombPasteForS + string(cost) + ".";</string>
+buyMessage = tr("BOMB PASTE FOR $") + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

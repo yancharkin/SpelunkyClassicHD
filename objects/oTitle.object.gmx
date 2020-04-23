@@ -372,12 +372,12 @@ if (instance_exists(oPlayer1))
         {
             draw_set_font(global.myFontSmall);
             draw_set_color(c_yellow);
-            draw_text(324 - global.room_offset, 4, global.F4Controls);
+            draw_text(324 - global.room_offset, 4, tr("F4 - CONTROLS"));
         }
     }
     
     if (player.x &lt; 256 and view_xview[0] &lt;= 1) {
-        scrDrawTextHCentered(global.WelcomeToTheShortcutHouse, 'small', c_white, 224);
+        scrDrawTextHCentered(tr("WELCOME TO THE SHORTCUT HOUSE!"), 'small', c_white, 224);
     }
 }
 </string>

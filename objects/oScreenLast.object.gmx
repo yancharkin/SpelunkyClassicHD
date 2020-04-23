@@ -390,17 +390,17 @@ with(oScreen)
                     
                     draw_set_font(global.myFont);
                     draw_set_color(c_white);
-                    draw_text(112, 200, global.Paused);
+                    draw_text(112, 200, tr("PAUSED"));
                     draw_set_font(global.myFontSmall);
                     if (isLevel())
                     {
                         n = 128-24;
                         if (global.currLevel &lt; 1) draw_text(40, n-24, "TUTORIAL CAVE");
                         else if (isRoom("rLoadLevel")) draw_text(40, n-24, "LEVEL: " + global.customLevelName + " BY " + global.customLevelAuthor);
-                        else draw_text(40, n-24, global.Level + string(global.currLevel));
+                        else draw_text(40, n-24, tr("LEVEL ") + string(global.currLevel));
                         draw_text(40, n-16, "DEPTH: " + string(174.8*(global.currLevel-1)+(py+8)*0.34) + " FEET");
-                        draw_text(40, n, global.Money2 + string(global.money));
-                        draw_text(40, n+8, global.Kills2 + string(global.kills));
+                        draw_text(40, n, tr("MONEY:  ") + string(global.money));
+                        draw_text(40, n+8, tr("KILLS:  ") + string(global.kills));
                         s = global.xtime;
                         s = floor(s / 1000);
                         m = 0;
@@ -421,7 +421,7 @@ with(oScreen)
                         }
                         if (s2 &lt; 10) str2 = "0" + string(s2);
                         else str2 = string(s2);
-                        draw_text(40, n+16, global.Time2 + string(m) + ":" + str + " / " + string(m2) + ":" + str2);
+                        draw_text(40, n+16, tr("TIME:  ") + string(m) + ":" + str + " / " + string(m2) + ":" + str2);
                         draw_text(40, n+24, "SAVES: " + string(global.damsels));
                         if (global.gamepadOn) draw_text(24, 216, "START-RETURN  BOMB-DIE  ROPE-QUIT/RESET");
                         else draw_text(40, 216, "ESC-RETURN  F1-DIE  F9-QUIT/RESET");

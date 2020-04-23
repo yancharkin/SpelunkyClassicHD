@@ -46,13 +46,13 @@ if (global.keepScore)
         
     if (global.money > tMoney)
     {
-        highscore_add2(1,global.Money4, max(0,real(global.money)))
+        highscore_add2(1,tr("MONEY"), max(0,real(global.money)))
 
         global.newMoney = true;
     }
     else
     {
-        highscore_add2(1,global.Money4, max(0,real(tMoney)))
+        highscore_add2(1,tr("MONEY"), max(0,real(tMoney)))
     }
     
     // convert time from 1000/sec to sec to prevent overflow
@@ -60,47 +60,47 @@ if (global.keepScore)
     
     if (argument0 == 1 and (global.time < tTime or tTime == 0) and not global.usedShortcut)
     {
-        highscore_add2(2,global.Time4, global.time);
+        highscore_add2(2,tr("TIME"), global.time);
         global.newTime = true;
     }
-    else highscore_add2(2,global.Time4, tTime);
+    else highscore_add2(2,tr("TIME"), tTime);
         
     if (global.kills > tKills)
     {
-        highscore_add2(3,global.Kills4, global.kills);
+        highscore_add2(3,tr("KILLS"), global.kills);
         global.newKills = true;
     }
-    else highscore_add2(3,global.Kills4, tKills);
+    else highscore_add2(3,tr("KILLS"), tKills);
         
     if (global.damsels > tSaves)
     {
-        highscore_add2(4,global.Saves2, global.damsels);
+        highscore_add2(4,tr("SAVES"), global.damsels);
         global.newSaves = true;
     }
-    else highscore_add2(4,global.Saves2, tSaves);
+    else highscore_add2(4,tr("SAVES"), tSaves);
         
-    if (argument0 == 2) highscore_add2(5,"PLAYS", tPlays);
-    else highscore_add2(5,"PLAYS", tPlays + 1);
+    if (argument0 == 2) highscore_add2(5,tr("PLAYS"), tPlays);
+    else highscore_add2(5,tr("PLAYS"), tPlays + 1);
     
     if (argument0 == 1)
     {
-        highscore_add2(6,global.Wins2, tWins + 1);
-        highscore_add2(7,global.Deaths2, tDeaths);
+        highscore_add2(6,tr("WINS"), tWins + 1);
+        highscore_add2(7,tr("DEATHS"), tDeaths);
     }
     else if (argument0 == 2)
     {
-        highscore_add2(6,global.Wins2, tWins);
-        highscore_add2(7,global.Deaths2, tDeaths);
+        highscore_add2(6,tr("WINS"), tWins);
+        highscore_add2(7,tr("DEATHS"), tDeaths);
     }
     else
     {
-        highscore_add2(6,global.Wins2, tWins);
-        highscore_add2(7,global.Deaths2, tDeaths + 1);
+        highscore_add2(6,tr("WINS"), tWins);
+        highscore_add2(7,tr("DEATHS"), tDeaths + 1);
     }
     
-    highscore_add2(8,global.Tunnel1, global.tunnel1);
+    highscore_add2(8,tr("TUNNEL1"), global.tunnel1);
     
-    highscore_add2(9,global.Tunnel2, global.tunnel2);
+    highscore_add2(9,tr("TUNNEL2"), global.tunnel2);
     
     if (global.mini1 > tMini1)
     {
@@ -118,7 +118,7 @@ if (global.keepScore)
         with oStarsRoom { highscore = true; }
     }
     
-    highscore_add2(10,global.Minigames, (tMini1*10000)+(tMini2*100)+tMini3);
+    highscore_add2(10,tr("MINIGAMES"), (tMini1*10000)+(tMini2*100)+tMini3);
     
     ini_close()
 }

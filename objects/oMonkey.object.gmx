@@ -447,7 +447,7 @@ else sprite_index = sMonkeyLeft;
             <kind>1</kind>
             <string>if (throwCounter == 0 and status != GRAB and other.active and not other.held)
 {
-    if (other.type == global.Rope)
+    if (other.type == tr("ROPE"))
     {
         if (not other.falling)
         {

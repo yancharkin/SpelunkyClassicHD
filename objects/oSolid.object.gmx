@@ -41,7 +41,7 @@
             <kind>1</kind>
             <string>invincible = false;
 shopWall = false;
-type = global.None;
+type = tr("NONE");
 treasure = "";
 cleanDeath = false;
 </string>

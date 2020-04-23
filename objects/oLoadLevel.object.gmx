@@ -33,7 +33,7 @@ global.keepScore = false;
 global.currLevel = 1;
 levelLoaded = false;
 
-msg = global.PressEscapeToReturnToTitle
+msg = tr("PRESS ESCAPE TO RETURN TO TITLE.")
 msgTimer = 0;
 
 GET_FILE_NAME = 0;
@@ -136,7 +136,7 @@ else oScreen.enabled = false;
           <argument>
             <kind>1</kind>
             <string>if (msgTimer &gt; 0) msgTimer -= 1;
-else msg = global.PressEscapeToReturnToTitle
+else msg = tr("PRESS ESCAPE TO RETURN TO TITLE.")
 
 /*
 if (status == GET_FILE_NAME)
@@ -179,14 +179,14 @@ if (status == GET_FILE_NAME)
 {
     draw_text(view_xview[0]+32, view_yview[0]+64, "LOAD LEVEL: " + levelName);
     draw_set_color(c_yellow);
-    draw_text(view_xview[0]+40, view_yview[0]+96, global.Levels);
+    draw_text(view_xview[0]+40, view_yview[0]+96, tr("LEVELS"));
     draw_text(view_xview[0]+224, view_yview[0]+96, string(page) + "/" + string(numPages));
     if (msgTimer &gt; 0)
     {
         draw_set_color(c_red);
-        draw_text(view_xview[0]+32, view_yview[0]+224, global.NoSuchLevelExists);
+        draw_text(view_xview[0]+32, view_yview[0]+224, tr("NO SUCH LEVEL EXISTS!"));
     }
-    else draw_text(view_xview[0]+32, view_yview[0]+224, global.PressEscapeToReturnToTitle);
+    else draw_text(view_xview[0]+32, view_yview[0]+224, tr("PRESS ESCAPE TO RETURN TO TITLE."));
     draw_set_color(c_white);
     n = 112;
     m = 0;

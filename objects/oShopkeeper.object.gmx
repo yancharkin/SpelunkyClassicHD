@@ -220,8 +220,8 @@ if (status == IDLE or status == FOLLOW)
         if (item.cost &gt; 0)
         {
             global.message = item.buyMessage;
-            if (global.gamepadOn) global.message2 = global.Press + scrGetJoy(global.joyPayVal) + global.ToPurchase;
-            else global.message2 = global.Press + scrGetKey(global.keyPayVal) + global.ToPurchase;
+            if (global.gamepadOn) global.message2 = tr("PRESS ") + scrGetJoy(global.joyPayVal) + tr(" TO PURCHASE.");
+            else global.message2 = tr("PRESS ") + scrGetKey(global.keyPayVal) + tr(" TO PURCHASE.");
             global.messageTimer = 200;
         }
     }
@@ -267,23 +267,23 @@ if (status == IDLE)
     }
     else if (not welcomed and (scrGetRoomX(oPlayer1.x) == scrGetRoomX(x) and scrGetRoomY(oPlayer1.y) == scrGetRoomY(y)))
     {
-        if (style == global.Bomb) global.message = global.WelcomeTo + scrGetName() + global.SBombShop;
-        else if (style == "Weapon") global.message = global.WelcomeTo + scrGetName() + global.SArmory;
-        else if (style == "Clothing") global.message = global.WelcomeTo + scrGetName() + global.SClothingShop;
-        else if (style == "Rare") global.message = global.WelcomeTo + scrGetName() + global.SSpecialityShop;
-        else if (style == "Craps") global.message = global.WelcomeTo + scrGetName() + global.SDiceHouse;
-        else if (style == "Kissing") global.message = global.WelcomeTo + scrGetName() + global.SKissingParlor;
-        else if (style == "Ankh") global.message = global.IHaveSomethingSpecial;
-        else global.message = global.WelcomeTo + scrGetName() + global.SSupplyShop;
+        if (style == tr("BOMB")) global.message = tr("WELCOME TO ") + scrGetName() + tr("'S BOMB SHOP!");
+        else if (style == "Weapon") global.message = tr("WELCOME TO ") + scrGetName() + tr("'S ARMORY!");
+        else if (style == "Clothing") global.message = tr("WELCOME TO ") + scrGetName() + tr("'S CLOTHING SHOP!");
+        else if (style == "Rare") global.message = tr("WELCOME TO ") + scrGetName() + tr("'S SPECIALTY SHOP!");
+        else if (style == "Craps") global.message = tr("WELCOME TO ") + scrGetName() + tr("'S DICE HOUSE!");
+        else if (style == "Kissing") global.message = tr("WELCOME TO ") + scrGetName() + tr("'S KISSING PARLOR!");
+        else if (style == "Ankh") global.message = tr("I HAVE SOMETHING SPECIAL...");
+        else global.message = tr("WELCOME TO ") + scrGetName() + tr("'S SUPPLY SHOP!");
         if (style == "Craps")
         {
-            if (global.gamepadOn) global.message2 = global.Press + scrGetJoy(global.joyPayVal) + global.ToBetS + string(betValue) + ".";
-            else global.message2 = global.Press + scrGetKey(global.keyPayVal) + global.ToBetS + string(betValue) + ".";
+            if (global.gamepadOn) global.message2 = tr("PRESS ") + scrGetJoy(global.joyPayVal) + tr(" TO BET $") + string(betValue) + ".";
+            else global.message2 = tr("PRESS ") + scrGetKey(global.keyPayVal) + tr(" TO BET $") + string(betValue) + ".";
         }
         else if (style == "Kissing")
         {
-            if (global.gamepadOn) global.message2 = "$" + string(getKissValue()) + global.AKissPress + scrGetJoy(global.joyPayVal) + ".";
-            else global.message2 = "$" + string(getKissValue()) + global.AKissPress + scrGetKey(global.keyPayVal) + ".";
+            if (global.gamepadOn) global.message2 = "$" + string(getKissValue()) + tr(" A KISS. PRESS ") + scrGetJoy(global.joyPayVal) + ".";
+            else global.message2 = "$" + string(getKissValue()) + tr(" A KISS. PRESS ") + scrGetKey(global.keyPayVal) + ".";
         }
         else global.message2 = "";
         global.messageTimer = 200;
@@ -316,8 +316,8 @@ if (status == IDLE)
             if (global.diceValue == 7)
             {
                 if (isRealLevel()) global.diceGamesWon += 1;
-                global.message = global.YouRolledASeven;
-                global.message2 = global.YouWonAPrize;
+                global.message = tr("YOU ROLLED A SEVEN!");
+                global.message2 = tr("YOU WIN A PRIZE!");
                 global.messageTimer = 200;
                 oPlayer1.bet = 0;
                 with oItem
@@ -345,8 +345,8 @@ if (status == IDLE)
             else if (global.diceValue &gt; 7)
             {
                 if (isRealLevel()) global.diceGamesWon += 1;
-                global.message = global.YouRolledA + string(global.diceValue) + "!";
-                global.message2 = global.CongratulationsYouWin;
+                global.message = tr("YOU ROLLED A ") + string(global.diceValue) + "!";
+                global.message2 = tr("CONGRATULATIONS! YOU WIN!");
                 global.messageTimer = 200;
                 global.collect += oPlayer1.bet * 2;
                 global.collectCounter += 20;
@@ -356,8 +356,8 @@ if (status == IDLE)
             else if (global.diceValue &lt; 7)
             {
                 if (isRealLevel()) global.diceGamesLost += 1;
-                global.message = global.YouRolledA + string(global.diceValue) + "!";
-                global.message2 = global.ImSorryButYouLose;
+                global.message = tr("YOU ROLLED A ") + string(global.diceValue) + "!";
+                global.message2 = tr("I'M SORRY, BUT YOU LOSE!");
                 global.messageTimer = 200;
                 oPlayer1.bet = 0;
             }

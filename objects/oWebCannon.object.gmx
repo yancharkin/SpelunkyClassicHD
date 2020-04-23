@@ -43,7 +43,7 @@
 makeActive()
 setCollisionBounds(-4, -4, 4, 4)
 cost = 2000;
-buyMessage = global.AWebCannonForS + string(cost) + ".";</string>
+buyMessage = tr("A WEB CANNON FOR $") + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

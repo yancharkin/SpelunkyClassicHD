@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = global.None;
+            <string>type = tr("NONE");
 xVel = 0;
 yVel = 0;
 yAcc = 0.6;</string>

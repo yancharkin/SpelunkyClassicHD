@@ -21,10 +21,10 @@
 
 switch (argument0)
 {
-    case vk_up: { return global.UpArr break; }
-    case vk_down: { return global.DownArr break; }
-    case vk_left: { return global.LeftArr break; }
-    case vk_right: { return global.RightArr break; }
+    case vk_up: { return tr("UP ARR") break; }
+    case vk_down: { return tr("DOWN ARR") break; }
+    case vk_left: { return tr("LEFT ARR") break; }
+    case vk_right: { return tr("RIGHT ARR") break; }
     case vk_shift: { return "SHIFT" break; }
     case vk_control: { return "CTRL" break; }
     case vk_alt: { return "ALT" break; }

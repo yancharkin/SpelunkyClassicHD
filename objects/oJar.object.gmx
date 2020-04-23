@@ -241,7 +241,7 @@ else
     }
     if (collision_point(x, y-5, oLava, 0, 0))
     {
-        if (type == global.Bomb)
+        if (type == tr("BOMB"))
         {
             instance_create(x, y, oExplosion);
             for (i = 0; i &lt; 3; i += 1)

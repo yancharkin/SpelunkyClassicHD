@@ -521,7 +521,7 @@
             }
             else if (global.arrows <= 0)
             {
-                global.message = global.IMOutOfArrows;
+                global.message = tr("I'M OUT OF ARROWS!");
                 global.message2 = "";
                 global.messageTimer = 80;
             }

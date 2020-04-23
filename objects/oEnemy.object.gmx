@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>hp = 1;
-type = global.None;
+type = tr("NONE");
 
 active = true;
 
@@ -276,10 +276,10 @@ if (status &gt;= 98)
             instance_create(x+8, y+8, oFlame);
             playSound(global.sndSmallExplode);
             scrCreateBlood(x+8, y+8, 3);
-            global.message = global.KaliAcceptsTheSacrifice;
+            global.message = tr("KALI ACCEPTS THE SACRIFICE!");
             if (global.favor &lt;= -8)
             {
-                global.message = global.KaliDevoursTheSacrifice;
+                global.message = tr("KALI DEVOURS THE SACRIFICE!");
             }
             else if (global.favor &lt; 0)
             {

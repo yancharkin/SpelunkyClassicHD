@@ -182,107 +182,107 @@ file_text_close(file);
             <kind>1</kind>
             <string>draw_set_font(global.myFontSmall);
 draw_set_color(c_yellow);
-strLen = string_length("PRESS BUTTON FOR")*8;
+strLen = string_length(tr("PRESS BUTTON FOR"))*8;
 n = 160 - strLen;
 n = ceil(n / 2);
-draw_text(n, 32, "PRESS BUTTON FOR");
-draw_text(8, 96, global.EscToKeepSame);
-draw_text(8, 104, global.Current);
+draw_text(n, 32, tr("PRESS BUTTON FOR"));
+draw_text(8, 96, tr("ESC TO KEEP SAME."));
+draw_text(8, 104, tr("CURRENT: "));
 
 if (not gamepad_is_connected(global.joyid) and string_length(gamepad_get_description(global.joyid)) &lt; 1)
 {
     draw_set_color(c_red);
-    draw_text(8, 88, "NO GAMEPAD FOUND!");
+    draw_text(8, 88, tr("NO GAMEPAD FOUND!"));
 }
 
 if (status == 0)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Jump)*16;
+    strLen = string_length(tr("JUMP"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Jump);
+    draw_text(n, 40, tr("JUMP"));
     currVal = global.joyJumpVal;
 }
 else if (status == 1)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Action)*16;
+    strLen = string_length(tr("ACTION"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Action);
+    draw_text(n, 40, tr("ACTION"));
     currVal = global.joyAttackVal;
 }
 else if (status == 2)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Switch)*16;
+    strLen = string_length(tr("SWITCH"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Switch);
+    draw_text(n, 40, tr("SWITCH"));
     currVal = global.joyItemVal;
 }
 else if (status == 3)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Run)*16;
+    strLen = string_length(tr("RUN"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Run);
+    draw_text(n, 40, tr("RUN"));
     currVal = global.joyRunVal;
 }
 else if (status == 4)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Bomb)*16;
+    strLen = string_length(tr("BOMB"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Bomb);
+    draw_text(n, 40, tr("BOMB"));
     currVal = global.joyBombVal;
 }
 else if (status == 5)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Rope)*16;
+    strLen = string_length(tr("ROPE"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Rope);
+    draw_text(n, 40, tr("ROPE"));
     currVal = global.joyRopeVal;
 }
 else if (status == 6)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Flare)*16;
+    strLen = string_length(tr("FLARE"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Flare);
+    draw_text(n, 40, tr("FLARE"));
     currVal = global.joyFlareVal;
 }
 else if (status == 7)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length(global.Purchase)*16;
+    strLen = string_length(tr("PURCHASE"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, global.Purchase);
+    draw_text(n, 40, tr("PURCHASE"));
     currVal = global.joyPayVal;
 }
 else if (status == 8)
 {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
-    strLen = string_length("START")*16;
+    strLen = string_length(tr("START"))*16;
     n = 160 - strLen;
     n = ceil(n / 2);
-    draw_text(n, 40, "START");
+    draw_text(n, 40, tr("START"));
     currVal = global.joyStartVal;
 }
 

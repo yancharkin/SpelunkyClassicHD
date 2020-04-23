@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>active = true;
-type = global.None;
+type = tr("NONE");
 shopDesc = "";
 new = true; // set to false once player has picked up, currently just used for bow
 held = false;
@@ -147,7 +147,7 @@ else depth = 101;</string>
             <kind>1</kind>
             <string>if ((x &gt; view_xview[0]-16 and x &lt; view_xview[0] + view_wview[0]+16 and
     y &gt; view_yview[0]-16 and y &lt; view_yview[0] + view_hview[0]+16) or
-    type == global.Rope)
+    type == tr("ROPE"))
 {
     if (global.hasSpectacles) depth = 51;
     else depth = 101;
@@ -257,7 +257,7 @@ else depth = 101;</string>
             }
         }
     
-        if (sticky and type == global.Bomb and sprite_index = sBombArmed)
+        if (sticky and type == tr("BOMB") and sprite_index = sBombArmed)
         {
             if (colLeft or colRight or colTop or colBot)
             {
@@ -293,7 +293,7 @@ else depth = 101;</string>
             //yVel = 0;
         }
     
-        if (sticky and type == global.Bomb and sprite_index = sBombArmed)
+        if (sticky and type == tr("BOMB") and sprite_index = sBombArmed)
         {
             // do nothing
         }
@@ -318,7 +318,7 @@ else depth = 101;</string>
     
         if (collision_point(x, y-5, oLava, 0, 0) and type != "Sceptre")
         {
-            if (type == global.Bomb)
+            if (type == tr("BOMB"))
             {
                 instance_create(x, y, oExplosion);
                 repeat(3)
@@ -361,7 +361,7 @@ else depth = 101;</string>
         }
     }
 
-    if (type == global.Bomb and sticky)
+    if (type == tr("BOMB") and sticky)
     {
         if (abs(xVel) &gt; 2 or abs(yVel) &gt; 2 and collision_rectangle(x-2, y-2, x+2, y+2, oEnemy, 0, 0) and enemyID == 0)
         {

@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = global.Rope;
+            <string>type = tr("ROPE");
 makeActive()
 setCollisionBounds(-4, -4, 4, 4)</string>
           </argument>

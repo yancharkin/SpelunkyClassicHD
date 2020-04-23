@@ -44,7 +44,7 @@ makeActive();
 setCollisionBounds(-6, -6, 6, 6);
 
 cost = 2000;
-buyMessage = global.AParachuteForS + string(cost) + ".";</string>
+buyMessage = tr("A PARACHUTE FOR $") + string(cost) + ".";</string>
           </argument>
         </arguments>
       </action>

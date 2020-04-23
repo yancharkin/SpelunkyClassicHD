@@ -50,7 +50,7 @@ music = "CAVE";
 lifeStart = "4";
 bombStart = "4";
 ropeStart = "4";
-nextLevel = global.None;
+nextLevel = tr("NONE");
 textEdit = "";
 
 for (j = 0; j &lt; 32; j += 1)
@@ -491,12 +491,12 @@ if (status == GET_FILE_NAME)
 }
 else if (status == EDIT_DOOR)
 {
-    draw_text(view_xview[0]+9, view_yview[0]+100, global.Label);
+    draw_text(view_xview[0]+9, view_yview[0]+100, tr("LABEL:"));
     draw_text(view_xview[0]+9, view_yview[0]+116, textEdit);
 }
 else if (status == EDIT_MSG)
 {
-    draw_text(view_xview[0]+9, view_yview[0]+100, global.Message);
+    draw_text(view_xview[0]+9, view_yview[0]+100, tr("MESSAGE:"));
     draw_text(view_xview[0]+9, view_yview[0]+116, textEdit);
 }
 else if (status == INFO_NAME)
@@ -509,7 +509,7 @@ else if (status == INFO_AUTHOR)
 }
 else if (status == INFO_MUSIC)
 {
-    draw_text(view_xview[0]+9, view_yview[0]+116, global.Music + music);
+    draw_text(view_xview[0]+9, view_yview[0]+116, tr("MUSIC: ") + music);
 }
 else if (status == INFO_LIFE)
 {
@@ -529,28 +529,28 @@ else if (status == INFO_NEXT)
 }
 else if (status == EXIT or status == NEW)
 {
-    strLen = string_length(global.SaveLevelYN)*8;
+    strLen = string_length(tr("SAVE LEVEL? (Y/N)"))*8;
     n = 320 - strLen;
     n = ceil(n / 2);
-    draw_text(view_xview[0]+n, view_yview[0]+116, global.SaveLevelYN);
+    draw_text(view_xview[0]+n, view_yview[0]+116, tr("SAVE LEVEL? (Y/N)"));
     
     m = 16;
     draw_set_color(c_yellow);
     if not (instance_exists(oEntrance))
     {
-        strLen = string_length(global.WarningNoEntrance)*8;
+        strLen = string_length(tr("WARNING: NO ENTRANCE!"))*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(view_xview[0]+n, view_yview[0]+116+m, global.WarningNoEntrance);
+        draw_text(view_xview[0]+n, view_yview[0]+116+m, tr("WARNING: NO ENTRANCE!"));
         m += 8;
     }
     
     if not (instance_exists(oExit))
     {
-        strLen = string_length(global.WarningNoExit)*8;
+        strLen = string_length(tr("WARNING: NO EXIT!"))*8;
         n = 320 - strLen;
         n = ceil(n / 2);
-        draw_text(view_xview[0]+n, view_yview[0]+116+m, global.WarningNoExit);
+        draw_text(view_xview[0]+n, view_yview[0]+116+m, tr("WARNING: NO EXIT!"));
     }
 }
 else
