@@ -21,10 +21,24 @@
     
 ***********************************************************************************/
 
-if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
+// Hack to make HUD work in HTML5
+// no idea why it doesn't work :(
+if (!global.html5Build) {
+    condition3 = (view_current==7);
+} else {
+    condition3 = true;
+}
+
+//if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
+if (global.drawHUD && instance_exists(oPlayer1) && condition3)
 {
-    vxv=0 //view_xview[0];
-    vyv=0 //view_yview[0];
+    if (!global.html5Build) {
+        vxv = 0 //view_xview[0];
+        vyv = 0 //view_yview[0];
+    } else {
+        vxv = view_xview[0];
+        vyv = view_yview[0];    
+    }
     
     lifeX = vxv+8;
     bombX = vxv+64;
@@ -95,7 +109,7 @@ if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
         else if (oPlayer1.pickupItemType== "Shotgun") draw_sprite(sShotgunRight, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Bow") draw_sprite(sBowDisp, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Sceptre") draw_sprite(sSceptreRight, -1, vxv+8+8, vyv+24+8);
-        else if (oPlayer1.pickupItemType== global.Flare) draw_sprite(sFlare, -1, vxv+8+8, vyv+24+8);
+        else if (oPlayer1.pickupItemType== "Flare") draw_sprite(sFlare, -1, vxv+8+8, vyv+24+8);
         else if (oPlayer1.pickupItemType== "Key") draw_sprite(sKeyRight, -1, vxv+8+8, vyv+24+8);
     }
     

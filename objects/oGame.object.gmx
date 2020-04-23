@@ -221,8 +221,8 @@ if (instance_exists(oPlayer1))
         if (not oLevel.musicFade)
         {
             oLevel.musicFade = true;
-            global.message = global.AChillRunsUpYourSpine;
-            global.message2 = global.LetSGetOutOfHere;
+            global.message = tr("A CHILL RUNS UP YOUR SPINE...");
+            global.message2 = tr("LET'S GET OUT OF HERE!");
             global.messageTimer = 200;
         }
     }
@@ -343,7 +343,7 @@ if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perfor
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Check keyboard input in the menu
+            <string>///Check input in the menu
 
 //Pause
 if (keyboard_check_pressed(vk_escape) or
@@ -406,22 +406,17 @@ if (paused) {
                     break;
                 }
                 case 3: {
-                    global.fullscreen = !global.fullscreen;
-                    if (global.fullscreen) {
-                        window_set_fullscreen(true);
-
-                    } else {
-                        window_set_fullscreen(false);
-                    }
+                    menuToggleFullscreen();
                     break;
                 }
                 case 4: {
-                    instance_activate_all();
-                    scrChangeLanguage();
-                    instance_deactivate_all(true);
+                    menuLanguage();
                     break;
                 }
-                case 5: { game_end(); break; }
+                case 5: {
+                    menuQuit();
+                    break;
+                }
             }
         } else {
             switch (menuItemIndex) {
@@ -430,27 +425,47 @@ if (paused) {
                     break;
                 }
                 case 1: {
-                    global.fullscreen = !global.fullscreen;
-                    if (global.fullscreen) {
-                        window_set_fullscreen(true);
-
-                    } else {
-                        window_set_fullscreen(false);
-                    }
+                    menuToggleFullscreen();
                     break;
                 }
                 case 2: {
-                    instance_activate_all();
-                    scrChangeLanguage();
-                    instance_deactivate_all(true);
+                    menuLanguage();
                     break;
                 }
                 case 3: { scrDie(); break; }
-                case 4: { game_end(); break; }
+                case 4: {
+                    menuQuit();
+                    break;
+                }
             }
         }
+        configSave()
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///saveStats
+scrWriteStats();
 </string>
           </argument>
         </arguments>
@@ -473,19 +488,52 @@ if (paused) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw the HUD
-
-display_set_gui_size(global.display_w,global.display_h)
-scrDrawHUD()
-
-if (global.messageTimer &gt; 0) {   
-    scrDrawTextHCentered(global.message, 'small', c_white, 216);
-    if (not isRoom("rTutorial")) {
-        scrDrawTextHCentered(global.message2, 'small', c_yellow, 224);
+            <string>/// Pause menu
+if (paused)
+{   
+    if (global.mobileBuild) {
+        scrDrawTextHCentered(tr("PAUSED"), 'large', c_white, 112);
     } else {
-        scrDrawTextHCentered(global.message2, 'small', c_white, 224);
+        color0 = c_white;
+        color1 = c_white;
+        color2 = c_white;
+        color3 = c_white;
+        color4 = c_white;
+        color5 = c_white;
+        switch (menuItemIndex) {
+            case 0: { color0 = c_yellow; break; }
+            case 1: { color1 = c_yellow; break; }
+            case 2: { color2 = c_yellow; break; }
+            case 3: { color3 = c_yellow; break; }
+            case 4: { color4 = c_yellow; break; }
+            case 5: { color5 = c_yellow; break; }
+        }
+        if (global.fullscreen) {
+            strFullscreen = tr("ON");
+        } else {
+            strFullscreen = tr("OFF");
+        }
+        if (global.toggleRunEnabled) {
+            strToggleRunEnabled = tr("ON");
+        } else {
+            strToggleRunEnabled = tr("OFF");
+        }
+        strLocaleName = string_upper(global.localesMap[? global.locale]);
+        if (isRoom("rTitle")) {
+            scrDrawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 60);
+            scrDrawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 80);
+            scrDrawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 100);
+            scrDrawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 120);
+            scrDrawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 140);
+            scrDrawTextHCentered(tr('QUIT'), 'small', color5, 160);
+        } else {
+            scrDrawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 80);
+            scrDrawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 100);
+            scrDrawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 120);
+            scrDrawTextHCentered(tr('DIE!'), 'small', color3, 140);
+            scrDrawTextHCentered(tr('QUIT'), 'small', color4, 160);
+        }
     }
-    global.messageTimer -= 1;
 }
 </string>
           </argument>
@@ -532,51 +580,19 @@ if (global.mobileBuild == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pause menu
-if (paused)
-{   
-    if (global.mobileBuild) {
-        scrDrawTextHCentered(global.Paused, 'large', c_white, 112);
+            <string>///Draw the HUD
+
+display_set_gui_size(global.display_w,global.display_h);
+if (!global.html5Build) scrDrawHUD();
+
+if (global.messageTimer &gt; 0) {   
+    scrDrawTextHCentered(global.message, 'small', c_white, 216);
+    if (not isRoom("rTutorial")) {
+        scrDrawTextHCentered(global.message2, 'small', c_yellow, 224);
     } else {
-        color0 = c_white;
-        color1 = c_white;
-        color2 = c_white;
-        color3 = c_white;
-        color4 = c_white;
-        color5 = c_white;
-        switch (menuItemIndex) {
-            case 0: { color0 = c_yellow; break; }
-            case 1: { color1 = c_yellow; break; }
-            case 2: { color2 = c_yellow; break; }
-            case 3: { color3 = c_yellow; break; }
-            case 4: { color4 = c_yellow; break; }
-            case 5: { color5 = c_yellow; break; }
-        }
-        if (global.fullscreen) {
-            strFullscreen = "ON";
-        } else {
-            strFullscreen = "OFF";
-        }
-        if (global.toggleRunEnabled) {
-            strToggleRunEnabled = "ON";
-        } else {
-            strToggleRunEnabled = "OFF";
-        }
-        if (isRoom("rTitle")) {
-            scrDrawTextHCentered('KEYBOARD CONFIGURATION', 'small', color0, 60);
-            scrDrawTextHCentered('GAMEPAD CONFIGURATION', 'small', color1, 80);
-            scrDrawTextHCentered('TOGGLEABLE RUN BUTTON &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 100);
-            scrDrawTextHCentered('FULLSCREEN &lt;' + strFullscreen + '&gt;', 'small', color3, 120);
-            scrDrawTextHCentered('LANGUAGE &lt;' +  string_upper(global.lang) + '&gt;', 'small', color4, 140);
-            scrDrawTextHCentered('QUIT', 'small', color5, 160);
-        } else {
-            scrDrawTextHCentered('TOGGLEABLE RUN BUTTON &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 80);
-            scrDrawTextHCentered('FULLSCREEN &lt;' + strFullscreen + '&gt;', 'small', color1, 100);
-            scrDrawTextHCentered('LANGUAGE &lt;' +  string_upper(global.lang) + '&gt;', 'small', color2, 120);
-            scrDrawTextHCentered('DIE!', 'small', color3, 140);
-            scrDrawTextHCentered('QUIT', 'small', color4, 160);
-        }
+        scrDrawTextHCentered(global.message2, 'small', c_white, 224);
     }
+    global.messageTimer -= 1;
 }
 </string>
           </argument>
@@ -610,13 +626,13 @@ if (paused)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.GameOver);
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("GAME OVER"));
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, global.FinalScore);
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, tr("FINAL SCORE:"));
             }
             if (drawStatus &gt; 2)
             {
@@ -630,13 +646,13 @@ if (paused)
                 {
                     if (global.testLevel != "")
                     {
-                        if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ToEditLevel;
-                        else str = global.Press + scrGetKey(global.keyAttackVal) + global.ToEditLevel;
+                        if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" TO EDIT LEVEL.");
+                        else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" TO EDIT LEVEL.");
                     }
                     else
                     {
-                        if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ToLoadAnotherLevel;
-                        else str = global.Press + scrGetKey(global.keyAttackVal) + global.ToLoadAnotherLevel;
+                        if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
+                        else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
                     }
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
@@ -645,8 +661,8 @@ if (paused)
                 }
                 else
                 {
-                    if (global.gamepadOn) str = global.Press + scrGetJoy(global.joyAttackVal) + global.ForHighScores;
-                    else str = global.Press + scrGetKey(global.keyAttackVal) + global.ForHighScores;
+                    if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" FOR HIGH SCORES.");
+                    else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" FOR HIGH SCORES.");
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
@@ -660,14 +676,14 @@ if (paused)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                if (oSunRoom.highscore) str = global.YouSetANewRecord;
-                else str = global.BetterLuckNextTime;
+                if (oSunRoom.highscore) str = tr("YOU SET A NEW RECORD!");
+                else str = tr("BETTER LUCK NEXT TIME...");
                 strLen = string_length(str)*8;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);
@@ -682,14 +698,14 @@ if (paused)
                 {
                     draw_set_font(global.myFont);
                     draw_set_color(c_yellow);
-                    draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
+                    draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
                 }
                 if (drawStatus &gt; 1)
                 {
                     draw_set_font(global.myFontSmall);
                     draw_set_color(c_yellow);
-                    if (oMoonRoom.highscore) str = global.YouSetANewRecord;
-                    else str = global.BetterLuckNextTime;
+                    if (oMoonRoom.highscore) str = tr("YOU SET A NEW RECORD!");
+                    else str = tr("BETTER LUCK NEXT TIME...");
                     strLen = string_length(str)*8;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
@@ -703,14 +719,14 @@ if (paused)
             {
                 draw_set_font(global.myFont);
                 draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, global.Finished);
+                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
             }
             if (drawStatus &gt; 1)
             {
                 draw_set_font(global.myFontSmall);
                 draw_set_color(c_yellow);
-                if (oStarsRoom.highscore) str = global.YouSetANewRecord;
-                else str = global.BetterLuckNextTime;
+                if (oStarsRoom.highscore) str = tr("YOU SET A NEW RECORD!");
+                else str = tr("BETTER LUCK NEXT TIME...");
                 strLen = string_length(str)*8;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);
@@ -857,6 +873,28 @@ if (false and room == rLevel and instance_exists(oXMarket))
 draw_text(oPlayer1.x-24, oPlayer1.y-48, string(oPlayer1.x-oXMarket.x));
 draw_text(oPlayer1.x, oPlayer1.y-48, string(oPlayer1.y-oXMarket.y));
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Draw HUD (HTML5)
+if (global.html5Build) scrDrawHUD();
 </string>
           </argument>
         </arguments>
