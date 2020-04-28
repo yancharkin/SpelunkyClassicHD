@@ -38,11 +38,13 @@ with oBrick
         sprite_index = sCaveUp;
         if (global.graphicsHigh)
         {
-            // DFK used to be y-16, not y-4, on these next two lines
-            //if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-4, 3);
-            //else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-4, 3);
-            if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-16, 3);
-            else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-16, 3);
+            if (global.html5Build) {
+                if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-5, 3);
+                else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-5, 3);
+            } else {
+                if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-16, 3);
+                else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-16, 3);
+            }
         }
         // instance_create(x, y-16, oCaveTop);
     }
@@ -86,7 +88,7 @@ with oLush
     {
         sprite_index = sLushUp;
         if (global.graphicsHigh)
-        {
+        {   
             if (rand(1,8) == 1) tile_add2(bgCaveTop2, 32, 0, 16, 16, x, y-16, 3);
             else if (rand(1,3) < 3) tile_add2(bgCaveTop2, 0, 0, 16, 16, x, y-16, 3);
             else tile_add2(bgCaveTop2, 16, 0, 16, 16, x, y-16, 3);
@@ -100,8 +102,13 @@ with oLush
         
         if (not collision_point(x, y+16, oSolid, 0, 0) and global.graphicsHigh)
         {
-            if (rand(1,12) == 1) tile_add2(bgCaveTop2, 48, 0, 16, 16, x, y+16, 3);
-            else if (rand(1,12) == 1) tile_add2(bgCaveTop2, 64, 0, 16, 16, x, y+16, 3);
+            if (global.html5Build) {
+                if (rand(1,12) == 1) tile_add2(bgCaveTop2, 53, 0, 16, 16, x, y+16, 3);
+                else if (rand(1,12) == 1) tile_add2(bgCaveTop2_2, 0, 0, 16, 16, x, y+16, 3);
+            } else {
+                if (rand(1,12) == 1) tile_add2(bgCaveTop2, 48, 0, 16, 16, x, y+16, 3);
+                else if (rand(1,12) == 1) tile_add2(bgCaveTop2, 64, 0, 16, 16, x, y+16, 3);
+            }
         }
         //instance_create(x, y+16, oLushBottom);
     }
@@ -127,8 +134,13 @@ with oDark
         {
             //if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y/*-16*/, 3);
             //else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y/*-16*/, 3);
-            if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-16, 3);
-            else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-16, 3);
+            if (global.html5Build) {
+                if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-5, 3);
+                else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-5, 3);
+            } else {
+                if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-16, 3);
+                else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-16, 3);
+            }
         }
     }
 
@@ -217,8 +229,13 @@ with oTemple
         sprite_index = sGTempleUp;
         if (global.graphicsHigh)
         {
-            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            if (global.html5Build) {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
+            } else {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            }
         }
         if (not left and not right)
         {
@@ -252,8 +269,13 @@ with oTemple
         sprite_index = sTempleUp;
         if (global.graphicsHigh)
         {
-            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            if (global.html5Build) {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
+            } else {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            }
         }
         if (not left and not right)
         {
@@ -301,8 +323,13 @@ with oTempleFake
         sprite_index = sGTempleUp;
         if (global.graphicsHigh)
         {
-            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            if (global.html5Build) {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
+            } else {
+                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
+            }
         }
         if (not left and not right)
         {
