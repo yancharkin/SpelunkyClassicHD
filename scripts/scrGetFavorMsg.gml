@@ -21,30 +21,30 @@
     
 ***********************************************************************************/
 
-if (global.favor <= -8) global.message2 = "SHE SEEMS VERY ANGRY WITH YOU!";
-else if (global.favor < 0) global.message2 = "SHE SEEMS ANGRY WITH YOU.";
-else if (global.favor == 0) global.message2 = "SHE HAS FORGIVEN YOU!";
+if (global.favor <= -8) global.message2 = tr("SHE SEEMS VERY ANGRY WITH YOU!");
+else if (global.favor < 0) global.message2 = tr("SHE SEEMS ANGRY WITH YOU.");
+else if (global.favor == 0) global.message2 = tr("SHE HAS FORGIVEN YOU!");
 else if (global.favor >= 32)
 {
     if (global.kaliGift >= 3 and global.favor >= 32 + (global.kaliGift-2)*16)
     {
-        global.message2 = "YOU FEEL INVIGORATED!";
+        global.message2 = tr("YOU FEEL INVIGORATED!");
         global.kaliGift += 1;
         global.plife += rand(4,8);
     }
     else if (global.kaliGift >= 3)
     {
-        global.message2 = "SHE SEEMS ECSTATIC WITH YOU!";
+        global.message2 = tr("SHE SEEMS ECSTATIC WITH YOU!");
     }
     else if (global.bombs < 80)
     {
-        global.message2 = "YOUR SATCHEL FEELS VERY FULL NOW!";
+        global.message2 = tr("YOUR SATCHEL FEELS VERY FULL NOW!");
         global.kaliGift = 3;
         global.bombs = 99;
     }
     else
     {
-        global.message2 = "YOU FEEL INVIGORATED!";
+        global.message2 = tr("YOU FEEL INVIGORATED!");
         global.kaliGift += 1;
         global.plife += rand(4,8);
     }
@@ -53,11 +53,11 @@ else if (global.favor >= 16)
 {
     if (global.kaliGift >= 2)
     {
-        global.message2 = "SHE SEEMS VERY HAPPY WITH YOU!";
+        global.message2 = tr("SHE SEEMS VERY HAPPY WITH YOU!");
     }
     else
     {
-        global.message2 = "SHE BESTOWS A GIFT UPON YOU!";
+        global.message2 = tr("SHE BESTOWS A GIFT UPON YOU!");
         global.kaliGift = 2;
         obj = instance_create(oSacAltarRight.x, y-8, oKapala);
         obj.cost = 0;
@@ -68,11 +68,11 @@ else if (global.favor >= 8)
 {
     if (global.kaliGift >= 1)
     {
-        global.message2 = "SHE SEEMS HAPPY WITH YOU.";
+        global.message2 = tr("SHE SEEMS HAPPY WITH YOU.");
     }
     else
     {
-        global.message2 = "SHE BESTOWS A GIFT UPON YOU!";
+        global.message2 = tr("SHE BESTOWS A GIFT UPON YOU!");
         global.kaliGift = 1;
         if (instance_exists(oSacAltarRight))
         {
@@ -108,4 +108,4 @@ else if (global.favor >= 8)
         }
     }
 }
-else if (global.favor > 0) global.message2 = "SHE SEEMS PLEASED WITH YOU.";
+else if (global.favor > 0) global.message2 = tr("SHE SEEMS PLEASED WITH YOU.");

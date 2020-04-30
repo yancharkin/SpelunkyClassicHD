@@ -618,7 +618,7 @@ if (instance_exists(oTunnelMan))
         if (isRoom("rTransition1x") or isRoom("rTransition3x")) draw_text(n, 216, tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."));
         else draw_text(n, 216, tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT."));
         draw_set_color(c_yellow);
-        draw_text(n, 224, "DONATE: " + string(oTunnelMan.donate));
+        draw_text(n, 224, tr("DONATE: ") + string(oTunnelMan.donate));
         draw_set_color(c_white);
     }
     else if (person.talk == 3)
