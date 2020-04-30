@@ -197,7 +197,7 @@ if (not global.madeMarketEntrance)
 global.temp2 = global.gameStart;
 if (not isRoom("rTutorial") and not isRoom("rLoadLevel")) scrEntityGen();
 
-if (instance_exists(oEntrance) and not global.customLevel)
+if (instance_exists(oEntrance) and not global.customLevel and instance_exists(oPlayer1))
 {
     oPlayer1.x = oEntrance.x+8;
     oPlayer1.y = oEntrance.y+8;

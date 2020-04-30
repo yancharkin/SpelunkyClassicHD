@@ -7,15 +7,15 @@ screenCenter = ceil(global.display_w / 2);
 
 if (drawStatus > 0)
 {
-    scrDrawTextHCentered(tr("YOU MADE IT!"), "large", c_yellow, -global.room_offset, 32);
+    drawTextHCentered(tr("YOU MADE IT!"), "large", c_yellow, -global.room_offset, 32);
 }
 if (drawStatus > 1)
 {
-    scrDrawTextHCentered(tr("FINAL SCORE:"), "small", c_yellow, -global.room_offset, 56);
+    drawTextHCentered(tr("FINAL SCORE:"), "small", c_yellow, -global.room_offset, 56);
 }
 if (drawStatus > 2)
 {
-    scrDrawTextHCentered("$" + string(moneyCount), "large", c_white, -global.room_offset, 72);
+    drawTextHCentered("$" + string(moneyCount), "large", c_white, -global.room_offset, 72);
 }
 if (drawStatus > 4)
 {
@@ -55,5 +55,5 @@ if (fadeOut)
 
 if (drawStatus == 8)
 {
-    scrDrawTextHCentered(tr("YOU SHALL BE REMEMBERED AS A HERO."), "small", c_white, -global.room_offset, 116);;
+    drawTextHCentered(tr("YOU SHALL BE REMEMBERED AS A HERO."), "small", c_white, -global.room_offset, 116);;
 }

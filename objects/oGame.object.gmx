@@ -357,6 +357,10 @@ if (keyboard_check_pressed(vk_escape) or
             paused = false;
             instance_activate_all();
             //audio_resume_all();
+            // Fix player falling through floor in html5 version
+            if (global.html5Build and instance_exists(oPlayer1)) {
+                oPlayer1.y -= 1;
+            }
         }
     }
 }
@@ -414,7 +418,7 @@ if (paused) {
                     break;
                 }
                 case 5: {
-                    menuQuit();
+                    quitGame();
                     break;
                 }
             }
@@ -434,7 +438,7 @@ if (paused) {
                 }
                 case 3: { scrDie(); break; }
                 case 4: {
-                    menuQuit();
+                    quitGame();
                     break;
                 }
             }
@@ -492,7 +496,7 @@ scrWriteStats();
 if (paused)
 {   
     if (global.mobileBuild) {
-        scrDrawTextHCentered(tr("PAUSED"), 'large', c_white, 112);
+        drawTextHCentered(tr("PAUSED"), 'large', c_white, 0, 112);
     } else {
         color0 = c_white;
         color1 = c_white;
@@ -520,18 +524,18 @@ if (paused)
         }
         strLocaleName = string_upper(global.localesMap[? global.locale]);
         if (isRoom("rTitle")) {
-            scrDrawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 60);
-            scrDrawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 80);
-            scrDrawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 100);
-            scrDrawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 120);
-            scrDrawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 140);
-            scrDrawTextHCentered(tr('QUIT'), 'small', color5, 160);
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
+            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
+            drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
         } else {
-            scrDrawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 80);
-            scrDrawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 100);
-            scrDrawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 120);
-            scrDrawTextHCentered(tr('DIE!'), 'small', color3, 140);
-            scrDrawTextHCentered(tr('QUIT'), 'small', color4, 160);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
+            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
+            drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
+            drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
         }
     }
 }
@@ -586,11 +590,11 @@ display_set_gui_size(global.display_w,global.display_h);
 if (!global.html5Build) scrDrawHUD();
 
 if (global.messageTimer &gt; 0) {   
-    scrDrawTextHCentered(global.message, 'small', c_white, 216);
+    drawTextHCentered(global.message, 'small', c_white, 0, 216);
     if (not isRoom("rTutorial")) {
-        scrDrawTextHCentered(global.message2, 'small', c_yellow, 224);
+        drawTextHCentered(global.message2, 'small', c_yellow, 0, 224);
     } else {
-        scrDrawTextHCentered(global.message2, 'small', c_white, 224);
+        drawTextHCentered(global.message2, 'small', c_white, 0, 224);
     }
     global.messageTimer -= 1;
 }

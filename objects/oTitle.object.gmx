@@ -377,7 +377,7 @@ if (instance_exists(oPlayer1))
     }
     
     if (player.x &lt; 256 and view_xview[0] &lt;= 1) {
-        scrDrawTextHCentered(tr("WELCOME TO THE SHORTCUT HOUSE!"), 'small', c_white, 0, 224);
+        drawTextHCentered(tr("WELCOME TO THE SHORTCUT HOUSE!"), 'small', c_white, 0, 224);
     }
 }
 </string>

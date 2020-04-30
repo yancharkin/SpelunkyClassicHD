@@ -85,13 +85,13 @@ with(oScreen)
             if (not global.hasAnkh) stopAllMusic();
         }
     }
-    
+    /*
     else if (checkRopePressed())
     {
         if (paused)
             game_end2();
     }
-    /*else if (checkStartPressed())
+    else if (checkStartPressed())
     {
         if (not paused and canPause)
         {

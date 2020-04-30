@@ -1,9 +1,10 @@
-///scrDrawTextHCentered(text, fontSize, color, posY)
+///drawTextHCentered(text, fontSize, color, offsetX, posY)
 
 var text = argument[0];
 var fontSize = argument[1];
 var color = argument[2];
-var posY = argument[3];
+var offsetX = argument[3];
+var posY = argument[4];
 
 if (fontSize = 'small') {
     strLen = string_length(text)*8;
@@ -16,4 +17,4 @@ if (fontSize = 'small') {
 
 posX = ceil((global.display_w - strLen) / 2);
 draw_set_color(color);
-draw_text(posX, posY, text);
+draw_text(posX + offsetX, posY, text);

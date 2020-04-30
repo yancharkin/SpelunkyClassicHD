@@ -23,7 +23,6 @@
 
 initMusic()
 
-//global.mobileBuild = false;
 global.mobileBuild = (os_type == os_android) or (os_type == os_ios);
 global.touchControlsVisible = 1;
 global.html5Build = !(os_browser == browser_not_a_browser);

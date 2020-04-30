@@ -295,7 +295,7 @@ if (timer &gt;= 0) draw_text(view_xview[0]+64+16, view_yview[0]+8, timer);
 else draw_text(view_xview[0]+64+16, view_yview[0]+8, "0");
 if (drawStatus &lt; 3)
 {
-    scrDrawTextHCentered( tr("ARCHERY CHALLENGE BEGINS IN ") + string(3-drawStatus) + "...", "small", c_yellow, -global.room_offset, 216);;
+    drawTextHCentered(tr("ARCHERY CHALLENGE BEGINS IN ") + string(3-drawStatus) + "...", "small", c_yellow, -global.room_offset, 216);
 }
 </string>
           </argument>

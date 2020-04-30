@@ -297,7 +297,7 @@ draw_sprite(sDamselIcon, -1, view_xview[0]+64, view_yview[0]+8);
 draw_text(view_xview[0]+64+16, view_yview[0]+8, points);
 if (drawStatus &lt; 3)
 {
-    scrDrawTextHCentered( tr("DAMSEL CHALLENGE BEGINS IN ") + string(3-drawStatus) + "...", "small", c_yellow, -global.room_offset, 216);;
+    drawTextHCentered(tr("DAMSEL CHALLENGE BEGINS IN ") + string(3-drawStatus) + "...", "small", c_yellow, -global.room_offset, 216);
 }
 </string>
           </argument>

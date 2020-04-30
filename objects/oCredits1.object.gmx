@@ -362,9 +362,10 @@ else if (fadeOut)
     if (fadeLevel &lt; 1) fadeLevel += 0.1;
     else
     {
-        game_end();
+        quitGame();
     }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
