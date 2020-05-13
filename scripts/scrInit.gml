@@ -21,19 +21,17 @@
 
 ***********************************************************************************/
 
-initMusic()
-
-global.mobileBuild = (os_type == os_android) or (os_type == os_ios);
-global.touchControlsVisible = 1;
-global.html5Build = !(os_browser == browser_not_a_browser);
+initMusic();
+getPlatform();
 
 globalvar gamepad;
 gamepad = instance_create(0, 0, oGamepad);
-global.toggleRun = false;
 window_set_cursor(cr_none);
 startGame = false;
 
 // Defaults
+global.toggleRun = false;
+global.touchControlsVisible = 1;
 global.firstLaunch = true;
 global.locale = "en";
 global.fullscreen = false;
@@ -140,5 +138,4 @@ SS_SetSoundVol(global.sndTFall, 2000 + 8000 * (global.soundVol/18));
 configLoad();
 getLocales();
 setLocale();
-global.firstLaunch = false;
-configSave();
+loadLocalizedSprites();

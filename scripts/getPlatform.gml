@@ -1,0 +1,8 @@
+///getPlatform
+
+global.html5Build = !(os_browser == browser_not_a_browser);
+global.mobileBuild = (os_type == os_android) or (os_type == os_ios);
+
+if (global.html5Build) {
+    global.electronBuild = isElectron();
+}

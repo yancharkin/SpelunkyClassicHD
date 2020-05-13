@@ -1,8 +1,12 @@
 ///setLocale
 
-var osLocale = os_get_language();
-if (ds_map_exists(global.localesMap, osLocale) and global.firstLaunch) {
-    global.locale = osLocale;
+if (global.firstLaunch) {
+    var osLocale = os_get_language();
+    if (ds_map_exists(global.localesMap, osLocale)) {
+        global.locale = osLocale;
+    }
+    global.firstLaunch = false;
+    configSave();
 }
 
 var localeDir = working_directory + "locale/" + global.locale;
@@ -20,5 +24,3 @@ global.myFontSmall = font_add_sprite_ext(FontSmall_lang, charset, false, 0);
 //loadText
 var localizedTextFile = localeDir + "/text.json";
 global.localizedTextMap = json2dsmap(localizedTextFile);
-
-loadLocalizedSprites();

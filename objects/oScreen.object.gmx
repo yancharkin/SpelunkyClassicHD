@@ -161,9 +161,11 @@ if (global.fullscreen){
     if (!global.html5Build) {
         window_set_size(screen_w, screen_h);
         window_set_fullscreen(true);
-    } else {   
-        newSize = electronSetFullscreen(true);
-        window_set_size(newSize[0], newSize[1]);
+    } else {
+        if (global.electronBuild) {
+            newSize = electronSetFullscreen(true);
+            window_set_size(newSize[0], newSize[1]);
+        }
     }
 }
 
