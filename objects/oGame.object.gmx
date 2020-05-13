@@ -34,6 +34,8 @@ global.ghostExists = false;
 
 paused = false;
 menuItemIndex = 0;
+localeChanged = false;
+changeSprites = false;
 
 damsel = false;
 idol = false;
@@ -450,6 +452,37 @@ if (paused) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change locale (HTML5 only)
+if (global.html5Build) {
+    if (localeChanged) {
+        setLocale();
+        localeChanged = false;
+    }
+    if (!paused) and (changeSprites) {
+        loadLocalizedSprites();
+        changeSprites = false;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="7" enumb="3">
       <action>
@@ -493,50 +526,45 @@ scrWriteStats();
           <argument>
             <kind>1</kind>
             <string>/// Pause menu
-if (paused)
-{   
-    if (global.mobileBuild) {
-        drawTextHCentered(tr("PAUSED"), 'large', c_white, 0, 112);
+if (paused) {
+    color0 = c_white;
+    color1 = c_white;
+    color2 = c_white;
+    color3 = c_white;
+    color4 = c_white;
+    color5 = c_white;
+    switch (menuItemIndex) {
+        case 0: { color0 = c_yellow; break; }
+        case 1: { color1 = c_yellow; break; }
+        case 2: { color2 = c_yellow; break; }
+        case 3: { color3 = c_yellow; break; }
+        case 4: { color4 = c_yellow; break; }
+        case 5: { color5 = c_yellow; break; }
+    }
+    if (global.fullscreen) {
+        strFullscreen = tr("ON");
     } else {
-        color0 = c_white;
-        color1 = c_white;
-        color2 = c_white;
-        color3 = c_white;
-        color4 = c_white;
-        color5 = c_white;
-        switch (menuItemIndex) {
-            case 0: { color0 = c_yellow; break; }
-            case 1: { color1 = c_yellow; break; }
-            case 2: { color2 = c_yellow; break; }
-            case 3: { color3 = c_yellow; break; }
-            case 4: { color4 = c_yellow; break; }
-            case 5: { color5 = c_yellow; break; }
-        }
-        if (global.fullscreen) {
-            strFullscreen = tr("ON");
-        } else {
-            strFullscreen = tr("OFF");
-        }
-        if (global.toggleRunEnabled) {
-            strToggleRunEnabled = tr("ON");
-        } else {
-            strToggleRunEnabled = tr("OFF");
-        }
-        strLocaleName = string_upper(global.localesMap[? global.locale]);
-        if (isRoom("rTitle")) {
-            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
-            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
-            drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
-        } else {
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
-            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
-            drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
-            drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
-        }
+        strFullscreen = tr("OFF");
+    }
+    if (global.toggleRunEnabled) {
+        strToggleRunEnabled = tr("ON");
+    } else {
+        strToggleRunEnabled = tr("OFF");
+    }
+    strLocaleName = string_upper(global.localesMap[? global.locale]);
+    if (isRoom("rTitle")) {
+        drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
+        drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
+        drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
+        drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
+        drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
+        drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
+    } else {
+        drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
+        drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
+        drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
+        drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
+        drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
     }
 }
 </string>

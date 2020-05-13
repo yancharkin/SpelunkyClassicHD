@@ -1,4 +1,4 @@
-///changeLanguage
+///changeLocale
 
 var newLocaleIndex = 0;
 var localesN = array_length_1d(global.localesArray);
@@ -14,4 +14,3 @@ for (var i = 0; i < localesN; i++;) {
 global.locale = global.localesArray[newLocaleIndex];
 global.message = '';
 global.message2 = '';
-setLocale();
