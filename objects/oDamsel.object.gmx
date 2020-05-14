@@ -473,10 +473,10 @@ if (status == THROWN or status == DEAD)
             instance_create(x, y, oFlame);
             playSound(global.sndSmallExplode);
             scrCreateBlood(x, y, 3);
-            global.message = "KALI ACCEPTS YOUR SACRIFICE!";
+            global.message = tr("KALI ACCEPTS YOUR SACRIFICE!");
             if (global.favor &lt;= -8)
             {
-                global.message = "KALI DEVOURS YOUR SACRIFICE!";
+                global.message = tr("KALI DEVOURS YOUR SACRIFICE!");
             }
             else if (global.favor &lt; 0)
             {
