@@ -1,4 +1,7 @@
-if (gamepad.flarePressed)
-    return gamepad.flarePressed;
-else
-    return (keyboard_check_pressed(global.keyFlareVal));
+if (gamepad.flarePressed or 
+        gamepad_button_check_pressed(global.joyid, global.joyFlareVal) or
+        keyboard_check_pressed(global.keyFlareVal)) {
+    return true;
+} else {
+    return false;
+}

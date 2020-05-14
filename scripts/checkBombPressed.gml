@@ -1,4 +1,7 @@
-if (gamepad.bombPressed)
-    return gamepad.bombPressed;
-else
-    return (keyboard_check_pressed(global.keyBombVal));
+if (gamepad.bombPressed or 
+        gamepad_button_check_pressed(global.joyid, global.joyBombVal) or
+        keyboard_check_pressed(global.keyBombVal)) {
+    return true;
+} else {
+    return false;
+}

@@ -34,8 +34,14 @@ global.ghostExists = false;
 
 paused = false;
 menuItemIndex = 0;
+//for HTML5
 localeChanged = false;
 changeSprites = false;
+//left analog stick in the menu
+analogLDownPreviousState = false;
+analogLUpPreviousState = false;
+analogLDownPressed = false;
+analogLUpPressed = false;
 
 damsel = false;
 idol = false;
@@ -56,6 +62,31 @@ time = 1;
 // sound_loop(sndMusicTest);
 
 if (global.gameStart) scrInitLevel();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///left analog stick in the menu
+analogLDownPressed = false;
+analogLUpPressed = false;
 </string>
           </argument>
         </arguments>
@@ -348,6 +379,7 @@ if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perfor
             <string>///Check input in the menu
 
 //Pause
+
 if (keyboard_check_pressed(vk_escape) or
         gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
@@ -368,31 +400,45 @@ if (keyboard_check_pressed(vk_escape) or
 }
 
 if (paused) {
+    /*
     if (keyboard_check_pressed(global.keyDownVal) or
             gamepad_button_check_pressed(global.joyid, gp_padd) or
+            (gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6) or
             keyboard_check_pressed(vk_down)) {
+    */
+    if (checkDownPressed()) {
         menuItemIndex += 1;
         if (isRoom("rTitle")) {
             if (menuItemIndex = 6) menuItemIndex = 0;
         } else { 
             if (menuItemIndex = 5) menuItemIndex = 0;
         }
+    /*
     } else if (keyboard_check_pressed(global.keyUpVal) or
             gamepad_button_check_pressed(global.joyid, gp_padu) or
+            (gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6) or
             keyboard_check_pressed(vk_up)) {
+    */
+    } else if (checkUpPressed()) {
         menuItemIndex -= 1;
         if (isRoom("rTitle")) {
             if (menuItemIndex = -1) menuItemIndex = 5;
         } else {
             if (menuItemIndex = -1) menuItemIndex = 4;
         }
+    } else if (checkJumpPressed()) {
+    /*
     } else if (keyboard_check_pressed(global.keyJumpVal) or
             gamepad_button_check_pressed(global.joyid, global.joyJumpVal)) {
+    */
         paused = false;
         instance_activate_all();
+    } else if (checkAttackPressed()) or (keyboard_check_pressed(vk_enter)) {
+    /*
     } else if (keyboard_check_pressed(global.keyAttackVal) or
             gamepad_button_check_pressed(global.joyid, global.joyAttackVal) or
             keyboard_check_pressed(vk_enter)) {
+    */
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {
@@ -468,7 +514,7 @@ if (paused) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Change locale (HTML5 only)
+            <string>///Change locale (HTML5)
 if (global.html5Build) {
     if (localeChanged) {
         setLocale();
@@ -478,6 +524,45 @@ if (global.html5Build) {
         loadLocalizedSprites();
         changeSprites = false;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///left analog stick in the menu
+if (gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6) {
+    if (analogLDownPreviousState == false) {
+        analogLDownPressed = true;
+        analogLDownPreviousState = true;
+        alarm[3] = 2;
+    }
+} else {
+    analogLDownPreviousState = false;
+}
+if (gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6) {
+    if (analogLUpPreviousState == false) {
+        analogLUpPressed = true;
+        analogLUpPreviousState = true;
+        alarm[3] = 2;
+    }
+} else {
+    analogLUpPreviousState = false;
 }
 </string>
           </argument>
@@ -876,7 +961,7 @@ if (false and instance_exists(oPlayer1))
         <arguments>
           <argument>
             <kind>13</kind>
-            <string>65535</string>
+            <string>-100</string>
           </argument>
         </arguments>
       </action>
