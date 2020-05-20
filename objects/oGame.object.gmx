@@ -37,11 +37,39 @@ menuItemIndex = 0;
 //for HTML5
 localeChanged = false;
 changeSprites = false;
-//left analog stick in the menu
-analogLDownPreviousState = false;
-analogLUpPreviousState = false;
-analogLDownPressed = false;
-analogLUpPressed = false;
+
+//Left analog stick in the menu
+global.analogLDownPreviousState = false;
+global.analogLUpPreviousState = false;
+global.analogLDownPressed = false;
+global.analogLUpPressed = false;
+
+instance_create(0, 0, oHtml5Gamepad);
+//Gamepad in HTML5
+global.bStartPressed = false;
+global.bStartPreviousState = false;
+global.bJumpPressed = false;
+global.bJumpPressedPreviousState = false;
+global.bJumpReleased = false;
+global.bJumpReleasedPreviousState = false;
+global.bAttackPressed = false;
+global.bAttackPressedPreviousState = false;
+global.bAttackReleased = false;
+global.bAttackReleasedPreviousState = false;
+/*
+global.bItemPressed = false;
+global.bItemPreviousState = false;
+global.bRunPressed = false;
+global.bRunPreviousState = false;
+global.bBombPressed = false;
+global.bBombPreviousState = false;
+global.bRopePressed = false;
+global.bRopePreviousState = false;
+global.bFlarePressed = false;
+global.bFlarePreviousState = false;
+global.bPayPressed = false;
+global.bPayPreviousState = false;
+*/
 
 damsel = false;
 idol = false;
@@ -67,6 +95,43 @@ if (global.gameStart) scrInitLevel();
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gamepad in HTML5
+global.bStartPressed = false;
+global.bJumpPressed = false;
+global.bJumpReleased = false;
+global.bAttackPressed = false;
+global.bAttackReleased = false;
+/*
+global.bItemPressed = false;
+global.bRunPressed = false;
+global.bBombPressed = false;
+global.bRopePressed = false;
+global.bFlarePressed = false;
+global.bPayPressed = false;
+global.bBombPressed = false;
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -84,9 +149,9 @@ if (global.gameStart) scrInitLevel();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///left analog stick in the menu
-analogLDownPressed = false;
-analogLUpPressed = false;
+            <string>///Left analog stick in the menu
+global.analogLDownPressed = false;
+global.analogLUpPressed = false;
 </string>
           </argument>
         </arguments>
@@ -376,21 +441,190 @@ if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perfor
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Gamepad in HTML5
+
+if (global.html5Build) {
+    //Start
+    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
+        if (global.bStartPreviousState == false) {
+            global.bStartPressed = true;
+            global.bStartPreviousState = true;
+        }
+    } else {
+        global.bStartPreviousState = false;
+    }
+    //Jump
+    if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
+        global.bJumpReleasedPreviousState = false;
+        if (global.bJumpPressedPreviousState == false) {
+            global.bJumpPressed = true;
+            global.bJumpPressedPreviousState = true;
+        }
+    } else {
+        global.bJumpPressedPreviousState = false;
+        if (global.bJumpReleasedPreviousState == false) {
+            global.bJumpReleased = true;
+            global.bJumpReleasedPreviousState = true;
+        }
+    }
+    //Attack
+    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
+        global.bAttackReleasedPreviousState = false;
+        if (global.bAttackPressedPreviousState == false) {
+            global.bAttackPressed = true;
+            global.bAttackPressedPreviousState = true;
+        }
+    } else {
+        global.bAttackPressedPreviousState = false;
+        if (global.bAttackReleasedPreviousState == false) {
+            global.bAttackReleased = true;
+            global.bAttackReleasedPreviousState = true;
+        }
+    }
+    /*
+    //Item
+    if (html5_gamepad_button_check(global.joyid, global.joyItemVal)) {
+        if (global.bItemPreviousState == false) {
+            global.bItemPressed = true;
+            global.bItemPreviousState = true;
+        }
+    } else {
+        global.bItemPreviousState = false;
+    }
+    //Bomb
+    if (html5_gamepad_button_check(global.joyid, global.joyBombVal)) {
+        if (global.bBombPreviousState == false) {
+            global.bBombPressed = true;
+            global.bBombPreviousState = true;
+        }
+    } else {
+        global.bBombPreviousState = false;
+    }
+    //Run
+    if (html5_gamepad_button_check(global.joyid, global.joyRunVal)) {
+        if (global.bRunPreviousState == false) {
+            global.bRunPressed = true;
+            global.bRunPreviousState = true;
+        }
+    } else {
+        global.bRunPreviousState = false;
+    }
+    //Rope
+    if (html5_gamepad_button_check(global.joyid, global.joyRopeVal)) {
+        if (global.bRopePreviousState == false) {
+            global.bRopePressed = true;
+            global.bRopePreviousState = true;
+        }
+    } else {
+        global.bRopePreviousState = false;
+    }
+    //Flare
+    if (html5_gamepad_button_check(global.joyid, global.joyFlareVal)) {
+        if (global.bFlarePreviousState == false) {
+            global.bFlarePressed = true;
+            global.bFlarePreviousState = true;
+        }
+    } else {
+        global.bFlarePreviousState = false;
+    }
+    //Pay
+    if (html5_gamepad_button_check(global.joyid, global.joyPayVal)) {
+        if (global.bPayPreviousState == false) {
+            global.bPayPressed = true;
+            global.bPayPreviousState = true;
+        }
+    } else {
+        global.bPayPreviousState = false;
+    }
+    */
+    alarm[4] = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Left analog stick and dpad in the menu
+
+if (!global.html5Build) {
+    var downPressed = gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6;
+    var upPressed = gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6;
+} else {
+    var downPressed = ((html5_gamepad_axis_value(global.joyid, 1) &gt; 0.6) or
+            (html5_gamepad_axis_value(global.joyid, 5) &gt; 0.6));
+    var upPressed = (html5_gamepad_axis_value(global.joyid, 1) &lt; -0.6 or
+            (html5_gamepad_axis_value(global.joyid, 5) &lt; -0.6));
+}
+
+if (downPressed) {
+    if (global.analogLDownPreviousState == false) {
+        global.analogLDownPressed = true;
+        global.analogLDownPreviousState = true;
+    }
+} else {
+    global.analogLDownPreviousState = false;
+}
+if (upPressed) {
+    if (global.analogLUpPreviousState == false) {
+        global.analogLUpPressed = true;
+        global.analogLUpPreviousState = true;
+    }
+} else {
+    global.analogLUpPreviousState = false;
+}
+alarm[3] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Check input in the menu
 
 //Pause
 
 if (keyboard_check_pressed(vk_escape) or
+        global.bStartPressed or
         gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
         if (not paused) {
             instance_deactivate_all(true);
-            //audio_pause_all();
+            audio_pause_all();
             paused = true;
         } else {
             paused = false;
             instance_activate_all();
-            //audio_resume_all();
+            audio_resume_all();
+
             // Fix player falling through floor in html5 version
             if (global.html5Build and instance_exists(oPlayer1)) {
                 oPlayer1.y -= 1;
@@ -400,93 +634,151 @@ if (keyboard_check_pressed(vk_escape) or
 }
 
 if (paused) {
-    /*
-    if (keyboard_check_pressed(global.keyDownVal) or
-            gamepad_button_check_pressed(global.joyid, gp_padd) or
-            (gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6) or
-            keyboard_check_pressed(vk_down)) {
-    */
+
+    if (global.mobileBuild) {
+        var maxIndexTitle = 2;
+        var maxIndexGame = 2;
+    } else {
+        var maxIndexGame = 4;
+        if (global.electronBuild or global.browserBuild) {
+            var maxIndexTitle = 6;
+        } else {
+            var maxIndexTitle = 5;
+        }
+    }
+
     if (checkDownPressed()) {
         menuItemIndex += 1;
         if (isRoom("rTitle")) {
-            if (menuItemIndex = 6) menuItemIndex = 0;
+            if (menuItemIndex &gt; maxIndexTitle) menuItemIndex = 0;
         } else { 
-            if (menuItemIndex = 5) menuItemIndex = 0;
+            if (menuItemIndex &gt; maxIndexGame) menuItemIndex = 0;
         }
-    /*
-    } else if (keyboard_check_pressed(global.keyUpVal) or
-            gamepad_button_check_pressed(global.joyid, gp_padu) or
-            (gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6) or
-            keyboard_check_pressed(vk_up)) {
-    */
     } else if (checkUpPressed()) {
         menuItemIndex -= 1;
         if (isRoom("rTitle")) {
-            if (menuItemIndex = -1) menuItemIndex = 5;
+            if (menuItemIndex &lt; 0) menuItemIndex = maxIndexTitle;
         } else {
-            if (menuItemIndex = -1) menuItemIndex = 4;
+            if (menuItemIndex &lt; 0) menuItemIndex = maxIndexGame;
         }
     } else if (checkJumpPressed()) {
-    /*
-    } else if (keyboard_check_pressed(global.keyJumpVal) or
-            gamepad_button_check_pressed(global.joyid, global.joyJumpVal)) {
-    */
         paused = false;
         instance_activate_all();
     } else if (checkAttackPressed()) or (keyboard_check_pressed(vk_enter)) {
-    /*
-    } else if (keyboard_check_pressed(global.keyAttackVal) or
-            gamepad_button_check_pressed(global.joyid, global.joyAttackVal) or
-            keyboard_check_pressed(vk_enter)) {
-    */
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {
-                    paused = false;
-                    instance_activate_all();
-                    room_goto(rKeyConfig);
+                    if (!global.mobileBuild) {
+                        paused = false;
+                        instance_activate_all();
+                        room_goto(rKeyConfig);
+                    } else {
+                        paused = false;
+                        instance_activate_all();
+                        room_goto(rJoyConfig);
+                    }
                     break;
                 }
                 case 1: {
-                    paused = false;
-                    instance_activate_all();
-                    room_goto(rJoyConfig);
+                    if (global.html5Build) {
+                        global.joyid = html5_gamepad_next(global.joyid);
+                    } else if (global.mobileBuild) {
+                        menuLanguage();
+                    } else {
+                        paused = false;
+                        instance_activate_all();
+                        room_goto(rJoyConfig);
+                    }
                     break;
                 }
                 case 2: {
-                    global.toggleRunEnabled = !global.toggleRunEnabled;
+                    if (global.html5Build) {
+                        paused = false;
+                        instance_activate_all();
+                        if (html5_gamepad_connected()) {
+                            room_goto(rJoyConfigHtml5);
+                        }
+                     } else if (global.mobileBuild) {
+                        instance_activate_all();
+                        audio_stop_all();
+                        game_restart();
+                     } else {
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
+                     }
                     break;
                 }
                 case 3: {
-                    menuToggleFullscreen();
+                    if (global.html5Build) {
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
+                    } else {
+                        menuToggleFullscreen();
+                    }
                     break;
                 }
                 case 4: {
-                    menuLanguage();
+                    if (global.html5Build) {
+                        menuToggleFullscreen();
+                    } else {
+                        menuLanguage();
+                    }
                     break;
                 }
                 case 5: {
-                    quitGame();
+                    if (global.html5Build) {
+                        menuLanguage();
+                    } else {
+                        quitGame();
+                    }
+                    break;
+                }
+                case 6: {
+                    if (global.electronBuild) {
+                        quitGame();
+                    } else if (global.browserBuild) {
+                        instance_activate_all();
+                        audio_stop_all();
+                        game_restart();
+                    }
                     break;
                 }
             }
         } else {
             switch (menuItemIndex) {
                 case 0: {
-                    global.toggleRunEnabled = !global.toggleRunEnabled;
+                    if (!global.mobileBuild) {
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
+                    } else {
+                        menuLanguage();
+                    }
                     break;
                 }
                 case 1: {
-                    menuToggleFullscreen();
+                    if (!global.mobileBuild) {
+                        menuToggleFullscreen();
+                    } else {
+                        scrDie();
+                    }
                     break;
                 }
                 case 2: {
-                    menuLanguage();
+                    if (!global.mobileBuild) {
+                        menuLanguage();
+                    } else {
+                        instance_activate_all();
+                        audio_stop_all();
+                        game_restart();
+                    }
                     break;
                 }
                 case 3: { scrDie(); break; }
                 case 4: {
-                    quitGame();
+                    if (global.browserBuild) {
+                        instance_activate_all();
+                        audio_stop_all();
+                        game_restart();
+                    } else {
+                        quitGame();
+                    }
                     break;
                 }
             }
@@ -524,45 +816,6 @@ if (global.html5Build) {
         loadLocalizedSprites();
         changeSprites = false;
     }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///left analog stick in the menu
-if (gamepad_axis_value(global.joyid, gp_axislv) &gt; 0.6) {
-    if (analogLDownPreviousState == false) {
-        analogLDownPressed = true;
-        analogLDownPreviousState = true;
-        alarm[3] = 2;
-    }
-} else {
-    analogLDownPreviousState = false;
-}
-if (gamepad_axis_value(global.joyid, gp_axislv) &lt; -0.6) {
-    if (analogLUpPreviousState == false) {
-        analogLUpPressed = true;
-        analogLUpPreviousState = true;
-        alarm[3] = 2;
-    }
-} else {
-    analogLUpPreviousState = false;
 }
 </string>
           </argument>
@@ -618,6 +871,7 @@ if (paused) {
     color3 = c_white;
     color4 = c_white;
     color5 = c_white;
+    color6 = c_white;
     switch (menuItemIndex) {
         case 0: { color0 = c_yellow; break; }
         case 1: { color1 = c_yellow; break; }
@@ -625,6 +879,7 @@ if (paused) {
         case 3: { color3 = c_yellow; break; }
         case 4: { color4 = c_yellow; break; }
         case 5: { color5 = c_yellow; break; }
+        case 6: { color6 = c_yellow; break; }
     }
     if (global.fullscreen) {
         strFullscreen = tr("ON");
@@ -638,18 +893,54 @@ if (paused) {
     }
     strLocaleName = string_upper(global.localesMap[? global.locale]);
     if (isRoom("rTitle")) {
-        drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
-        drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
-        drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
-        drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
-        drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
-        drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
+        if (global.electronBuild or global.browserBuild) {
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
+            drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color1, 0, 80);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, 100);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color3, 0, 120);
+            if (global.electronBuild) {
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color4, 0, 140);
+            } else {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color4, 0, 140);
+            }
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, 160);
+            if (global.electronBuild) {
+                drawTextHCentered(tr('QUIT'), 'small', color6, 0, 180);
+            } else if (global.browserBuild) {
+                drawTextHCentered(tr('RESTART'), 'small', color6, 0, 180);
+            }
+        } else if (global.mobileBuild) {
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color0, 0, 100);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color1, 0, 120);
+            drawTextHCentered(tr('RESTART'), 'small', color2, 0, 140);
+        } else {
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
+            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
+            drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
+        }
     } else {
-        drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
-        drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
-        drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
-        drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
-        drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
+        if (!global.mobileBuild) {
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
+            if (global.browserBuild) {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color1, 0, 100);
+            } else {
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
+            }
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
+            drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
+            if (global.browserBuild) {
+                drawTextHCentered(tr('RESTART'), 'small', color4, 0, 160);
+            } else {
+                drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
+            }
+        } else {
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color0, 0, 100);
+            drawTextHCentered(tr('DIE!'), 'small', color1, 0, 120);
+            drawTextHCentered(tr('RESTART'), 'small', color2, 0, 140);
+        }
     }
 }
 </string>

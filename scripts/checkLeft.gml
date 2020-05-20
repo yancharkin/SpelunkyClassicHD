@@ -1,8 +1,18 @@
-if (gamepad.left or
-        gamepad_button_check(global.joyid, gp_padl) or
-        (gamepad_axis_value(global.joyid, gp_axislh) < -0.6) or
-        keyboard_check(global.keyLeftVal)) {
-    return true;
+if (!global.html5Build) {
+    if (gamepad.left or
+            gamepad_button_check(global.joyid, gp_padl) or
+            (gamepad_axis_value(global.joyid, gp_axislh) < -0.6) or
+            keyboard_check(global.keyLeftVal)) {
+        return true;
+    } else {
+        return false;
+    }
 } else {
-    return false;
+    if ((html5_gamepad_axis_value(global.joyid, 0) < -0.6) or
+            (html5_gamepad_axis_value(global.joyid, 4) < -0.6) or
+            keyboard_check(global.keyLeftVal)) {
+        return true;
+    } else {
+        return false;
+    }   
 }

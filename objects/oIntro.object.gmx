@@ -201,11 +201,22 @@ switch (n)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_enter) or
-    keyboard_check_pressed(vk_escape) or
-    checkAttackPressed() or
-    checkStartPressed())
-{
+            <string>if (!global.html5Build) {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            keyboard_check_pressed(vk_escape) or
+            checkAttackPressed() or
+            checkStartPressed());
+} else {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            keyboard_check_pressed(vk_escape) or
+            html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
+            html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
+            html5_gamepad_button_check(global.joyid, global.joyStartVal) or
+            checkAttackPressed() or
+            checkStartPressed());
+}
+
+if (skipCondition) {
     if (not instance_exists(oPDummy3)) fadeIn = true;
     else
     {

@@ -1,5 +1,41 @@
 ///configLoad
 
+//Default controls
+global.keyUpVal = vk_up;
+global.keyDownVal = vk_down;
+global.keyLeftVal = vk_left;
+global.keyRightVal = vk_right;
+global.keyJumpVal = ord('Z');
+global.keyAttackVal = ord('X');
+global.keyItemVal = ord('C');
+global.keyRunVal = vk_shift;
+global.keyBombVal = ord('A');
+global.keyRopeVal = ord('S');
+global.keyFlareVal = ord('F');
+global.keyPayVal = ord('P');
+
+if (!global.html5Build) {
+    global.joyJumpVal = gp_face1;
+    global.joyAttackVal = gp_face2;
+    global.joyItemVal = gp_face3;
+    global.joyRunVal = gp_shoulderlb;
+    global.joyBombVal = gp_shoulderl;
+    global.joyRopeVal = gp_shoulderr;
+    global.joyFlareVal = gp_face4;
+    global.joyPayVal = gp_shoulderrb;
+    global.joyStartVal = gp_start;
+} else {
+    global.joyAttackVal = 0;
+    global.joyJumpVal = 1;
+    global.joyItemVal = 2;
+    global.joyRunVal = 3;
+    global.joyFlareVal = 4;
+    global.joyPayVal = 5;
+    global.joyBombVal = 6;
+    global.joyRopeVal = 7;
+    global.joyStartVal = 9;
+}
+
 if (file_exists(working_directory + "settings.json")) {
     var settingsMap = json2dsmap(working_directory + "settings.json");
     global.locale = settingsMap[? "locale"];

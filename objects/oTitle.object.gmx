@@ -345,9 +345,7 @@ if (gamepad.select) event_perform(ev_keypress, vk_f5);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if (instance_exists(oFlare) and needDark)
-{
+            <string>if (instance_exists(oFlare) and needDark) {
     dist = 160 - oFlare.y;
     if (dist &lt; 0) dist = 0;
     darkness = dist / 160;
@@ -356,26 +354,8 @@ if (instance_exists(oFlare) and needDark)
 
 draw_set_alpha(1);
 
-/*
-draw_set_font(global.myFontSmall);
-draw_set_color(c_yellow);
-draw_text(320+96, 96, "V1.1 (C)2009");
-*/
-
-if (instance_exists(oPlayer1))
-{
-    player = instance_nearest(0, 0, oPlayer1);
-    
-    if (global.mobileBuild != true)
-    {
-    if (player.x &gt; (324 - global.room_offset))
-        {
-            draw_set_font(global.myFontSmall);
-            draw_set_color(c_yellow);
-            draw_text(324 - global.room_offset, 4, tr("F4 - CONTROLS"));
-        }
-    }
-    
+if (instance_exists(oPlayer1)) {
+    player = instance_nearest(0, 0, oPlayer1);    
     if (player.x &lt; 256 and view_xview[0] &lt;= 1) {
         drawTextHCentered(tr("WELCOME TO THE SHORTCUT HOUSE!"), 'small', c_white, 0, 224);
     }

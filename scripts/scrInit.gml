@@ -43,29 +43,6 @@ global.screenScale = 1;
 global.musicVol = 15;
 global.soundVol = 15;
 
-global.keyUpVal = vk_up;
-global.keyDownVal = vk_down;
-global.keyLeftVal = vk_left;
-global.keyRightVal = vk_right;
-global.keyJumpVal = ord('Z');
-global.keyAttackVal = ord('X');
-global.keyItemVal = ord('C');
-global.keyRunVal = vk_shift;
-global.keyBombVal = ord('A');
-global.keyRopeVal = ord('S');
-global.keyFlareVal = ord('F');
-global.keyPayVal = ord('P');
-
-global.joyJumpVal = gp_face1;
-global.joyAttackVal = gp_face2;
-global.joyItemVal = gp_face3;
-global.joyRunVal = gp_shoulderlb;
-global.joyBombVal = gp_shoulderl;
-global.joyRopeVal = gp_shoulderr;
-global.joyFlareVal = gp_face4;
-global.joyPayVal = gp_shoulderrb;
-global.joyStartVal = gp_start;
-
 if (global.musicVol > 17) global.musicVol = 17;
 if (global.musicVol < 0) global.musicVol = 0;
 if (global.soundVol > 17) global.soundVol = 17;

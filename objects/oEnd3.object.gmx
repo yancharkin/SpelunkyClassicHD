@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>drawStatus = 0;
+            <string>instance_create(0, 0, oHtml5Gamepad);
+drawStatus = 0;
 moneyCount = 0;
 fadeOut = false;
 fadeLevel = 0;
@@ -37,7 +38,39 @@ alarm[0] = 50;
 with oMenu
 {
     visible = false;
-}</string>
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gamepad in HTML5
+global.bStartPressed = false;
+global.bStartPreviousState = false;
+global.bJumpPressed = false;
+global.bJumpPressedPreviousState = false;
+global.bJumpReleased = false;
+global.bJumpReleasedPreviousState = false;
+global.bAttackPressed = false;
+global.bAttackPressedPreviousState = false;
+global.bAttackReleased = false;
+global.bAttackReleasedPreviousState = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -64,6 +97,34 @@ playSound(global.sndThump);
 global.money += 50000;
 moneyCount += 50000;
 alarm[3] = 50;</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gamepad in HTML5
+global.bStartPressed = false;
+global.bJumpPressed = false;
+global.bJumpReleased = false;
+global.bAttackPressed = false;
+global.bAttackReleased = false;
+</string>
           </argument>
         </arguments>
       </action>
@@ -221,11 +282,80 @@ playSound(global.sndPFall);</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_enter) or
-    keyboard_check_pressed(vk_escape) or
-    checkAttackPressed() or
-    checkStartPressed())
-{
+            <string>///Gamepad in HTML5
+if (global.html5Build) {
+    //Start
+    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
+        if (global.bStartPreviousState == false) {
+            global.bStartPressed = true;
+            global.bStartPreviousState = true;
+        }
+    } else {
+        global.bStartPreviousState = false;
+    }
+    //Jump
+    if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
+        global.bJumpReleasedPreviousState = false;
+        if (global.bJumpPressedPreviousState == false) {
+            global.bJumpPressed = true;
+            global.bJumpPressedPreviousState = true;
+        }
+    } else {
+        global.bJumpPressedPreviousState = false;
+        if (global.bJumpReleasedPreviousState == false) {
+            global.bJumpReleased = true;
+            global.bJumpReleasedPreviousState = true;
+        }
+    }
+    //Attack
+    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
+        global.bAttackReleasedPreviousState = false;
+        if (global.bAttackPressedPreviousState == false) {
+            global.bAttackPressed = true;
+            global.bAttackPressedPreviousState = true;
+        }
+    } else {
+        global.bAttackPressedPreviousState = false;
+        if (global.bAttackReleasedPreviousState == false) {
+            global.bAttackReleased = true;
+            global.bAttackReleasedPreviousState = true;
+        }
+    }
+    alarm[6] = 1;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!global.html5Build) {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            keyboard_check_pressed(vk_escape) or 
+            checkAttackPressed() or checkStartPressed());
+} else {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            keyboard_check_pressed(vk_escape) or
+            global.bAttackPressed or global.bStartPressed or
+            checkAttackPressed() or checkStartPressed());
+}
+
+if (skipCondition) {
     if (drawStatus == 7)
     {
         if (moneyCount &lt; global.money)

@@ -25,45 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shakeToggle = false;
-oPDummy.status = 2;
-
-timer = 0;
-
-if (global.kaliPunish &gt;= 2)
-{
-    instance_create(oPDummy.x, oPDummy.y+2, oBall2);
-    obj = instance_create(oPDummy.x, oPDummy.y, oChain2);
-    obj.linkVal = 1;
-    obj = instance_create(oPDummy.x, oPDummy.y, oChain2);
-    obj.linkVal = 2;
-    obj = instance_create(oPDummy.x, oPDummy.y, oChain2);
-    obj.linkVal = 3;
-    obj = instance_create(oPDummy.x, oPDummy.y, oChain2);
-    obj.linkVal = 4;
-}
-
-stopAllMusic();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Gamepad in HTML5
 global.bStartPressed = false;
 global.bStartPreviousState = false;
@@ -75,6 +36,18 @@ global.bAttackPressed = false;
 global.bAttackPressedPreviousState = false;
 global.bAttackReleased = false;
 global.bAttackReleasedPreviousState = false;
+global.bItemPressed = false;
+global.bItemPreviousState = false;
+global.bRunPressed = false;
+global.bRunPreviousState = false;
+global.bBombPressed = false;
+global.bBombPreviousState = false;
+global.bRopePressed = false;
+global.bRopePreviousState = false;
+global.bFlarePressed = false;
+global.bFlarePreviousState = false;
+global.bPayPressed = false;
+global.bPayPreviousState = false;
 </string>
           </argument>
         </arguments>
@@ -103,6 +76,13 @@ global.bJumpPressed = false;
 global.bJumpReleased = false;
 global.bAttackPressed = false;
 global.bAttackReleased = false;
+global.bItemPressed = false;
+global.bRunPressed = false;
+global.bBombPressed = false;
+global.bRopePressed = false;
+global.bFlarePressed = false;
+global.bPayPressed = false;
+global.bBombPressed = false;
 </string>
           </argument>
         </arguments>
@@ -164,6 +144,60 @@ if (global.html5Build) {
             global.bAttackReleasedPreviousState = true;
         }
     }
+    //Item
+    if (html5_gamepad_button_check(global.joyid, global.joyItemVal)) {
+        if (global.bItemPreviousState == false) {
+            global.bItemPressed = true;
+            global.bItemPreviousState = true;
+        }
+    } else {
+        global.bItemPreviousState = false;
+    }
+    //Bomb
+    if (html5_gamepad_button_check(global.joyid, global.joyBombVal)) {
+        if (global.bBombPreviousState == false) {
+            global.bBombPressed = true;
+            global.bBombPreviousState = true;
+        }
+    } else {
+        global.bBombPreviousState = false;
+    }
+    //Run
+    if (html5_gamepad_button_check(global.joyid, global.joyRunVal)) {
+        if (global.bRunPreviousState == false) {
+            global.bRunPressed = true;
+            global.bRunPreviousState = true;
+        }
+    } else {
+        global.bRunPreviousState = false;
+    }
+    //Rope
+    if (html5_gamepad_button_check(global.joyid, global.joyRopeVal)) {
+        if (global.bRopePreviousState == false) {
+            global.bRopePressed = true;
+            global.bRopePreviousState = true;
+        }
+    } else {
+        global.bRopePreviousState = false;
+    }
+    //Flare
+    if (html5_gamepad_button_check(global.joyid, global.joyFlareVal)) {
+        if (global.bFlarePreviousState == false) {
+            global.bFlarePressed = true;
+            global.bFlarePreviousState = true;
+        }
+    } else {
+        global.bFlarePreviousState = false;
+    }
+    //Pay
+    if (html5_gamepad_button_check(global.joyid, global.joyPayVal)) {
+        if (global.bPayPreviousState == false) {
+            global.bPayPressed = true;
+            global.bPayPreviousState = true;
+        }
+    } else {
+        global.bPayPreviousState = false;
+    }
     alarm[0] = 1;
 }
 
@@ -187,69 +221,11 @@ if (global.html5Build) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer += 1;  
-if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or 
-            checkAttackPressed() or checkStartPressed());
-} else {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or
-            global.bAttackPressed or global.bStartPressed or
-            checkAttackPressed() or checkStartPressed());
+            <string>///Check if any gamepad connected (HTML5)
+if (global.html5Build) {
+    global.gamepadOn = html5_gamepad_connected();
 }
-
-if (skipCondition) {
-    if (timer &gt; 50)
-    {
-        if (gamepad.attackPressed) gamepad.attackPressed = false;
-        if (gamepad.startPressed) gamepad.startPressed = false;
-        global.gameStart = false;
-        room_goto(rEnd3);
-    }
-}
-
-// shake the screen
-if (global.shake &gt; 0)
-{
-    //view_xview[0] = view_xview[0] + rand(0,3) - rand(0,3);
-    //view_yview[0] = view_yview[0] + rand(0,3) - rand(0,3);
-    //if (view_yview[0] &gt; 16) view_yview[0] = 16 - rand(0,8);
-    //if (view_yview[0] &lt; 0) view_yview[0] = 0 + rand(0,8);
-    if (shakeToggle) view_yview[0] = view_yview[0] + rand(1,8);
-    else view_yview[0] = 0;
-    shakeToggle = not shakeToggle;
-    global.shake -= 1;
-}
-else
-{
-    view_yview[0] = 0;
-}
-
-if (view_xview[0] &lt; room_width - 320) view_xview[0] += 1;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.shake = 0;</string>
           </argument>
         </arguments>
       </action>
@@ -258,11 +234,11 @@ if (view_xview[0] &lt; room_width - 320) view_xview[0] += 1;
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
+  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0</PhysicsObjectLinearDamping>
-  <PhysicsObjectAngularDamping>0</PhysicsObjectAngularDamping>
+  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>

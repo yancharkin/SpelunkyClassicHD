@@ -26,7 +26,34 @@
           <argument>
             <kind>1</kind>
             <string>status = 0;
-joy = false;
+buttonPressed = false;
+buttonPreviousState = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>buttonPressed = false;
+if (!html5_gamepad_button_check(global.joyid, button)) {
+    buttonPreviousState = false;
+}
 </string>
           </argument>
         </arguments>
@@ -49,72 +76,41 @@ joy = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>joyReleased = false;
-joyPressed = false;
-joyKey = checkJoyButton();
-if (joy)
-{
-    if (joyKey != 0) joy = true;
-    else
-    {
-        joyReleased = true;
-        joy = false;
+            <string>for (var i = 0; i &lt; 31; i++) {
+    if (html5_gamepad_button_check(global.joyid, i)) {
+        if (buttonPreviousState == false) {
+            buttonPressed = true;
+            buttonPreviousState = true;
+            button = i;
+        }
     }
 }
-else
-{
-    if (joyKey != 0)
-    {
-        joyPressed = true;
-        joy = true;
+alarm[0] = 1;
+
+if (buttonPressed) {
+    if (status == 0) {   
+        global.joyJumpVal = button;
+    } else if (status == 1) {
+        global.joyAttackVal = button;
+    } else if (status == 2) {
+        global.joyItemVal = button;
+    } else if (status == 3) {
+        global.joyRunVal = button;
+    } else if (status == 4) {
+        global.joyBombVal = button;
+    } else if (status == 5) {
+        global.joyRopeVal = button;
+    } else if (status == 6) {
+        global.joyFlareVal = button;
+    } else if (status == 7) {
+        global.joyPayVal = button;
+    } else if (status == 8) {
+        global.joyStartVal = button;
     }
-    else joy = false;
 }
 
-if (joyPressed)
-{
-if (status == 0)
-{
-    global.joyJumpVal = joyKey;
-}
-else if (status == 1)
-{
-    global.joyAttackVal = joyKey;
-}
-else if (status == 2)
-{
-    global.joyItemVal = joyKey;
-}
-else if (status == 3)
-{
-    global.joyRunVal = joyKey;
-}
-else if (status == 4)
-{
-    global.joyBombVal = joyKey;
-}
-else if (status == 5)
-{
-    global.joyRopeVal = joyKey;
-}
-else if (status == 6)
-{
-    global.joyFlareVal = joyKey;
-}
-else if (status == 7)
-{
-    global.joyPayVal = joyKey;
-}
-else if (status == 8)
-{
-    global.joyStartVal = joyKey;
-}}
-
-if (joyPressed or keyboard_check_pressed(vk_escape))
-{
+if (buttonPressed or keyboard_check_pressed(vk_escape)) {
     status += 1;
-    if (gamepad.attackPressed) gamepad.attackPressed = false;
-    if (gamepad.startPressed) gamepad.startPressed = false;
     if (status &gt; 8) room_goto(rTitle);
 }
 </string>
@@ -172,14 +168,12 @@ draw_text(n, 32, tr("PRESS BUTTON FOR"));
 draw_text(8, 96, tr("ESC TO KEEP SAME."));
 draw_text(8, 104, tr("CURRENT: "));
 
-if (not gamepad_is_connected(global.joyid) and string_length(gamepad_get_description(global.joyid)) &lt; 1)
-{
+if (!html5_gamepad_connected()) {
     draw_set_color(c_red);
     draw_text(8, 88, tr("NO GAMEPAD FOUND!"));
 }
 
-if (status == 0)
-{
+if (status == 0) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("JUMP"))*16;
@@ -187,9 +181,7 @@ if (status == 0)
     n = ceil(n / 2);
     draw_text(n, 40, tr("JUMP"));
     currVal = global.joyJumpVal;
-}
-else if (status == 1)
-{
+} else if (status == 1) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("ACTION"))*16;
@@ -197,9 +189,7 @@ else if (status == 1)
     n = ceil(n / 2);
     draw_text(n, 40, tr("ACTION"));
     currVal = global.joyAttackVal;
-}
-else if (status == 2)
-{
+} else if (status == 2) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("SWITCH"))*16;
@@ -207,9 +197,7 @@ else if (status == 2)
     n = ceil(n / 2);
     draw_text(n, 40, tr("SWITCH"));
     currVal = global.joyItemVal;
-}
-else if (status == 3)
-{
+} else if (status == 3) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("RUN"))*16;
@@ -217,9 +205,7 @@ else if (status == 3)
     n = ceil(n / 2);
     draw_text(n, 40, tr("RUN"));
     currVal = global.joyRunVal;
-}
-else if (status == 4)
-{
+} else if (status == 4) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("BOMB"))*16;
@@ -227,9 +213,7 @@ else if (status == 4)
     n = ceil(n / 2);
     draw_text(n, 40, tr("BOMB"));
     currVal = global.joyBombVal;
-}
-else if (status == 5)
-{
+} else if (status == 5) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("ROPE"))*16;
@@ -237,9 +221,7 @@ else if (status == 5)
     n = ceil(n / 2);
     draw_text(n, 40, tr("ROPE"));
     currVal = global.joyRopeVal;
-}
-else if (status == 6)
-{
+} else if (status == 6) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("FLARE"))*16;
@@ -247,9 +229,7 @@ else if (status == 6)
     n = ceil(n / 2);
     draw_text(n, 40, tr("FLARE"));
     currVal = global.joyFlareVal;
-}
-else if (status == 7)
-{
+} else if (status == 7) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("PURCHASE"))*16;
@@ -257,9 +237,7 @@ else if (status == 7)
     n = ceil(n / 2);
     draw_text(n, 40, tr("PURCHASE"));
     currVal = global.joyPayVal;
-}
-else if (status == 8)
-{
+} else if (status == 8) {
     draw_set_font(global.myFont);
     draw_set_color(c_white);
     strLen = string_length(tr("START"))*16;

@@ -147,6 +147,7 @@ conf_y = (h - 120 - 32)/2;
 
 room_set_view(rKeyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
 room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
+room_set_view(rJoyConfigHtml5,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
 
 // this will destroy the screen object if surfaces are not supported on the graphics card, reverting to the viewport method
 /*if (screen == -1) game_end2();

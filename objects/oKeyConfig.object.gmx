@@ -48,6 +48,7 @@
           <argument>
             <kind>1</kind>
             <string>keysSave();
+audio_resume_all();
 </string>
           </argument>
         </arguments>

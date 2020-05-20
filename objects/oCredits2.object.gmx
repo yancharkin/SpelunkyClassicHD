@@ -313,10 +313,16 @@ instance_create(global.display_w+64, 144-16, oCaravan);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check_pressed(vk_enter) or
-    keyboard_check_pressed(vk_escape) or
-    checkAttack())
-{
+            <string>if (!global.html5Build) {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            keyboard_check_pressed(vk_escape) or checkAttack());
+} else {
+    var skipCondition = (keyboard_check_pressed(vk_enter) or
+            html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
+            keyboard_check_pressed(vk_escape) or checkAttack());
+}
+
+if (skipCondition) {
     if (instance_exists(oCamel))
     {
         if (fadeIn)
