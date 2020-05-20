@@ -42,9 +42,10 @@
             <string>type = "Rope Pile";
 makeActive();
 setCollisionBounds(-6, -5, 6, 5);
-
 cost = 2500;
-buyMessage = tr("EXTRA ROPE FOR $") + string(cost) + ".";</string>
+shopDesc = tr("EXTRA ROPE");
+buyMessage = tr("EXTRA ROPE FOR $") + string(cost) + ".";
+</string>
           </argument>
         </arguments>
       </action>

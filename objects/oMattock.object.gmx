@@ -43,7 +43,9 @@
 makeActive()
 setCollisionBounds(-4, -6, 4, 6)
 cost = 8000;
-buyMessage = tr("A MATTOCK FOR $") + string(cost) + ".";</string>
+shopDesc = tr("A MATTOCK");
+buyMessage = tr("A MATTOCK FOR $") + string(cost) + ".";
+</string>
           </argument>
         </arguments>
       </action>

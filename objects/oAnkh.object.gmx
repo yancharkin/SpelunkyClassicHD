@@ -42,9 +42,10 @@
             <string>type = "Ankh";
 makeActive()
 setCollisionBounds(-4, -6, 4, 8)
-
 cost = 50000;
-buyMessage = tr("AN ANKH FOR $") + string(cost) + ".";</string>
+shopDesc = tr("AN ANKH");
+buyMessage = tr("AN ANKH FOR $") + string(cost) + ".";
+</string>
           </argument>
         </arguments>
       </action>
