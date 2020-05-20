@@ -56,5 +56,5 @@ switch (argument0)
     case ord("X"): { return "X" break; }
     case ord("Y"): { return "Y" break; }
     case ord("Z"): { return "Z" break; }
-    default: { return "KEY " + string(argument0); break; }
+    default: { return string_upper(string(argument0)); break; }
 }

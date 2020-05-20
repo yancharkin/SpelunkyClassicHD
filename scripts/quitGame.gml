@@ -3,5 +3,7 @@
 if (!global.html5Build) {
     game_end();
 } else {
-    electronQuit();
+    if (global.electronBuild) {
+        electronQuit();
+    }
 }

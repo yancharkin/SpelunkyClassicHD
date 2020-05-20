@@ -1,4 +1,4 @@
-///drawTextHCentered(text, fontSize, color, posX, posY)
+///drawText(text, fontSize, color, posX, posY)
 
 var text = argument[0];
 var fontSize = argument[1];

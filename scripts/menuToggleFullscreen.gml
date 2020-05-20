@@ -8,6 +8,9 @@ if (global.fullscreen) {
         if (global.electronBuild) {
             newSize = electronSetFullscreen(true);
             window_set_size(newSize[0], newSize[1]);
+        } else if (global.browserBuild) {
+            newSize = html5_set_fullscreen(true);
+            window_set_size(newSize[0], newSize[1]);
         }
     }
 } else {
@@ -17,6 +20,9 @@ if (global.fullscreen) {
     } else {
         if (global.electronBuild) {
             newSize = electronSetFullscreen(false);
+            window_set_size(newSize[0], newSize[1]);
+        } else if (global.browserBuild) {
+            newSize = html5_set_fullscreen(false);
             window_set_size(newSize[0], newSize[1]);
         }
     }

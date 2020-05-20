@@ -1246,7 +1246,7 @@ if (not dead and
             holdItem = 0;
             pickupItemType = "";
         }
-        else if (holdItem.type == tr("BOMB"))
+        else if (holdItem.type == "Bomb")
         {
             if (holdItem.armed)
             {
@@ -1260,7 +1260,7 @@ if (not dead and
             
             global.pickupItem = pickupItemType;
         }
-        else if (holdItem.type == tr("ROPE"))
+        else if (holdItem.type == "Rope")
         {
             global.rope += 1;
             with holdItem { instance_destroy(); }
@@ -1376,7 +1376,7 @@ if (not dead and
             holdItem = 0;
             pickupItemType = "";
         }
-        else if (holdItem.type == tr("BOMB"))
+        else if (holdItem.type == "Bomb")
         {
             if (holdItem.armed)
             {
@@ -1390,7 +1390,7 @@ if (not dead and
             
             global.pickupItem = pickupItemType;
         }
-        else if (holdItem.type == tr("ROPE"))
+        else if (holdItem.type == "Rope")
         {
             global.rope += 1;
             with holdItem { instance_destroy(); }
@@ -1988,7 +1988,7 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
             }
             else
             {
-                global.message = tr("YOU NEED $") + string(1000 + global.currLevel * 500) + " TO BET!";
+                global.message = tr("YOU NEED $") + string(1000 + global.currLevel * 500) + tr(" TO BET!");
                 global.message2 = "";
                 global.messageTimer = 200;
             }
@@ -2826,16 +2826,24 @@ global.xmoney += global.money - money;</string>
           <argument>
             <kind>1</kind>
             <string>///Check keyboard input
-if (keyboard_check_pressed(global.keyRunVal) or
-        gamepad_button_check_pressed(global.joyid, global.joyRunVal)) {
-    if (global.mobileBuild) {
-        global.toggleRun = !global.toggleRun;
-    } else {
+if (!global.html5Build) {
+    if (keyboard_check_pressed(global.keyRunVal) or
+            gamepad_button_check_pressed(global.joyid, global.joyRunVal)) {
+        if (global.mobileBuild) {
+            global.toggleRun = !global.toggleRun;
+        } else {
+            if (global.toggleRunEnabled) {
+                global.toggleRun = !global.toggleRun;
+            }
+        }
+    }
+} else {
+    if (keyboard_check_pressed(global.keyRunVal) or (global.bRunPressed)) {
         if (global.toggleRunEnabled) {
             global.toggleRun = !global.toggleRun;
         }
     }
-} 
+}
 </string>
           </argument>
         </arguments>

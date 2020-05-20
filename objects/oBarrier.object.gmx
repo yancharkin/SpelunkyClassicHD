@@ -77,7 +77,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.type == tr("BOMB"))
+            <string>if (other.type == "Bomb")
 {
     with other
     {
