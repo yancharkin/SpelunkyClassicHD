@@ -33,44 +33,6 @@ debug = false;
 global.ghostExists = false;
 
 paused = false;
-menuItemIndex = 0;
-//for HTML5
-localeChanged = false;
-changeSprites = false;
-
-//Left analog stick in the menu
-global.analogLDownPreviousState = false;
-global.analogLUpPreviousState = false;
-global.analogLDownPressed = false;
-global.analogLUpPressed = false;
-
-instance_create(0, 0, oHtml5Gamepad);
-//Gamepad in HTML5
-global.bStartPressed = false;
-global.bStartPreviousState = false;
-global.bJumpPressed = false;
-global.bJumpPressedPreviousState = false;
-global.bJumpReleased = false;
-global.bJumpReleasedPreviousState = false;
-global.bAttackPressed = false;
-global.bAttackPressedPreviousState = false;
-global.bAttackReleased = false;
-global.bAttackReleasedPreviousState = false;
-/*
-global.bItemPressed = false;
-global.bItemPreviousState = false;
-global.bRunPressed = false;
-global.bRunPreviousState = false;
-global.bBombPressed = false;
-global.bBombPreviousState = false;
-global.bRopePressed = false;
-global.bRopePreviousState = false;
-global.bFlarePressed = false;
-global.bFlarePreviousState = false;
-global.bPayPressed = false;
-global.bPayPreviousState = false;
-*/
-
 damsel = false;
 idol = false;
 altar = false;
@@ -90,6 +52,64 @@ time = 1;
 // sound_loop(sndMusicTest);
 
 if (global.gameStart) scrInitLevel();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Menu
+menuItemIndex = 0;
+if (global.mobileBuild) {
+    maxIndexTitle = 2;
+    maxIndexGame = 2;
+} else {
+    maxIndexGame = 4;
+    if (global.electronBuild or global.browserBuild) {
+        maxIndexTitle = 6;
+    } else {
+        maxIndexTitle = 5;
+    }
+}
+firstMenuItemTitleY = (240 - 8 - 20 * maxIndexTitle) / 2;
+firstMenuItemGameY = (240 - 8 - 20 * maxIndexGame) / 2;
+
+//Left analog stick in the menu
+global.analogLDownPreviousState = false;
+global.analogLUpPreviousState = false;
+global.analogLDownPressed = false;
+global.analogLUpPressed = false;
+
+//for HTML5
+localeChanged = false;
+changeSprites = false;
+
+//Gamepad in HTML5
+instance_create(0, 0, oHtml5Gamepad);
+global.bStartPressed = false;
+global.bStartPreviousState = false;
+global.bJumpPressed = false;
+global.bJumpPressedPreviousState = false;
+global.bJumpReleased = false;
+global.bJumpReleasedPreviousState = false;
+global.bAttackPressed = false;
+global.bAttackPressedPreviousState = false;
+global.bAttackReleased = false;
+global.bAttackReleasedPreviousState = false;
 </string>
           </argument>
         </arguments>
@@ -634,19 +654,6 @@ if (keyboard_check_pressed(vk_escape) or
 }
 
 if (paused) {
-
-    if (global.mobileBuild) {
-        var maxIndexTitle = 2;
-        var maxIndexGame = 2;
-    } else {
-        var maxIndexGame = 4;
-        if (global.electronBuild or global.browserBuild) {
-            var maxIndexTitle = 6;
-        } else {
-            var maxIndexTitle = 5;
-        }
-    }
-
     if (checkDownPressed()) {
         menuItemIndex += 1;
         if (isRoom("rTitle")) {
@@ -894,52 +901,52 @@ if (paused) {
     strLocaleName = string_upper(global.localesMap[? global.locale]);
     if (isRoom("rTitle")) {
         if (global.electronBuild or global.browserBuild) {
-            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
-            drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color1, 0, 80);
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, 100);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color3, 0, 120);
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
+            drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color1, 0, firstMenuItemTitleY+20);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, firstMenuItemTitleY+40);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
             if (global.electronBuild) {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color4, 0, 140);
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
             } else {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color4, 0, 140);
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color4, 0, firstMenuItemTitleY+80);
             }
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, 160);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
             if (global.electronBuild) {
-                drawTextHCentered(tr('QUIT'), 'small', color6, 0, 180);
+                drawTextHCentered(tr('QUIT'), 'small', color6, 0, firstMenuItemTitleY+120);
             } else if (global.browserBuild) {
-                drawTextHCentered(tr('RESTART'), 'small', color6, 0, 180);
+                drawTextHCentered(tr('RESTART'), 'small', color6, 0, firstMenuItemTitleY+120);
             }
         } else if (global.mobileBuild) {
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color0, 0, 100);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color1, 0, 120);
-            drawTextHCentered(tr('RESTART'), 'small', color2, 0, 140);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color1, 0, firstMenuItemTitleY+20);
+            drawTextHCentered(tr('RESTART'), 'small', color2, 0, firstMenuItemTitleY+40);
         } else {
-            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, 60);
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, 80);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, 100);
-            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, 120);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, 140);
-            drawTextHCentered(tr('QUIT'), 'small', color5, 0, 160);
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, firstMenuItemTitleY+20);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, firstMenuItemTitleY+40);
+            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+            drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemTitleY+100);
         }
     } else {
         if (!global.mobileBuild) {
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, 80);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, firstMenuItemGameY);
             if (global.browserBuild) {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color1, 0, 100);
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color1, 0, firstMenuItemGameY+20);
             } else {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, 100);
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
             }
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, 120);
-            drawTextHCentered(tr('DIE!'), 'small', color3, 0, 140);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+            drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
             if (global.browserBuild) {
-                drawTextHCentered(tr('RESTART'), 'small', color4, 0, 160);
+                drawTextHCentered(tr('RESTART'), 'small', color4, 0, firstMenuItemGameY+80);
             } else {
-                drawTextHCentered(tr('QUIT'), 'small', color4, 0, 160);
+                drawTextHCentered(tr('QUIT'), 'small', color4, 0, firstMenuItemGameY+80);
             }
         } else {
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color0, 0, 100);
-            drawTextHCentered(tr('DIE!'), 'small', color1, 0, 120);
-            drawTextHCentered(tr('RESTART'), 'small', color2, 0, 140);
+            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color0, 0, firstMenuItemGameY);
+            drawTextHCentered(tr('DIE!'), 'small', color1, 0, firstMenuItemGameY+20);
+            drawTextHCentered(tr('RESTART'), 'small', color2, 0, firstMenuItemGameY+40);
         }
     }
 }
