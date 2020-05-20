@@ -25,7 +25,39 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>debugCounter = 0;
+            <string>///Gamepad in HTML5
+global.bStartPressed = false;
+global.bStartPreviousState = false;
+global.bAttackPressed = false;
+global.bAttackPressedPreviousState = false;
+
+//Left analog stick
+global.analogLDownPreviousState = false;
+global.analogLUpPreviousState = false;
+global.analogLDownPressed = false;
+global.analogLUpPressed = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_create(0, 0, oHtml5Gamepad);
+debugCounter = 0;
 
 global.message = "";
 global.message2 = "";
@@ -91,6 +123,33 @@ upHeld = 0;
 downHeld = 0;
 
 stopAllMusic();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gamepad in HTML5
+global.bStartPressed = false;
+global.bAttackPressed = false;
+global.analogLDownPressed = false;
+global.analogLUpPressed = false;
 </string>
           </argument>
         </arguments>
@@ -455,14 +514,89 @@ else alarm[0] = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (checkAttackPressed() or checkStartPressed())
-{
+            <string>///Gamepad in HTML5
+    //Up/Down
+    if (global.html5Build) {
+    var downPressed = ((html5_gamepad_axis_value(global.joyid, 1) &gt; 0.6) or
+            (html5_gamepad_axis_value(global.joyid, 5) &gt; 0.6));
+    var upPressed = (html5_gamepad_axis_value(global.joyid, 1) &lt; -0.6 or
+            (html5_gamepad_axis_value(global.joyid, 5) &lt; -0.6));
+    
+    if (downPressed) {
+        if (global.analogLDownPreviousState == false) {
+            global.analogLDownPressed = true;
+            global.analogLDownPreviousState = true;
+        }
+    } else {
+        global.analogLDownPreviousState = false;
+    }
+    if (upPressed) {
+        if (global.analogLUpPreviousState == false) {
+            global.analogLUpPressed = true;
+            global.analogLUpPreviousState = true;
+        }
+    } else {
+        global.analogLUpPreviousState = false;
+    }
+    //Start
+    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
+        if (global.bStartPreviousState == false) {
+            global.bStartPressed = true;
+            global.bStartPreviousState = true;
+        }
+    } else {
+        global.bStartPreviousState = false;
+    }
+    //Attack
+    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
+        global.bAttackReleasedPreviousState = false;
+        if (global.bAttackPressedPreviousState == false) {
+            global.bAttackPressed = true;
+            global.bAttackPressedPreviousState = true;
+        }
+    } else {
+        global.bAttackPressedPreviousState = false;
+        if (global.bAttackReleasedPreviousState == false) {
+            global.bAttackReleased = true;
+            global.bAttackReleasedPreviousState = true;
+        }
+    }
+    alarm[3] = 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!global.html5Build) {
+    var skipCondition = checkAttackPressed() or checkStartPressed();
+} else {
+    var skipCondition = global.bAttackPressed or global.bStartPressed or
+            checkAttackPressed() or checkStartPressed();
+}
+
+if (skipCondition) {
     n = 0;
 
     if (instance_exists(oTunnelMan))
     {
         person = instance_nearest(100, 100, oTunnelMan);
-        if (person.talk &lt; 3) n = 1;
+        if (person.talk != 6) n = 1;    
     }
 
     if (drawLoot == 2 and moneyCount == global.xmoney and n == 0)
@@ -489,7 +623,7 @@ else alarm[0] = 3;
     }
 }
 
-if (checkUpPressed())
+if checkUpPressed()
 {
     if (instance_exists(oTunnelMan))
     {
@@ -513,7 +647,7 @@ if (checkUpPressed())
         }
     }
 }
-else if (checkDownPressed())
+else if checkDownPressed()
 {
     if (instance_exists(oTunnelMan))
     {
