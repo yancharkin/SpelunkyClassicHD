@@ -6,11 +6,10 @@ var color = argument[2];
 var posX = argument[3];
 var posY = argument[4];
 
-if (fontSize = 'small') {
-    draw_set_font(global.myFontSmall);
-
+if (fontSize == 'small') {
+    draw_set_font(global.fontSmall);
 } else {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
 }
 
 draw_set_color(color);

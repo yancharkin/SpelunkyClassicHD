@@ -289,7 +289,7 @@ alarm[2] = 30;</string>
             <kind>1</kind>
             <string>life = global.plife;
 if (life &lt; 0) life = 0;
-draw_set_font(global.myFont);
+draw_set_font(global.fontLarge);
 draw_set_color(c_white);
 draw_sprite(sHeart, -1, view_xview[0]+8, view_yview[0]+8);
 draw_text(view_xview[0]+24, view_yview[0]+8, life);

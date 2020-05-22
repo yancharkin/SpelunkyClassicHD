@@ -388,10 +388,10 @@ with(oScreen)
                     //instance_activate_object(oScreenLast);
                     //instance_activate_object(oScreen);
                     
-                    draw_set_font(global.myFont);
+                    draw_set_font(global.fontLarge);
                     draw_set_color(c_white);
                     draw_text(112, 200, tr("PAUSED"));
-                    draw_set_font(global.myFontSmall);
+                    draw_set_font(global.fontSmall);
                     if (isLevel())
                     {
                         n = 128-24;

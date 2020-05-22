@@ -312,11 +312,7 @@ else if (sprite_index == sJawsRight)
     else if (hp &lt; 20) draw_sprite(sJawsBody2R, 0, x-48, y);
     else draw_sprite(sJawsBody1R, 0, x-48, y);
 }
-/* debug
-draw_set_font(global.myFontSmall);
-draw_set_color(c_white);
-draw_text(x, y-16, string(status) + ":" + string(counter));
-*/</string>
+</string>
           </argument>
         </arguments>
       </action>

@@ -482,7 +482,7 @@ else if (mouse_x &gt; 16 and
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(global.myFontSmall);
+            <string>draw_set_font(global.fontSmall);
 draw_set_color(c_white);
 
 if (status == GET_FILE_NAME)
@@ -529,7 +529,7 @@ else if (status == INFO_NEXT)
 }
 else if (status == EXIT or status == NEW)
 {
-    strLen = string_length(tr("SAVE LEVEL? (Y/N)"))*8;
+    strLen = string_length(tr("SAVE LEVEL? (Y/N)"))*global.fontSmallWidth;
     n = 320 - strLen;
     n = ceil(n / 2);
     draw_text(view_xview[0]+n, view_yview[0]+116, tr("SAVE LEVEL? (Y/N)"));
@@ -538,7 +538,7 @@ else if (status == EXIT or status == NEW)
     draw_set_color(c_yellow);
     if not (instance_exists(oEntrance))
     {
-        strLen = string_length(tr("WARNING: NO ENTRANCE!"))*8;
+        strLen = string_length(tr("WARNING: NO ENTRANCE!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(view_xview[0]+n, view_yview[0]+116+m, tr("WARNING: NO ENTRANCE!"));
@@ -547,7 +547,7 @@ else if (status == EXIT or status == NEW)
     
     if not (instance_exists(oExit))
     {
-        strLen = string_length(tr("WARNING: NO EXIT!"))*8;
+        strLen = string_length(tr("WARNING: NO EXIT!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(view_xview[0]+n, view_yview[0]+116+m, tr("WARNING: NO EXIT!"));
@@ -566,7 +566,8 @@ else
         draw_text(view_xview[0]+40, view_yview[0]+16, levelName + " BY " + author);
         draw_text(view_xview[0]+40, view_yview[0]+24, string(oCursObj.x) + ", " + string(oCursObj.y));
     }
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>

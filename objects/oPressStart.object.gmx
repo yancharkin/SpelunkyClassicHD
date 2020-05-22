@@ -110,9 +110,9 @@ if (instance_exists(oPlayer1)) {
                     text = tr("PRESS ESC TO SHOW THE MENU");
                 }
             }
-            draw_set_font(global.myFontSmall);
+            draw_set_font(global.fontSmall);
             draw_set_color(c_white);
-            strLen = string_length(text)*8;
+            strLen = string_length(text)*global.fontSmallWidth;
             posX = anchorX + ceil(( view_wview[0] - strLen) / 2);
             draw_text(posX, 108, text);
         }

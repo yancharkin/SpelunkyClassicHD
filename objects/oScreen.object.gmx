@@ -672,10 +672,10 @@ if (paused)
 {
     surface_set_target(pSurf)
     
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     draw_text(112, 200, tr("PAUSED"));
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     if (isLevel())
     {
         n = 128-24;
@@ -731,7 +731,7 @@ else
         if (oTitle.darkness &gt; 0) draw_rectangle(0, 0, screen_w, screen_h, false);
         if (oTitle.state == 1)
         {
-            draw_set_font(global.myFontSmall);
+            draw_set_font(global.fontSmall);
             draw_set_color(c_white);
             draw_text(88, 48, tr("DEREK YU PRESENTS"));
         }

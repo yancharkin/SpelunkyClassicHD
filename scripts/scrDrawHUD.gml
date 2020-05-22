@@ -29,12 +29,11 @@ if (!global.html5Build) {
     condition3 = true;
 }
 
-//if (global.drawHUD && instance_exists(oPlayer1) && view_current==7)
 if (global.drawHUD && instance_exists(oPlayer1) && condition3)
 {
     if (!global.html5Build) {
-        vxv = 0 //view_xview[0];
-        vyv = 0 //view_yview[0];
+        vxv = 0;
+        vyv = 0;
     } else {
         vxv = view_xview[0];
         vyv = view_yview[0];    
@@ -44,19 +43,17 @@ if (global.drawHUD && instance_exists(oPlayer1) && condition3)
     bombX = vxv+64;
     ropeX = vxv+120;
     moneyX = vxv+176;
-    draw_set_font(global.myFont);
-    draw_set_color(c_white);
     draw_sprite(sHeart, -1, lifeX, vyv+8);
     life = global.plife;
     if (life < 0) life = 0;
-    draw_text(lifeX+16, vyv+8, life);
+    drawText(life, 'large', c_white, lifeX+16, vyv+8+global.fontOffsetY);
     if (global.hasStickyBombs) draw_sprite(sStickyBombIcon, -1, bombX, vyv+8);
     else draw_sprite(sBombIcon, -1, bombX, vyv+8);
-    draw_text(bombX+16, vyv+8, global.bombs);
+    drawText(global.bombs, 'large', c_white, bombX+16, vyv+8+global.fontOffsetY);
     draw_sprite(sRopeIcon, -1, ropeX, vyv+8);
-    draw_text(ropeX+16, vyv+8, global.rope);
+    drawText(global.rope, 'large', c_white, ropeX+16, vyv+8+global.fontOffsetY);
     draw_sprite(sDollarSign, -1, moneyX, vyv+8);
-    draw_text(moneyX+16, vyv+8, global.money);
+    drawText(global.money, 'large', c_white, moneyX+16, vyv+8+global.fontOffsetY);
 
     if (isRoom("rOlmec")) { global.exitX = 640; global.exitY = 544; }
     
@@ -194,10 +191,8 @@ if (global.drawHUD && instance_exists(oPlayer1) && condition3)
             m -= 1;
         }
     }
-     
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_yellow);
-    if (global.collect > 0) draw_text(moneyX, vyv+8+16, "+" + string(global.collect));
-
+         if (global.collect > 0) {
+        drawText("+" + string(global.collect), 'small', c_yellow, moneyX, vyv+8+16);
+    }
 }
 

@@ -723,30 +723,30 @@ if (global.mobileBuild == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(global.myFontSmall);
+            <string>draw_set_font(global.fontSmall);
 draw_set_color(c_white);
 if (instance_exists(oTunnelMan))
 {
     person = instance_nearest(176, 176, oTunnelMan);
     if (person.talk == 1)
     {
-        strLen = string_length(tr("HEY THERE! I'M THE TUNNEL MAN!"))*8;
+        strLen = string_length(tr("HEY THERE! I'M THE TUNNEL MAN!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 208, tr("HEY THERE! I'M THE TUNNEL MAN!"));
-        strLen = string_length(tr("I DIG SHORTCUTS."))*8;
+        strLen = string_length(tr("I DIG SHORTCUTS."))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 216, tr("I DIG SHORTCUTS."));
     }
     else if (person.talk == 2)
     {
-        strLen = string_length(tr("CAN YOU LEND ME A LITTLE MONEY?"))*8;
+        strLen = string_length(tr("CAN YOU LEND ME A LITTLE MONEY?"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 208, tr("CAN YOU LEND ME A LITTLE MONEY?"));
-        if (isRoom("rTransition1x") or isRoom("rTransition3x")) strLen = string_length(tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."))*8;
-        else strLen = string_length(tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT."))*8;
+        if (isRoom("rTransition1x") or isRoom("rTransition3x")) strLen = string_length(tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."))*global.fontSmallWidth;
+        else strLen = string_length(tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT."))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         if (isRoom("rTransition1x") or isRoom("rTransition3x")) draw_text(n, 216, tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."));
@@ -757,21 +757,21 @@ if (instance_exists(oTunnelMan))
     }
     else if (person.talk == 3)
     {
-        strLen = string_length(tr("THANKS! YOU WON'T REGRET IT!"))*8;
+        strLen = string_length(tr("THANKS! YOU WON'T REGRET IT!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 216, tr("THANKS! YOU WON'T REGRET IT!"));
     }
     else if (person.talk == 4)
     {
-        strLen = string_length(tr("I'LL NEVER GET THIS SHORTCUT BUILT!"))*8;
+        strLen = string_length(tr("I'LL NEVER GET THIS SHORTCUT BUILT!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 216, tr("I'LL NEVER GET THIS SHORTCUT BUILT!"));
     }
     else if (person.talk == 5)
     {
-        strLen = string_length(tr("ONE SHORTCUT, COMING UP!"))*8;
+        strLen = string_length(tr("ONE SHORTCUT, COMING UP!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 216, tr("ONE SHORTCUT, COMING UP!"));
@@ -782,7 +782,7 @@ else if (instance_exists(oDamselKiss))
     person = instance_nearest(176, 176, oDamselKiss);
     if (person.kissed)
     {
-        strLen = string_length(tr("MY HERO!"))*8;
+        strLen = string_length(tr("MY HERO!"))*global.fontSmallWidth;
         n = 320 - strLen;
         n = ceil(n / 2);
         draw_text(n, 216, tr("MY HERO!"));

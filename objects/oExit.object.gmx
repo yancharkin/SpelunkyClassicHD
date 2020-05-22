@@ -49,11 +49,8 @@ leadsTo = ""; // used for Level Editor only</string>
           <argument>
             <kind>1</kind>
             <string>draw_sprite(sprite_index, -1, x, y);
-if (isRoom("rLevelEditor"))
-{
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_white);
-    draw_text(x, y, leadsTo);
+if (isRoom("rLevelEditor")) {
+    drawText(leadsTo, 'small', c_white, x, y);
 }
 </string>
           </argument>

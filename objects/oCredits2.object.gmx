@@ -400,22 +400,22 @@ else if (fadeOut)
             <kind>1</kind>
             <string>if (drawStatus == 1)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_yellow);
     draw_text(16, 16, "SPELUNKY");
 }
 else if (drawStatus == 2)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(16, 16, tr("A GAME BY"));
-    // draw_set_font(global.myFontSmall);
+    // draw_set_font(global.fontSmall);
     draw_set_color(c_white);
     draw_text(32, 32, "DEREK YU");
 }
 else if (drawStatus == 3)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(16, 16, tr("PLATFORM ENGINE"));
     draw_set_color(c_white);
@@ -431,7 +431,7 @@ else if (drawStatus == 3)
 }
 else if (drawStatus == 4)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(16, 16, tr("MUSIC BY"));
     draw_set_color(c_white);
@@ -440,7 +440,7 @@ else if (drawStatus == 4)
 }
 else if (drawStatus == 5)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(16, 16, tr("BETA TESTING BY"));
     draw_set_color(c_white);
@@ -469,10 +469,10 @@ else if (drawStatus == 5)
 }
 else if (drawStatus == 6)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(16, 16, tr("THANKS FOR PLAYING!"));
-    // draw_set_font(global.myFontSmall);
+    // draw_set_font(global.fontSmall);
     draw_set_color(c_white);
     draw_text(32, 32, tr("SEE YOU NEXT ADVENTURE!"));
 }

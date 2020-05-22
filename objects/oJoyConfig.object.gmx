@@ -163,9 +163,9 @@ audio_resume_all();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(global.myFontSmall);
+            <string>draw_set_font(global.fontSmall);
 draw_set_color(c_yellow);
-strLen = string_length(tr("PRESS BUTTON FOR"))*8;
+strLen = string_length(tr("PRESS BUTTON FOR"))*global.fontSmallWidth;
 n = 160 - strLen;
 n = ceil(n / 2);
 draw_text(n, 32, tr("PRESS BUTTON FOR"));
@@ -180,9 +180,9 @@ if (not gamepad_is_connected(global.joyid) and string_length(gamepad_get_descrip
 
 if (status == 0)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("JUMP"))*16;
+    strLen = string_length(tr("JUMP"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("JUMP"));
@@ -190,9 +190,9 @@ if (status == 0)
 }
 else if (status == 1)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("ACTION"))*16;
+    strLen = string_length(tr("ACTION"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("ACTION"));
@@ -200,9 +200,9 @@ else if (status == 1)
 }
 else if (status == 2)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("SWITCH"))*16;
+    strLen = string_length(tr("SWITCH"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("SWITCH"));
@@ -210,9 +210,9 @@ else if (status == 2)
 }
 else if (status == 3)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("RUN"))*16;
+    strLen = string_length(tr("RUN"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("RUN"));
@@ -220,9 +220,9 @@ else if (status == 3)
 }
 else if (status == 4)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("BOMB"))*16;
+    strLen = string_length(tr("BOMB"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("BOMB"));
@@ -230,9 +230,9 @@ else if (status == 4)
 }
 else if (status == 5)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("ROPE"))*16;
+    strLen = string_length(tr("ROPE"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("ROPE"));
@@ -240,9 +240,9 @@ else if (status == 5)
 }
 else if (status == 6)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("FLARE"))*16;
+    strLen = string_length(tr("FLARE"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("FLARE"));
@@ -250,9 +250,9 @@ else if (status == 6)
 }
 else if (status == 7)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("PURCHASE"))*16;
+    strLen = string_length(tr("PURCHASE"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("PURCHASE"));
@@ -260,16 +260,16 @@ else if (status == 7)
 }
 else if (status == 8)
 {
-    draw_set_font(global.myFont);
+    draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("START"))*16;
+    strLen = string_length(tr("START"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("START"));
     currVal = global.joyStartVal;
 }
 
-draw_set_font(global.myFontSmall);
+draw_set_font(global.fontSmall);
 draw_text(80, 104, scrGetJoy(currVal));
 </string>
           </argument>

@@ -85,8 +85,8 @@ if (global.mobileBuild) {
         maxIndexTitle = 5;
     }
 }
-firstMenuItemTitleY = (240 - 8 - 20 * maxIndexTitle) / 2;
-firstMenuItemGameY = (240 - 8 - 20 * maxIndexGame) / 2;
+firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
+firstMenuItemGameY = (240 - global.fontSmallHeight - 20 * maxIndexGame) / 2;
 
 //Left analog stick in the menu
 global.analogLDownPreviousState = false;
@@ -1000,12 +1000,14 @@ if (global.mobileBuild == true)
 display_set_gui_size(global.display_w,global.display_h);
 if (!global.html5Build) scrDrawHUD();
 
-if (global.messageTimer &gt; 0) {   
-    drawTextHCentered(global.message, 'small', c_white, 0, 216);
+if (global.messageTimer &gt; 0) {
+    y1 = 216 + 8 - global.fontSmallHeight;
+    y2 = y1 + global.fontSmallHeight;
+    drawMessage(global.message, 'small', c_white, 0, y1, 1);
     if (not isRoom("rTutorial")) {
-        drawTextHCentered(global.message2, 'small', c_yellow, 0, 224);
+        drawMessage(global.message2, 'small', c_yellow, 0, y2, 2);
     } else {
-        drawTextHCentered(global.message2, 'small', c_white, 0, 224);
+        drawMessage(global.message2, 'small', c_white, 0, y2, 2);
     }
     global.messageTimer -= 1;
 }
@@ -1039,23 +1041,23 @@ if (global.messageTimer &gt; 0) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.myFont);
+                draw_set_font(global.fontLarge);
                 draw_set_color(c_yellow);
                 draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("GAME OVER"));
             }
             if (drawStatus &gt; 1)
             {
-                draw_set_font(global.myFontSmall);
+                draw_set_font(global.fontSmall);
                 draw_set_color(c_yellow);
                 draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, tr("FINAL SCORE:"));
             }
             if (drawStatus &gt; 2)
             {
-                draw_set_font(global.myFont);
+                draw_set_font(global.fontLarge);
                 draw_set_color(c_white);
                 draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+72+16, "$" + string(moneyCount));
                 
-                draw_set_font(global.myFontSmall);
+                draw_set_font(global.fontSmall);
                 draw_set_color(c_yellow);
                 if (global.customLevel)
                 {
@@ -1069,7 +1071,7 @@ if (global.messageTimer &gt; 0) {
                         if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
                         else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
                     }
-                    strLen = string_length(str)*8;
+                    strLen = string_length(str)*global.fontSmallWidth;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
                     draw_text(view_xview[0]+n, view_yview[0]+120, str);
@@ -1078,7 +1080,7 @@ if (global.messageTimer &gt; 0) {
                 {
                     if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" FOR HIGH SCORES.");
                     else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" FOR HIGH SCORES.");
-                    strLen = string_length(str)*8;
+                    strLen = string_length(str)*global.fontSmallWidth;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
                     draw_text(view_xview[0]+n, view_yview[0]+120, str);
@@ -1089,17 +1091,17 @@ if (global.messageTimer &gt; 0) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.myFont);
+                draw_set_font(global.fontLarge);
                 draw_set_color(c_yellow);
                 draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
             }
             if (drawStatus &gt; 1)
             {
-                draw_set_font(global.myFontSmall);
+                draw_set_font(global.fontSmall);
                 draw_set_color(c_yellow);
                 if (oSunRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                 else str = tr("BETTER LUCK NEXT TIME...");
-                strLen = string_length(str)*8;
+                strLen = string_length(str)*global.fontSmallWidth;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);
                 draw_text(n-global.room_offset, view_yview[0]+64+16, str);
@@ -1111,17 +1113,17 @@ if (global.messageTimer &gt; 0) {
             {
                 if (drawStatus &gt; 0)
                 {
-                    draw_set_font(global.myFont);
+                    draw_set_font(global.fontLarge);
                     draw_set_color(c_yellow);
                     draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
                 }
                 if (drawStatus &gt; 1)
                 {
-                    draw_set_font(global.myFontSmall);
+                    draw_set_font(global.fontSmall);
                     draw_set_color(c_yellow);
                     if (oMoonRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                     else str = tr("BETTER LUCK NEXT TIME...");
-                    strLen = string_length(str)*8;
+                    strLen = string_length(str)*global.fontSmallWidth;
                     n = global.display_w - strLen;
                     n = ceil(n / 2);
                     draw_text(n-global.room_offset, view_yview[0]+64+16, str);
@@ -1132,17 +1134,17 @@ if (global.messageTimer &gt; 0) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.myFont);
+                draw_set_font(global.fontLarge);
                 draw_set_color(c_yellow);
                 draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
             }
             if (drawStatus &gt; 1)
             {
-                draw_set_font(global.myFontSmall);
+                draw_set_font(global.fontSmall);
                 draw_set_color(c_yellow);
                 if (oStarsRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                 else str = tr("BETTER LUCK NEXT TIME...");
-                strLen = string_length(str)*8;
+                strLen = string_length(str)*global.fontSmallWidth;
                 n = global.display_w - strLen;
                 n = ceil(n / 2);
                 draw_text(n-global.room_offset, view_yview[0]+64+16, str);
@@ -1230,7 +1232,7 @@ if (false and instance_exists(oPlayer1))
 
 if (false and instance_exists(oPlayer1))
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_white);
     draw_text(oPlayer1.x+16, oPlayer1.y-16, string(oPlayer1.stunTimer));
     // if (instance_exists(oLockedChest)) { with oPlayer1 { draw_text(x+16, y-32, distance_to_object(oLockedChest)); } }

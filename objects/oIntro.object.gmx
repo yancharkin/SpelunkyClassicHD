@@ -272,32 +272,16 @@ draw_set_alpha(fadeLevel);
 draw_rectangle(view_xview[0], view_yview[0], view_xview[0]+global.display_w, view_yview[0]+global.display_h, false);
 draw_set_alpha(1);
 
-if (drawStatus &gt; 0)
-{
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_white);
-    strLen = string_length(str1)*8;
-    n = global.display_w - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 116-16, str1);
+offsetY = 8 - global.fontSmallHeight;
+
+if (drawStatus &gt; 0) {
+    drawTextHCentered(str1, 'small', c_white, 0, 116-16+offsetY)
 }
-if (drawStatus &gt; 1)
-{
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_white);
-    strLen = string_length(str2)*8;
-    n = global.display_w - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 116, str2);
+if (drawStatus &gt; 1) {
+    drawTextHCentered(str2, 'small', c_white, 0, 116+offsetY)
 }
-if (drawStatus &gt; 2)
-{
-    draw_set_font(global.myFontSmall);
-    draw_set_color(c_white);
-    strLen = string_length(str3)*8;
-    n = global.display_w - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 116+16, str3);
+if (drawStatus &gt; 2) {
+    drawTextHCentered(str3, 'small', c_white, 0, 116+16+offsetY)
 }
 </string>
           </argument>

@@ -1,7 +1,10 @@
 ///loadLocalizedSprites
 
-var localeDir = working_directory + "locale/" + global.locale;
-var localizedImagesDir = localeDir + "/images/"
+var localizedImagesDir = working_directory + "locale/locales/" + global.locale + "/images/";
+
+if (!file_exists(localizedImagesDir + "level5_sign.png")) {
+    localizedImagesDir = working_directory + "locale/locales/en/images/";
+}
 
 if (instance_exists(oLevel5Sign)) {
     sLevel5SignNew = sprite_add(localizedImagesDir + "level5_sign.png", 1, false, false, 0, 0);

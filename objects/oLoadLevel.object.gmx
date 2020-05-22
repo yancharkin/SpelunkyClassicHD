@@ -172,7 +172,7 @@ if (status == GET_FILE_NAME)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(global.myFontSmall);
+            <string>draw_set_font(global.fontSmall);
 draw_set_color(c_white);
 
 if (status == GET_FILE_NAME)

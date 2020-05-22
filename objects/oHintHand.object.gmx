@@ -47,20 +47,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(oPlayer1))
-{
-    if (abs(oPlayer1.x - (x+8)) &lt; 8)
-    {    
-        draw_set_font(global.myFontSmall);
-        draw_set_color(c_white);
-        strLen = string_length(tr("PRESS UP TO ENTER!"))*8;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(320+n, 216, string(tr("PRESS UP TO ENTER!")));
+            <string>if (instance_exists(oPlayer1)) {
+    if (abs(oPlayer1.x - (x+8)) &lt; 8) {
+        drawTextHCentered(tr("PRESS UP TO ENTER!"), 'small', c_white, 0, 216)
     }
 }
-
-draw_sprite(sprite_index, image_index, x, y);</string>
+draw_sprite(sprite_index, image_index, x, y);
+</string>
           </argument>
         </arguments>
       </action>

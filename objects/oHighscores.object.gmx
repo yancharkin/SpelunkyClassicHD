@@ -218,7 +218,7 @@ else
 
 if (oPlayer1.y &lt; 156)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
     draw_text(128+16, 32, tr("SECRET CHALLENGES"));
     draw_set_color(c_white);
@@ -334,7 +334,7 @@ with oNew
 {
     visible = true;
 }
-draw_set_font(global.myFontSmall);
+draw_set_font(global.fontSmall);
 draw_set_color(c_yellow);
 draw_text(160, 32, tr("TOP DEFILERS"));
 draw_set_color(c_white);
@@ -368,9 +368,9 @@ draw_text(128, 160, tr("WINS:   ") + string(ini_read_real("highscore","value6",0
 block = instance_nearest(160, 240, oPushBlock);
 if (not oButtonHighscore.pushed and block.x &gt; 160)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
-    strLen = string_length(tr("THIS WILL CLEAR EVERYTHING!"))*8;
+    strLen = string_length(tr("THIS WILL CLEAR EVERYTHING!"))*global.fontSmallWidth;
     n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(n-global.room_offset, 216, string(tr("THIS WILL CLEAR EVERYTHING!")));

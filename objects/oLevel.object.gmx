@@ -287,23 +287,25 @@ if (global.darkLevel)
 
 }
 
+/*
 if (not global.darkLevel and global.messageTimer &gt; 0)
 {
-    draw_set_font(global.myFontSmall);
+    draw_set_font(global.fontSmall);
     draw_set_color(c_white);
-    strLen = string_length(global.message)*8;
+    strLen = string_length(global.message)*global.fontSmallWidth;
     n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(view_xview[0]+n, view_yview[0]+216, string(global.message));
     
     if (not isLevel("rTutorial")) draw_set_color(c_yellow);
-    strLen = string_length(global.message2)*8;
+    strLen = string_length(global.message2)*global.fontSmallWidth;
     n = global.display_w - strLen;
     n = ceil(n / 2);
     draw_text(view_xview[0]+n, view_yview[0]+224, string(global.message2));
     
     global.messageTimer -= 1;
 }
+*/
 </string>
           </argument>
         </arguments>

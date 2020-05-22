@@ -6,13 +6,12 @@ var color = argument[2];
 var offsetX = argument[3];
 var posY = argument[4];
 
-if (fontSize = 'small') {
-    strLen = string_length(text)*8;
-    draw_set_font(global.myFontSmall);
-
+if (fontSize == 'small') {
+    strLen = string_length(text)*global.fontSmallWidth;
+    draw_set_font(global.fontSmall);
 } else {
-    strLen = string_length(text)*16;
-    draw_set_font(global.myFont);
+    strLen = string_length(text)*global.fontLargeWidth;
+    draw_set_font(global.fontLarge);
 }
 
 posX = ceil((global.display_w - strLen) / 2);
