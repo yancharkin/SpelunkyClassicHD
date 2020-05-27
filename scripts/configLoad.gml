@@ -76,3 +76,9 @@ if (file_exists(working_directory + "gamepad.json")) {
     global.joyStartVal =  int64(joyMap[? "joyStartVal"]);
     ds_map_destroy(joyMap);
 }
+
+if (file_exists(working_directory + "gamepadmapping.json")) {
+    global.gamepadMapping = json2dsmap(working_directory + "gamepadmapping.json");
+} else {
+    global.gamepadMapping = ds_map_create();
+}
