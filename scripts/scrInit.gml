@@ -30,8 +30,9 @@ window_set_cursor(cr_none);
 startGame = false;
 
 // Defaults
+global.touchControlsVisibility = 0;
+if (global.mobileBuild) global.touchControlsVisibility = 2;
 global.toggleRun = false;
-global.touchControlsVisible = 1;
 global.firstLaunch = true;
 global.locale = "en";
 global.fullscreen = false;
@@ -39,7 +40,6 @@ global.toggleRunEnabled = false;
 global.graphicsHigh = true;
 global.downToRun = true;
 global.gamepadOn = false;
-global.screenScale = 1;
 global.musicVol = 15;
 global.soundVol = 15;
 

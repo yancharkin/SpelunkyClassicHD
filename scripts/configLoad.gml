@@ -42,6 +42,7 @@ if (file_exists(working_directory + "settings.json")) {
     global.fullscreen = settingsMap[? "fullscreen"];
     global.toggleRunEnabled = settingsMap[? "toggleRunEnabled"];
     global.firstLaunch = settingsMap[? "firstLaunch"];
+    global.touchControlsVisibility = int64(settingsMap[? "touchControlsVisibility"]);
     ds_map_destroy(settingsMap);
 }
 

@@ -8,7 +8,7 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>63</bbox_right>
+  <bbox_right>31</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>127</bbox_bottom>
   <HTile>0</HTile>
@@ -17,9 +17,9 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>64</width>
+  <width>32</width>
   <height>128</height>
   <frames>
-    <frame index="0">images\TouchButtons2SemiTr_0.png</frame>
+    <frame index="0">images\TouchButtons2Op1_0.png</frame>
   </frames>
 </sprite>

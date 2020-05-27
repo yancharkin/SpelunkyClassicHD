@@ -241,7 +241,6 @@ else if (fadeOut)
     else
     {
         global.gameStart = false;
-        global.touchControlsVisible = 1;
         room_goto(rTitle);
     }
 }

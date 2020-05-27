@@ -19,6 +19,7 @@ if (!global.html5Build) {
     ds_map_replace(settingsMap, "toggleRunEnabled", global.toggleRunEnabled);
     ds_map_replace(settingsMap, "firstLaunch", global.firstLaunch);
 }
+ds_map_replace(settingsMap, "touchControlsVisibility", int64(global.touchControlsVisibility));
 
 dsmap2json(settingsMap, working_directory + "settings.json");
 ds_map_destroy(settingsMap);
