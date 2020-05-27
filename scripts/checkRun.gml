@@ -1,7 +1,6 @@
 if (gamepad.run) {
     return gamepad.run;
 } else {
-    if (!global.mobileBuild) {
         if (!global.toggleRunEnabled) {
             return (keyboard_check(global.keyRunVal) or
                     html5_gamepad_button_check(global.joyid, global.joyRunVal) or
@@ -10,7 +9,4 @@ if (gamepad.run) {
         } else {
             return global.toggleRun;
         }
-    } else {
-        return global.toggleRun;
-    }
 }

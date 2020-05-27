@@ -101,17 +101,15 @@ if (buttonPressed) {
     } else if (status == 5) {
         global.joyRopeVal = button;
     } else if (status == 6) {
-        global.joyFlareVal = button;
-    } else if (status == 7) {
         global.joyPayVal = button;
-    } else if (status == 8) {
+    } else if (status == 7) {
         global.joyStartVal = button;
     }
 }
 
 if (buttonPressed or keyboard_check_pressed(vk_escape)) {
     status += 1;
-    if (status &gt; 8) room_goto(rTitle);
+    if (status &gt; 7) room_goto(rTitle);
 }
 </string>
           </argument>
@@ -224,20 +222,12 @@ if (status == 0) {
 } else if (status == 6) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
-    strLen = string_length(tr("FLARE"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, tr("FLARE"));
-    currVal = global.joyFlareVal;
-} else if (status == 7) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
     strLen = string_length(tr("PURCHASE"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, tr("PURCHASE"));
     currVal = global.joyPayVal;
-} else if (status == 8) {
+} else if (status == 7) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("START"))*global.fontLargeWidth;

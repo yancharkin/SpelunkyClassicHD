@@ -1876,23 +1876,6 @@ else if (kAttackPressed)
     }
 }
 
-if (global.mobileBuild == true)
-{
-    if (keyboard_check_pressed(ord('F')))
-        if (global.touchControlsVisible == 1)
-        {
-            global.touchControlsVisible = 2;
-        }
-        else if (global.touchControlsVisible == 2)
-        {
-            global.touchControlsVisible = 0;
-        }
-        else if (global.touchControlsVisible == 0)
-        {
-            global.touchControlsVisible = 1;
-        }
-}
-
 /*
 if (isLevel() and kFlarePressed and active and not dead and not stunned)
 {
@@ -2827,14 +2810,10 @@ global.xmoney += global.money - money;</string>
             <kind>1</kind>
             <string>///Check keyboard input
 if (!global.html5Build) {
-    if (keyboard_check_pressed(global.keyRunVal) or
-            gamepad_button_check_pressed(global.joyid, global.joyRunVal)) {
-        if (global.mobileBuild) {
+if (keyboard_check_pressed(global.keyRunVal) or
+        gamepad_button_check_pressed(global.joyid, global.joyRunVal)) {
+        if (global.toggleRunEnabled) {
             global.toggleRun = !global.toggleRun;
-        } else {
-            if (global.toggleRunEnabled) {
-                global.toggleRun = !global.toggleRun;
-            }
         }
     }
 } else {
