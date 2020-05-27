@@ -27,11 +27,7 @@
             <kind>1</kind>
             <string>scrReadStats();
 scrInit();
-//global.fullscreen = true;
-
 instance_destroy();
-//instance_create(0,0,oScreenFirst)
-//instance_create(0,0,oScreenLast)
 </string>
           </argument>
         </arguments>
@@ -54,16 +50,15 @@ instance_destroy();
             <kind>1</kind>
             <string>py = 0; // player Y coord
 
-// screen base(view_wview and view_hview)
+// screen
 screen_x = 0;
 screen_y = 0;
 screen_w = display_get_width();
 screen_h = display_get_height();
-screen_scale =  1; //global.screenScale;
 enabled = true;
 
 // pause
-pSurf = -1 surface_create(screen_w,screen_h);  //    MJD
+pSurf = -1 surface_create(screen_w,screen_h);
 canPause = true;
 paused = false;
 
@@ -71,50 +66,27 @@ paused = false;
 screen = -1; //surface_create(screen_w,screen_h);
 darkSurf = surface_create(screen_w,screen_h);
 
-/*
-if (screen)
-{
-    surface_set_target(screen);
-    draw_clear(c_black);
+// use all screen space if possible
+h = 240;
+global.screenAspectRatio = (screen_w/screen_h);
+if ((global.screenAspectRatio &gt;= 1.333333333) and (global.screenAspectRatio &lt;= 1.875)) {
+    w = round(240 * global.screenAspectRatio);
+    global.touchCorrectionH = 0;
+    global.touchCorrectionV = 0;
+} else {
+    if (global.screenAspectRatio &gt; 1.875) {
+        w = 450;
+        global.touchCorrectionH = ((w - 320)/8);
+        global.touchCorrectionV = 0;
+    } else if (global.screenAspectRatio &lt; 1.333333333) {
+        w = 320;
+        global.touchCorrectionH = 0;
+        global.touchCorrectionV = ((screen_h - 240)/10);
+    }
 }
-*/
+
 // set up rooms
-aspect_ratio = (screen_w/screen_h);
-
-if (aspect_ratio &gt; 1.71)
-{
-    w = 430 * screen_scale;
-}
-else if (aspect_ratio &gt; 1.6)
-{
-    w = 405 * screen_scale;
-}
-else if (aspect_ratio &gt; 1.5)
-{
-    w = 384 * screen_scale;   
-}
-else if (aspect_ratio &gt; 1.4)
-{
-    w = 360 * screen_scale; 
-}
-else if (aspect_ratio &gt; 1.3)
-{
-    w = 320 * screen_scale; 
-}
-else if (aspect_ratio = 1.2)
-{
-    w = 300 * screen_scale; 
-}
-else
-{
-    w = 320 * screen_scale; 
-}
-
-h = 240 * screen_scale;
-
 global.room_offset = ((w - 320)/2);
-
-//room_set_view(ind, vind, vis, xview, yview, wview, hview, xport, yport, wport, hport, hborder, vborder, hspeed, vspeed, obj);
 room_set_view(rIntro,0,true,0,0,w,h,0,0,w,h,128,0,-1,-1,oPDummy3);
 room_set_view(rCredits1,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
 room_set_view(rCredits2,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
@@ -149,14 +121,6 @@ room_set_view(rKeyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,
 room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
 room_set_view(rJoyConfigHtml5,0,true,-conf_x,-conf_y,w,h,-conf_x,-conf_y,w,h,0,0,0,0,noone);
 
-// this will destroy the screen object if surfaces are not supported on the graphics card, reverting to the viewport method
-/*if (screen == -1) game_end2();
-else*/
-
-// Fake fullscreen (borderless fullscreen window), Windows only.
-/*window_set_size(screen_w, screen_h);
-window_set_position(0, 0);*/
-
 window_set_size(screen_w, screen_h);
 if (global.fullscreen){
     if (!global.html5Build) {
@@ -171,7 +135,7 @@ if (global.fullscreen){
 }
 
 if (!global.html5Build) {
-    window_set_size(800, 800/aspect_ratio);
+    window_set_size(800, 800/global.screenAspectRatio);
 }
 surface_resize(application_surface, w, h);
 view_wview[0] = w;
@@ -322,30 +286,6 @@ room_goto_next();
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// this sets surface 'screen' as the drawing target for everything in the game, so all drawing will be done on this surface and not on the game screen
-//surface_set_target(screen);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
@@ -393,13 +333,7 @@ if (checkBombPressed())
         if (not global.hasAnkh) stopAllMusic();
     }
 }
-/*
-else if (checkRopePressed())
-{
-    if (paused)
-        game_end2();
-}
-*/
+
 else if (checkStartPressed())
 {
     if (not paused and canPause)
@@ -409,11 +343,10 @@ else if (checkStartPressed())
             if (not oPlayer1.dead)
             {
                 surface_set_target(pSurf);
-                //screen_redraw();
                 if (global.darkLevel) draw_set_alpha(1);
                 else draw_set_alpha(0.9);
                 draw_set_color(c_black);
-                draw_rectangle(0, 0, global.display_w*screen_scale, global.display_h*screen_scale, false);
+                draw_rectangle(0, 0, global.display_w, global.display_h, false);
                 draw_set_alpha(1);
                 if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 0);
                 if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 0);
@@ -442,18 +375,12 @@ else if (checkStartPressed())
     }
 }
 
-//show_debug_message("2")
-
 // this draws the surface on the screen
 surface_reset_target();
 draw_clear(0);
 if (paused)
 {   
     draw_surface_stretched(pSurf,screen_x,screen_y,window_get_width(),window_get_height());
-    //draw_surface_stretched(pSurf,screen_x,screen_y,browser_width,browser_height);
-    //draw_surface_stretched(pSurf,screen_x,screen_y,global.display_w*screen_scale,global.display_h*screen_scale);
-    //draw_surface_stretched(pSurf,screen_x,screen_y,global.display_w*screen_scale*(window_get_width()/view_wview[0]),global.display_h*screen_scale*(window_get_height()/view_hview[0]));
-    //draw_surface_stretched(pSurf,screen_x,screen_y,global.display_w,global.display_h);
 }
 else
 {
@@ -553,23 +480,15 @@ else
             {
                 draw_circle((x+16)-view_xview[0], (y+16)-view_yview[0], 64, false);
             }
-            //surface_set_target(screen);
         }
         surface_reset_target();
     }
 
-    // DFK
-    // draw_set_blend_mode_ext(bm_one, bm_zero); // According to ChevyRay, this should fix the black box glitch
     if view_current=0
     {
-        //draw_surface_stretched(screen,screen_x,screen_y,browser_height*(960/720),browser_height);
-        draw_surface_stretched(screen,screen_x,screen_y,global.display_w*screen_scale,global.display_h*screen_scale);
-        //draw_surface_stretched(screen,screen_x,screen_y,global.display_w,global.display_h);
+        draw_surface_stretched(screen, screen_x, screen_y, global.display_w, global.display_h);
     }
-    // DFK
-    // draw_set_blend_mode(bm_normal); // According to ChevyRay, this should fix the black box glitch
 }
-
 </string>
           </argument>
         </arguments>
@@ -636,173 +555,6 @@ if (surface_exists(darkSurf))
 stopAllMusic();
 //SS_Unload();
 //scrWriteStats();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/*
-///NEW
-
-//pSurf
-//darkSurf
-//screen
-
-//MJD
-display_set_gui_size(view_wview[0],view_hview[0])
-
-if (paused)
-{
-    surface_set_target(pSurf)
-    
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    draw_text(112, 200, tr("PAUSED"));
-    draw_set_font(global.fontSmall);
-    if (isLevel())
-    {
-        n = 128-24;
-        if (global.currLevel &lt; 1) draw_text(40, n-24, tr("TUTORIAL CAVE"));
-        else if (isRoom("rLoadLevel")) draw_text(40, n-24, tr("LEVEL: ") + global.customLevelName + tr(" BY ") + global.customLevelAuthor);
-        else draw_text(40, n-24, tr("LEVEL ") + string(global.currLevel));
-        draw_text(40, n-16, tr("DEPTH: ") + string(174.8*(global.currLevel-1)+(py+8)*0.34) + tr(" FEET"));
-        draw_text(40, n, tr("MONEY:  ") + string(global.money));
-        draw_text(40, n+8, tr("KILLS:  ") + string(global.kills));
-        s = global.xtime;
-        s = floor(s / 1000);
-        m = 0;
-        while (s &gt; 59)
-        {
-            s -= 60;
-            m += 1;
-        }
-        if (s &lt; 10) str = "0" + string(s);
-        else str = string(s);
-        s2 = global.time;
-        s2 = floor(s2 / 1000);
-        m2 = 0;
-        while (s2 &gt; 59)
-        {
-            s2 -= 60;
-            m2 += 1;
-        }
-        if (s2 &lt; 10) str2 = "0" + string(s2);
-        else str2 = string(s2);
-        draw_text(40, n+16, tr("TIME:  ") + string(m) + ":" + str + " / " + string(m2) + ":" + str2);
-        draw_text(40, n+24, tr("SAVES: ") + string(global.damsels));
-        if (global.gamepadOn) draw_text(24, 216, tr("START-RETURN  BOMB-DIE  ROPE-QUIT/RESET"));
-        else draw_text(40, 216, tr("ESC-RETURN  F1-DIE  F9-QUIT/RESET"));
-    }
-    else
-    {
-        if (global.gamepadOn) draw_text(64, 216, tr("START-RETURN  ROPE-QUIT/RESET"));
-        else draw_text(80, 216, tr("ESC-RETURN  F9-QUIT/RESET"));
-    }
-    
-    global.drawpSurf=1
-    draw_surface_stretched(pSurf,screen_x,screen_y,window_get_width(),window_get_height());
-    draw_surface_stretched(pSurf,screen_x,screen_y,screen_w*screen_scale*(window_get_width()/view_wview[0]),screen_h*screen_scale*(window_get_height()/view_hview[0]));
-    
-    //if view_current=0 draw_surface_stretched(pSurf,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale);
-}
-else
-{
-    if (isRoom("rTitle"))
-    {
-       draw_set_alpha(oTitle.darkness);
-        draw_set_color(c_black);
-        if (oTitle.darkness &gt; 0) draw_rectangle(0, 0, screen_w, screen_h, false);
-        if (oTitle.state == 1)
-        {
-            draw_set_font(global.fontSmall);
-            draw_set_color(c_white);
-            draw_text(88, 48, tr("DEREK YU PRESENTS"));
-        }
-        draw_set_alpha(1);
-    }
-}
-*/
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="112">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//if (paused and global.plife &gt; 0 and isLevel())
-//{
-//    instance_activate_all();
-//    paused = false;
-//    with oPlayer1
-//    {
-//        if (facing == 18) xVel = -3;
-//        else xVel = 3;
-//        yVel = -6;
-//        global.plife = -99;
-//    }
-    
-//    if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 10000);
-//    if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 10000);
-//    if (SS_IsSoundPlaying(global.musLush)) SS_SetSoundVol(global.musLush, 10000);
-//    if (SS_IsSoundPlaying(global.musTemple)) SS_SetSoundVol(global.musTemple, 10000);
-//    if (SS_IsSoundPlaying(global.musBoss)) SS_SetSoundVol(global.musBoss, 10000);
-//    stopAllMusic();
-//}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="56">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>show_debug_message("oScreen")
 </string>
           </argument>
         </arguments>
