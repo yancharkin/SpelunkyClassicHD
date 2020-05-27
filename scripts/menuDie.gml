@@ -1,3 +1,4 @@
+///menuDie
 if (paused and global.plife > 0 and isLevel())
 {
     instance_activate_all();

@@ -74,17 +74,20 @@ if (global.gameStart) scrInitLevel();
             <kind>1</kind>
             <string>//Menu
 menuItemIndex = 0;
-if (global.mobileBuild) {
-    maxIndexTitle = 2;
-    maxIndexGame = 2;
-} else {
-    maxIndexGame = 4;
-    if (global.electronBuild or global.browserBuild) {
+
+if (global.html5Build) {
+    if (global.mobileBuild) {
         maxIndexTitle = 6;
+        maxIndexGame = 4;
     } else {
-        maxIndexTitle = 5;
+        maxIndexTitle = 7;
+        maxIndexGame = 5;
     }
+} else {
+    maxIndexTitle = 5;
+    maxIndexGame = 4;
 }
+
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
 firstMenuItemGameY = (240 - global.fontSmallHeight - 20 * maxIndexGame) / 2;
 
@@ -628,6 +631,47 @@ alarm[3] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///"Fix" the jump touch button
+if (instance_exists(oPlayer1)) {
+    if (keyboard_check(ord('J'))) {
+        oPlayer1.initialJumpAcc = -4;
+    } else {    
+        if (!global.html5Build) {
+            if (gamepad.jump or
+                    gamepad_button_check(global.joyid, global.joyJumpVal) or
+                    (gamepad_button_value(global.joyid, global.joyJumpVal) &gt; 0.6) or
+                    keyboard_check(global.keyJumpVal)) {
+                oPlayer1.initialJumpAcc = -2;
+            }
+        } else {
+            if (html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
+                    keyboard_check(global.keyJumpVal)) {
+                oPlayer1.initialJumpAcc = -2;
+            }
+    
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Check input in the menu
 
 //Pause
@@ -675,22 +719,13 @@ if (paused) {
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {
-                    if (!global.mobileBuild) {
-                        paused = false;
-                        instance_activate_all();
-                        room_goto(rKeyConfig);
-                    } else {
-                        paused = false;
-                        instance_activate_all();
-                        room_goto(rJoyConfig);
-                    }
+                    instance_activate_all();
+                    room_goto(rKeyConfig);
                     break;
                 }
-                case 1: {
+                case 1: {               
                     if (global.html5Build) {
                         global.joyid = html5_gamepad_next(global.joyid);
-                    } else if (global.mobileBuild) {
-                        menuLanguage();
                     } else {
                         paused = false;
                         instance_activate_all();
@@ -702,13 +737,7 @@ if (paused) {
                     if (global.html5Build) {
                         paused = false;
                         instance_activate_all();
-                        if (html5_gamepad_connected()) {
-                            room_goto(rJoyConfigHtml5);
-                        }
-                     } else if (global.mobileBuild) {
-                        instance_activate_all();
-                        audio_stop_all();
-                        game_restart();
+                        room_goto(rJoyConfigHtml5);
                      } else {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
                      }
@@ -716,7 +745,9 @@ if (paused) {
                 }
                 case 3: {
                     if (global.html5Build) {
-                        global.toggleRunEnabled = !global.toggleRunEnabled;
+                        menuTouchControls();
+                    } else if (global.mobileBuild) {
+                            menuTouchControls();
                     } else {
                         menuToggleFullscreen();
                     }
@@ -724,7 +755,7 @@ if (paused) {
                 }
                 case 4: {
                     if (global.html5Build) {
-                        menuToggleFullscreen();
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
                         menuLanguage();
                     }
@@ -732,13 +763,33 @@ if (paused) {
                 }
                 case 5: {
                     if (global.html5Build) {
-                        menuLanguage();
+                        if (global.mobileBuild) {
+                            menuLanguage();
+                        } else {
+                            menuToggleFullscreen();
+                        }
                     } else {
-                        quitGame();
+                        if (global.mobileBuild) {
+                            instance_activate_all();
+                            audio_stop_all();
+                            game_restart();
+                        } else {
+                            quitGame();
+                        }
                     }
                     break;
                 }
                 case 6: {
+                    if (global.mobileBuild) {
+                        instance_activate_all();
+                        audio_stop_all();
+                        game_restart();
+                    } else {
+                        menuLanguage();
+                    }
+                    break;
+                }
+                case 7: {
                     if (global.electronBuild) {
                         quitGame();
                     } else if (global.browserBuild) {
@@ -752,33 +803,78 @@ if (paused) {
         } else {
             switch (menuItemIndex) {
                 case 0: {
-                    if (!global.mobileBuild) {
-                        global.toggleRunEnabled = !global.toggleRunEnabled;
+                    if (global.html5Build) {
+                        menuTouchControls();
                     } else {
-                        menuLanguage();
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
                     }
                     break;
                 }
                 case 1: {
-                    if (!global.mobileBuild) {
-                        menuToggleFullscreen();
+                    if (global.html5Build) {
+                        global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
-                        scrDie();
+                        if (global.mobileBuild) {
+                            menuTouchControls();
+                        } else {
+                            menuToggleFullscreen();
+                        }
                     }
                     break;
                 }
                 case 2: {
-                    if (!global.mobileBuild) {
-                        menuLanguage();
+                    if (global.html5Build) {
+                        if (global.mobileBuild) {
+                            menuLanguage();
+                        } else {
+                            menuToggleFullscreen();
+                        }
                     } else {
-                        instance_activate_all();
-                        audio_stop_all();
-                        game_restart();
+                        if (global.mobileBuild) {
+                            menuLanguage();
+                        } else {
+                            menuLanguage();
+                        }
                     }
                     break;
                 }
-                case 3: { scrDie(); break; }
+                case 3: {
+                    if (global.html5Build) {
+                        if (global.mobileBuild) {
+                            menuDie();
+                        } else {
+                            menuLanguage();
+                        }
+                    } else {
+                        if (global.mobileBuild) {
+                            menuDie();
+                        } else {
+                            menuDie();
+                        }
+                    }
+                    break;
+                }
                 case 4: {
+                    if (global.html5Build) {
+                        if (global.mobileBuild) {
+                            instance_activate_all();
+                            audio_stop_all();
+                            game_restart();
+                        } else {
+                            menuDie();
+                        }
+                    } else {
+                        if (global.mobileBuild) {
+                            instance_activate_all();
+                            audio_stop_all();
+                            game_restart();
+                        } else {
+                            quitGame();
+                        }
+                    }
+                    break;
+                }
+                case 5: {
                     if (global.browserBuild) {
                         instance_activate_all();
                         audio_stop_all();
@@ -879,6 +975,7 @@ if (paused) {
     color4 = c_white;
     color5 = c_white;
     color6 = c_white;
+    color7 = c_white;
     switch (menuItemIndex) {
         case 0: { color0 = c_yellow; break; }
         case 1: { color1 = c_yellow; break; }
@@ -887,7 +984,9 @@ if (paused) {
         case 4: { color4 = c_yellow; break; }
         case 5: { color5 = c_yellow; break; }
         case 6: { color6 = c_yellow; break; }
+        case 7: { color7 = c_yellow; break; }
     }
+
     if (global.fullscreen) {
         strFullscreen = tr("ON");
     } else {
@@ -898,57 +997,79 @@ if (paused) {
     } else {
         strToggleRunEnabled = tr("OFF");
     }
+
     strLocaleName = string_upper(global.localesMap[? global.locale]);
+
     if (isRoom("rTitle")) {
-        if (global.electronBuild or global.browserBuild) {
+        if (global.html5Build) {
             drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
             drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color1, 0, firstMenuItemTitleY+20);
             drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, firstMenuItemTitleY+40);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
-            if (global.electronBuild) {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
-            } else {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color4, 0, firstMenuItemTitleY+80);
-            }
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
-            if (global.electronBuild) {
-                drawTextHCentered(tr('QUIT'), 'small', color6, 0, firstMenuItemTitleY+120);
-            } else if (global.browserBuild) {
+            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+            if (global.mobileBuild) {
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
                 drawTextHCentered(tr('RESTART'), 'small', color6, 0, firstMenuItemTitleY+120);
+            } else if (global.browserBuild) {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color6, 0, firstMenuItemTitleY+120);
+                drawTextHCentered(tr('RESTART'), 'small', color7, 0, firstMenuItemTitleY+140);
+            //} else if (global.electronBuild) {
+            } else {        
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);    
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color6, 0, firstMenuItemTitleY+120);
+                drawTextHCentered(tr('QUIT'), 'small', color7, 0, firstMenuItemTitleY+140);
             }
-        } else if (global.mobileBuild) {
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color1, 0, firstMenuItemTitleY+20);
-            drawTextHCentered(tr('RESTART'), 'small', color2, 0, firstMenuItemTitleY+40);
         } else {
             drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
             drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, firstMenuItemTitleY+20);
             drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, firstMenuItemTitleY+40);
-            drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
-            drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemTitleY+100);
+            if (global.mobileBuild) {
+                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+                drawTextHCentered(tr('RESTART'), 'small', color5, 0, firstMenuItemTitleY+100);
+            } else {
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+                drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemTitleY+100);
+            }
         }
     } else {
-        if (!global.mobileBuild) {
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, firstMenuItemGameY);
-            if (global.browserBuild) {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color1, 0, firstMenuItemGameY+20);
-            } else {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
-            }
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
-            drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
-            if (global.browserBuild) {
+        if (global.html5Build) {
+            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color0, 0, firstMenuItemGameY);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+            if (global.mobileBuild) {
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
                 drawTextHCentered(tr('RESTART'), 'small', color4, 0, firstMenuItemGameY+80);
+            } else if (global.browserBuild) {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('DIE!'), 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('RESTART'), 'small', color5, 0, firstMenuItemGameY+100);
+            //} else if (global.electronBuild) {
             } else {
-                drawTextHCentered(tr('QUIT'), 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('DIE!'), 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemGameY+100);
             }
         } else {
-            drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color0, 0, firstMenuItemGameY);
-            drawTextHCentered(tr('DIE!'), 'small', color1, 0, firstMenuItemGameY+20);
-            drawTextHCentered(tr('RESTART'), 'small', color2, 0, firstMenuItemGameY+40);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, firstMenuItemGameY);
+            if (global.mobileBuild) {
+                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('RESTART'), 'small', color4, 0, firstMenuItemGameY+80);
+            } else {
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('QUIT'), 'small', color4, 0, firstMenuItemGameY+80);
+            }
         }
     }
+    if (global.html5Build) drawTouchControls();
 }
 </string>
           </argument>
@@ -971,9 +1092,8 @@ if (paused) {
           <argument>
             <kind>1</kind>
             <string>///TouchInput
-if (global.mobileBuild == true)
-{
-    scrTouchInputEnable();
+if ((global.mobileBuild) or (global.html5Build)) {
+    enableTouchInput();
 }
 </string>
           </argument>
@@ -998,18 +1118,25 @@ if (global.mobileBuild == true)
             <string>///Draw the HUD
 
 display_set_gui_size(global.display_w,global.display_h);
-if (!global.html5Build) scrDrawHUD();
-
-if (global.messageTimer &gt; 0) {
-    y1 = 216 + 8 - global.fontSmallHeight;
-    y2 = y1 + global.fontSmallHeight;
-    drawMessage(global.message, 'small', c_white, 0, y1, 1);
-    if (not isRoom("rTutorial")) {
-        drawMessage(global.message2, 'small', c_yellow, 0, y2, 2);
-    } else {
-        drawMessage(global.message2, 'small', c_white, 0, y2, 2);
+if (!global.html5Build) {
+    scrDrawHUD();
+    if (global.mobileBuild) {
+        drawTouchControls();
     }
-    global.messageTimer -= 1;
+    showMessages();
+    /*
+    if (global.messageTimer &gt; 0) {
+        y1 = 216 + 8 - global.fontSmallHeight;
+        y2 = y1 + global.fontSmallHeight;
+        drawMessage(global.message, 'small', c_white, 0, y1, 1);
+        if (not isRoom("rTutorial")) {
+            drawMessage(global.message2, 'small', c_yellow, 0, y2, 2);
+        } else {
+            drawMessage(global.message2, 'small', c_white, 0, y2, 2);
+        }
+        global.messageTimer -= 1;
+    }
+    */
 }
 </string>
           </argument>
@@ -1311,7 +1438,24 @@ draw_text(oPlayer1.x, oPlayer1.y-48, string(oPlayer1.y-oXMarket.y));
           <argument>
             <kind>1</kind>
             <string>/// Draw HUD (HTML5)
-if (global.html5Build) scrDrawHUD();
+if (global.html5Build) {
+    scrDrawHUD();
+    drawTouchControls();
+    showMessages();
+    /*
+    if (global.messageTimer &gt; 0) {
+        y1 = view_yview[0] + 216 + 8 - global.fontSmallHeight;
+        y2 = y1 + global.fontSmallHeight;
+        drawMessage(global.message, 'small', c_white, view_xview[0], y1, 1);
+        if (not isRoom("rTutorial")) {
+            drawMessage(global.message2, 'small', c_yellow, view_xview[0], y2, 2);
+        } else {
+            drawMessage(global.message2, 'small', c_white, view_xview[0], y2, 2);
+        }
+        global.messageTimer -= 1;
+    }
+    */
+}
 </string>
           </argument>
         </arguments>
