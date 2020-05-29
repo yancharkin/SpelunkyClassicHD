@@ -278,7 +278,7 @@ alarm[1] = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( (keyboard_check_pressed(vk_enter)) || (keyboard_check_pressed(vk_escape)) || checkAttackPressed() || checkStartPressed())
+            <string>if( (keyboard_check_pressed(global.keyEnter)) || (keyboard_check_pressed(global.keyEscape)) || checkAttackPressed() || checkStartPressed())
 {
     if (instance_exists(oScreen))
     {

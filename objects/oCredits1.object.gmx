@@ -316,12 +316,12 @@ alarm[1] = 16;
           <argument>
             <kind>1</kind>
             <string>if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or checkAttack());
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or checkAttack());
 } else {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
             html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
-            keyboard_check_pressed(vk_escape) or checkAttack());
+            keyboard_check_pressed(global.keyEscape) or checkAttack());
 }
 
 if (skipCondition) {

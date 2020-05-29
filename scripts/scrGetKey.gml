@@ -29,7 +29,7 @@ switch (argument0)
     case vk_control: { return "CTRL" break; }
     case vk_alt: { return "ALT" break; }
     case vk_space: { return "SPACE" break; }
-    case vk_enter: { return "ENTER" break; }
+    case global.keyEnter: { return "ENTER" break; }
     case ord("A"): { return "A" break; }
     case ord("B"): { return "B" break; }
     case ord("C"): { return "C" break; }

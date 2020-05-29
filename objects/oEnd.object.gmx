@@ -189,12 +189,12 @@ if (global.html5Build) {
             <kind>1</kind>
             <string>timer += 1;  
 if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or 
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or 
             checkAttackPressed() or checkStartPressed());
 } else {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or
             global.bAttackPressed or global.bStartPressed or
             checkAttackPressed() or checkStartPressed());
 }
@@ -212,10 +212,6 @@ if (skipCondition) {
 // shake the screen
 if (global.shake &gt; 0)
 {
-    //view_xview[0] = view_xview[0] + rand(0,3) - rand(0,3);
-    //view_yview[0] = view_yview[0] + rand(0,3) - rand(0,3);
-    //if (view_yview[0] &gt; 16) view_yview[0] = 16 - rand(0,8);
-    //if (view_yview[0] &lt; 0) view_yview[0] = 0 + rand(0,8);
     if (shakeToggle) view_yview[0] = view_yview[0] + rand(1,8);
     else view_yview[0] = 0;
     shakeToggle = not shakeToggle;

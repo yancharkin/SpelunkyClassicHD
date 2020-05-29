@@ -233,7 +233,7 @@ if (blackOut)
         global.titleStart = 2;
         room_goto(rTitle);
     }
-    else if (keyboard_key == vk_enter)
+    else if (keyboard_key == global.keyEnter)
     {
         global.firstCustomLevel = levelName;
         scrLoadLevel(0);

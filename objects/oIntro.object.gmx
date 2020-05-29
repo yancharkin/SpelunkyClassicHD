@@ -202,13 +202,13 @@ switch (n)
           <argument>
             <kind>1</kind>
             <string>if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or
             checkAttackPressed() or
             checkStartPressed());
 } else {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or
             html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
             html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
             html5_gamepad_button_check(global.joyid, global.joyStartVal) or

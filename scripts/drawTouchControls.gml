@@ -1,5 +1,8 @@
 ///drawTouchControls
-if (paused) {
+scale_level = global.display_h / 240;
+vkey_size = 32 * scale_level;
+
+if (instance_exists(oGame) and (oGame.paused)) {
     posX = 0;
     posY = 0;
 } else {

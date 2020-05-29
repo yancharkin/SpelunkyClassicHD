@@ -351,12 +351,12 @@ if (global.html5Build) {
           <argument>
             <kind>1</kind>
             <string>if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or 
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or 
             checkAttackPressed() or checkStartPressed());
 } else {
-    var skipCondition = (keyboard_check_pressed(vk_enter) or
-            keyboard_check_pressed(vk_escape) or
+    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+            keyboard_check_pressed(global.keyEscape) or
             global.bAttackPressed or global.bStartPressed or
             checkAttackPressed() or checkStartPressed());
 }

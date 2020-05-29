@@ -141,15 +141,6 @@ global.bJumpPressed = false;
 global.bJumpReleased = false;
 global.bAttackPressed = false;
 global.bAttackReleased = false;
-/*
-global.bItemPressed = false;
-global.bRunPressed = false;
-global.bBombPressed = false;
-global.bRopePressed = false;
-global.bFlarePressed = false;
-global.bPayPressed = false;
-global.bBombPressed = false;
-*/
 </string>
           </argument>
         </arguments>
@@ -631,21 +622,23 @@ alarm[3] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///"Fix" the jump touch button
+            <string>///"Fix" the jump touch button and jump keyboard key on Android
 if (instance_exists(oPlayer1)) {
     if (keyboard_check(ord('J'))) {
         oPlayer1.initialJumpAcc = -4;
+    } else if (global.mobileBuild and keyboard_check(global.keyJumpVal)) {
+        oPlayer1.initialJumpAcc = -4;
+    } else if (!global.mobileBuild and keyboard_check(global.keyJumpVal)) {
+        oPlayer1.initialJumpAcc = -2;
     } else {    
         if (!global.html5Build) {
             if (gamepad.jump or
                     gamepad_button_check(global.joyid, global.joyJumpVal) or
-                    (gamepad_button_value(global.joyid, global.joyJumpVal) &gt; 0.6) or
-                    keyboard_check(global.keyJumpVal)) {
+                    (gamepad_button_value(global.joyid, global.joyJumpVal) &gt; 0.6)) {
                 oPlayer1.initialJumpAcc = -2;
             }
         } else {
-            if (html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
-                    keyboard_check(global.keyJumpVal)) {
+            if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
                 oPlayer1.initialJumpAcc = -2;
             }
     
@@ -676,7 +669,7 @@ if (instance_exists(oPlayer1)) {
 
 //Pause
 
-if (keyboard_check_pressed(vk_escape) or
+if (keyboard_check_pressed(global.keyStartVal) or
         global.bStartPressed or
         gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
@@ -715,7 +708,7 @@ if (paused) {
     } else if (checkJumpPressed()) {
         paused = false;
         instance_activate_all();
-    } else if (checkAttackPressed()) or (keyboard_check_pressed(vk_enter)) {
+    } else if (checkAttackPressed()) or (keyboard_check_pressed(global.keyEnter)) {
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {

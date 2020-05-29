@@ -13,6 +13,14 @@ global.keyBombVal = ord('A');
 global.keyRopeVal = ord('S');
 global.keyFlareVal = ord('F');
 global.keyPayVal = ord('P');
+global.keyStartVal = vk_escape;
+global.keyEscape = vk_escape;
+global.keyEnter = vk_enter;
+if (os_type == os_android) {
+    global.keyStartVal = 8;
+    global.keyEscape = 8
+    global.keyEnter = 10;
+}
 
 if (!global.html5Build) {
     global.joyJumpVal = gp_face1;

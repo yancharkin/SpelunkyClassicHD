@@ -939,7 +939,7 @@ else
             <kind>1</kind>
             <string>if (status == GET_FILE_NAME)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (levelName != "")
         {
@@ -1102,7 +1102,7 @@ else if (status == EDIT)
 }
 else if (status == EDIT_DOOR)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         obj.leadsTo = textEdit;
         status = EDIT;
@@ -1120,7 +1120,7 @@ else if (status == EDIT_DOOR)
 }
 else if (status == EDIT_MSG)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         obj.message = textEdit;
         status = EDIT;
@@ -1139,7 +1139,7 @@ else if (status == EDIT_MSG)
 
 else if (status == INFO_NAME)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (levelName != "")
         {
@@ -1156,7 +1156,7 @@ else if (status == INFO_NAME)
 }
 else if (status == INFO_AUTHOR)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (author != "")
         {
@@ -1173,7 +1173,7 @@ else if (status == INFO_AUTHOR)
 }
 else if (status == INFO_MUSIC)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (music != "")
         {
@@ -1190,7 +1190,7 @@ else if (status == INFO_MUSIC)
 }
 else if (status == INFO_LIFE)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (lifeStart != "")
         {
@@ -1207,7 +1207,7 @@ else if (status == INFO_LIFE)
 }
 else if (status == INFO_BOMBS)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (bombStart != "")
         {
@@ -1224,7 +1224,7 @@ else if (status == INFO_BOMBS)
 }
 else if (status == INFO_ROPE)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (ropeStart != "")
         {
@@ -1241,7 +1241,7 @@ else if (status == INFO_ROPE)
 }
 else if (status == INFO_NEXT)
 {
-    if (keyboard_key == vk_enter)
+    if (keyboard_key == global.keyEnter)
     {
         if (nextLevel != "")
         {
