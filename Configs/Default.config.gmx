@@ -22,7 +22,7 @@
     <option_android_arch_mipsr2sf>False</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
-    <option_android_build_version>3</option_android_build_version>
+    <option_android_build_version>4</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
     <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
     <option_android_display_name>Spelunky Classic HD</option_android_display_name>
@@ -71,10 +71,10 @@
     <option_android_orient_portrait_flipped>False</option_android_orient_portrait_flipped>
     <option_android_orientation>1</option_android_orientation>
     <option_android_ouya_icon>Configs\Default\android\icons\ouyaIcon.png</option_android_ouya_icon>
-    <option_android_package_company>companyname</option_android_package_company>
+    <option_android_package_company>spelunky</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>spelunky</option_android_package_product>
-    <option_android_permission_flags>16</option_android_permission_flags>
+    <option_android_permission_flags>17</option_android_permission_flags>
     <option_android_pocketchange_enable>0</option_android_pocketchange_enable>
     <option_android_pocketchange_id></option_android_pocketchange_id>
     <option_android_pocketchange_test_enable>0</option_android_pocketchange_test_enable>
@@ -88,7 +88,7 @@
     <option_android_splash_time>0</option_android_splash_time>
     <option_android_support_lib_version>23.1.1</option_android_support_lib_version>
     <option_android_target_sdk_version>16</option_android_target_sdk_version>
-    <option_android_texture_page>1024</option_android_texture_page>
+    <option_android_texture_page>512</option_android_texture_page>
     <option_android_use_test_ads>0</option_android_use_test_ads>
     <option_androidfire_GPU_device>0</option_androidfire_GPU_device>
     <option_androidfire_adcolony_enable_V4VC>false</option_androidfire_adcolony_enable_V4VC>
@@ -250,33 +250,33 @@
     <option_html5_advertising_enable>0</option_html5_advertising_enable>
     <option_html5_advertising_key></option_html5_advertising_key>
     <option_html5_advertising_type>Supersonic Ads</option_html5_advertising_type>
-    <option_html5_allow_fullscreen>True</option_html5_allow_fullscreen>
+    <option_html5_allow_fullscreen>False</option_html5_allow_fullscreen>
     <option_html5_alwaysreload>False</option_html5_alwaysreload>
-    <option_html5_browser_title>Created with GameMaker: Studio</option_html5_browser_title>
+    <option_html5_browser_title>SpelunkyClassicHD</option_html5_browser_title>
     <option_html5_centergame>False</option_html5_centergame>
     <option_html5_facebook_app_display_name></option_html5_facebook_app_display_name>
     <option_html5_facebook_appid></option_html5_facebook_appid>
     <option_html5_facebook_enable>0</option_html5_facebook_enable>
     <option_html5_flurry_enable>0</option_html5_flurry_enable>
     <option_html5_flurry_id></option_html5_flurry_id>
-    <option_html5_foldername>html5game</option_html5_foldername>
+    <option_html5_foldername>assets</option_html5_foldername>
     <option_html5_generate_spotify_app>0</option_html5_generate_spotify_app>
     <option_html5_google_analytics_enable>0</option_html5_google_analytics_enable>
     <option_html5_google_tracking_id></option_html5_google_tracking_id>
     <option_html5_icon>Configs\Default\html5\fav.ico</option_html5_icon>
-    <option_html5_index>-1</option_html5_index>
+    <option_html5_index>0</option_html5_index>
     <option_html5_interpolate>0</option_html5_interpolate>
     <option_html5_jsprepend></option_html5_jsprepend>
-    <option_html5_loadingbar>-1</option_html5_loadingbar>
-    <option_html5_localrunalert>True</option_html5_localrunalert>
-    <option_html5_outputdebugtoconsole>False</option_html5_outputdebugtoconsole>
+    <option_html5_loadingbar>0</option_html5_loadingbar>
+    <option_html5_localrunalert>False</option_html5_localrunalert>
+    <option_html5_outputdebugtoconsole>True</option_html5_outputdebugtoconsole>
     <option_html5_outputname>index.html</option_html5_outputname>
     <option_html5_scale>-1</option_html5_scale>
-    <option_html5_showcursor>True</option_html5_showcursor>
+    <option_html5_showcursor>False</option_html5_showcursor>
     <option_html5_splash_png>Configs\Default\html5\splash.png</option_html5_splash_png>
-    <option_html5_texture_page>2048</option_html5_texture_page>
+    <option_html5_texture_page>512</option_html5_texture_page>
     <option_html5_use_test_ads>0</option_html5_use_test_ads>
-    <option_html5_usebuiltinparticles>True</option_html5_usebuiltinparticles>
+    <option_html5_usebuiltinparticles>False</option_html5_usebuiltinparticles>
     <option_html5_usesplash>False</option_html5_usesplash>
     <option_icon>nil</option_icon>
     <option_in_app_purchase_enable>0</option_in_app_purchase_enable>
@@ -390,7 +390,7 @@
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
     <option_linux_sync>0</option_linux_sync>
     <option_linux_texture_page>2048</option_linux_texture_page>
-    <option_linux_version_build>3</option_linux_version_build>
+    <option_linux_version_build>4</option_linux_version_build>
     <option_linux_version_major>1</option_linux_version_major>
     <option_linux_version_minor>1</option_linux_version_minor>
     <option_loadalpha>255</option_loadalpha>
@@ -400,7 +400,7 @@
     <option_mac_app_id></option_mac_app_id>
     <option_mac_appstore_incoming_allow>0</option_mac_appstore_incoming_allow>
     <option_mac_appstore_outgoing_allow>0</option_mac_appstore_outgoing_allow>
-    <option_mac_build_version>3</option_mac_build_version>
+    <option_mac_build_version>4</option_mac_build_version>
     <option_mac_copyright_info></option_mac_copyright_info>
     <option_mac_create_app_store>-1</option_mac_create_app_store>
     <option_mac_display_name>SpelunkyClassicHD</option_mac_display_name>
@@ -534,7 +534,7 @@
     <option_version_major>1</option_version_major>
     <option_version_minor>1</option_version_minor>
     <option_version_product></option_version_product>
-    <option_version_release>3</option_version_release>
+    <option_version_release>4</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
     <option_win8_advertising_enable>0</option_win8_advertising_enable>
     <option_win8_advertising_key></option_win8_advertising_key>
@@ -619,7 +619,7 @@
     <option_windows_major_version>1</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info></option_windows_product_info>
-    <option_windows_release_version>3</option_windows_release_version>
+    <option_windows_release_version>4</option_windows_release_version>
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>

@@ -3,24 +3,995 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="110" name="datafiles">
-    <datafile>
-      <name>settings.cfg</name>
-      <exists>-1</exists>
-      <size>27</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>settings.cfg</filename>
-    </datafile>
+  <datafiles number="224" name="datafiles">
+    <datafiles number="224" name="locale">
+      <datafiles number="224" name="fonts">
+        <datafiles number="224" name="7-12-serif">
+          <datafiles number="224" name="font">
+            <datafile>
+              <name>7-12-serif.ttf</name>
+              <exists>-1</exists>
+              <size>1504688</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>1047548110</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>7-12-serif.ttf</filename>
+            </datafile>
+            <datafile>
+              <name>7-12-serif.woff</name>
+              <exists>-1</exists>
+              <size>177808</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>32</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>7-12-serif.woff</filename>
+            </datafile>
+            <datafile>
+              <name>license.txt</name>
+              <exists>-1</exists>
+              <size>225</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>license.txt</filename>
+            </datafile>
+            <datafile>
+              <name>readme.txt</name>
+              <exists>-1</exists>
+              <size>671</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>readme.txt</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>99</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+        <datafiles number="224" name="7x7-monopixel">
+          <datafiles number="224" name="font">
+            <datafile>
+              <name>7x7-monopixel.ttf</name>
+              <exists>-1</exists>
+              <size>821816</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>1047548110</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>7x7-monopixel.ttf</filename>
+            </datafile>
+            <datafile>
+              <name>7x7-monopixel.woff</name>
+              <exists>-1</exists>
+              <size>102328</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>32</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>7x7-monopixel.woff</filename>
+            </datafile>
+            <datafile>
+              <name>license.txt</name>
+              <exists>-1</exists>
+              <size>227</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>license.txt</filename>
+            </datafile>
+            <datafile>
+              <name>readme.txt</name>
+              <exists>-1</exists>
+              <size>667</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>readme.txt</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>97</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+        <datafiles number="224" name="fs-monopixel-regular">
+          <datafiles number="224" name="font">
+            <datafile>
+              <name>fs-monopixel-regular.ttf</name>
+              <exists>-1</exists>
+              <size>717792</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>1047548110</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>fs-monopixel-regular.ttf</filename>
+            </datafile>
+            <datafile>
+              <name>fs-monopixel-regular.woff</name>
+              <exists>-1</exists>
+              <size>80600</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>32</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>fs-monopixel-regular.woff</filename>
+            </datafile>
+            <datafile>
+              <name>license.txt</name>
+              <exists>-1</exists>
+              <size>8069</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>license.txt</filename>
+            </datafile>
+            <datafile>
+              <name>readme.txt</name>
+              <exists>-1</exists>
+              <size>680</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>readme.txt</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>99</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+      </datafiles>
+      <datafiles number="224" name="locales">
+        <datafiles number="224" name="en">
+          <datafiles number="224" name="charset">
+            <datafile>
+              <name>charset</name>
+              <exists>-1</exists>
+              <size>60</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset</filename>
+            </datafile>
+            <datafile>
+              <name>charset.png</name>
+              <exists>-1</exists>
+              <size>1302</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset.png</filename>
+            </datafile>
+            <datafile>
+              <name>charset_small.png</name>
+              <exists>-1</exists>
+              <size>1055</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset_small.png</filename>
+            </datafile>
+          </datafiles>
+          <datafiles number="224" name="images">
+            <datafile>
+              <name>level5_sign.png</name>
+              <exists>-1</exists>
+              <size>418</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level5_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level9_sign.png</name>
+              <exists>-1</exists>
+              <size>414</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level9_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level13_sign.png</name>
+              <exists>-1</exists>
+              <size>418</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level13_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>quit_sign.png</name>
+              <exists>-1</exists>
+              <size>305</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>quit_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>reset_sign.png</name>
+              <exists>-1</exists>
+              <size>368</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>reset_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>scores_sign.png</name>
+              <exists>-1</exists>
+              <size>451</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>scores_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>start_sign.png</name>
+              <exists>-1</exists>
+              <size>416</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>start_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>tutorial_sign.png</name>
+              <exists>-1</exists>
+              <size>251</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>tutorial_sign.png</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>text.json</name>
+            <exists>-1</exists>
+            <size>271</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>text.json</filename>
+          </datafile>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>129</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+        <datafiles number="224" name="es">
+          <datafiles number="224" name="charset">
+            <datafile>
+              <name>charset</name>
+              <exists>-1</exists>
+              <size>79</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset</filename>
+            </datafile>
+            <datafile>
+              <name>charset.png</name>
+              <exists>-1</exists>
+              <size>4653</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset.png</filename>
+            </datafile>
+            <datafile>
+              <name>charset_small.png</name>
+              <exists>-1</exists>
+              <size>1570</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset_small.png</filename>
+            </datafile>
+          </datafiles>
+          <datafiles number="224" name="images">
+            <datafile>
+              <name>level5_sign.png</name>
+              <exists>-1</exists>
+              <size>602</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level5_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level9_sign.png</name>
+              <exists>-1</exists>
+              <size>600</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level9_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level13_sign.png</name>
+              <exists>-1</exists>
+              <size>622</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level13_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>quit_sign.png</name>
+              <exists>-1</exists>
+              <size>438</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>quit_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>reset_sign.png</name>
+              <exists>-1</exists>
+              <size>368</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>reset_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>scores_sign.png</name>
+              <exists>-1</exists>
+              <size>615</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>scores_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>start_sign.png</name>
+              <exists>-1</exists>
+              <size>593</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>start_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>tutorial_sign.png</name>
+              <exists>-1</exists>
+              <size>251</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>tutorial_sign.png</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>text.json</name>
+            <exists>-1</exists>
+            <size>271</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>text.json</filename>
+          </datafile>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>129</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+        <datafiles number="224" name="ru">
+          <datafiles number="224" name="charset">
+            <datafile>
+              <name>charset</name>
+              <exists>-1</exists>
+              <size>126</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset</filename>
+            </datafile>
+            <datafile>
+              <name>charset.png</name>
+              <exists>-1</exists>
+              <size>1986</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset.png</filename>
+            </datafile>
+            <datafile>
+              <name>charset_small.png</name>
+              <exists>-1</exists>
+              <size>1515</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>charset_small.png</filename>
+            </datafile>
+          </datafiles>
+          <datafiles number="224" name="images">
+            <datafile>
+              <name>level5_sign.png</name>
+              <exists>-1</exists>
+              <size>8158</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level5_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level9_sign.png</name>
+              <exists>-1</exists>
+              <size>8094</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level9_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>level13_sign.png</name>
+              <exists>-1</exists>
+              <size>8244</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>level13_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>quit_sign.png</name>
+              <exists>-1</exists>
+              <size>4528</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>quit_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>reset_sign.png</name>
+              <exists>-1</exists>
+              <size>544</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>reset_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>scores_sign.png</name>
+              <exists>-1</exists>
+              <size>6688</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>scores_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>start_sign.png</name>
+              <exists>-1</exists>
+              <size>8373</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>start_sign.png</filename>
+            </datafile>
+            <datafile>
+              <name>tutorial_sign.png</name>
+              <exists>-1</exists>
+              <size>449</size>
+              <exportAction>2</exportAction>
+              <exportDir></exportDir>
+              <overwrite>0</overwrite>
+              <freeData>-1</freeData>
+              <removeEnd>0</removeEnd>
+              <store>0</store>
+              <ConfigOptions>
+                <Config name="Default">
+                  <CopyToMask>9223372036854775807</CopyToMask>
+                </Config>
+              </ConfigOptions>
+              <filename>tutorial_sign.png</filename>
+            </datafile>
+          </datafiles>
+          <datafile>
+            <name>text.json</name>
+            <exists>-1</exists>
+            <size>382</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>text.json</filename>
+          </datafile>
+          <datafile>
+            <name>font.json</name>
+            <exists>-1</exists>
+            <size>129</size>
+            <exportAction>2</exportAction>
+            <exportDir></exportDir>
+            <overwrite>0</overwrite>
+            <freeData>-1</freeData>
+            <removeEnd>0</removeEnd>
+            <store>0</store>
+            <ConfigOptions>
+              <Config name="Default">
+                <CopyToMask>9223372036854775807</CopyToMask>
+              </Config>
+            </ConfigOptions>
+            <filename>font.json</filename>
+          </datafile>
+        </datafiles>
+      </datafiles>
+      <datafile>
+        <name>fonts.json</name>
+        <exists>-1</exists>
+        <size>33</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>fonts.json</filename>
+      </datafile>
+      <datafile>
+        <name>locales.json</name>
+        <exists>-1</exists>
+        <size>52</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>locales.json</filename>
+      </datafile>
+    </datafiles>
     <datafile>
       <name>spelunky.ini</name>
       <exists>-1</exists>
@@ -38,8 +1009,46 @@
       </ConfigOptions>
       <filename>spelunky.ini</filename>
     </datafile>
+    <datafile>
+      <name>index.html</name>
+      <exists>-1</exists>
+      <size>2959</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>32</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>index.html</filename>
+    </datafile>
+    <datafile>
+      <name>icon.png</name>
+      <exists>-1</exists>
+      <size>1423</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>32</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>icon.png</filename>
+    </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\electronExtension</extension>
+    <extension index="1">extensions\html5DisableLoadBar</extension>
+    <extension index="2">extensions\html5Extension</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="Music">
       <sound>sound\mBoss</sound>
@@ -1032,10 +2041,12 @@
     <sprites name="TouchInput">
       <sprite>sprites\TouchArrowsSemiTr</sprite>
       <sprite>sprites\TouchButtons1SemiTr</sprite>
-      <sprite>sprites\TouchButtons2SemiTr</sprite>
+      <sprite>sprites\TouchButtons2SemiTr0</sprite>
+      <sprite>sprites\TouchButtons2SemiTr1</sprite>
       <sprite>sprites\TouchArrowsOp</sprite>
       <sprite>sprites\TouchButtons1Op</sprite>
-      <sprite>sprites\TouchButtons2Op</sprite>
+      <sprite>sprites\TouchButtons2Op0</sprite>
+      <sprite>sprites\TouchButtons2Op1</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -1069,6 +2080,7 @@
     <background>background\bgAlienShip2</background>
     <background>background\bgAlienShip3</background>
     <background>background\bGameMakerIntroBack</background>
+    <background>background\bgCaveTop2_2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -1228,7 +2240,8 @@
       </scripts>
     </scripts>
     <script>scripts\scrInit.gml</script>
-    <script>scripts\scrTouchInputEnable.gml</script>
+    <script>scripts\getPlatform.gml</script>
+    <script>scripts\enableTouchInput.gml</script>
     <script>scripts\scrCheckCollisions.gml</script>
     <script>scripts\scrGetFavorMsg.gml</script>
     <script>scripts\scrCreateBlood.gml</script>
@@ -1240,6 +2253,7 @@
     <script>scripts\scrGetChar.gml</script>
     <script>scripts\scrGetJoy.gml</script>
     <script>scripts\scrNotTrigger.gml</script>
+    <script>scripts\drawTouchControls.gml</script>
     <script>scripts\scrDrawHUD.gml</script>
     <script>scripts\rand.gml</script>
     <script>scripts\tile_add2.gml</script>
@@ -1248,6 +2262,28 @@
     <script>scripts\initMusic.gml</script>
     <script>scripts\draw_surface_pSurf.gml</script>
     <script>scripts\gmitf.gml</script>
+    <script>scripts\showFinalScore.gml</script>
+    <script>scripts\drawText.gml</script>
+    <script>scripts\drawTextHCentered.gml</script>
+    <script>scripts\drawHighlightedMessage.gml</script>
+    <script>scripts\drawMessage.gml</script>
+    <script>scripts\showMessages.gml</script>
+    <script>scripts\menuDie.gml</script>
+    <script>scripts\getLocales.gml</script>
+    <script>scripts\changeLocale.gml</script>
+    <script>scripts\loadLocalizedSprites.gml</script>
+    <script>scripts\setLocale.gml</script>
+    <script>scripts\tr.gml</script>
+    <script>scripts\json2dsmap.gml</script>
+    <script>scripts\dsmap2json.gml</script>
+    <script>scripts\configLoad.gml</script>
+    <script>scripts\configSave.gml</script>
+    <script>scripts\keysSave.gml</script>
+    <script>scripts\joySave.gml</script>
+    <script>scripts\menuTouchControls.gml</script>
+    <script>scripts\menuToggleFullscreen.gml</script>
+    <script>scripts\menuLanguage.gml</script>
+    <script>scripts\quitGame.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Basis">
@@ -1697,7 +2733,6 @@
       <object>objects\oSlider1</object>
       <object>objects\oSlider2</object>
       <object>objects\oSliderBG</object>
-      <object>objects\oOKButton</object>
       <object>objects\oKeyConfigButton</object>
       <object>objects\oJoyConfigButton</object>
     </objects>
@@ -1709,6 +2744,7 @@
     <object>objects\oGamepad</object>
     <object>objects\oKeyConfig</object>
     <object>objects\oJoyConfig</object>
+    <object>objects\oJoyConfigHtml5</object>
     <object>objects\oScreen</object>
     <object>objects\oScreenFirst</object>
     <object>objects\oScreenLast</object>
@@ -1742,7 +2778,9 @@
       <object>objects\mascara2</object>
     </objects>
     <object>objects\oNAL</object>
+    <object>objects\oPressStart</object>
     <object>objects\yyScreen</object>
+    <object>objects\oHtml5Gamepad</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rGameMakerIntro_room</room>
@@ -1775,6 +2813,7 @@
     <room>rooms\rEndCustom</room>
     <room>rooms\rKeyConfig</room>
     <room>rooms\rJoyConfig</room>
+    <room>rooms\rJoyConfigHtml5</room>
     <room>rooms\rGameMakerIntro</room>
     <rooms name="supersound">
       <room>rooms\room0</room>
