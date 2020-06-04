@@ -10,23 +10,34 @@ if (global.firstLaunch) {
 }
 
 var localeDir = working_directory + "locale/locales/" + global.locale;
+var charsetDir = localeDir + "/charset/";
 
 //loadFonts
-if (file_exists(localeDir + "/charset/charset") and
-        file_exists(localeDir + "/charset/charset.png") and
-        file_exists(localeDir + "/charset/charset_small.png")) {
+if (file_exists(charsetDir + "charset") and
+        file_exists(charsetDir + "charset.png") and
+        file_exists(charsetDir + "charset_small.png")) {
     //Sprite font
-    var file = file_text_open_read(localeDir + "/charset/charset");
-    charset = file_text_read_string(file);
-    file_text_close(file);
+    var charsetFile = file_text_open_read(charsetDir + "charset");
+    charset = file_text_read_string(charsetFile);
+    file_text_close(charsetFile);
     chars_n = string_length(charset);
-    fontSprite = sprite_add(localeDir + "/charset/charset.png", chars_n, false, false, 0, 0);
-    fontSpriteSmall = sprite_add(localeDir + "/charset/charset_small.png", chars_n, false, false, 0, 0);
-    global.fontSmallWidth = 8;
-    global.fontSmallHeight = 8;
-    global.fontLargeWidth = 16;
-    global.fontLargeHeight = 16;
-    global.fontOffsetY = 0;
+    fontSprite = sprite_add(charsetDir + "charset.png", chars_n, false, false, 0, 0);
+    fontSpriteSmall = sprite_add(charsetDir + "charset_small.png", chars_n, false, false, 0, 0);
+    if (file_exists(charsetDir + "font.json")) {
+        fontInfo = json2dsmap(charsetDir + "font.json");
+        global.fontSmallWidth = fontInfo[? "fontSmallWidth"];
+        global.fontSmallHeight = fontInfo[? "fontSmallHeight"];
+        global.fontLargeWidth = fontInfo[? "fontLargeWidth"];
+        global.fontLargeHeight = fontInfo[? "fontLargeHeight"];
+        global.fontOffsetY = fontInfo[? "fontOffsetY"];
+        ds_map_destroy(fontInfo);
+    } else {
+        global.fontSmallWidth = 8;
+        global.fontSmallHeight = 8;
+        global.fontLargeWidth = 16;
+        global.fontLargeHeight = 16;
+        global.fontOffsetY = 0;
+    }
     global.messageBackground = false;
     global.fontLarge = font_add_sprite_ext(fontSprite, charset, false, 0);
     global.fontSmall = font_add_sprite_ext(fontSpriteSmall, charset, false, 0);
