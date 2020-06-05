@@ -24,6 +24,8 @@
 initMusic();
 getPlatform();
 
+global.debugBuild = false;
+global.levelIndex = 0;
 globalvar gamepad;
 gamepad = instance_create(0, 0, oGamepad);
 window_set_cursor(cr_none);

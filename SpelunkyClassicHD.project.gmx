@@ -2780,6 +2780,7 @@
     <object>objects\oNAL</object>
     <object>objects\oPressStart</object>
     <object>objects\yyScreen</object>
+    <object>objects\oDebug</object>
     <object>objects\oHtml5Gamepad</object>
   </objects>
   <rooms name="rooms">

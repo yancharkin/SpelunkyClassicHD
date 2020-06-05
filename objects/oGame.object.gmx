@@ -75,6 +75,9 @@ if (global.gameStart) scrInitLevel();
             <string>//Menu
 menuItemIndex = 0;
 
+//Debug
+if (global.debugBuild) instance_create(0, 0, oDebug);
+
 if (global.html5Build) {
     if (global.mobileBuild) {
         maxIndexTitle = 6;
