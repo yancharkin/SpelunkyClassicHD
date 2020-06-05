@@ -68,6 +68,6 @@ At this point, you can send localized files to me any way you like and I'll do t
 * copy **images** directory from **en** to the directory with localized files, in the example: **.../locale/locales/de**
 * redraw images
 
-##Questions?
+## Questions?
 If something not clear, ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/issues/8) or [here](https://itch.io/t/821814/how-to-localize-the-game).
 
