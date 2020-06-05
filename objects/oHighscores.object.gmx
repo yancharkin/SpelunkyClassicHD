@@ -299,7 +299,7 @@ if (oPlayer1.y &lt; 156)
             else
             {
                 draw_text(128, 112, tr("KILL AS MANY ANGRY"));
-                draw_text(128, 128, tr("SHOPKEEPS AS YOU CAN"));
+                draw_text(128, 128, tr("SHOPKEEPERS AS YOU CAN"));
                 draw_text(128, 144, tr("BEFORE THEY GET YOU!"));
             }
         }

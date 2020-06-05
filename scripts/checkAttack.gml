@@ -8,8 +8,8 @@ if (!global.html5Build) {
         return false;
     }
 } else {
-    if (html5_gamepad_button_check(global.joyid, global.joyArrackVal) or
-            keyboard_check(global.keyArrackVal)) {
+    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
+            keyboard_check(global.keyAttackVal)) {
         return true;
     } else {
         return false;
