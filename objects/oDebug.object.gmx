@@ -97,34 +97,36 @@ if (keyboard_check_pressed(vk_f2)) {
             break;
         }
         case 9: {
-            room_goto(rEnd);
-            break;
-        }
-        case 10: {
-            room_goto(rEndCustom);
-            break;
-        }
-        case 11: {
-            room_goto(rCredits1);
-            break;
-        }
-        case 12: {
-            room_goto(rCredits2);
-            break;
-        }
-        case 13: {
             room_goto(rSun);
             break;
         }
-        case 14: {
+        case 10: {
             room_goto(rMoon);
             break;
         }
-        case 15: {
+        case 11: {
             room_goto(rStars);
             break;
+        }       
+        case 12: {
+            room_goto(rEnd);
+            break;
         }
-        case 16: {
+        case 13: {
+            room_goto(rEndCustom);
+            break;
+        }
+        /*
+        case 14: {
+            room_goto(rCredits1);
+            break;
+        }
+        case 15: {
+            room_goto(rCredits2);
+            break;
+        }
+        */
+        case 14: {
             global.levelIndex = 0;
             break;
         }
@@ -135,6 +137,13 @@ if (keyboard_check_pressed(vk_f2)) {
 if (keyboard_check_pressed(vk_f3)) {
     global.tunnel1 = 0;
     global.tunnel2 = 0;
+}
+
+if (keyboard_check_pressed(vk_f4)) {
+    global.money =200000;
+    global.time = 300;
+    global.kills = 200;
+    global.damsels = 10;
 }
 </string>
           </argument>
