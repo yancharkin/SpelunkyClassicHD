@@ -1,4 +1,4 @@
-#How to localize the game
+# How to localize the game
 
 To make the localization process easier, you can download debug builds from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
 
@@ -6,7 +6,7 @@ To make the localization process easier, you can download debug builds from the 
 * press F3 to open all shortcuts
 * press F4 to open all challenges
 
-##Step 1
+## Step 1
 * go to the **locale** directory:
    **Linux**: [game directory]/assets/locale/
    **Windows**: [game directory]\locale\
@@ -32,7 +32,7 @@ If you want to use a different font, copy **font.json** from **en** to the local
 
 At this point, you can send localized files to me any way you like and I'll do the rest. Also, you can skip **step 2** (because it can be not so easy to do), create localized images (**step 3**), and then send me files. If you want to do everything yourself or you didn't find a TTF font that includes all characters you use in the translation and looks OK (can be the case for languages like Chinese and Japanese), read the rest of the instructions.
 
-##Step 2
+## Step 2
 
 * create **charset** text file:
     * for most languages just add all letter from your language alphabet to **charset** file (if not already there)
@@ -63,7 +63,7 @@ At this point, you can send localized files to me any way you like and I'll do t
             "fontOffsetY": -5
         }
 
-##Step 3
+## Step 3
 
 * copy **images** directory from **en** to the directory with localized files, in the example: **.../locale/locales/de**
 * redraw images
