@@ -32,6 +32,7 @@ virtual_key_add(global.display_w - global.touchCorrectionH - (2.5*vkey_size), gl
 virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, global.display_h - global.touchCorrectionV/2 - (2.5*vkey_size), vkey_size, vkey_size, global.keyRunVal);
 // Pause
 virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 0 + global.touchCorrectionV, vkey_size, vkey_size, vk_escape);
+virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 0 + global.touchCorrectionV, vkey_size, vkey_size, global.keyStartVal);
 // Pay
 virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, vkey_size + global.touchCorrectionV/2, vkey_size, vkey_size, global.keyPayVal);
 // Rope

@@ -673,6 +673,7 @@ if (instance_exists(oPlayer1)) {
 //Pause
 
 if (keyboard_check_pressed(global.keyStartVal) or
+        keyboard_check_pressed(vk_escape) or
         global.bStartPressed or
         gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
