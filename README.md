@@ -14,6 +14,11 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - proper in-game menu
 - better gamepads support
 
+## Translators
+- [grheavy](mailto:grheavy@hushmail.com) - Spanish
+- [Spenĉjo](https://github.com/Rajzin) - Esperanto
+- [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194) - Brazilian Portuguese
+
 ## Links
 * [Game's page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
 * [HTML5 version: Linux (amd64, arm64, armv7l), macOS, Windows (x64) builds](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
