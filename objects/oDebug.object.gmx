@@ -135,10 +135,12 @@ if (keyboard_check_pressed(vk_f2)) {
 
 // Open shortcuts and challenges
 if (keyboard_check_pressed(vk_f3)) {
+    // Shortcuts
     global.tunnel1 = 0;
     global.tunnel2 = 0;
+    // Challenges
     global.money =200000;
-    global.time = 300;
+    global.time = 300; // NOT ENOUGH TO OPEN MOON ROOM! Have to complete the game (F2 is OK).
     global.kills = 200;
     global.damsels = 10;
 }
