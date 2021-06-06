@@ -133,17 +133,21 @@ if (keyboard_check_pressed(vk_f2)) {
     }
 }
 
-// Debug shortcuts
+// Open shortcuts and challenges
 if (keyboard_check_pressed(vk_f3)) {
     global.tunnel1 = 0;
     global.tunnel2 = 0;
-}
-
-if (keyboard_check_pressed(vk_f4)) {
     global.money =200000;
     global.time = 300;
     global.kills = 200;
     global.damsels = 10;
+}
+
+// Debug shotgun
+if (keyboard_check_pressed(vk_f4)) {
+    global.plife=99;
+    var player = oGame.players[0];
+    instance_create(player.x-24, player.y, oShotgun);
 }
 </string>
           </argument>
