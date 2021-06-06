@@ -30,12 +30,13 @@ global.cemetary = false;
 // DFK adding this to override tutorial
 global.firstTime = false;
 
-if (global.firstLaunch) {
-    global.titleStart = 0;
+if (!global.firstLaunch) {
+    if (global.titleStart == 0) {
+        global.titleStart = 2;
+    }
+} else {
     global.firstLaunch = false;
     configSave();
-} else {
-    global.titleStart = 2;
 }
 
 global.keepScore = true;
