@@ -1165,24 +1165,15 @@ if (!global.html5Build) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.fontLarge);
-                draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("GAME OVER"));
+                drawTextHCentered(tr("GAME OVER"), 'large', c_yellow, view_xview[0], view_yview[0]+32+16);
             }
             if (drawStatus &gt; 1)
             {
-                draw_set_font(global.fontSmall);
-                draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+64+16, tr("FINAL SCORE:"));
+                drawTextHCentered(tr("FINAL SCORE:"), 'small', c_yellow, view_xview[0], view_yview[0]+64+16);
             }
             if (drawStatus &gt; 2)
             {
-                draw_set_font(global.fontLarge);
-                draw_set_color(c_white);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+72+16, "$" + string(moneyCount));
-                
-                draw_set_font(global.fontSmall);
-                draw_set_color(c_yellow);
+                drawTextHCentered("$" + string(moneyCount), 'large', c_white, view_xview[0], view_yview[0]+72+16);
                 if (global.customLevel)
                 {
                     if (global.testLevel != "")
@@ -1195,19 +1186,13 @@ if (!global.html5Build) {
                         if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
                         else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" TO LOAD ANOTHER LEVEL.");
                     }
-                    strLen = string_length(str)*global.fontSmallWidth;
-                    n = global.display_w - strLen;
-                    n = ceil(n / 2);
-                    draw_text(view_xview[0]+n, view_yview[0]+120, str);
+                    drawTextHCentered(str, 'small', c_yellow, view_xview[0], view_yview[0]+120);
                 }
                 else
                 {
                     if (global.gamepadOn) str = tr("PRESS ") + scrGetJoy(global.joyAttackVal) + tr(" FOR HIGH SCORES.");
                     else str = tr("PRESS ") + scrGetKey(global.keyAttackVal) + tr(" FOR HIGH SCORES.");
-                    strLen = string_length(str)*global.fontSmallWidth;
-                    n = global.display_w - strLen;
-                    n = ceil(n / 2);
-                    draw_text(view_xview[0]+n, view_yview[0]+120, str);
+                    drawTextHCentered(str, 'small', c_yellow, view_xview[0], view_yview[0]+120);
                 }
             }
         }
@@ -1215,20 +1200,13 @@ if (!global.html5Build) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.fontLarge);
-                draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
+                drawTextHCentered(tr("FINISHED!"), 'large', c_yellow, view_xview[0], view_yview[0]+32+16);
             }
             if (drawStatus &gt; 1)
             {
-                draw_set_font(global.fontSmall);
-                draw_set_color(c_yellow);
                 if (oSunRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                 else str = tr("BETTER LUCK NEXT TIME...");
-                strLen = string_length(str)*global.fontSmallWidth;
-                n = global.display_w - strLen;
-                n = ceil(n / 2);
-                draw_text(n-global.room_offset, view_yview[0]+64+16, str);
+                drawTextHCentered(str, 'small', c_yellow, view_xview[0], view_yview[0]+64+16);
             }
         }
         else if (isRoom("rMoon"))
@@ -1237,20 +1215,13 @@ if (!global.html5Build) {
             {
                 if (drawStatus &gt; 0)
                 {
-                    draw_set_font(global.fontLarge);
-                    draw_set_color(c_yellow);
-                    draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
+                    drawTextHCentered(tr("FINISHED!"), 'large', c_yellow, view_xview[0], view_yview[0]+32+16);
                 }
                 if (drawStatus &gt; 1)
                 {
-                    draw_set_font(global.fontSmall);
-                    draw_set_color(c_yellow);
                     if (oMoonRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                     else str = tr("BETTER LUCK NEXT TIME...");
-                    strLen = string_length(str)*global.fontSmallWidth;
-                    n = global.display_w - strLen;
-                    n = ceil(n / 2);
-                    draw_text(n-global.room_offset, view_yview[0]+64+16, str);
+                    drawTextHCentered(str, 'small', c_yellow, view_xview[0], view_yview[0]+64+16);
                 }
             }
         }
@@ -1258,20 +1229,13 @@ if (!global.html5Build) {
         {
             if (drawStatus &gt; 0)
             {
-                draw_set_font(global.fontLarge);
-                draw_set_color(c_yellow);
-                draw_text(view_xview[0]+global.room_offset+88, view_yview[0]+32+16, tr("FINISHED!"));
+                drawTextHCentered(tr("FINISHED!"), 'large', c_yellow, view_xview[0], view_yview[0]+32+16);
             }
             if (drawStatus &gt; 1)
-            {
-                draw_set_font(global.fontSmall);
-                draw_set_color(c_yellow);
+{
                 if (oStarsRoom.highscore) str = tr("YOU SET A NEW RECORD!");
                 else str = tr("BETTER LUCK NEXT TIME...");
-                strLen = string_length(str)*global.fontSmallWidth;
-                n = global.display_w - strLen;
-                n = ceil(n / 2);
-                draw_text(n-global.room_offset, view_yview[0]+64+16, str);
+                drawTextHCentered(str, 'small', c_yellow, view_xview[0], view_yview[0]+64+16);
             }
         }
     }
