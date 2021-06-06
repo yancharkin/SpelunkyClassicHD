@@ -575,10 +575,10 @@
             }
             else if (facing == RIGHT and firing == 0)
             {
-                instance_create(x+8, y+1, oShotgunBlastRight);
+                instance_create(x+9, y+1, oShotgunBlastRight);
                 repeat(6)
                 {
-                    obj = instance_create(x+8, y-2, oBullet);
+                    obj = instance_create(x+9, y-2, oBullet);
                     obj.xVel = rand(6,8) + xVel;
                     if (obj.xVel < 6) obj.xVel = 6;
                     obj.yVel = random(1) - random(1);
