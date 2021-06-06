@@ -5,7 +5,6 @@ if (global.firstLaunch) {
     if (ds_map_exists(global.localesMap, osLocale)) {
         global.locale = osLocale;
     }
-    global.firstLaunch = false;
     configSave();
 }
 
