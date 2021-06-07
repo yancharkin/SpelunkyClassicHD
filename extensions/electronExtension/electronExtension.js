@@ -7,25 +7,34 @@ function isElectron() {
 }
 
 if (isElectron()) {
-    var electron = require('electron');
-    var win = electron.remote.getCurrentWindow();
-    var defaultWinSize = win.getSize();
+    let windowSize = [window.innerWidth, window.innerHeight];
+    let aspectRatio = windowSize[0]/windowSize[1];
+    var defaultWinSize = [800, Math.round(800/aspectRatio)];
+    var canvas = document.getElementById("canvas");
 }
 
 function electronQuit() {
-    electron.remote.process.exit();
+    window.close()
 }
 
 function electronSetFullscreen(fullscreen) {
-    if (fullscreen == true) {
-        win.resizable = true;
-        win.setFullScreen(true);
-        win.resizable = false;
-        return win.getSize();
+    if (fullscreen) {
+        try {
+            if (!document.fullscreenElement) {
+                canvas.requestFullscreen();
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        return [window.screen.width, window.screen.height];
     } else {
-        win.resizable = true;
-        win.setFullScreen(false);
-        win.resizable = false;
+        try {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            }
+        } catch (error) {
+            console.log(error);
+        }
         return defaultWinSize;
     }
 }
