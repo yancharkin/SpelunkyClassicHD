@@ -22,7 +22,7 @@
     <option_android_arch_mipsr2sf>False</option_android_arch_mipsr2sf>
     <option_android_arch_x86>True</option_android_arch_x86>
     <option_android_build_tools_version>23.0.1</option_android_build_tools_version>
-    <option_android_build_version>4</option_android_build_version>
+    <option_android_build_version>5</option_android_build_version>
     <option_android_color_depth>1</option_android_color_depth>
     <option_android_compile_sdk_version>23</option_android_compile_sdk_version>
     <option_android_display_name>Spelunky Classic HD</option_android_display_name>
@@ -390,7 +390,7 @@
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
     <option_linux_sync>0</option_linux_sync>
     <option_linux_texture_page>2048</option_linux_texture_page>
-    <option_linux_version_build>4</option_linux_version_build>
+    <option_linux_version_build>5</option_linux_version_build>
     <option_linux_version_major>1</option_linux_version_major>
     <option_linux_version_minor>1</option_linux_version_minor>
     <option_loadalpha>255</option_loadalpha>
@@ -400,7 +400,7 @@
     <option_mac_app_id></option_mac_app_id>
     <option_mac_appstore_incoming_allow>0</option_mac_appstore_incoming_allow>
     <option_mac_appstore_outgoing_allow>0</option_mac_appstore_outgoing_allow>
-    <option_mac_build_version>4</option_mac_build_version>
+    <option_mac_build_version>5</option_mac_build_version>
     <option_mac_copyright_info></option_mac_copyright_info>
     <option_mac_create_app_store>-1</option_mac_create_app_store>
     <option_mac_display_name>SpelunkyClassicHD</option_mac_display_name>
@@ -526,7 +526,7 @@
     <option_use_fast_collision>True</option_use_fast_collision>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
-    <option_version>1.1</option_version>
+    <option_version>1.1.5</option_version>
     <option_version_build>0</option_version_build>
     <option_version_company></option_version_company>
     <option_version_copyright></option_version_copyright>
@@ -534,7 +534,7 @@
     <option_version_major>1</option_version_major>
     <option_version_minor>1</option_version_minor>
     <option_version_product></option_version_product>
-    <option_version_release>4</option_version_release>
+    <option_version_release>5</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
     <option_win8_advertising_enable>0</option_win8_advertising_enable>
     <option_win8_advertising_key></option_win8_advertising_key>
@@ -619,7 +619,7 @@
     <option_windows_major_version>1</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info></option_windows_product_info>
-    <option_windows_release_version>4</option_windows_release_version>
+    <option_windows_release_version>5</option_windows_release_version>
     <option_windows_runner_finished>Configs\Default\windows\Runner_finish.bmp</option_windows_runner_finished>
     <option_windows_runner_header>Configs\Default\windows\Runner_header.bmp</option_windows_runner_header>
     <option_windows_save_location>0</option_windows_save_location>
