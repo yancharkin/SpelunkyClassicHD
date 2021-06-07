@@ -129,7 +129,7 @@ view_object[0] = oOlmec;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_hborder[0] = 128;
+            <string>view_hborder[0] = global.display_w/2;
 view_vborder[0] = 64;
 view_xview[0] = 0;
 view_object[0] = oPlayer1;
@@ -359,7 +359,7 @@ else carryPlayer = false;
 
 if (status == START1)
 {
-    if (view_xview[0] &lt; 176) view_xview[0] += 2;
+    if (view_xview[0] &lt; 176-global.room_offset) view_xview[0] += 2;
     else
     {
         alarm[1] = 100;

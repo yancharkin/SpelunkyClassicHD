@@ -87,7 +87,7 @@ if ((global.screenAspectRatio &gt;= 1.333333333) and (global.screenAspectRatio &
 
 // set up rooms
 global.room_offset = ((w - 320)/2);
-room_set_view(rIntro,0,true,0,0,w,h,0,0,w,h,128,0,-1,-1,oPDummy3);
+room_set_view(rIntro,0,true,0,0,w,h,0,0,w,h,w/2,0,-1,-1,oPDummy3);
 room_set_view(rCredits1,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
 room_set_view(rCredits2,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
 room_set_view(rTitle,0,true,0,0,w,h,0,0,w,h,0,0,0,0,noone);
@@ -96,12 +96,12 @@ room_set_view(rSun,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,
 room_set_view(rMoon,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
 room_set_view(rStars,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
 room_set_view(rLevelEditor,0,true,0,0,w,h,0,0,w,h,0,0,-1,-1,noone);
-room_set_view(rLoadLevel,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rTutorial,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel2,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rLevel3,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
-room_set_view(rOlmec,0,true,0,0,w,h,0,0,w,h,128,96,-1,-1,oPlayer1);
+room_set_view(rLoadLevel,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
+room_set_view(rTutorial,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
+room_set_view(rLevel,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
+room_set_view(rLevel2,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
+room_set_view(rLevel3,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
+room_set_view(rOlmec,0,true,0,0,w,h,0,0,w,h,w/2,96,-1,-1,oPlayer1);
 room_set_view(rTransition1,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
 room_set_view(rTransition1x,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
 room_set_view(rTransition2,0,true,-global.room_offset,0,w,h,-global.room_offset,0,w,h,0,0,0,0,noone);
