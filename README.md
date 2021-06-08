@@ -22,5 +22,4 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 ## Links
 * [Game's page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
 * [HTML5 version: Linux (amd64, arm64, armv7l), macOS, Windows (x64) builds](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
-* [How to localize the game](localization/README.md)
-
+* [How to localize the game](localization)
