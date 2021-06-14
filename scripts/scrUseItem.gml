@@ -360,10 +360,10 @@
             {
             if (facing == LEFT and firing == 0)
             {
-                instance_create(x-12, y, oShotgunBlastLeft);
+                instance_create(x-18, y, oShotgunBlastLeft);
                 for (i = 0; i < 1; i+= 1)
                 {
-                    obj = instance_create(x-12, y-2, oWebBall);
+                    obj = instance_create(x-18, y-2, oWebBall);
                     obj.xVel = (-1 * rand(6,8)) + xVel;
                     if (obj.xVel >= -6) obj.xVel = -6;
                     obj.yVel = 0;
@@ -378,10 +378,10 @@
             }
             else if (facing == RIGHT and firing == 0)
             {
-                instance_create(x+12, y, oShotgunBlastRight);
+                instance_create(x+18, y, oShotgunBlastRight);
                 for (i = 0; i < 1; i+= 1)
                 {
-                    obj = instance_create(x+12, y-2, oWebBall);
+                    obj = instance_create(x+18, y-2, oWebBall);
                     obj.xVel = rand(6,8) + xVel;
                     if (obj.xVel < 6) obj.xVel = 6;
                     obj.yVel = 0;
