@@ -483,7 +483,7 @@ else depth = 101;</string>
                         if (isRealLevel()) global.enemyKills[16] += 1;
                         global.ufos += 1;
                         global.kills += 1;
-                        instance_destroy();
+                        //instance_destroy();
                     }
                     else
                     {
