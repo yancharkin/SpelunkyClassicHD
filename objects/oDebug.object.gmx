@@ -8,6 +8,29 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>itemsBundleIndex = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -135,6 +158,7 @@ if (keyboard_check_pressed(vk_f2)) {
 
 // Open shortcuts and challenges
 if (keyboard_check_pressed(vk_f3)) {
+    global.plife=99;
     // Shortcuts
     global.tunnel1 = 0;
     global.tunnel2 = 0;
@@ -145,11 +169,72 @@ if (keyboard_check_pressed(vk_f3)) {
     global.damsels = 10;
 }
 
-// Debug shotgun
+// Debug items
 if (keyboard_check_pressed(vk_f4)) {
-    global.plife=99;
+    itemsBundleIndex += 1;
+    if (itemsBundleIndex == 6) {
+        itemsBundleIndex = 0;
+    }
+}
+if (keyboard_check_pressed(vk_f5)) {
     var player = oGame.players[0];
-    instance_create(player.x-24, player.y, oShotgun);
+    switch (itemsBundleIndex) {
+        case 0: {
+            instance_create(player.x-24, player.y, oRock);
+            instance_create(player.x+24, player.y, oRopePile);
+            instance_create(player.x-48, player.y, oBombBox);
+            instance_create(player.x+48, player.y, oLockedChest);
+            instance_create(player.x-72, player.y, oDamsel);
+            instance_create(player.x+72, player.y, oKey);
+            break;
+        }
+        case 1: {
+            instance_create(player.x-24, player.y, oBow);
+            instance_create(player.x+24, player.y, oPistol);
+            instance_create(player.x-48, player.y, oShotgun);
+            instance_create(player.x+48, player.y, oWebCannon);
+            instance_create(player.x-72, player.y, oMachete);
+            instance_create(player.x+72, player.y, oMattock);
+            break;
+        }
+        case 2: {
+            instance_create(player.x-24, player.y, oGloves);
+            instance_create(player.x+24, player.y, oMitt);
+            instance_create(player.x-48, player.y, oSpringShoes);
+            instance_create(player.x+48, player.y, oSpikeShoes);
+            instance_create(player.x-72, player.y, oSpectacles);
+            instance_create(player.x+72, player.y, oCapePickup);
+            break;
+        }
+        case 3: {
+            instance_create(player.x-24, player.y, oJetpack);
+            instance_create(player.x+24, player.y, oParaPickup);
+            instance_create(player.x-48, player.y, oCompass);
+            instance_create(player.x+48, player.y, oFlareCrate);
+            instance_create(player.x-72, player.y, oCrate);
+            instance_create(player.x+72, player.y, oPaste);
+            break;
+        }
+        case 4: {
+            instance_create(player.x-24, player.y, oUdjatEye);
+            instance_create(player.x+24, player.y, oAnkh);
+            instance_create(player.x-48, player.y, oCrown);
+            instance_create(player.x+48, player.y, oSceptre);
+            instance_create(player.x-72, player.y, oTeleporter);
+            instance_create(player.x+72, player.y, oKapala);
+            break;
+        }
+        case 5: {
+            instance_create(player.x-24, player.y, oLampItem);
+            instance_create(player.x+24, player.y, oLampRedItem);
+            instance_create(player.x-48, player.y, oArrow);
+            instance_create(player.x+48, player.y, oBasketball);
+            instance_create(player.x-72, player.y, oJordans);
+            caveman = instance_create(player.x+72, player.y, oCaveman);
+            caveman.hp = 0;
+            break;
+        }
+    }
 }
 </string>
           </argument>

@@ -2450,6 +2450,8 @@
       <sprite>sprites\TouchButtons1Op</sprite>
       <sprite>sprites\TouchButtons2Op0</sprite>
       <sprite>sprites\TouchButtons2Op1</sprite>
+      <sprite>sprites\TouchButtonPlainOp</sprite>
+      <sprite>sprites\TouchButtonPlainSemiTr</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
