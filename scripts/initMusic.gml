@@ -1,4 +1,4 @@
-global.music = true;
+//global.music = true;
 
 global.musTitle   =mTitle
 global.musCave    =mCave

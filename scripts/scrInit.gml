@@ -20,7 +20,6 @@
     If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 
 ***********************************************************************************/
-
 initMusic();
 getPlatform();
 
@@ -42,6 +41,7 @@ global.toggleRunEnabled = false;
 global.graphicsHigh = true;
 global.downToRun = true;
 global.gamepadOn = false;
+global.music = true;
 global.musicVol = 15;
 global.soundVol = 15;
 

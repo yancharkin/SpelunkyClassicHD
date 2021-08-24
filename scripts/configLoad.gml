@@ -48,6 +48,7 @@ if (file_exists(working_directory + "settings.json")) {
     var settingsMap = json2dsmap(working_directory + "settings.json");
     global.locale = settingsMap[? "locale"];
     global.fullscreen = settingsMap[? "fullscreen"];
+    global.music = settingsMap[? "music"];
     global.toggleRunEnabled = settingsMap[? "toggleRunEnabled"];
     global.firstLaunch = settingsMap[? "firstLaunch"];
     global.touchControlsVisibility = int64(settingsMap[? "touchControlsVisibility"]);

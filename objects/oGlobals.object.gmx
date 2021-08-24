@@ -44,7 +44,7 @@ global.usedShortcut = false;
 global.darkLevel = false;
 global.lake = false;
 
-global.music = true;
+//global.music = true;
 global.message = "";
 global.message2 = "";
 global.messageTimer = 0;

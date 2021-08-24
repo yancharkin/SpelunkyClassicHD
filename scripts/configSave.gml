@@ -12,10 +12,12 @@ ds_map_replace(settingsMap, "locale", global.locale);
 // or on the HTML5 platform
 if (!global.html5Build) {
     ds_map_replace(settingsMap, "fullscreen", bool(global.fullscreen));
+    ds_map_replace(settingsMap, "music", bool(global.music));
     ds_map_replace(settingsMap, "toggleRunEnabled", bool(global.toggleRunEnabled));
     ds_map_replace(settingsMap, "firstLaunch", bool(global.firstLaunch));
 } else {
     ds_map_replace(settingsMap, "fullscreen", global.fullscreen);
+    ds_map_replace(settingsMap, "music", global.music);
     ds_map_replace(settingsMap, "toggleRunEnabled", global.toggleRunEnabled);
     ds_map_replace(settingsMap, "firstLaunch", global.firstLaunch);
 }

@@ -80,15 +80,15 @@ if (global.debugBuild) instance_create(0, 0, oDebug);
 
 if (global.html5Build) {
     if (global.mobileBuild) {
-        maxIndexTitle = 6;
-        maxIndexGame = 4;
-    } else {
         maxIndexTitle = 7;
         maxIndexGame = 5;
+    } else {
+        maxIndexTitle = 8;
+        maxIndexGame = 6;
     }
 } else {
-    maxIndexTitle = 5;
-    maxIndexGame = 4;
+    maxIndexTitle = 6;
+    maxIndexGame = 5;
 }
 
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
@@ -716,11 +716,16 @@ if (paused) {
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {
+                    toggleMusic();
+                    if (paused) audio_pause_all();
+                    break;
+                }
+                case 1: {
                     instance_activate_all();
                     room_goto(rKeyConfig);
                     break;
                 }
-                case 1: {               
+                case 2: {               
                     if (global.html5Build) {
                         global.joyid = html5_gamepad_next(global.joyid);
                     } else {
@@ -730,7 +735,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 2: {
+                case 3: {
                     if (global.html5Build) {
                         paused = false;
                         instance_activate_all();
@@ -740,7 +745,7 @@ if (paused) {
                      }
                     break;
                 }
-                case 3: {
+                case 4: {
                     if (global.html5Build) {
                         menuTouchControls();
                     } else if (global.mobileBuild) {
@@ -750,7 +755,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 4: {
+                case 5: {
                     if (global.html5Build) {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
@@ -758,7 +763,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 5: {
+                case 6: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
                             menuLanguage();
@@ -776,7 +781,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 6: {
+                case 7: {
                     if (global.mobileBuild) {
                         instance_activate_all();
                         audio_stop_all();
@@ -786,7 +791,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 7: {
+                case 8: {
                     if (global.electronBuild) {
                         quitGame();
                     } else if (global.browserBuild) {
@@ -800,6 +805,11 @@ if (paused) {
         } else {
             switch (menuItemIndex) {
                 case 0: {
+                    toggleMusic();
+                    if (paused) audio_pause_all();
+                    break;
+                }
+                case 1: {
                     if (global.html5Build) {
                         menuTouchControls();
                     } else {
@@ -807,7 +817,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 1: {
+                case 2: {
                     if (global.html5Build) {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
@@ -819,7 +829,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 2: {
+                case 3: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
                             menuLanguage();
@@ -835,7 +845,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 3: {
+                case 4: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
                             menuDie();
@@ -851,7 +861,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 4: {
+                case 5: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
                             instance_activate_all();
@@ -871,7 +881,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 5: {
+                case 6: {
                     if (global.browserBuild) {
                         instance_activate_all();
                         audio_stop_all();
@@ -973,6 +983,7 @@ if (paused) {
     color5 = c_white;
     color6 = c_white;
     color7 = c_white;
+    color8 = c_white;
     switch (menuItemIndex) {
         case 0: { color0 = c_yellow; break; }
         case 1: { color1 = c_yellow; break; }
@@ -982,8 +993,14 @@ if (paused) {
         case 5: { color5 = c_yellow; break; }
         case 6: { color6 = c_yellow; break; }
         case 7: { color7 = c_yellow; break; }
+        case 8: { color8 = c_yellow; break; }
     }
 
+    if (global.music) {
+        strMusic = tr("ON");
+    } else {
+        strMusic = tr("OFF");
+    }
     if (global.fullscreen) {
         strFullscreen = tr("ON");
     } else {
@@ -999,70 +1016,74 @@ if (paused) {
 
     if (isRoom("rTitle")) {
         if (global.html5Build) {
-            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
-            drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color1, 0, firstMenuItemTitleY+20);
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, firstMenuItemTitleY+40);
-            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+            drawTextHCentered(tr('MUSIC') + ' &lt;' + strMusic + '&gt;', 'small', color0, 0, firstMenuItemTitleY);
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color1, 0, firstMenuItemTitleY+20);
+            drawTextHCentered(tr('GAMEPAD') + ' &lt;' + string(global.joyid) + '&gt;', 'small', color2, 0, firstMenuItemTitleY+40);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color3, 0, firstMenuItemTitleY+60);
+            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
             if (global.mobileBuild) {
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
-                drawTextHCentered(tr('RESTART'), 'small', color6, 0, firstMenuItemTitleY+120);
-            } else if (global.browserBuild) {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color5, 0, firstMenuItemTitleY+100);
                 drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color6, 0, firstMenuItemTitleY+120);
                 drawTextHCentered(tr('RESTART'), 'small', color7, 0, firstMenuItemTitleY+140);
+            } else if (global.browserBuild) {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color6, 0, firstMenuItemTitleY+120);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color7, 0, firstMenuItemTitleY+140);
+                drawTextHCentered(tr('RESTART'), 'small', color8, 0, firstMenuItemTitleY+160);
             //} else if (global.electronBuild) {
             } else {        
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);    
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color6, 0, firstMenuItemTitleY+120);
-                drawTextHCentered(tr('QUIT'), 'small', color7, 0, firstMenuItemTitleY+140);
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color6, 0, firstMenuItemTitleY+120);    
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color7, 0, firstMenuItemTitleY+140);
+                drawTextHCentered(tr('QUIT'), 'small', color8, 0, firstMenuItemTitleY+160);
             }
         } else {
-            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color0, 0, firstMenuItemTitleY);
-            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color1, 0, firstMenuItemTitleY+20);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, firstMenuItemTitleY+40);
+            drawTextHCentered(tr('MUSIC') + ' &lt;' + strMusic + '&gt;', 'small', color0, 0, firstMenuItemTitleY);
+            drawTextHCentered(tr('KEYBOARD CONFIGURATION'), 'small', color1, 0, firstMenuItemTitleY+20);
+            drawTextHCentered(tr('GAMEPAD CONFIGURATION'), 'small', color2, 0, firstMenuItemTitleY+40);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
             if (global.mobileBuild) {
-                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
-                drawTextHCentered(tr('RESTART'), 'small', color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr('RESTART'), 'small', color6, 0, firstMenuItemTitleY+120);
             } else {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, firstMenuItemTitleY+60);
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
-                drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color4, 0, firstMenuItemTitleY+80);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr('QUIT'), 'small', color6, 0, firstMenuItemTitleY+120);
             }
         }
     } else {
         if (global.html5Build) {
-            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color0, 0, firstMenuItemGameY);
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+            drawTextHCentered(tr('MUSIC') + ' &lt;' + strMusic + '&gt;', 'small', color0, 0, firstMenuItemGameY);
+            drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
             if (global.mobileBuild) {
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
-                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr('RESTART'), 'small', color4, 0, firstMenuItemGameY+80);
-            } else if (global.browserBuild) {
-                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color2, 0, firstMenuItemGameY+40);
                 drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
                 drawTextHCentered(tr('DIE!'), 'small', color4, 0, firstMenuItemGameY+80);
                 drawTextHCentered(tr('RESTART'), 'small', color5, 0, firstMenuItemGameY+100);
+            } else if (global.browserBuild) {
+                drawTextHCentered(tr('TOGGLE FULLSCREEN'), 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('DIE!'), 'small', color5, 0, firstMenuItemGameY+100);
+                drawTextHCentered(tr('RESTART'), 'small', color6, 0, firstMenuItemGameY+120);
             //} else if (global.electronBuild) {
+            } else {
+                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('DIE!'), 'small', color5, 0, firstMenuItemGameY+100);
+                drawTextHCentered(tr('QUIT'), 'small', color6, 0, firstMenuItemGameY+120);
+            }
+        } else {
+            drawTextHCentered(tr('MUSIC') + ' &lt;' + strMusic + '&gt;', 'small', color0, 0, firstMenuItemGameY);
+            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
+            if (global.mobileBuild) {
+                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
+                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
+                drawTextHCentered(tr('DIE!'), 'small', color4, 0, firstMenuItemGameY+80);
+                drawTextHCentered(tr('RESTART'), 'small', color5, 0, firstMenuItemGameY+100);
             } else {
                 drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
                 drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color3, 0, firstMenuItemGameY+60);
                 drawTextHCentered(tr('DIE!'), 'small', color4, 0, firstMenuItemGameY+80);
                 drawTextHCentered(tr('QUIT'), 'small', color5, 0, firstMenuItemGameY+100);
-            }
-        } else {
-            drawTextHCentered(tr('TOGGLEABLE RUN BUTTON') + ' &lt;' + strToggleRunEnabled + '&gt;', 'small', color0, 0, firstMenuItemGameY);
-            if (global.mobileBuild) {
-                drawTextHCentered(tr('TOUCH CONTROLS VISIBILITY') + ' &lt;' + string(global.touchControlsVisibility) + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
-                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr('RESTART'), 'small', color4, 0, firstMenuItemGameY+80);
-            } else {
-                drawTextHCentered(tr('FULLSCREEN') + ' &lt;' + strFullscreen + '&gt;', 'small', color1, 0, firstMenuItemGameY+20);
-                drawTextHCentered(tr('LANGUAGE') + ' &lt;' + strLocaleName + '&gt;', 'small', color2, 0, firstMenuItemGameY+40);
-                drawTextHCentered(tr('DIE!'), 'small', color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr('QUIT'), 'small', color4, 0, firstMenuItemGameY+80);
             }
         }
     }
@@ -1439,28 +1460,8 @@ if (global.html5Build) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.music)
-{
-    global.music = false;
-    stopAllMusic();
-}
-else
-{
-    global.music = true;
-    if (isLevel())
-    {
-        if (global.levelType == 1) playMusic(global.musLush, true);
-        else if (global.levelType == 2) playMusic(global.musIce, true);
-        else if (global.levelType == 3) playMusic(global.musTemple, true);
-        else if (isRoom("rOlmec"))
-        {
-            if (oPlayer1.active)
-                playMusic(global.musBoss, true);
-        }
-        else playMusic(global.musCave, true);
-    }
-    else if (isRoom("rTitle")) playMusic(global.musTitle, true);
-}</string>
+            <string>toggleMusic();
+</string>
           </argument>
         </arguments>
       </action>

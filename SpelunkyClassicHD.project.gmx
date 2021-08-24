@@ -2687,6 +2687,8 @@
     <script>scripts\menuToggleFullscreen.gml</script>
     <script>scripts\menuLanguage.gml</script>
     <script>scripts\quitGame.gml</script>
+    <script>scripts\toggleMusic.gml</script>
+    <script>scripts\onOffMusic.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Basis">
