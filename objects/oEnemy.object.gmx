@@ -103,7 +103,8 @@ bombID = 0;</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (bombID)
+            <string>/*
+if (bombID)
 {
     bombID.enemyID = 0;
 }
@@ -112,7 +113,9 @@ if (held)
 {
     oPlayer1.holdItem = 0;
     oPlayer1.pickupItem = "";
-}</string>
+}
+*/
+</string>
           </argument>
         </arguments>
       </action>
