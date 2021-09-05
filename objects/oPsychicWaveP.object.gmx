@@ -65,23 +65,34 @@ dir = 0;</string>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (counter &gt; 0)
-{
+            <string>if (counter &gt; 0) {
     counter -= 1;
     x += xVel;
     if (xVel &gt; 0) dir = 0;
     else dir = 180;
-}
-else
-{
-    if (instance_exists(oEnemy))
-    {
-        obj = instance_nearest(x, y, oEnemy);
+} else {
+    enemy_exists = instance_exists(oEnemy);
+    damsel_exists = instance_exists(oDamsel);
+    if (enemy_exists or damsel_exists){
+        if (enemy_exists) var enemy = instance_nearest(x, y, oEnemy);
+        if (damsel_exists) var damsel = instance_nearest(x, y, oDamsel);
+        if (enemy_exists and damsel_exists){
+             if (point_distance(x, y, enemy.x, enemy.y) &lt; point_distance(x, y, damsel.x, damsel.y)) {
+                obj = enemy;
+             } else {
+                obj = damsel;
+             }
+        } else if (enemy_exists) {
+            obj = instance_nearest(x, y, oEnemy);
+        } else if (damsel_exists) {
+            obj = instance_nearest(x, y, oDamsel);
+        }
         dir = point_direction(x, y, obj.x+8, obj.y+8);
     }
     x += 2 * cos(degtorad(dir));
     y += -2 * sin(degtorad(dir));
-}</string>
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -116,7 +127,8 @@ else
 
 // global.checkWater = true;
 
-instance_destroy();</string>
+//instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
