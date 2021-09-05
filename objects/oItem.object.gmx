@@ -363,41 +363,18 @@ else depth = 101;</string>
 
     if (type == "Bomb" and sticky)
     {
-        if (abs(xVel) &gt; 2 or abs(yVel) &gt; 2 and collision_rectangle(x-2, y-2, x+2, y+2, oEnemy, 0, 0) and enemyID == 0)
-        {
-            enemyID = instance_nearest(x, y, oEnemy);
-            /*
-            if (enemyID.bombID)
-            {
-                // Can only have one sticky bomb on someone at a time
-                with enemyID.bombID
-                {
-                    sticky = false;
-                    enemyID = 0;
-                }
+        if ((abs(xVel) &gt; 2 or abs(yVel) &gt; 2)) {
+            if (collision_rectangle(x-2, y-2, x+2, y+2, oEnemy, 0, 0)) {
+                enemyID = instance_nearest(x, y, oEnemy);
+                enemyID.bombID = self;
+                stickyXDiff = enemyID.x-x;
+                stickyYDiff = enemyID.y-y;
+            } else if (collision_rectangle(x-2, y-2, x+2, y+2, oDamsel, 0, 0)) {
+                enemyID = collision_rectangle(x-2, y-2, x+2, y+2, oDamsel, 0, 0);
+                enemyID.bombID = self;
+                stickyXDiff = enemyID.x-x;
+                stickyYDiff = enemyID.y-y;
             }
-            */
-            enemyID.bombID = self; // instance_nearest(x, y, oBomb);
-            stickyXDiff = enemyID.x-x;
-            stickyYDiff = enemyID.y-y;
-        }
-        else if (abs(xVel) &gt; 2 or abs(yVel) &gt; 2 and collision_rectangle(x-2, y-2, x+2, y+2, oDamsel, 0, 0) and enemyID == 0)
-        {
-            enemyID = collision_rectangle(x-2, y-2, x+2, y+2, oDamsel, 0, 0);
-            /*
-            if (enemyID.bombID)
-            {
-                // Can only have one sticky bomb on someone at a time
-                with enemyID.bombID
-                {
-                    sticky = false;
-                    enemyID = 0;
-                }
-            }
-            */
-            enemyID.bombID = self; // instance_nearest(x, y, oBomb);
-            stickyXDiff = enemyID.x-x;
-            stickyYDiff = enemyID.y-y;
         }
     }
     else if (abs(xVel) &gt; 2 or abs(yVel) &gt; 2)
