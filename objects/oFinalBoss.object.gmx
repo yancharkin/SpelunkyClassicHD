@@ -49,13 +49,10 @@ global.doorOpen = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if (not olmecDead and not doorOpen)
-//if (global.olmecDead = false and not global.doorOpen)
-if (global.olmecDead = true and not global.doorOpen)
+            <string>if (global.olmecDead and not global.doorOpen)
 {
     global.doorOpen = true;
-    obj = instance_place(640, 544, oEntrance);
-    with obj { instance_destroy(); }
+    with (oEntrance) instance_destroy();
     instance_create(640, 544, oXEnd);
     if (not collision_point(640, 560, oSolid, 0, 0))
     {
