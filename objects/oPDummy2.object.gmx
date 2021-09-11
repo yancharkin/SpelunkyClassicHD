@@ -84,7 +84,7 @@ else if (global.isTunnelMan) sprite_index = sTunnelRunL;
 {
     drawStatus = 1;
     alarm[1] = 50;
-    audio_play_sound(global.musVictory, 10, false);
+    if (global.music) audio_play_sound(global.musVictory, 10, false);
 }
 </string>
           </argument>
