@@ -2,10 +2,6 @@
 
 To make the localization process easier, you can download debug builds from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
 
-* press F2 to transfer player between levels
-* press F3 to open all shortcuts
-* press F4 to open all challenges
-
 ## Step 1
 * go to the **locale** directory:
    **Linux**: [game directory]/assets/locale/
