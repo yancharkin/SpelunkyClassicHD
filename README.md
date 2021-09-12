@@ -2,7 +2,10 @@
 
 **Mirrors: [Github](https://github.com/yancharkin/SpelunkyClassicHD), [Bitbucket](https://bitbucket.org/yancharkin/spelunkyclassichd), [Gitlab](https://gitlab.com/yancharkin/SpelunkyClassicHD)**
 
-![screenshot](screenshots/screenshot_00.jpg)
+
+**This project is no longer under development. You can ask questions but do not expect new features or bug fixes. You can still report bugs, but it's unlikely that those bugs will be fixed. But if someday someone decides to continue development, your bug reports may come in handy.**
+
+![screenshot](screenshots/screenshot_00.png)
 
 A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game [Spelunky Classic](https://spelunkyworld.com/original.html). Based on the source code published in **Humble Weekly Bundle: Play and Create with GameMaker** (not original 1.1 release).
 
