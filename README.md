@@ -3,7 +3,7 @@
 **Mirrors: [Github](https://github.com/yancharkin/SpelunkyClassicHD), [Bitbucket](https://bitbucket.org/yancharkin/spelunkyclassichd), [Gitlab](https://gitlab.com/yancharkin/SpelunkyClassicHD)**
 
 
-**This project is no longer under development. You can ask questions but do not expect new features or bug fixes. You can still report bugs, but it's unlikely that those bugs will be fixed. But if someday someone decides to continue development, your bug reports may come in handy.**
+**This project is no longer under development. You can ask questions, I'll try to answer them, but do not expect new features or bug fixes. You can still report bugs, though it's unlikely that those bugs will be fixed. Your bug reports will be useful only if someday someone decides to continue development. So it's up to you to decide if it's worth your time to report bugs.**
 
 ![screenshot](screenshots/screenshot_00.png)
 
