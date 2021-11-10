@@ -17,8 +17,8 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>548</width>
-  <height>549</height>
+  <width>16</width>
+  <height>16</height>
   <frames>
     <frame index="0">images\sGameMakerLogoS_0.png</frame>
   </frames>

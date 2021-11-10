@@ -17,8 +17,8 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>0</width>
-  <height>0</height>
+  <width>8</width>
+  <height>8</height>
   <frames>
     <frame index="0">images\sPageUp_0.png</frame>
   </frames>
