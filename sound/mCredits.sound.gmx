@@ -22,7 +22,7 @@
   </bitDepths>
   <preload>-1</preload>
   <data>mCredits.ogg</data>
-  <compressed>0</compressed>
+  <compressed>1</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
   <audioGroup>0</audioGroup>
