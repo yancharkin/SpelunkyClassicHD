@@ -65,5 +65,5 @@ At this point, you can send localized files to me any way you like and I'll do t
 * redraw images
 
 ## Questions?
-If something not clear, ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/821814/how-to-localize-the-game).
+If something not clear, ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/1757542/translation-how-to-localize-the-game).
 
