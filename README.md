@@ -19,6 +19,7 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - [Spenĉjo](https://github.com/Rajzin) - Esperanto
 - [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194) - Brazilian Portuguese
 - [bakustarver](https://github.com/bakustarver) - Ukrainian
+- [LeRetardatN](https://github.com/Lecodeurenretard) - French
 
 ## Links
 * [Game's page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
