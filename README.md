@@ -20,8 +20,9 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194) - Brazilian Portuguese
 - [bakustarver](https://github.com/bakustarver) - Ukrainian
 - [LeRetardatN](https://github.com/Lecodeurenretard) - French
+- ([WIP?](https://github.com/yancharkin/SpelunkyClassicHD/discussions/24)) - Georgian (ქართული)
 
 ## Links
-* [Game's page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
+* [Page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
 * [HTML5 version: Linux (amd64, arm64, armv7l), macOS, Windows (x64) builds](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
 * [How to localize the game](localization)
