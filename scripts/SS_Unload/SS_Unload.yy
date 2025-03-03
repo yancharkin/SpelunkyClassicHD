@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SS_Unload",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SS_Unload",
+  "parent":{
+    "name":"supersound",
+    "path":"folders/Scripts/supersound.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

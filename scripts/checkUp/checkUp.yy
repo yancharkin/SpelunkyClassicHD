@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"checkUp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"checkUp",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

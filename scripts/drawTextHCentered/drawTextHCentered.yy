@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"drawTextHCentered",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawTextHCentered",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

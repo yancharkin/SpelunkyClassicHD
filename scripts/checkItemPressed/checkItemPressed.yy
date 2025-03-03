@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"checkItemPressed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"checkItemPressed",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

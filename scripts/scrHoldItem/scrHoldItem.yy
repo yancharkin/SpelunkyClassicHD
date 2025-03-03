@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrHoldItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrHoldItem",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Scripts/Character.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

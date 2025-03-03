@@ -1,0 +1,2 @@
+type = "";
+blinkToggle = 0;

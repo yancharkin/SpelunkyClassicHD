@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SS_IsSoundPlaying",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SS_IsSoundPlaying",
+  "parent":{
+    "name":"Advanced",
+    "path":"folders/Scripts/supersound/Advanced.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

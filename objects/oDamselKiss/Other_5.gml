@@ -1,0 +1,1 @@
+global.plife += 1;

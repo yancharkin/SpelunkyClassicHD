@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrPlayerIsDucking",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrPlayerIsDucking",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Scripts/Character.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

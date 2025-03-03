@@ -1,0 +1,9 @@
+life = 20;
+dying = false;
+UP = 0;
+DOWN = 1;
+dir = rand(0,1);
+moveOff = 32;
+hard = false;
+if (x > 208) hard = true;
+xDiff = 0;

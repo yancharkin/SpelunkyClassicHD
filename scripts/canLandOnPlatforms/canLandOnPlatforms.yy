@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"canLandOnPlatforms",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"canLandOnPlatforms",
+  "parent":{
+    "name":"Collision",
+    "path":"folders/Scripts/Collision.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SS_PauseSound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SS_PauseSound",
+  "parent":{
+    "name":"Advanced",
+    "path":"folders/Scripts/supersound/Advanced.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

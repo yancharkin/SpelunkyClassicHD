@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"dsmap2json",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"dsmap2json",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

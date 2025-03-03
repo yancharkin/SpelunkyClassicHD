@@ -1,0 +1,1 @@
+global.shake = 0;

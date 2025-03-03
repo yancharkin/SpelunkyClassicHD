@@ -1,0 +1,2 @@
+x += xVel;
+y += yVel;

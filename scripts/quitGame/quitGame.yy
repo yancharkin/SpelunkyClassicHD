@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"quitGame",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"quitGame",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

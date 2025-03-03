@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"calculateCollisionBounds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"calculateCollisionBounds",
+  "parent":{
+    "name":"hidden",
+    "path":"folders/Scripts/Collision/hidden.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

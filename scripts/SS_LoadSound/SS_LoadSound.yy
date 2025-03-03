@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SS_LoadSound",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SS_LoadSound",
+  "parent":{
+    "name":"supersound",
+    "path":"folders/Scripts/supersound.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,2 @@
+invincible = false;
+bounce = true;

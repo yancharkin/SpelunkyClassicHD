@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"showMessages",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"showMessages",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

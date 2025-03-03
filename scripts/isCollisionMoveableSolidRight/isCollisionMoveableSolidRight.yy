@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"isCollisionMoveableSolidRight",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"isCollisionMoveableSolidRight",
+  "parent":{
+    "name":"horizontal",
+    "path":"folders/Scripts/Collision/horizontal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

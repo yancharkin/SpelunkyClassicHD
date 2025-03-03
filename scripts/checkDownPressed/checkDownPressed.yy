@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"checkDownPressed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"checkDownPressed",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"approximatelyZero",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"approximatelyZero",
+  "parent":{
+    "name":"hidden",
+    "path":"folders/Scripts/Collision/hidden.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

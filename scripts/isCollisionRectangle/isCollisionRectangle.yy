@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"isCollisionRectangle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"isCollisionRectangle",
+  "parent":{
+    "name":"hidden",
+    "path":"folders/Scripts/Collision/hidden.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

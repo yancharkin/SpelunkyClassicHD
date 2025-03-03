@@ -1,0 +1,2 @@
+itemsBundleIndex = 0;
+

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SS_GetSoundLength",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SS_GetSoundLength",
+  "parent":{
+    "name":"Advanced",
+    "path":"folders/Scripts/supersound/Advanced.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

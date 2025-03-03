@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrDropItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrDropItem",
+  "parent":{
+    "name":"Character",
+    "path":"folders/Scripts/Character.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
