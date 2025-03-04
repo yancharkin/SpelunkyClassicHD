@@ -36,6 +36,14 @@ if (joyPressed) {
         global.joyPayVal = joyKey;
     } else if (status == 7) {
         global.joyStartVal = joyKey;
+    } else if (status == 8) {
+        global.joyLeftVal = joyKey;
+    } else if (status == 9) {
+        global.joyRightVal = joyKey;
+    } else if (status == 10) {
+        global.joyUpVal = joyKey;
+    } else if (status == 11) {
+        global.joyDownVal = joyKey;
     }
 }
 
@@ -43,6 +51,9 @@ if (joyPressed or keyboard_check_pressed(vk_escape)) {
     status += 1;
     if (gamepad.attackPressed) gamepad.attackPressed = false;
     if (gamepad.startPressed) gamepad.startPressed = false;
-    if (status > 7) room_goto(rTitle);
+	if (os_type != os_linux) {
+		if (status > 7) room_goto(rTitle);
+	}
+    if (status > 11) room_goto(rTitle);
 }
 

@@ -22,9 +22,9 @@ function scrGetJoy() {
 
 	if (file_exists(working_directory + "gamepadmapping.json")) {
 	    if (!ds_map_exists(global.gamepadMapping, string(argument[0]))) {
-	        return argument[0];
-	    } else if (global.gamepadMapping[? string(argument[0])] == "") {
-	        return argument[0];
+	        return string(argument[0]);
+	    } else if (global.gamepadMapping[? string(argument[0])] == ""  or is_undefined(global.gamepadMapping[? string(argument[0])])) {
+	        return string(argument[0]);
 	    } else {
 	        return string_upper(global.gamepadMapping[? string(argument[0])]);
 	    }

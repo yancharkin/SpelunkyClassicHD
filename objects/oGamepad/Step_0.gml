@@ -35,13 +35,13 @@ leftReleased = false;
 leftPressed = false;
 if (left)
 {
-    left = (gamepad_button_check(global.joyid, gp_padl) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
+    left = (gamepad_button_check(global.joyid, global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
 
     if (not left) leftReleased = true;
 }
 else
 {
-    left = (gamepad_button_check(global.joyid, gp_padl) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
+    left = (gamepad_button_check(global.joyid, global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
     
     if (left) leftPressed = true;
 }
@@ -54,13 +54,13 @@ rightReleased = false;
 rightPressed = false;
 if (right)
 {
-    right = (gamepad_button_check(global.joyid, gp_padr) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
+    right = (gamepad_button_check(global.joyid, global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
 
     if (not right) rightReleased = true;
 }
 else
 {
-    right = (gamepad_button_check(global.joyid, gp_padr) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
+    right = (gamepad_button_check(global.joyid, global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
     
     if (right) rightPressed = true;
 }
@@ -73,13 +73,13 @@ upReleased = false;
 upPressed = false;
 if (up)
 {
-    up = (gamepad_button_check(global.joyid, gp_padu) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
+    up = (gamepad_button_check(global.joyid, global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
 
     if (not up) upReleased = true;
 }
 else
 {
-    up = (gamepad_button_check(global.joyid, gp_padu) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
+    up = (gamepad_button_check(global.joyid, global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
     
     if (up) upPressed = true;
 }
@@ -92,13 +92,13 @@ downReleased = false;
 downPressed = false;
 if (down)
 {
-    down = (gamepad_button_check(global.joyid, gp_padd) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
+    down = (gamepad_button_check(global.joyid, global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
 
     if (not down) downReleased = true;
 }
 else
 {
-    down = (gamepad_button_check(global.joyid, gp_padd) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
+    down = (gamepad_button_check(global.joyid, global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
     
     if (down) downPressed = true;
 }

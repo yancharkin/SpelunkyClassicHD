@@ -33,6 +33,10 @@ function configLoad() {
 	    global.joyFlareVal = gp_face4;
 	    global.joyPayVal = gp_shoulderrb;
 	    global.joyStartVal = gp_start;
+		global.joyLeftVal = gp_padl;
+		global.joyRightVal = gp_padr;
+		global.joyUpVal = gp_padu;
+		global.joyDownVal = gp_padd;		
 	} else {
 	    global.joyAttackVal = 0;
 	    global.joyJumpVal = 1;
@@ -47,43 +51,47 @@ function configLoad() {
 
 	if (file_exists(working_directory + "settings.json")) {
 	    var settingsMap = json2dsmap(working_directory + "settings.json");
-	    global.locale = settingsMap[? "locale"];
-	    global.fullscreen = settingsMap[? "fullscreen"];
-	    global.music = settingsMap[? "music"];
-	    global.toggleRunEnabled = settingsMap[? "toggleRunEnabled"];
-	    global.firstLaunch = settingsMap[? "firstLaunch"];
-	    global.touchControlsVisibility = int64(settingsMap[? "touchControlsVisibility"]);
+	    global.locale = is_undefined(settingsMap[? "locale"]) ? global.locale : settingsMap[? "locale"];
+	    global.fullscreen = is_undefined(settingsMap[? "fullscreen"]) ? global.fullscreen : settingsMap[? "fullscreen"];
+	    global.music = is_undefined(settingsMap[? "music"]) ? global.music : settingsMap[? "music"];
+	    global.toggleRunEnabled = is_undefined(settingsMap[? "toggleRunEnabled"]) ? global.toggleRunEnabled : settingsMap[? "toggleRunEnabled"];
+	    global.firstLaunch = is_undefined(settingsMap[? "firstLaunch"]) ? global.firstLaunch : settingsMap[? "firstLaunch"];
+	    global.touchControlsVisibility = is_undefined(settingsMap[? "touchControlsVisibility"]) ? global.touchControlsVisibility : int64(settingsMap[? "touchControlsVisibility"]);
 	    ds_map_destroy(settingsMap);
 	}
 
 	if (file_exists(working_directory + "keys.json")) {
 	    var keysMap = json2dsmap(working_directory + "keys.json");
-	    global.keyUpVal = int64(keysMap[? "keyUpVal"]);
-	    global.keyDownVal =  int64(keysMap[? "keyDownVal"]);
-	    global.keyLeftVal =  int64(keysMap[? "keyLeftVal"]);
-	    global.keyRightVal =  int64(keysMap[? "keyRightVal"]);
-	    global.keyJumpVal =  int64(keysMap[? "keyJumpVal"]);
-	    global.keyAttackVal =  int64(keysMap[? "keyAttackVal"]);
-	    global.keyItemVal =  int64(keysMap[? "keyItemVal"]);
-	    global.keyRunVal =  int64(keysMap[? "keyRunVal"]);
-	    global.keyBombVal =  int64(keysMap[? "keyBombVal"]);
-	    global.keyRopeVal =  int64(keysMap[? "keyRopeVal"]);
-	    global.keyFlareVal =  int64(keysMap[? "keyFlareVal"]);
-	    global.keyPayVal =  int64(keysMap[? "keyPayVal"]);
+	    global.keyUpVal = is_undefined(keysMap[? "keyUpVal"]) ? global.keyUpVal : int64(keysMap[? "keyUpVal"]);
+	    global.keyDownVal =  is_undefined(keysMap[? "keyDownVal"]) ? global.keyDownVal : int64(keysMap[? "keyDownVal"]);
+	    global.keyLeftVal =  is_undefined(keysMap[? "keyLeftVal"]) ? global.keyLeftVal : int64(keysMap[? "keyLeftVal"]);
+	    global.keyRightVal =  is_undefined(keysMap[? "keyRightVal"]) ? global.keyRightVal : int64(keysMap[? "keyRightVal"]);
+	    global.keyJumpVal =  is_undefined(keysMap[? "keyJumpVal"]) ? global.keyJumpVal : int64(keysMap[? "keyJumpVal"]);
+	    global.keyAttackVal =  is_undefined(keysMap[? "keyAttackVal"]) ? global.keyAttackVal : int64(keysMap[? "keyAttackVal"]);
+	    global.keyItemVal =  is_undefined(keysMap[? "keyItemVal"]) ? global.keyItemVal : int64(keysMap[? "keyItemVal"]);
+	    global.keyRunVal =  is_undefined(keysMap[? "keyRunVal"]) ? global.keyRunVal : int64(keysMap[? "keyRunVal"]);
+	    global.keyBombVal =  is_undefined(keysMap[? "keyBombVal"]) ? global.keyBombVal : int64(keysMap[? "keyBombVal"]);
+	    global.keyRopeVal =  is_undefined(keysMap[? "keyRopeVal"]) ? global.keyRopeVal : int64(keysMap[? "keyRopeVal"]);
+	    global.keyFlareVal =  is_undefined(keysMap[? "keyFlareVal"]) ? global.keyFlareVal : int64(keysMap[? "keyFlareVal"]);
+	    global.keyPayVal =  is_undefined(keysMap[? "keyPayVal"]) ? global.keyPayVal : int64(keysMap[? "keyPayVal"]);
 	    ds_map_destroy(keysMap);
 	}
 
 	if (file_exists(working_directory + "gamepad.json")) {
 	    var joyMap = json2dsmap(working_directory + "gamepad.json");
-	    global.joyJumpVal =  int64(joyMap[? "joyJumpVal"]);
-	    global.joyAttackVal =  int64(joyMap[? "joyAttackVal"]);
-	    global.joyItemVal =  int64(joyMap[? "joyItemVal"]);
-	    global.joyRunVal =  int64(joyMap[? "joyRunVal"]);
-	    global.joyBombVal =  int64(joyMap[? "joyBombVal"]);
-	    global.joyRopeVal =  int64(joyMap[? "joyRopeVal"]);
-	    global.joyFlareVal =  int64(joyMap[? "joyFlareVal"]);
-	    global.joyPayVal =  int64(joyMap[? "joyPayVal"]);
-	    global.joyStartVal =  int64(joyMap[? "joyStartVal"]);
+	    global.joyJumpVal =  is_undefined(joyMap[? "joyJumpVal"]) ? global.joyJumpVal : int64(joyMap[? "joyJumpVal"]);
+	    global.joyAttackVal =  is_undefined(joyMap[? "joyAttackVal"]) ? global.joyAttackVal : int64(joyMap[? "joyAttackVal"]);
+	    global.joyItemVal =  is_undefined(joyMap[? "joyItemVal"]) ? global.joyItemVal : int64(joyMap[? "joyItemVal"]);
+	    global.joyRunVal =  is_undefined(joyMap[? "joyRunVal"]) ? global.joyRunVal : int64(joyMap[? "joyRunVal"]);
+	    global.joyBombVal =  is_undefined(joyMap[? "joyBombVal"]) ? global.joyBombVal : int64(joyMap[? "joyBombVal"]);
+	    global.joyRopeVal =  is_undefined(joyMap[? "joyRopeVal"]) ? global.joyRopeVal : int64(joyMap[? "joyRopeVal"]);
+	    global.joyFlareVal =  is_undefined(joyMap[? "joyFlareVal"]) ? global.joyFlareVal : int64(joyMap[? "joyFlareVal"]);
+	    global.joyPayVal =  is_undefined(joyMap[? "joyPayVal"]) ? global.joyPayVal : int64(joyMap[? "joyPayVal"]);
+	    global.joyStartVal =  is_undefined(joyMap[? "joyStartVal"]) ? global.joyStartVal : int64(joyMap[? "joyStartVal"]);
+		global.joyLeftVal =  is_undefined(joyMap[? "joyLeftVal"]) ? global.joyLeftVal : int64(joyMap[? "joyLeftVal"]);
+		global.joyRightVal =  is_undefined(joyMap[? "joyRightVal"]) ? global.joyRightVal : int64(joyMap[? "joyRightVal"]);
+		global.joyUpVal =  is_undefined(joyMap[? "joyUpVal"]) ? global.joyUpVal : int64(joyMap[? "joyUpVal"]);
+		global.joyDownVal =  is_undefined(joyMap[? "joyDownVal"]) ? global.joyDownVal : int64(joyMap[? "joyDownVal"]);
 	    ds_map_destroy(joyMap);
 	}
 
@@ -92,7 +100,5 @@ function configLoad() {
 	} else {
 	    global.gamepadMapping = ds_map_create();
 	}
-
-
 
 }
