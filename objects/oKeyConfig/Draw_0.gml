@@ -1,14 +1,14 @@
 draw_set_font(global.fontSmall);
 draw_set_color(c_yellow);
-strLen = string_length(tr("PRESS KEY FOR"))*global.fontSmallWidth;
-n = 160 - strLen;
+var strLen = string_length(tr("PRESS KEY FOR"))*global.fontSmallWidth;
+var n = 160 - strLen;
 n = ceil(n / 2);
 draw_text(n, 32, string_hash_to_newline(tr("PRESS KEY FOR")));
 draw_text(8, 96, string_hash_to_newline(tr("ESC TO KEEP SAME.")));
 draw_text(8, 104, string_hash_to_newline(tr("CURRENT: ")));
+var currVal
 
-if (status == 0)
-{
+if (status == 0) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("UP"))*global.fontLargeWidth;
@@ -16,9 +16,7 @@ if (status == 0)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("UP")));
     currVal = global.keyUpVal;
-}
-else if (status == 1)
-{
+} else if (status == 1) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("DOWN"))*global.fontLargeWidth;
@@ -26,9 +24,7 @@ else if (status == 1)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("DOWN")));
     currVal = global.keyDownVal;
-}
-else if (status == 2)
-{
+} else if (status == 2) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("LEFT"))*global.fontLargeWidth;
@@ -36,9 +32,7 @@ else if (status == 2)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("LEFT")));
     currVal = global.keyLeftVal;
-}
-else if (status == 3)
-{
+} else if (status == 3) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("RIGHT"))*global.fontLargeWidth;
@@ -46,9 +40,7 @@ else if (status == 3)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("RIGHT")));
     currVal = global.keyRightVal;
-}
-else if (status == 4)
-{
+} else if (status == 4) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("JUMP"))*global.fontLargeWidth;
@@ -56,9 +48,7 @@ else if (status == 4)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("JUMP")));
     currVal = global.keyJumpVal;
-}
-else if (status == 5)
-{
+} else if (status == 5) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("ACTION"))*global.fontLargeWidth;
@@ -66,9 +56,7 @@ else if (status == 5)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("ACTION")));
     currVal = global.keyAttackVal;
-}
-else if (status == 6)
-{
+} else if (status == 6) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("SWITCH"))*global.fontLargeWidth;
@@ -76,9 +64,7 @@ else if (status == 6)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("SWITCH")));
     currVal = global.keyItemVal;
-}
-else if (status == 7)
-{
+} else if (status == 7) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("RUN"))*global.fontLargeWidth;
@@ -86,9 +72,7 @@ else if (status == 7)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("RUN")));
     currVal = global.keyRunVal;
-}
-else if (status == 8)
-{
+} else if (status == 8) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("BOMB"))*global.fontLargeWidth;
@@ -96,9 +80,7 @@ else if (status == 8)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("BOMB")));
     currVal = global.keyBombVal;
-}
-else if (status == 9)
-{
+} else if (status == 9) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("ROPE"))*global.fontLargeWidth;
@@ -106,21 +88,7 @@ else if (status == 9)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("ROPE")));
     currVal = global.keyRopeVal;
-}
-/*
-else if (status == 10)
-{
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("FLARE"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, tr("FLARE"));
-    currVal = global.keyFlareVal;
-}
-*/
-else if (status == 10)
-{
+} else if (status == 10) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("PURCHASE"))*global.fontLargeWidth;
@@ -128,11 +96,19 @@ else if (status == 10)
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("PURCHASE")));
     currVal = global.keyPayVal;
+} else if (status == 11) {
+    draw_set_font(global.fontLarge);
+    draw_set_color(c_white);
+    strLen = string_length(tr("LANGUAGE"))*global.fontLargeWidth;
+    n = 160 - strLen;
+    n = ceil(n / 2);
+    draw_text(n, 40, string_hash_to_newline(tr("LANGUAGE")));
+    currVal = global.keyLangVal;
 }
 
 draw_set_font(global.fontSmall);
-switch (currVal)
-{
+
+switch (currVal) {
     case vk_up: { draw_text(80, 104, string_hash_to_newline(tr("UP ARR"))); break; }
     case vk_down: { draw_text(80, 104, string_hash_to_newline(tr("DOWN ARR"))); break; }
     case vk_left: { draw_text(80, 104, string_hash_to_newline(tr("LEFT ARR"))); break; }
@@ -170,7 +146,3 @@ switch (currVal)
     case ord("Z"): { draw_text(80, 104, string_hash_to_newline("Z")); break; }
     default: { draw_text(80, 104, string_hash_to_newline("KEY " + string(currVal))); break; }
 }
-
-
-/* */
-/*  */

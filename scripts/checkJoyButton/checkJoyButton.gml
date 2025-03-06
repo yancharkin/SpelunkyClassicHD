@@ -34,7 +34,7 @@ function checkJoyButton() {
 	    if (gamepad_button_check(global.joyid, _btn))
 	        return _btn;
 	}
-    
+	
 	__allowedbuttons = 0; // free the array.
 	return 0;
 

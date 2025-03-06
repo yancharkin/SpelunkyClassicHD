@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"json2struct",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"json2struct",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

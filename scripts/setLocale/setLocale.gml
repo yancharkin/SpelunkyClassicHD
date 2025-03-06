@@ -74,6 +74,4 @@ function setLocale() {
 	var localizedTextFile = localeDir + "/text.json";
 	global.localizedTextMap = json2dsmap(localizedTextFile);
 
-
-
 }

@@ -17,6 +17,7 @@ function configLoad() {
 	global.keyStartVal = vk_escape;
 	global.keyEscape = vk_escape;
 	global.keyEnter = vk_enter;
+	global.keyLangVal = ord("L");
 	if (os_type == os_android) {
 	    global.keyStartVal = 8;
 	    global.keyEscape = 8
@@ -36,7 +37,8 @@ function configLoad() {
 		global.joyLeftVal = gp_padl;
 		global.joyRightVal = gp_padr;
 		global.joyUpVal = gp_padu;
-		global.joyDownVal = gp_padd;		
+		global.joyDownVal = gp_padd;	
+		global.joyLangVal = gp_stickr;
 	} else {
 	    global.joyAttackVal = 0;
 	    global.joyJumpVal = 1;
@@ -52,6 +54,7 @@ function configLoad() {
 	if (file_exists(working_directory + "settings.json")) {
 	    var settingsMap = json2dsmap(working_directory + "settings.json");
 	    global.locale = is_undefined(settingsMap[? "locale"]) ? global.locale : settingsMap[? "locale"];
+		global.locale2 = is_undefined(settingsMap[? "locale2"]) ? global.locale : settingsMap[? "locale2"];
 	    global.fullscreen = is_undefined(settingsMap[? "fullscreen"]) ? global.fullscreen : settingsMap[? "fullscreen"];
 	    global.music = is_undefined(settingsMap[? "music"]) ? global.music : settingsMap[? "music"];
 	    global.toggleRunEnabled = is_undefined(settingsMap[? "toggleRunEnabled"]) ? global.toggleRunEnabled : settingsMap[? "toggleRunEnabled"];
@@ -74,6 +77,7 @@ function configLoad() {
 	    global.keyRopeVal =  is_undefined(keysMap[? "keyRopeVal"]) ? global.keyRopeVal : int64(keysMap[? "keyRopeVal"]);
 	    global.keyFlareVal =  is_undefined(keysMap[? "keyFlareVal"]) ? global.keyFlareVal : int64(keysMap[? "keyFlareVal"]);
 	    global.keyPayVal =  is_undefined(keysMap[? "keyPayVal"]) ? global.keyPayVal : int64(keysMap[? "keyPayVal"]);
+		global.keyLangVal =  is_undefined(keysMap[? "keyLangVal"]) ? global.keyLangVal : int64(keysMap[? "keyLangVal"]);
 	    ds_map_destroy(keysMap);
 	}
 
@@ -92,6 +96,7 @@ function configLoad() {
 		global.joyRightVal =  is_undefined(joyMap[? "joyRightVal"]) ? global.joyRightVal : int64(joyMap[? "joyRightVal"]);
 		global.joyUpVal =  is_undefined(joyMap[? "joyUpVal"]) ? global.joyUpVal : int64(joyMap[? "joyUpVal"]);
 		global.joyDownVal =  is_undefined(joyMap[? "joyDownVal"]) ? global.joyDownVal : int64(joyMap[? "joyDownVal"]);
+		global.joyLangVal =  is_undefined(joyMap[? "joyLangVal"]) ? global.joyLangVal : int64(joyMap[? "joyLangVal"]);
 	    ds_map_destroy(joyMap);
 	}
 

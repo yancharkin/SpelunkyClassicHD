@@ -1,6 +1,6 @@
-/// @description json2dsmap(filepath)
+/// @description json2struct(filepath)
 /// @param filepath
-function json2dsmap() {
+function json2struct() {
 
 	var filepath = argument[0];
 
@@ -12,7 +12,7 @@ function json2dsmap() {
 	    file_text_readln(file);
 	}
 	file_text_close(file);
-	map = json_decode(data);
+	json_struct  =json_parse(data);
 
-	return map;
+	return json_struct;
 }

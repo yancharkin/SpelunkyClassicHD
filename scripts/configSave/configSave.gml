@@ -1,13 +1,13 @@
 /// @description configSave
 function configSave() {
-
+	
+	var settingsMap = ds_map_create();
 	if (file_exists(working_directory + "settings.json")) {
-	    var settingsMap = json2dsmap(working_directory + "settings.json");
-	} else {
-	    var settingsMap = ds_map_create();
+	    settingsMap = json2dsmap(working_directory + "settings.json");
 	}
-
+	
 	ds_map_replace(settingsMap, "locale", global.locale);
+	ds_map_replace(settingsMap, "locale2", global.locale2);
 	// This is the only way <I found> to load values from the 'settings.json' correctly.
 	// Any (?) other way cause issues either on the desktop (when locale is not 'en')
 	// or on the HTML5 platform
@@ -26,7 +26,5 @@ function configSave() {
 
 	dsmap2json(settingsMap, working_directory + "settings.json");
 	ds_map_destroy(settingsMap);
-
-
 
 }

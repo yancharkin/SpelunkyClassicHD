@@ -20,6 +20,7 @@ function joySave() {
 	ds_map_replace(joyMap, "joyRightVal", int64(global.joyRightVal));
 	ds_map_replace(joyMap, "joyUpVal", int64(global.joyUpVal));
 	ds_map_replace(joyMap, "joyDownVal", int64(global.joyDownVal));
+	ds_map_replace(joyMap, "joyLangVal", int64(global.joyLangVal));
 
 	dsmap2json(joyMap, working_directory + "gamepad.json");
 	ds_map_destroy(joyMap);

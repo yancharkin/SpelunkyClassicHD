@@ -1,0 +1,82 @@
+{
+    "en": {
+        "en": "ENGLISH",
+        "eo": "ESPERANTO",
+        "es": "SPANISH",
+        "fr": "FRENCH",
+        "ka": "GEORGIAN",
+        "pt_br": "BRAZILIAN PORTUGUESE",
+        "ru": "RUSSIAN",
+        "uk": "UKRAINIAN"
+    },
+    "eo": {
+        "en": "ANGLA",
+        "eo": "ESPERANTO",
+        "es": "HISPANA",
+        "fr": "FRANCA",
+        "ka": "KARTVELA",
+        "pt_br": "BRAZILA PORTUGALA",
+        "ru": "RUSA",
+        "uk": "UKRAINA"
+    },
+    "es": {
+        "en": "INGLÉS",
+        "eo": "ESPERANTO",
+        "es": "ESPAÑOL",
+        "fr": "FRANCÉS",
+        "ka": "GEORGIANO",
+        "pt_br": "PORTUGUÉS BRASILEÑO",
+        "ru": "RUSO",
+        "uk": "UCRANIANO"
+    },
+    "fr": {
+        "en": "ANGLAIS",
+        "eo": "ESPÉRANTO",
+        "es": "ESPAGNOL",
+        "fr": "FRANÇAIS",
+        "ka": "GÉORGIEN",
+        "pt_br": "PORTUGAIS BRÉSILIEN",
+        "ru": "RUSSE",
+        "uk": "UKRAINIEN"
+    },
+    "ka": {
+        "en": "ᲘᲜᲒᲚᲘᲡᲣᲠᲘ",
+        "eo": "ᲔᲡᲞᲔᲠᲐᲜᲢᲝ",
+        "es": "ᲔᲡᲞᲐᲜᲣᲠᲘ",
+        "fr": "ᲤᲠᲐᲜᲒᲣᲚᲘ",
+        "ka": "ᲥᲐᲠᲗᲣᲚᲘ",
+        "pt_br": "ᲑᲠᲐᲖᲘᲚᲘᲣᲠᲘ ᲞᲝᲠᲢᲣᲒᲐᲚᲘᲣᲠᲘ",
+        "ru": "ᲠᲣᲡᲣᲚᲘ",
+        "uk": "ᲣᲙᲠᲐᲘᲜᲣᲚᲘ"
+    },
+    "pt_br": {
+        "en": "INGLESA",
+        "eo": "ESPERANTO",
+        "es": "ESPANHOLA",
+        "fr": "FRANCESA",
+        "ka": "GEORGIANA",
+        "pt_br": "PORTUGUÊS BRASILEIRO",
+        "ru": "RUSSA",
+        "uk": "UCRANIANA"
+    },
+    "ru": {
+        "en": "АНГЛИЙСКИЙ",
+        "eo": "ЭСПЕРАНТО",
+        "es": "ИСПАНСКИЙ",
+        "fr": "ФРАНЦУЗСКИЙ",
+        "ka": "ГРУЗИНСКИЙ",
+        "pt_br": "БРАЗИЛЬСКИЙ ПОРТУГАЛЬСКИЙ",
+        "ru": "РУССКИЙ",
+        "uk": "УКРАИНСКИЙ"
+    },
+    "uk": {
+        "en": "АНГЛІЙСЬКА",
+        "eo": "ЕСПЕРАНТО",
+        "es": "ІСПАНСЬКА",
+        "fr": "ФРАНЦУЗЬКА",
+        "ka": "ГРУЗИНСЬКА",
+        "pt_br": "БРАЗИЛЬСЬКА ПОРТУГАЛЬСЬКА",
+        "ru": "РОСІЙСЬКА",
+        "uk": "УКРАЇНСЬКА"
+    }
+}

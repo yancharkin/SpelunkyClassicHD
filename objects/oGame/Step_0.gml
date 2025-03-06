@@ -262,8 +262,10 @@ if (upPressed) {
 }
 alarm[3] = 1;
 
-/* */
+
+// OBSOLETE on modern GameMaker (?)
 ///"Fix" the jump touch button and jump keyboard key on Android
+/*
 if (instance_exists(oPlayer1)) {
     if (keyboard_check(ord("J"))) {
         oPlayer1.initialJumpAcc = -4;
@@ -282,9 +284,20 @@ if (instance_exists(oPlayer1)) {
             if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
                 oPlayer1.initialJumpAcc = -2;
             }
-    
         }
     }
+}
+*/
+
+if (keyboard_check_pressed(global.keyLangVal) or
+				gamepad_button_check_pressed(global.joyid, global.joyLangVal)) {
+		if (!paused) {
+		    var locale_tmp = global.locale;
+			global.locale = global.locale2;
+			global.locale2 = locale_tmp;
+		    setLocale();
+		    loadLocalizedSprites();
+		}
 }
 
 /* */
@@ -383,7 +396,7 @@ if (paused) {
                     }
                     break;
                 }
-                case 6: {
+				case 6: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
                             menuLanguage();
@@ -391,13 +404,7 @@ if (paused) {
                             menuToggleFullscreen();
                         }
                     } else {
-                        if (global.mobileBuild) {
-                            instance_activate_all();
-                            audio_stop_all();
-                            game_restart();
-                        } else {
-                            quitGame();
-                        }
+						changeLocale2();
                     }
                     break;
                 }
@@ -407,7 +414,13 @@ if (paused) {
                         audio_stop_all();
                         game_restart();
                     } else {
-                        menuLanguage();
+                        if (global.mobileBuild) {
+                            instance_activate_all();
+                            audio_stop_all();
+                            game_restart();
+                        } else {
+                            quitGame();
+                        }
                     }
                     break;
                 }
@@ -457,11 +470,7 @@ if (paused) {
                             menuToggleFullscreen();
                         }
                     } else {
-                        if (global.mobileBuild) {
-                            menuLanguage();
-                        } else {
-                            menuLanguage();
-                        }
+                        menuLanguage();
                     }
                     break;
                 }
@@ -473,11 +482,7 @@ if (paused) {
                             menuLanguage();
                         }
                     } else {
-                        if (global.mobileBuild) {
-                            menuDie();
-                        } else {
-                            menuDie();
-                        }
+						changeLocale2();
                     }
                     break;
                 }
@@ -491,18 +496,12 @@ if (paused) {
                             menuDie();
                         }
                     } else {
-                        if (global.mobileBuild) {
-                            instance_activate_all();
-                            audio_stop_all();
-                            game_restart();
-                        } else {
-                            quitGame();
-                        }
+                        menuDie();
                     }
                     break;
                 }
                 case 6: {
-                    if (global.browserBuild) {
+                    if (global.browserBuild or global.mobileBuild) {
                         instance_activate_all();
                         audio_stop_all();
                         game_restart();
@@ -529,6 +528,3 @@ if (global.html5Build) {
         changeSprites = false;
     }
 }
-
-/* */
-/*  */

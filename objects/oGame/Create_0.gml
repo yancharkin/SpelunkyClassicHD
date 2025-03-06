@@ -41,8 +41,8 @@ if (global.html5Build) {
         maxIndexGame = 6;
     }
 } else {
-    maxIndexTitle = 6;
-    maxIndexGame = 5;
+    maxIndexTitle = 7;
+    maxIndexGame = 6;
 }
 
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
@@ -70,4 +70,3 @@ global.bAttackPressed = false;
 global.bAttackPressedPreviousState = false;
 global.bAttackReleased = false;
 global.bAttackReleasedPreviousState = false;
-

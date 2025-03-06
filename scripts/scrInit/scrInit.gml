@@ -37,6 +37,7 @@ function scrInit() {
 	global.toggleRun = false;
 	global.firstLaunch = true;
 	global.locale = "en";
+	global.locale2 = "es";
 	global.fullscreen = false;
 	global.toggleRunEnabled = false;
 	global.graphicsHigh = true;

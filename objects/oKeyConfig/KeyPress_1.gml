@@ -34,9 +34,10 @@ if (pressedKey != global.keyEscape) {
         global.keyRopeVal = pressedKey;
     } else if (status == 10) {
         global.keyPayVal = pressedKey;
+    } else if (status == 11) {
+        global.keyLangVal = pressedKey;
     }
 }
 
 status += 1;
-if (status > 10) room_goto(rTitle);
-
+if (status > 11) room_goto(rTitle);

@@ -11,7 +11,4 @@ function menuLanguage() {
 	    localeChanged = true;
 	    changeSprites = true;
 	}
-
-
-
 }

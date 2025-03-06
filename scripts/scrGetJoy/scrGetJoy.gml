@@ -30,7 +30,7 @@ function scrGetJoy() {
 	    }
 	} else {
 	    if (!global.html5Build) {
-	        var gamepadDesc = gamepad_get_description(global.joyid);
+	        //var gamepadDesc = gamepad_get_description(global.joyid);
 	        // Xbox 360
 	        switch (argument[0]) {
 	            case gp_face1: return "A";

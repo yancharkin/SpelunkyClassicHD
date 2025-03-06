@@ -80,12 +80,20 @@ if (status == 0) {
 } else if (status == 8) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
+    strLen = string_length(tr("LANGUAGE"))*global.fontLargeWidth;
+    n = 160 - strLen;
+    n = ceil(n / 2);
+    draw_text(n, 40, string_hash_to_newline(tr("LANGUAGE")));
+    currVal = global.joyLangVal;
+} else if (status == 9) {
+    draw_set_font(global.fontLarge);
+    draw_set_color(c_white);
     strLen = string_length(tr("LEFT"))*global.fontLargeWidth;
     n = 160 - strLen;
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("LEFT")));
     currVal = global.joyLeftVal;
-} else if (status == 9) {
+} else if (status == 10) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("RIGHT"))*global.fontLargeWidth;
@@ -93,7 +101,7 @@ if (status == 0) {
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("RIGHT")));
     currVal = global.joyRightVal;
-} else if (status == 10) {
+} else if (status == 11) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("UP"))*global.fontLargeWidth;
@@ -101,7 +109,7 @@ if (status == 0) {
     n = ceil(n / 2);
     draw_text(n, 40, string_hash_to_newline(tr("UP")));
     currVal = global.joyUpVal;
-} else if (status == 11) {
+} else if (status == 12) {
     draw_set_font(global.fontLarge);
     draw_set_color(c_white);
     strLen = string_length(tr("DOWN"))*global.fontLargeWidth;
