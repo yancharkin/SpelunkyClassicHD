@@ -30,7 +30,4 @@ function showMessages() {
 	    }
 	    global.messageTimer -= 1;
 	}
-
-
-
 }

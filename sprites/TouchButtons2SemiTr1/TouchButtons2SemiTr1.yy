@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"TouchButtons2SemiTr1",
   "bboxMode":0,
-  "bbox_bottom":127,
+  "bbox_bottom":159,
   "bbox_left":0,
   "bbox_right":31,
   "bbox_top":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4aae1c01-ac5f-4c1a-95ac-30a7c1235a75","name":"4aae1c01-ac5f-4c1a-95ac-30a7c1235a75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b7e43a8f-b6c6-4eec-892a-38777a049919","name":"b7e43a8f-b6c6-4eec-892a-38777a049919","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":128,
+  "height":160,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c4f69832-cc5d-4647-97fc-9d01b178c77f","blendMode":0,"displayName":"default","isLocked":false,"name":"c4f69832-cc5d-4647-97fc-9d01b178c77f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f3b541c1-1339-4d51-b3bd-90f30d6a48a0","blendMode":0,"displayName":"default","isLocked":false,"name":"f3b541c1-1339-4d51-b3bd-90f30d6a48a0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"TouchButtons2SemiTr1",
   "nineSlice":null,
@@ -68,7 +68,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"4aae1c01-ac5f-4c1a-95ac-30a7c1235a75","path":"sprites/TouchButtons2SemiTr1/TouchButtons2SemiTr1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"186f5c21-2657-4051-9c2d-bbfb094bc572","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7e43a8f-b6c6-4eec-892a-38777a049919","path":"sprites/TouchButtons2SemiTr1/TouchButtons2SemiTr1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d2c5a1f3-a6c4-43f2-b5e7-193f71147d06","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

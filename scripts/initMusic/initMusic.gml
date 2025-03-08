@@ -64,7 +64,4 @@ function initMusic() {
 	global.sndSlam =xslam
 	global.sndPFall =xpfall
 	global.sndTFall =xtfall
-
-
-
 }

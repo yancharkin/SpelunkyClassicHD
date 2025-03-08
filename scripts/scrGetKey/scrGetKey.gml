@@ -22,44 +22,41 @@ function scrGetKey(argument0) {
 
 	switch (argument0)
 	{
-	    case vk_up: { return tr("UP ARR") break; }
-	    case vk_down: { return tr("DOWN ARR") break; }
-	    case vk_left: { return tr("LEFT ARR") break; }
-	    case vk_right: { return tr("RIGHT ARR") break; }
-	    case vk_shift: { return "SHIFT" break; }
-	    case vk_control: { return "CTRL" break; }
-	    case vk_alt: { return "ALT" break; }
-	    case vk_space: { return "SPACE" break; }
-	    case global.keyEnter: { return "ENTER" break; }
-	    case ord("A"): { return "A" break; }
-	    case ord("B"): { return "B" break; }
-	    case ord("C"): { return "C" break; }
-	    case ord("D"): { return "D" break; }
-	    case ord("E"): { return "E" break; }
-	    case ord("F"): { return "F" break; }
-	    case ord("G"): { return "G" break; }
-	    case ord("H"): { return "H" break; }
-	    case ord("I"): { return "I" break; }
-	    case ord("J"): { return "J" break; }
-	    case ord("K"): { return "K" break; }
-	    case ord("L"): { return "L" break; }
-	    case ord("M"): { return "M" break; }
-	    case ord("N"): { return "N" break; }
-	    case ord("O"): { return "O" break; }
-	    case ord("P"): { return "P" break; }
-	    case ord("Q"): { return "Q" break; }
-	    case ord("R"): { return "R" break; }
-	    case ord("S"): { return "S" break; }
-	    case ord("T"): { return "T" break; }
-	    case ord("U"): { return "U" break; }
-	    case ord("V"): { return "V" break; }
-	    case ord("W"): { return "W" break; }
-	    case ord("X"): { return "X" break; }
-	    case ord("Y"): { return "Y" break; }
-	    case ord("Z"): { return "Z" break; }
-	    default: { return string_upper(string(argument0)); break; }
+	    case vk_up: { return tr("UP ARR"); }
+	    case vk_down: { return tr("DOWN ARR"); }
+	    case vk_left: { return tr("LEFT ARR"); }
+	    case vk_right: { return tr("RIGHT ARR"); }
+	    case vk_shift: { return "SHIFT"; }
+	    case vk_control: { return "CTRL"; }
+	    case vk_alt: { return "ALT"; }
+	    case vk_space: { return "SPACE"; }
+	    case global.keyEnter: { return "ENTER"; }
+	    case ord("A"): { return "A"; }
+	    case ord("B"): { return "B"; }
+	    case ord("C"): { return "C"; }
+	    case ord("D"): { return "D"; }
+	    case ord("E"): { return "E"; }
+	    case ord("F"): { return "F"; }
+	    case ord("G"): { return "G"; }
+	    case ord("H"): { return "H"; }
+	    case ord("I"): { return "I"; }
+	    case ord("J"): { return "J"; }
+	    case ord("K"): { return "K"; }
+	    case ord("L"): { return "L"; }
+	    case ord("M"): { return "M"; }
+	    case ord("N"): { return "N"; }
+	    case ord("O"): { return "O"; }
+	    case ord("P"): { return "P"; }
+	    case ord("Q"): { return "Q"; }
+	    case ord("R"): { return "R"; }
+	    case ord("S"): { return "S"; }
+	    case ord("T"): { return "T"; }
+	    case ord("U"): { return "U"; }
+	    case ord("V"): { return "V"; }
+	    case ord("W"): { return "W"; }
+	    case ord("X"): { return "X"; }
+	    case ord("Y"): { return "Y"; }
+	    case ord("Z"): { return "Z"; }
+	    default: { return string_upper(string(argument0));; }
 	}
-
-
-
 }

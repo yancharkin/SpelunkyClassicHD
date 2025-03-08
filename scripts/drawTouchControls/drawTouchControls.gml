@@ -1,4 +1,4 @@
-/// @description drawTouchControls
+	/// @description drawTouchControls
 function drawTouchControls() {
 	scale_level = global.display_h / 240;
 	vkey_size = 32 * scale_level;
@@ -25,10 +25,7 @@ function drawTouchControls() {
 	        draw_sprite(TouchButtons2SemiTr1, -1, posX + global.display_w - vkey_size, posY);
 	    }
 	    if (global.debugBuild) {
-	        draw_sprite(TouchButtonPlainSemiTr, -1, posX, posY + vkey_size);
-	        draw_sprite(TouchButtonPlainSemiTr, -1, posX, posY + 2*vkey_size);
-	        draw_sprite(TouchButtonPlainSemiTr, -1, posX, posY + 3*vkey_size);
-	        draw_sprite(TouchButtonPlainSemiTr, -1, posX + vkey_size, posY + 3*vkey_size);
+			draw_sprite(TouchButtonsCheatSemiTr, -1,  posX + global.display_w/2 - 2*vkey_size, posY + global.display_h - vkey_size);
 	    }
 	} else if (global.touchControlsVisibility == 2) {
 	    draw_sprite(TouchArrowsOp, -1, posX, posY + global.display_h - (3*vkey_size));
@@ -39,13 +36,7 @@ function drawTouchControls() {
 	        draw_sprite(TouchButtons2Op1, -1, posX + global.display_w - vkey_size, posY);
 	    }
 	    if (global.debugBuild) {
-	        draw_sprite(TouchButtonPlainOp, -1, posX, posY + vkey_size);
-	        draw_sprite(TouchButtonPlainOp, -1, posX, posY + 2*vkey_size);
-	        draw_sprite(TouchButtonPlainOp, -1, posX, posY + 3*vkey_size);
-	        draw_sprite(TouchButtonPlainOp, -1, posX + vkey_size, posY + 3*vkey_size);
+			draw_sprite(TouchButtonsCheatOp, -1,  posX + global.display_w/2 - 2*vkey_size, posY + global.display_h - vkey_size);
 	    }
 	}
-
-
-
 }

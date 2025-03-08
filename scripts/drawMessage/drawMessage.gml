@@ -32,6 +32,4 @@ function drawMessage() {
 
 	drawTextHCentered(text, fontSize, color, offsetX, posY);
 
-
-
 }

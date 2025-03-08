@@ -545,7 +545,4 @@ function scrSetupWalls(argument0) {
 	        else sprite_index = sTreeBranchLeft;
 	    }
 	}
-
-
-
 }

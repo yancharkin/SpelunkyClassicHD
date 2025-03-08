@@ -7,7 +7,4 @@ function stopAllMusic() {
 	SS_StopMusic(global.musBoss);
 	SS_StopMusic(global.musVictory);
 	SS_StopMusic(global.musCredits);
-
-
-
 }
