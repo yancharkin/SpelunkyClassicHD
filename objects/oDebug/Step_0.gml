@@ -125,6 +125,9 @@ if (keyboard_check_pressed(vk_f4)) {
     if (itemsBundleIndex == 6) {
         itemsBundleIndex = 0;
     }
+	global.message = string(itemsBundleIndex);
+	global.message2 = "";
+	global.messageTimer = 50;
 }
 if (keyboard_check_pressed(vk_f5)) {
     var player = oGame.players[0];

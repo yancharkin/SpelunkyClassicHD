@@ -84,4 +84,3 @@ if (fadeIn or fadeOut)
     draw_rectangle(0, 0, global.display_w, 240, false);
     draw_set_alpha(1);
 }
-

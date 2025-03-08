@@ -1,10 +1,11 @@
+var skipCondition;
 if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+    skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or
             checkAttackPressed() or
             checkStartPressed());
 } else {
-    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+    skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or
             html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
             html5_gamepad_button_check(global.joyid, global.joyAttackVal) or

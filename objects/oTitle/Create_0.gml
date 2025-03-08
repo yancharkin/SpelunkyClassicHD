@@ -86,6 +86,12 @@ else
     instance_create(304, 96, oBrick);
     instance_create(320, 96, oBrick);
     instance_create(336, 96, oBrick);
+	
+	for (var cx=192; cx<256; cx=cx+16) {
+		for (var cy=32; cy<160; cy=cy+16) {
+			instance_create(cx, cy, oBrick);
+		}
+	}
 }
 
 if (tMoney >= 200000 && tTime > 0 && tTime <= 600 && tKills >= 120 && tSaves >= 8)
