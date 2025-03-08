@@ -1,6 +1,6 @@
-# "Debug" builds
+# Cheat builds
 
-"Debug" builds are not "real" debug builds, more like cheat builds. You can't do proper debugging with them.
+These builds are primarily made to make localization easier but, of course, could also be used just to have fun :)
 
 ## What you can do with them:
 - **F2 / Touch Button 1**: move between levels

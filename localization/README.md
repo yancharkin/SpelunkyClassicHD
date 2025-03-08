@@ -1,6 +1,6 @@
 # How to localize the game
 
-To make the localization process easier, you can download debug builds from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
+To make the localization process easier, you can download [cheat builds](../CHEAT_BUILDS.md) from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
 
 ## Step 1
 * go to the **locale** directory:
