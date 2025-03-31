@@ -1,69 +1,84 @@
 # How to localize the game
 
-To make the localization process easier, you can download [cheat builds](../CHEAT_BUILDS.md) from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
+To simplify the localization process, you can download [cheat builds](../CHEAT_BUILDS.md) from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
 
 ## Step 1
-* go to the **locale** directory:
-   **Linux**: [game directory]/assets/locale/
-   **Windows**: [game directory]\locale\
 
-* add language to the **locales.json** file, for example:
+1. Navigate to the **locale** directory:
 
-        "de": "DEUTSCHE"
-    
-* create a directory for localized files in **locales** directory, for example, **de**
+    * **Windows**: [game directory]\locale\
+  
+    * **Linux**: [game directory]/assets/locale/
 
-* copy **text.json** from **en** (or other completed translation if you prefer) to the new directory
+2. Add your language to the **locales.json** and **locales_tr.json** files
+    * Follow the format used for other languages. Example:
 
-* translate text in the **text.json** file
+          "de": "DEUTSCHE"
 
-For most languages, that's enough. The game will use TTF font **7-12-serif** from the **fonts** directory and you can play the localized game.
+3. Create a directory for localized files
 
-If you want to use a different font, copy **font.json** from **en** to the localization directory (**de** in the example) and edit it:
+    * Inside the **locale/locales/** directory, create a new directory with your language code (e.g., **de** for German).
 
-* **fontName** - name of the directory in the **fonts** directory containing target font (you can add your own monospace fonts there).
-* **fontWidth** and **fontHeight** - font size. You may need to experiment with these values because sometimes font rendered not as you expect.
-* **fontOffsetY** - only used to align HUD (life, bombs, rope, and money count). Start with 0 and if HUD misaligned adjust it.
-* **messageBackground** - if in-game messages hard to read, set to true, it will draw a black background behind the text.
+4. Copy and translate the text file
 
-At this point, you can send localized files to me any way you like and I'll do the rest. Also, you can skip **step 2** (because it can be not so easy to do), create localized images (**step 3**), and then send me files. If you want to do everything yourself or you didn't find a TTF font that includes all characters you use in the translation and looks OK (can be the case for languages like Chinese and Japanese), read the rest of the instructions.
+    * Copy **text.json** from the **en** directory (or another completed translation) into your new directory.
+    * Translate the text inside **text.json**.
+    * Tip: Try to keep the line lengths roughly the same as the original to maintain formatting.
+
+_**For most languages, this is enough to get a working translaton. The game will use TTF font\* '7-12-serif' from the 'fonts' directory, allowing you to play the localized version. Other steps are optional.**_
+
+### * Note about TTF Fonts
+
+It is possible to use any TTF font, to do so copy **font.json** from the **en** to your localization directory (**de** in this example) and edit it:
+* **fontName** - name of the directory in the **fonts** directory containing target font.
+* **fontWidth** and **fontHeight** - font size. You may need to experiment with these values, as fonts sometimes render differently than expected.
+* **fontOffsetY** - used only to align the HUD (life, bombs, rope, and money count). Start with 0; if the HUD misaligned, adjust it accordingly.
+* **messageBackground** - if set to true, a black background will be added behind the text.
+
+_**TTF fonts look very different from the default font. They are useful for quick testing, but if possible, consider creating a bitmap font (see Step 2).**_
 
 ## Step 2
 
-* create **charset** text file:
-    * for most languages just add all letter from your language alphabet to **charset** file (if not already there)
-    * for languages with lots of characters (like Chinese or Japanese):
-        * copy **charset** file from **en** and add characters that you use in your translation to it
-        * **OR** if you have python installed on your PC or willing to install it, you can use **generate_charset_text_file.py** script:
-            * place **text.json** and **generate_charset_text_file.py** into the same directory
-            * run **generate_charset_text_file.py**
-            * check the generated file for mistakes and adjust if required
+1. Copy the charset directory
+    * Copy the **charset** directory from **en** to your localized files directory.
+    * Example: /locale/locales/de/
+  
+2. Modify the charset file
+    * For most languages, simply add all letters from your language’s alphabet to **charset/charset** (if they’re not already there).
+    * For languages with many characters (e.g., Chinese or Japanese):
+      * Only add the characters used in your translation (no need to include every kanji, for example).
+        * The easiest way to do this is with the provided Python script:
+          * Place **text.json** and **generate_charset_text_file.py** in the same directory.
+          * Run **generate_charset_text_file.py**.
+          * Check the generated file for mistakes and adjust if needed.
 
-* create **charset.png** and **charset_small.png**:
-    * first way:
-        * draw additional characters yourself (that's how charset for Russian was done)
-    * second way (requires python and pillow library):
-        * place **generate_charset_image_file.py**, **charset** text file and (any monospace) TTF font into the same directory
-        * run **generate_charset_image_file.py** (maybe you have to adjust **font_size** inside the script)
-        * edit output file, it's not usable as-is, you have to, at least, resize it (in the original font each character is 16x16px in **charset.png** and 8x8px in **charset_small.png**, so use something close to these values)
+3. Modify or create **charset.png** and **charset_small.png**
+    * Option 1: Draw additional characters manually.
+    * Option 2: Use a Python script (requires the Pillow library):
+      * Place **generate_charset_image_file.py**, the **charset** text file, and a monospace TTF font in the same directory.
+      * Run **generate_charset_image_file.py** (you may need to adjust font_size inside the script).
+      * Edit the output file - it’s not usable as-is. Use it as a base for creating a font. At a minimum, you need to resize it. In the original font, each character is 16×16px in **charset.png** and 8×8px in **charset_small.png**, so aim for similar values.
 
-* go to the directory with localized files, in the example: **.../locale/locales/de**
-* create **charset** directory and place **charset**, **charset.png**, and **charset_small.png** here
-* if your fonts not 8x8 and 16x16, create **font.json** file with the following content (adjust values):
+4. Adjust font settings (if necessary)
+    * If your fonts are not 8×8 and 16×16, create a **font.json** file with the following content (adjust values as needed):
 
-        {
-            "fontSmallWidth": 8,
-            "fontSmallHeight": 10,
-            "fontLargeWidth": 16,
-            "fontLargeHeight": 20,
-            "fontOffsetY": -5
-        }
+          {
+              "fontSmallWidth": 8,
+              "fontSmallHeight": 10,
+              "fontLargeWidth": 16,
+              "fontLargeHeight": 20,
+              "fontOffsetY": -5
+          }
 
 ## Step 3
 
-* copy **images** directory from **en** to the directory with localized files, in the example: **.../locale/locales/de**
-* redraw images
+1. Copy the images directory
+    * Copy the **images** directory from **en** to your localized files directory.
+    * Example: /locale/locales/de/
+
+2. Redraw the images
+    * Modify the images as needed to match the new language.
 
 ## Questions?
-If something not clear, ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/1757542/translation-how-to-localize-the-game).
 
+If something is unclear, feel free to ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/1757542/translation-how-to-localize-the-game).
