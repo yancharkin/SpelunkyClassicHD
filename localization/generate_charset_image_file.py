@@ -11,7 +11,7 @@ with open('charset', 'r') as charset_file:
     charset = charset_file.read()
 
 font = ImageFont.truetype(font_path, font_size)
-char_size = font.getsize("A")
+char_size = (font.getbbox("A")[2], font.getbbox("A")[3])
 print(f'Character size: {char_size[0]}x{char_size[1]}')
 image = Image.new('RGBA', (char_size[0] * (len(charset) - 1), char_size[1]), 0)
 draw = ImageDraw.Draw(image)
