@@ -4,7 +4,7 @@ global.joyid = 0;
 
 //
 
-ini_open("spelunky.ini")
+ini_open(getWorkingDirPath("spelunky.ini"));
 
 global.levelSelect = 0; //DEBUG
 
@@ -35,8 +35,8 @@ global.tunnel2Max = 200000;
 global.tunnel3Max = 300000;
 global.tunnel1 = 1
 global.tunnel2 = 2
-global.tunnel1 = ini_read_real("highscore","value8",0);
-global.tunnel2 = ini_read_real("highscore","value9",0);
+global.tunnel1 = ini_read_real("highscore","value8",10001);
+global.tunnel2 = ini_read_real("highscore","value9",20001);
 
 // Minigames
 global.mini1 = 0;
