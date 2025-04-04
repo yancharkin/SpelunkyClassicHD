@@ -1,5 +1,16 @@
 {
+    "de": {
+        "de": "DEUTSCH",
+        "en": "ENGLISCH",
+        "eo": "ESPERANTO",
+        "es": "SPANISCH",
+        "fr": "FRANZÖSICH",
+        "pt_br": "BRASILIANISCHES PORTUGIESISCH",
+        "ru": "RUSSISCH",
+        "uk": "UKRAINISCH"
+    },
     "en": {
+        "de": "GERMAN",
         "en": "ENGLISH",
         "eo": "ESPERANTO",
         "es": "SPANISH",
@@ -9,6 +20,7 @@
         "uk": "UKRAINIAN"
     },
     "eo": {
+        "de": "GERMANA",
         "en": "ANGLA",
         "eo": "ESPERANTO",
         "es": "HISPANA",
@@ -18,6 +30,7 @@
         "uk": "UKRAINA"
     },
     "es": {
+        "de": "ALEMÁN",
         "en": "INGLÉS",
         "eo": "ESPERANTO",
         "es": "ESPAÑOL",
@@ -27,6 +40,7 @@
         "uk": "UCRANIANO"
     },
     "fr": {
+        "de": "ALLEMAND",
         "en": "ANGLAIS",
         "eo": "ESPÉRANTO",
         "es": "ESPAGNOL",
@@ -36,6 +50,7 @@
         "uk": "UKRAINIEN"
     },
     "pt_br": {
+        "de": "ALEMÃO",
         "en": "INGLESA",
         "eo": "ESPERANTO",
         "es": "ESPANHOLA",
@@ -45,6 +60,7 @@
         "uk": "UCRANIANA"
     },
     "ru": {
+        "de": "НЕМЕЦКИЙ",
         "en": "АНГЛИЙСКИЙ",
         "eo": "ЭСПЕРАНТО",
         "es": "ИСПАНСКИЙ",
@@ -54,6 +70,7 @@
         "uk": "УКРАИНСКИЙ"
     },
     "uk": {
+        "de": "НІМЕЦЬКА",
         "en": "АНГЛІЙСЬКА",
         "eo": "ЕСПЕРАНТО",
         "es": "ІСПАНСЬКА",
