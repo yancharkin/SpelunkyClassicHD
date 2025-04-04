@@ -30,7 +30,7 @@ global.newKills = false;
 global.newSaves = false;
 global.newTime = false;
 
-ini_open("spelunky.ini")
+ini_open(getWorkingDirPath("spelunky.ini"));
 
 tMoney = ini_read_real("highscore","value1",0);
 tTime = ini_read_real("highscore","value2",0);

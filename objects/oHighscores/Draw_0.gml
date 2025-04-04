@@ -1,4 +1,4 @@
-ini_open("spelunky.ini")
+ini_open(getWorkingDirPath("spelunky.ini"));
 
 if (oPlayer1.y < 156)
 {

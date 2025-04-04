@@ -51,8 +51,8 @@ function configLoad() {
 	    global.joyStartVal = 9;
 	}
 
-	if (file_exists(working_directory + "settings.json")) {
-	    var settingsMap = json2dsmap(working_directory + "settings.json");
+	if (file_exists(getWorkingDirPath("settings.json"))) {
+	    var settingsMap = json2dsmap(getWorkingDirPath("settings.json"));
 	    global.locale = is_undefined(settingsMap[? "locale"]) ? global.locale : settingsMap[? "locale"];
 		global.locale2 = is_undefined(settingsMap[? "locale2"]) ? global.locale : settingsMap[? "locale2"];
 	    global.fullscreen = is_undefined(settingsMap[? "fullscreen"]) ? global.fullscreen : settingsMap[? "fullscreen"];
@@ -63,8 +63,8 @@ function configLoad() {
 	    ds_map_destroy(settingsMap);
 	}
 
-	if (file_exists(working_directory + "keys.json")) {
-	    var keysMap = json2dsmap(working_directory + "keys.json");
+	if (file_exists(getWorkingDirPath("keys.json"))) {
+	    var keysMap = json2dsmap(getWorkingDirPath("keys.json"));
 	    global.keyUpVal = is_undefined(keysMap[? "keyUpVal"]) ? global.keyUpVal : int64(keysMap[? "keyUpVal"]);
 	    global.keyDownVal =  is_undefined(keysMap[? "keyDownVal"]) ? global.keyDownVal : int64(keysMap[? "keyDownVal"]);
 	    global.keyLeftVal =  is_undefined(keysMap[? "keyLeftVal"]) ? global.keyLeftVal : int64(keysMap[? "keyLeftVal"]);
@@ -81,8 +81,8 @@ function configLoad() {
 	    ds_map_destroy(keysMap);
 	}
 
-	if (file_exists(working_directory + "gamepad.json")) {
-	    var joyMap = json2dsmap(working_directory + "gamepad.json");
+	if (file_exists(getWorkingDirPath("gamepad.json"))) {
+	    var joyMap = json2dsmap(getWorkingDirPath("gamepad.json"));
 	    global.joyJumpVal =  is_undefined(joyMap[? "joyJumpVal"]) ? global.joyJumpVal : int64(joyMap[? "joyJumpVal"]);
 	    global.joyAttackVal =  is_undefined(joyMap[? "joyAttackVal"]) ? global.joyAttackVal : int64(joyMap[? "joyAttackVal"]);
 	    global.joyItemVal =  is_undefined(joyMap[? "joyItemVal"]) ? global.joyItemVal : int64(joyMap[? "joyItemVal"]);
@@ -100,8 +100,8 @@ function configLoad() {
 	    ds_map_destroy(joyMap);
 	}
 
-	if (file_exists(working_directory + "gamepadmapping.json")) {
-	    global.gamepadMapping = json2dsmap(working_directory + "gamepadmapping.json");
+	if (file_exists(getWorkingDirPath("gamepadmapping.json"))) {
+	    global.gamepadMapping = json2dsmap(getWorkingDirPath("gamepadmapping.json"));
 	} else {
 	    global.gamepadMapping = ds_map_create();
 	}

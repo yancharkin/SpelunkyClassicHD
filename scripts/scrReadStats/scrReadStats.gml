@@ -60,7 +60,7 @@ function scrReadStats() {
 
 	global.totalMonkeyKills = 0;
 
-	filePath = working_directory + "stats.txt";
+	filePath = getWorkingDirPath("stats.txt");
 	if (file_exists(filePath)) {
 	    file = file_text_open_read(filePath);
 	    file_text_readln(file);

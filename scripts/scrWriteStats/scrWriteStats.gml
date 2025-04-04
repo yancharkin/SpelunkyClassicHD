@@ -23,7 +23,7 @@ function scrWriteStats() {
 	***********************************************************************************/
 
 	//file_delete(working_directory + "stats.txt");
-	file = file_text_open_write(working_directory + "stats.txt");
+	file = file_text_open_write(getWorkingDirPath("stats.txt"));
 
 	file_text_write_string(file, "+---------------------------+");
 	file_text_writeln(file);

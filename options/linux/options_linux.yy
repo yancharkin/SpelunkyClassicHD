@@ -3,7 +3,7 @@
   "%Name":"Linux",
   "name":"Linux",
   "option_linux_allow_fullscreen":false,
-  "option_linux_disable_sandbox":false,
+  "option_linux_disable_sandbox":true,
   "option_linux_display_cursor":false,
   "option_linux_display_name":"SpelunkyClassicHD",
   "option_linux_display_splash":false,

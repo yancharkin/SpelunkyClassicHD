@@ -3,8 +3,8 @@ function joySave() {
 	
 	var joyMap = ds_map_create();
 
-	if (file_exists(working_directory + "gamepad.json")) {
-	    joyMap = json2dsmap(working_directory + "gamepad.json");
+	if (file_exists(getWorkingDirPath("gamepad.json"))) {
+	    joyMap = json2dsmap(getWorkingDirPath("gamepad.json"));
 	}
 
 	ds_map_replace(joyMap, "joyJumpVal", int64(global.joyJumpVal));
@@ -22,7 +22,7 @@ function joySave() {
 	ds_map_replace(joyMap, "joyDownVal", int64(global.joyDownVal));
 	ds_map_replace(joyMap, "joyLangVal", int64(global.joyLangVal));
 
-	dsmap2json(joyMap, working_directory + "gamepad.json");
+	dsmap2json(joyMap, getWorkingDirPath("gamepad.json"));
 	ds_map_destroy(joyMap);
 
 }

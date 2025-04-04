@@ -29,7 +29,7 @@ function scrUpdateHighscores(argument0) {
 
 	if (global.keepScore)
 	{
-	    ini_open("spelunky.ini")
+	    ini_open(getWorkingDirPath("spelunky.ini"));
     
 	    // retrieve highscore values from highscore list
 	    tMoney   = ini_read_real("highscore","value1",0);

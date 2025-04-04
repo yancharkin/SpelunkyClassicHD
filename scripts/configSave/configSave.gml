@@ -2,8 +2,8 @@
 function configSave() {
 	
 	var settingsMap = ds_map_create();
-	if (file_exists(working_directory + "settings.json")) {
-	    settingsMap = json2dsmap(working_directory + "settings.json");
+	if (file_exists(getWorkingDirPath("settings.json"))) {
+	    settingsMap = json2dsmap(getWorkingDirPath("settings.json"));
 	}
 	
 	ds_map_replace(settingsMap, "locale", global.locale);
@@ -24,7 +24,7 @@ function configSave() {
 	}
 	ds_map_replace(settingsMap, "touchControlsVisibility", int64(global.touchControlsVisibility));
 
-	dsmap2json(settingsMap, working_directory + "settings.json");
+	dsmap2json(settingsMap, getWorkingDirPath("settings.json"));
 	ds_map_destroy(settingsMap);
 
 }

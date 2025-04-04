@@ -99,7 +99,7 @@ if (false and room == rLevel)
 
 if (false and instance_exists(oPlayer1))
 {
-    file = file_text_open_read(working_directory + "stats.txt");
+    file = file_text_open_read(getWorkingDirPath("stats.txt"));
 
     if (file)
     {

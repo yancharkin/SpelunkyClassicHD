@@ -16,7 +16,7 @@ sunGold = 200000;
 moonGold = 600000;
 starsGold = 120;
 
-ini_open("spelunky.ini")
+ini_open(getWorkingDirPath("spelunky.ini"));
 
 tMoney = ini_read_real("highscore","value1",0) -0;
 tTime = ini_read_real("highscore","value2",0) -0;

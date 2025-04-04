@@ -22,7 +22,7 @@ function scrResetHighscores() {
     
 	***********************************************************************************/
 
-	ini_open("spelunky.ini")
+	ini_open(getWorkingDirPath("spelunky.ini"));
 
 	ini_write_real("highscore","value1",0)
 	ini_write_real("highscore","value2",0)
