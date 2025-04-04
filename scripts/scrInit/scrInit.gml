@@ -120,7 +120,4 @@ function scrInit() {
 	getLocales();
 	setLocale();
 	loadLocalizedSprites();
-
-
-
 }

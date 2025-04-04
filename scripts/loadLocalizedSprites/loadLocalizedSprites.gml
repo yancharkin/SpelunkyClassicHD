@@ -4,6 +4,8 @@ function loadLocalizedSprites() {
 	if (!file_exists(localizedImagesDir + "level5_sign.png")) {
 	    localizedImagesDir = working_directory + "locale/locales/en/images/";
 	}
+	global.sMoneySignNew = sprite_add(localizedImagesDir + "money_sign.png", 1, false, false, 0, 0);
+	global.sYellHelpNew = sprite_add(localizedImagesDir + "yell_help.png", 1, false, false, 0, 0);
 	if (instance_exists(oLevel5Sign)) {
 	    sLevel5SignNew = sprite_add(localizedImagesDir + "level5_sign.png", 1, false, false, 0, 0);
 	    oLevel5Sign.sprite_index = sLevel5SignNew;
@@ -35,5 +37,8 @@ function loadLocalizedSprites() {
 	if (instance_exists(oResetSign)) {
 	    sResetSignNew = sprite_add(localizedImagesDir + "reset_sign.png", 1, false, false, 0, 0);
 	    oResetSign.sprite_index = sResetSignNew;
+	}
+	if (instance_exists(oYellHelp)) {
+	    oYellHelp.sprite_index = global.sYellHelpNew;
 	}
 }

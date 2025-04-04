@@ -53,7 +53,7 @@ function scrDrawHUD() {
 	    drawText(global.bombs, "large", c_white, bombX+16, vyv+8+global.fontOffsetY);
 	    draw_sprite(sRopeIcon, -1, ropeX, vyv+8);
 	    drawText(global.rope, "large", c_white, ropeX+16, vyv+8+global.fontOffsetY);
-	    draw_sprite(sDollarSign, -1, moneyX, vyv+8);
+	    draw_sprite(global.sMoneySignNew,  -1, moneyX, vyv+6);
 	    drawText(global.money, "large", c_white, moneyX+16, vyv+8+global.fontOffsetY);
 
 	    if (isRoom("rOlmec")) { global.exitX = 640; global.exitY = 544; }
