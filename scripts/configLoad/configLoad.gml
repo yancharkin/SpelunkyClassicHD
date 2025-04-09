@@ -60,6 +60,7 @@ function configLoad() {
 	    global.toggleRunEnabled = is_undefined(settingsMap[? "toggleRunEnabled"]) ? global.toggleRunEnabled : settingsMap[? "toggleRunEnabled"];
 	    global.firstLaunch = is_undefined(settingsMap[? "firstLaunch"]) ? global.firstLaunch : settingsMap[? "firstLaunch"];
 	    global.touchControlsVisibility = is_undefined(settingsMap[? "touchControlsVisibility"]) ? global.touchControlsVisibility : int64(settingsMap[? "touchControlsVisibility"]);
+		if !(global.mobileBuild or global.html5Build) global.touchControlsVisibility = 0;
 	    ds_map_destroy(settingsMap);
 	}
 

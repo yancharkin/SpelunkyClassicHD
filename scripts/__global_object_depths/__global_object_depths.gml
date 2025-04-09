@@ -464,9 +464,7 @@ function __global_object_depths() {
 	global.__objectDepths[456] = 0; // core
 	global.__objectDepths[457] = 0; // mascara
 	global.__objectDepths[458] = 0; // mascara2
-	global.__objectDepths[459] = 0; // oNAL
 	global.__objectDepths[460] = 0; // oPressStart
-	global.__objectDepths[461] = 0; // yyScreen
 	global.__objectDepths[462] = 0; // oDebug
 	global.__objectDepths[463] = 0; // oHtml5Gamepad
 
@@ -930,9 +928,7 @@ function __global_object_depths() {
 	global.__objectNames[456] = "core";
 	global.__objectNames[457] = "mascara";
 	global.__objectNames[458] = "mascara2";
-	global.__objectNames[459] = "oNAL";
 	global.__objectNames[460] = "oPressStart";
-	global.__objectNames[461] = "yyScreen";
 	global.__objectNames[462] = "oDebug";
 	global.__objectNames[463] = "oHtml5Gamepad";
 

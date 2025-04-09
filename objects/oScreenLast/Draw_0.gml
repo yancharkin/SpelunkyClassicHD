@@ -33,11 +33,9 @@ with(oScreen)
                     with(all)
                     {
                         if object_index!=oGamepad
-                        && object_index!=oNAL
                         && object_index!=oScreenFirst
                         && object_index!=oScreenLast
                         && object_index!=oScreen
-                        && object_index!=yyScreen
                         {
                             instance_deactivate_object(id)
                         }

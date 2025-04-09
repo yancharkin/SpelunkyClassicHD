@@ -1,5 +1,7 @@
 /// @description  Pause menu
 if (paused) {
+	draw_set_color(c_black);
+	draw_rectangle(0, 0, global.display_w, global.display_h, false);
     var color0 = c_white;
     var color1 = c_white;
     var color2 = c_white;

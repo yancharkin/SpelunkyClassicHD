@@ -52,7 +52,6 @@ else if (checkStartPressed())
                 py = oPlayer1.y;
                 instance_deactivate_all(true);
                 instance_activate_object(oGamepad);
-                instance_activate_object(oNAL);
                 paused = true;
             }
         }
@@ -184,4 +183,3 @@ else
         draw_surface_stretched(screen, screen_x, screen_y, global.display_w, global.display_h);
     }
 }
-

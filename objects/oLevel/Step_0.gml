@@ -105,8 +105,6 @@ if (view_enabled)
     with oTempleTop { if (not collision_point(x, y+16, oTemple, 0, 0)) instance_destroy(); }
     with oIceBottom { if (not collision_point(x, y-16, oIce, 0, 0)) instance_destroy(); }
     */
-    
-    //instance_activate_object(oNAL);
 }
 
 // darkness

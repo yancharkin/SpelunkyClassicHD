@@ -3,7 +3,7 @@ globalvar browser_height_previous,game_wid,game_hgt,soundson;
 
 browser_height_previous=browser_height
 
-game_wid=960 
+game_wid=960
 game_hgt=720
 
 soundson=1
