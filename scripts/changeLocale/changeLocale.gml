@@ -5,9 +5,12 @@ function changeLocale() {
 	var localesN = array_length_1d(global.localesArray);
 	for (var i = 0; i < localesN; i++;) {
 	    if (global.localesArray[i] = global.locale) {
-	        newLocaleIndex = i + 1;
+	        newLocaleIndex = i + global.localeChangeBy;
 	        if (newLocaleIndex = localesN) {
 	            newLocaleIndex = 0;
+	        }
+			if (newLocaleIndex < 0) {
+	            newLocaleIndex = localesN-1;
 	        }
 	    }
 	}

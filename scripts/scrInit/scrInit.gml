@@ -33,11 +33,14 @@ function scrInit() {
 
 	// Defaults
 	global.touchControlsVisibility = 0;
-	if (global.mobileBuild) global.touchControlsVisibility = 2;
+	if (global.mobileBuild) global.touchControlsVisibility = 1;
+	global.touchVisChangeBy = 1;
 	global.toggleRun = false;
 	global.firstLaunch = true;
 	global.locale = "en";
 	global.locale2 = "es";
+	global.localeChangeBy = 1;
+	global.locale2ChangeBy = 1;
 	global.fullscreen = false;
 	global.toggleRunEnabled = false;
 	global.graphicsHigh = true;

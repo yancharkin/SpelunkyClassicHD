@@ -345,7 +345,8 @@ if (paused) {
     } else if (checkJumpPressed()) {
         paused = false;
         instance_activate_all();
-    } else if (checkAttackPressed()) or (keyboard_check_pressed(global.keyEnter)) {
+    } else if (checkAttackPressed())
+			or (keyboard_check_pressed(global.keyEnter) or checkRightPressed() or checkLeftPressed()) {
         if (isRoom("rTitle")) {
             switch (menuItemIndex) {
                 case 0: {
@@ -380,8 +381,12 @@ if (paused) {
                 }
                 case 4: {
                     if (global.html5Build) {
+						global.touchVisChangeBy = 1;
+						if (checkLeftPressed()) global.touchVisChangeBy = -1;
                         menuTouchControls();
                     } else if (global.mobileBuild) {
+							global.touchVisChangeBy = 1;
+							if (checkLeftPressed()) global.touchVisChangeBy = -1;
                             menuTouchControls();
                     } else {
                         menuToggleFullscreen();
@@ -392,6 +397,8 @@ if (paused) {
                     if (global.html5Build) {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
+						global.localeChangeBy = 1;
+						if (checkLeftPressed()) global.localeChangeBy = -1;
                         menuLanguage();
                     }
                     break;
@@ -399,11 +406,15 @@ if (paused) {
 				case 6: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
+							global.localeChangeBy = 1;
+							if (checkLeftPressed()) global.localeChangeBy = -1;
                             menuLanguage();
                         } else {
                             menuToggleFullscreen();
                         }
                     } else {
+						global.locale2ChangeBy = 1;
+						if (checkLeftPressed()) global.locale2ChangeBy = -1;
 						changeLocale2();
                     }
                     break;
@@ -444,6 +455,8 @@ if (paused) {
                 }
                 case 1: {
                     if (global.html5Build) {
+						global.touchVisChangeBy = 1;
+						if (checkLeftPressed()) global.touchVisChangeBy = -1;
                         menuTouchControls();
                     } else {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
@@ -455,6 +468,8 @@ if (paused) {
                         global.toggleRunEnabled = !global.toggleRunEnabled;
                     } else {
                         if (global.mobileBuild) {
+							global.touchVisChangeBy = 1;
+							if (checkLeftPressed()) global.touchVisChangeBy = -1;
                             menuTouchControls();
                         } else {
                             menuToggleFullscreen();
@@ -465,11 +480,15 @@ if (paused) {
                 case 3: {
                     if (global.html5Build) {
                         if (global.mobileBuild) {
+							global.localeChangeBy = 1;
+							if (checkLeftPressed()) global.localeChangeBy = -1;
                             menuLanguage();
                         } else {
                             menuToggleFullscreen();
                         }
                     } else {
+						global.localeChangeBy = 1;
+						if (checkLeftPressed()) global.localeChangeBy = -1;
                         menuLanguage();
                     }
                     break;
@@ -479,9 +498,13 @@ if (paused) {
                         if (global.mobileBuild) {
                             menuDie();
                         } else {
+							global.localeChangeBy = 1;
+							if (checkLeftPressed()) global.localeChangeBy = -1;
                             menuLanguage();
                         }
                     } else {
+						global.locale2ChangeBy = 1;
+						if (checkLeftPressed()) global.locale2ChangeBy = -1;
 						changeLocale2();
                     }
                     break;
