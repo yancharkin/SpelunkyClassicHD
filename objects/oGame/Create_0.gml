@@ -1,4 +1,5 @@
 /// @description  Create Game
+
 drawStatus = 0;
 moneyCount = 0;
 globalvar debug;
@@ -70,3 +71,8 @@ global.bAttackPressed = false;
 global.bAttackPressedPreviousState = false;
 global.bAttackReleased = false;
 global.bAttackReleasedPreviousState = false;
+
+//TouchInput
+if ((global.mobileBuild) or (global.html5Build)) {
+    enableTouchInput();
+}

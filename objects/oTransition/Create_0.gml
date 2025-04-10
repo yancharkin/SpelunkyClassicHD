@@ -1,4 +1,9 @@
-/// @description Gamepad in HTML5
+///TouchInput
+if ((global.mobileBuild) or (global.html5Build)) {
+    enableTouchInput();
+}
+
+/// Gamepad in HTML5
 global.bStartPressed = false;
 global.bStartPreviousState = false;
 global.bAttackPressed = false;

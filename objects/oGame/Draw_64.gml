@@ -122,11 +122,6 @@ if (paused) {
     if (global.html5Build) drawTouchControls();
 }
 
-///TouchInput
-if ((global.mobileBuild) or (global.html5Build)) {
-    enableTouchInput();
-}
-
 ///Draw the HUD
 
 display_set_gui_size(global.display_w,global.display_h);

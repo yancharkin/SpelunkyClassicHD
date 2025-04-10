@@ -25,3 +25,7 @@ global.bAttackPressedPreviousState = false;
 global.bAttackReleased = false;
 global.bAttackReleasedPreviousState = false;
 
+//TouchInput
+if ((global.mobileBuild) or (global.html5Build)) {
+    enableTouchInput();
+}
