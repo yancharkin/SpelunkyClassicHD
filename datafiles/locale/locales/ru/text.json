@@ -387,5 +387,7 @@
     "UP ARR": "СТР. ВВЕРХ",
     "DOWN ARR": "СТР. ВНИЗ",
     "LEFT ARR": "СТР. ВЛЕВО",
-    "RIGHT ARR": "СТР. ВПРАВО"
+    "RIGHT ARR": "СТР. ВПРАВО",
+    "PRESS ANY BUTTON": "НАЖМИ ЛЮБУЮ КНОПКУ",
+    "WAIT TO KEEP SAME: ": "НЕ МЕНЯТЬ - ПОДОЖДИ: "
 }

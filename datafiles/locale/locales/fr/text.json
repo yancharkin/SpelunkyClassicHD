@@ -387,5 +387,7 @@
     "UP ARR": "FLECHE HAUT",
     "DOWN ARR": "FLÈCHE BAS",
     "LEFT ARR": "FLÈCHE GAUCHE",
-    "RIGHT ARR": "FLÈCHE DROITE"
+    "RIGHT ARR": "FLÈCHE DROITE",
+    "PRESS ANY BUTTON": "",
+    "WAIT TO KEEP SAME: ": ""
 }

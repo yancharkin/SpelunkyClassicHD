@@ -1,7 +1,7 @@
-joyReleased = false;
-joyPressed = false;
+var joyReleased = false;
+var joyPressed = false;
 
-joyKey = checkJoyButton();
+var joyKey = checkJoyButton();
 
 if (joy) {
     if (joyKey != 0) {
@@ -49,8 +49,12 @@ if (joyPressed) {
     }
 }
 
-if (joyPressed or keyboard_check_pressed(vk_escape)) {
+if (joyPressed or keyboard_check_pressed(vk_escape) or alarm[0] == alarmSec*fps) {
     status += 1;
+	alarm[0] = alarmSec*fps;
+	if (!gamepadFound) {
+		room_goto(rTitle);
+	};
     if (gamepad.attackPressed) gamepad.attackPressed = false;
     if (gamepad.startPressed) gamepad.startPressed = false;
 	if (os_type == os_windows) {
@@ -58,4 +62,3 @@ if (joyPressed or keyboard_check_pressed(vk_escape)) {
 	}
     if (status > 12) room_goto(rTitle);
 }
-
