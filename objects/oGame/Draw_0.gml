@@ -86,63 +86,63 @@ action_color(16777215);
 // DEBUGGING TEXT
 
 // Display level path
-if (false and room == rLevel)
-{
-    for (j = 0; j < 4; j += 1)
-    {
-        for (i = 0; i < 4; i += 1)
-        {
-            draw_text(oPlayer1.x+48+i*16, oPlayer1.y-64+16+j*16, string_hash_to_newline(string(global.roomPath[i,j])));
-        }
-    }
-}
+//if (false and room == rLevel)
+//{
+//    for (j = 0; j < 4; j += 1)
+//    {
+//        for (i = 0; i < 4; i += 1)
+//        {
+//            draw_text(oPlayer1.x+48+i*16, oPlayer1.y-64+16+j*16, string_hash_to_newline(string(global.roomPath[i,j])));
+//        }
+//    }
+//}
 
-if (false and instance_exists(oPlayer1))
-{
-    file = file_text_open_read(getWorkingDirPath("stats.txt"));
+//if (false and instance_exists(oPlayer1))
+//{
+//    file = file_text_open_read(getWorkingDirPath("stats.txt"));
 
-    if (file)
-    {
-    file_text_readln(file);
-    file_text_readln(file);
-    file_text_readln(file);
-    file_text_readln(file);
-    str = file_text_read_string(file);
-    str = string_delete(str, 1, 20);
-    global.totalCrates = real(str);
-    file_text_readln(file);
-    str = file_text_read_string(file);
-    // str = string_delete(str, 1, 20);
-    // global.totalChests = real(str);
+//    if (file)
+//    {
+//    file_text_readln(file);
+//    file_text_readln(file);
+//    file_text_readln(file);
+//    file_text_readln(file);
+//    str = file_text_read_string(file);
+//    str = string_delete(str, 1, 20);
+//    global.totalCrates = real(str);
+//    file_text_readln(file);
+//    str = file_text_read_string(file);
+//    // str = string_delete(str, 1, 20);
+//    // global.totalChests = real(str);
         
-    draw_text(oPlayer1.x+16, oPlayer1.y-16, string_hash_to_newline(str));
+//    draw_text(oPlayer1.x+16, oPlayer1.y-16, string_hash_to_newline(str));
         
-    file_text_close(file);
-    }
-}
+//    file_text_close(file);
+//    }
+//}
 
-if (false and instance_exists(oPlayer1))
-{
-    draw_set_font(global.fontSmall);
-    draw_set_color(c_white);
-    draw_text(oPlayer1.x+16, oPlayer1.y-16, string_hash_to_newline(string(oPlayer1.stunTimer)));
-    // if (instance_exists(oLockedChest)) { with oPlayer1 { draw_text(x+16, y-32, distance_to_object(oLockedChest)); } }
-    // else { draw_text(oPlayer1.x+16, oPlayer1.y-16, "0"); }
-    //if (global.madeMoai == true) draw_text(oPlayer1.x+16, oPlayer1.y-16, "TRUE");
-    //else draw_text(oPlayer1.x+16, oPlayer1.y-16, "FALSE");
-    //draw_text(oPlayer1.x+16, oPlayer1.y-16, string_upper(global.pickupItem));
-}
+//if (false and instance_exists(oPlayer1))
+//{
+//    draw_set_font(global.fontSmall);
+//    draw_set_color(c_white);
+//    draw_text(oPlayer1.x+16, oPlayer1.y-16, string_hash_to_newline(string(oPlayer1.stunTimer)));
+//    // if (instance_exists(oLockedChest)) { with oPlayer1 { draw_text(x+16, y-32, distance_to_object(oLockedChest)); } }
+//    // else { draw_text(oPlayer1.x+16, oPlayer1.y-16, "0"); }
+//    //if (global.madeMoai == true) draw_text(oPlayer1.x+16, oPlayer1.y-16, "TRUE");
+//    //else draw_text(oPlayer1.x+16, oPlayer1.y-16, "FALSE");
+//    //draw_text(oPlayer1.x+16, oPlayer1.y-16, string_upper(global.pickupItem));
+//}
 
 action_color(-100);
 // draw_text(oPlayer1.x-24, oPlayer1.y-48, string(radtodeg(arctan(1))));
 
 // DEBUG
 
-if (false and room == rLevel and instance_exists(oXMarket))
-{
-draw_text(oPlayer1.x-24, oPlayer1.y-48, string_hash_to_newline(string(oPlayer1.x-oXMarket.x)));
-draw_text(oPlayer1.x, oPlayer1.y-48, string_hash_to_newline(string(oPlayer1.y-oXMarket.y)));
-}
+//if (false and room == rLevel and instance_exists(oXMarket))
+//{
+//draw_text(oPlayer1.x-24, oPlayer1.y-48, string_hash_to_newline(string(oPlayer1.x-oXMarket.x)));
+//draw_text(oPlayer1.x, oPlayer1.y-48, string_hash_to_newline(string(oPlayer1.y-oXMarket.y)));
+//}
 
 /// Draw HUD (HTML5)
 if (global.html5Build) {

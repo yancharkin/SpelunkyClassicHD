@@ -11,7 +11,7 @@ function drawHighlightedMessage() {
 	var messageN = argument[3];
 	var text = "";
 
-	for (var i = 0; i < array_length_1d(message); i++) {
+	for (var i = 0; i < array_length(message); i++) {
 	    text += message[i];
 	}
 
@@ -36,11 +36,11 @@ function drawHighlightedMessage() {
 
 	draw_set_font(global.fontSmall);
 	var previousStrLen = 0;
-	for (var i = 0; i < array_length_1d(message); i++) {
+	for (var i = 0; i < array_length(message); i++) {
 	    draw_set_color(c_white);
 	    if (messageN == 1) {
 	        if (is_array(global.messageHighlights)) {
-	            for (var j = 0; j < array_length_1d(global.messageHighlights); j++) {
+	            for (var j = 0; j < array_length(global.messageHighlights); j++) {
 	                if (i == global.messageHighlights[j]) {
 	                    draw_set_color(c_yellow);
 	                }
@@ -48,7 +48,7 @@ function drawHighlightedMessage() {
 	        }
 	    } else if (messageN == 2) {
 	        if (is_array(global.message2Highlights)) {
-	            for (var j = 0; j < array_length_1d(global.message2Highlights); j++) {
+	            for (var j = 0; j < array_length(global.message2Highlights); j++) {
 	                if (i == global.message2Highlights[j]) {
 	                    draw_set_color(c_yellow);
 	                }

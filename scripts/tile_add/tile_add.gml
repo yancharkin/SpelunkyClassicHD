@@ -21,7 +21,7 @@ function tile_add(argument0, argument1, argument2, argument3, argument4, argumen
 
 	// Scan for a layer with the correct depth
 	var __layers = layer_get_all();
-	var __numlayers = array_length_1d(__layers);
+	var __numlayers = array_length(__layers);
 
 	var __layertouse = -1;
 	var __i;

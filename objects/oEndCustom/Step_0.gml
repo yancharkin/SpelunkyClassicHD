@@ -40,13 +40,13 @@ if (global.html5Build) {
     alarm[6] = 1;
 }
 
-
+var skipCondition;
 if (!global.html5Build) {
-    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+    skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or 
             checkAttackPressed() or checkStartPressed());
 } else {
-    var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+    skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or
             global.bAttackPressed or global.bStartPressed or
             checkAttackPressed() or checkStartPressed());

@@ -34,7 +34,7 @@ function __background_set_element(argument0, argument1, argument2, argument3, ar
 	var __fglen = string_length(__fgstring);
 	var __bglen = string_length(__bgstring);
 	var __layerlist = layer_get_all();
-	var __layerlistlength = array_length_1d(__layerlist);
+	var __layerlistlength = array_length(__layerlist);
 	var __collayer = -1;
 	var __slots;
 	var __isforeground;
@@ -44,7 +44,7 @@ function __background_set_element(argument0, argument1, argument2, argument3, ar
 		__slots[__i] = -1;
 		__isforeground[__i] = false;
 	}
-
+	var __slot;
 
 	for(__i = 0; __i < __layerlistlength; __i++)
 	{
@@ -55,7 +55,7 @@ function __background_set_element(argument0, argument1, argument2, argument3, ar
 			if (__slotchr == "")
 				continue;
 			
-			var __slot = real( __slotchr );
+			__slot = real( __slotchr );
 			__slots[__slot] = __layerlist[__i];
 		
 			__isforeground[__slot] = true;
@@ -68,7 +68,7 @@ function __background_set_element(argument0, argument1, argument2, argument3, ar
 			if (__slotchr == "")
 				continue;
 			
-			var __slot = real( __slotchr );
+			__slot = real( __slotchr );
 			__slots[__slot] = __layerlist[__i];
 		
 			__isforeground[__slot] = false;

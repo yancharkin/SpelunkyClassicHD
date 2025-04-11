@@ -37,4 +37,4 @@ counter = 200;
 stunMax = 120;
 
 bombID = 0;
-
+cimg = 0;

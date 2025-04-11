@@ -22,10 +22,10 @@ if (oPlayer1.y < 156)
         {
             if (false) // (global.isTunnelMan)
             {
-                draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
-                draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
-                draw_text(128, 144, string_hash_to_newline(""));
-                draw_text(128, 160, string_hash_to_newline(""));
+                //draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
+                //draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
+                //draw_text(128, 144, string_hash_to_newline(""));
+                //draw_text(128, 160, string_hash_to_newline(""));
             }
             else
             {
@@ -49,10 +49,10 @@ if (oPlayer1.y < 156)
         {
             if (false) // (global.isTunnelMan)
             {
-                draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
-                draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
-                draw_text(128, 144, string_hash_to_newline(""));
-                draw_text(128, 160, string_hash_to_newline(""));
+                //draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
+                //draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
+                //draw_text(128, 144, string_hash_to_newline(""));
+                //draw_text(128, 160, string_hash_to_newline(""));
             }
             else
             {
@@ -75,10 +75,10 @@ if (oPlayer1.y < 156)
         {
             if (false) // (global.isTunnelMan)
             {
-                draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
-                draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
-                draw_text(128, 144, string_hash_to_newline(""));
-                draw_text(128, 160, string_hash_to_newline(""));
+                //draw_text(128, 112, string_hash_to_newline("NO MATTOCKS ALLOWED!"));
+                //draw_text(128, 128, string_hash_to_newline("THIS MEANS YOU!"));
+                //draw_text(128, 144, string_hash_to_newline(""));
+                //draw_text(128, 160, string_hash_to_newline(""));
             }
             else
             {

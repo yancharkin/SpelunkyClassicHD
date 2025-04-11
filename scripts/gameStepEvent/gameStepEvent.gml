@@ -85,7 +85,7 @@ function gameStepEvent() {
 	          var player;
 	          player=oGame.players[i]  
             
-	          if(viscidTop and isCollisionCharacterTop(1,player) and (player.viscidMovementOk=1 or player.viscidMovementOk=2))
+	          if(viscidTop and isCollisionCharacterTop(1, i) and (player.viscidMovementOk=1 or player.viscidMovementOk=2))
 	          {
 	            with oGame.players[i]
 	              if isCollisionRight(1)=0
@@ -94,7 +94,7 @@ function gameStepEvent() {
 	                viscidMovementOk=2
 	              }
 	          }
-	          else if isCollisionCharacterRight(1,oGame.players[i])
+	          else if isCollisionCharacterRight(1, i)
 	          {
 	            with oGame.players[i]
 	              collision=isCollisionRight(1)
@@ -118,7 +118,7 @@ function gameStepEvent() {
 	      {
 	        for(i=0;i<oGame.players_length;i+=1)
 	        {
-	          if viscidTop and isCollisionCharacterTop(1,oGame.players[i]) and (oGame.players[i].viscidMovementOk=1 or oGame.players[i].viscidMovementOk=2)
+	          if viscidTop and isCollisionCharacterTop(1, i) and (oGame.players[i].viscidMovementOk=1 or oGame.players[i].viscidMovementOk=2)
 	          {
 	            with oGame.players[i]
 	              if isCollisionLeft(1)=0
@@ -127,7 +127,7 @@ function gameStepEvent() {
 	                viscidMovementOk=2
 	              }
 	          }
-	          else if isCollisionCharacterLeft(1,oGame.players[i])
+	          else if isCollisionCharacterLeft(1, i)
 	          {
 	            with oGame.players[i]
 	              collision=isCollisionLeft(1)
@@ -151,7 +151,7 @@ function gameStepEvent() {
 	      {
 	        for(i=0;i<oGame.players_length;i+=1)
 	        {
-	          if viscidTop and isCollisionCharacterTop(2,oGame.players[i])
+	          if viscidTop and isCollisionCharacterTop(2, i)
 	          {
 	            //since we do not want to include the solid that is pulling the character down,
 	            //we must alter the position of the solid to get around this dilemma
@@ -161,7 +161,7 @@ function gameStepEvent() {
 	                y+=1
 	            y-=5
 	          }
-	          else if isCollisionCharacterBottom(1,oGame.players[i])
+	          else if isCollisionCharacterBottom(1, i)
 	          {
 	            with oGame.players[i]
 	              collision=isCollisionBottom(1)
@@ -186,7 +186,7 @@ function gameStepEvent() {
 	        for(i=0;i<oGame.players_length;i+=1)
 	        {
 	          //push the character up regardless of the viscid properties of the solid top
-	          if isCollisionCharacterTop(1,oGame.players[i])
+	          if isCollisionCharacterTop(1, i)
 	          { 
 	            with oGame.players[i]
 	              collision=isCollisionTop(1)
@@ -197,7 +197,7 @@ function gameStepEvent() {
 	            }
 	            oGame.players[i].y-=1
 	          }
-	          if isCollisionCharacterBottom(1,oGame.players[i])
+	          if isCollisionCharacterBottom(1, i)
 	          {
 	            //variable jumping causes the character to get stuck to the bottom of a moving solid
 	            //that is moving faster than 1 pixel per step upwards, so we need this code

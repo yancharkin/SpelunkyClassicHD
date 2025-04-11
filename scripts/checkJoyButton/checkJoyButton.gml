@@ -28,7 +28,7 @@ function checkJoyButton() {
 		    return gp_shoulderlb;
 	}
 
-	for (var i = 0; i < array_length_1d(__allowedbuttons); i++)
+	for (var i = 0; i < array_length(__allowedbuttons); i++)
 	{
 	    var _btn = __allowedbuttons[i];
 	    if (gamepad_button_check(global.joyid, _btn))

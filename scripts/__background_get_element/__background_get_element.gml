@@ -13,7 +13,7 @@ function __background_get_element(argument0) {
 	var __fglen = string_length(__fgstring);
 	var __bglen = string_length(__bgstring);
 	var __layerlist = layer_get_all();
-	var __layerlistlength = array_length_1d(__layerlist);
+	var __layerlistlength = array_length(__layerlist);
 	var __i;
 
 	var __layerid = -1;
@@ -62,7 +62,7 @@ function __background_get_element(argument0) {
 		// We have a winner!
 		// Get id of background element on this layer
 		var __els = layer_get_all_elements(__layerid);
-		var __elslength = array_length_1d(__els);
+		var __elslength = array_length(__els);
 		for(__i = 0; __i < __elslength; __i++)
 		{
 			if (layer_get_element_type(__els[__i]) == layerelementtype_background)

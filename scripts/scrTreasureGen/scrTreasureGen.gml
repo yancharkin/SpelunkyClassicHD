@@ -51,7 +51,8 @@ function scrTreasureGen(argument0) {
 	    (collision_point(x-16, y-16, oSolid, 0, 0) or collision_point(x+16, y-16, oSolid, 0, 0) or collision_point(x-16, y-16, oBlock, 0, 0) or collision_point(x+16, y-16, oBlock, 0, 0)))
 	{
 	    n = 60;
-	    if (distance_to_object(oGiantSpider < 100)) n = 5;
+	    //if (distance_to_object(oGiantSpider < 100)) n = 5;
+		if (distance_to_object(oGiantSpider) < 100) n = 5;
     
 	    if (global.levelType != 2 and rand(1,n) == 1) instance_create(x, y-16, oWeb);
 	    else if (global.genUdjatEye and not global.LockedChest)
@@ -97,7 +98,8 @@ function scrTreasureGen(argument0) {
 	    (collision_point(x-16, y-16, oSolid, 0, 0) and collision_point(x+16, y-16, oSolid, 0, 0)))
 	{
 	    n = 60;
-	    if (distance_to_object(oGiantSpider < 100)) n = 10;
+		//if (distance_to_object(oGiantSpider < 100)) n = 10;
+	    if (distance_to_object(oGiantSpider) < 100) n = 10;
 	    if (global.levelType != 2 and rand(1,n) == 1) instance_create(x, y-16, oWeb);
 	    else if (rand(1,4) == 1) instance_create(x+8, y-4, oGoldBar);
 	    else if (rand(1,8) == 1) instance_create(x+8, y-8, oGoldBars);

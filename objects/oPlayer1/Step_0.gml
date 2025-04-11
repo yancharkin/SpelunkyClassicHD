@@ -211,7 +211,8 @@ if (collision_point(x, y+6, oLava, 0, 0))
 }
 
 // JETPACK
-if (global.hasJetpack and platformCharacterIs(ON_GROUND))
+//if (global.hasJetpack and platformCharacterIs(ON_GROUND))
+if (global.hasJetpack and platformCharacterIs(20))
 {
     jetpackFuel = 50;
 }
@@ -264,7 +265,8 @@ if (active)
             }
         }
     }
-    else if (platformCharacterIs(ON_GROUND) and fallTimer > 16 and not collision_rectangle(x-8, y-8, x+8, y+8, oSpringTrap, 0, 0)) // LONG DROP
+    //else if (platformCharacterIs(ON_GROUND) and fallTimer > 16 and not collision_rectangle(x-8, y-8, x+8, y+8, oSpringTrap, 0, 0)) // LONG DROP
+	else if (platformCharacterIs(20) and fallTimer > 16 and not collision_rectangle(x-8, y-8, x+8, y+8, oSpringTrap, 0, 0)) // LONG DROP
     {
         // LONG DROP
         stunned = true;
@@ -383,12 +385,14 @@ if (dead or stunned)
 }
 else if (isLevel()) // look up and down
 {
-    if (kDown and (platformCharacterIs(ON_GROUND) or state == HANGING) and not kRight and not kLeft)
+    //if (kDown and (platformCharacterIs(ON_GROUND) or state == HANGING) and not kRight and not kLeft)
+	if (kDown and (platformCharacterIs(20) or state == HANGING) and not kRight and not kLeft)
     {
         if (viewCount <= 30) viewCount += 1;
         else __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) + (4) );
     }
-    else if (kUp and (platformCharacterIs(ON_GROUND) or state == HANGING) and not kRight and not kLeft)
+	//else if (kUp and (platformCharacterIs(ON_GROUND) or state == HANGING) and not kRight and not kLeft)
+    else if (kUp and (platformCharacterIs(20) or state == HANGING) and not kRight and not kLeft)
     {
         if (viewCount <= 30) viewCount += 1;
         else __view_set( e__VW.YView, 0, __view_get( e__VW.YView, 0 ) - (4) );
@@ -674,7 +678,8 @@ if (not dead and
     not whipping and 
     collision_point(x, y, oXStart, 0, 0) and
     kUp and
-    platformCharacterIs(ON_GROUND) and
+	//platformCharacterIs(ON_GROUND) and
+    platformCharacterIs(20) and
     sprite_index != sPExit and sprite_index != sDamselExit and sprite_index != sTunnelExit)
 {
     // oXEnd is the child of oXStart, for some reason, that's why this is here:
@@ -759,7 +764,8 @@ if (not dead and
     not whipping and 
     collision_point(x, y, oExit, 0, 0) and
     kUp and
-    platformCharacterIs(ON_GROUND) and
+	//platformCharacterIs(ON_GROUND) and
+    platformCharacterIs(20) and
     sprite_index != sPExit and sprite_index != sDamselExit and sprite_index != sTunnelExit)
 {
     holdArrow = 0;
@@ -1163,7 +1169,8 @@ else if (inGame and kBombPressed and global.bombs > 0 and not whipping)
     
     if (kDown)
     {
-        if (platformCharacterIs(ON_GROUND)) obj.xVel *= 0.1;
+		//if (platformCharacterIs(ON_GROUND)) obj.xVel *= 0.1;
+        if (platformCharacterIs(20)) obj.xVel *= 0.1;
         obj.yVel = 3;
     }
     
@@ -1178,7 +1185,8 @@ else if (holdItem == 0)
         image_speed = 0.6;
         if (global.isTunnelMan)
         {
-            if (platformCharacterIs(ON_GROUND))
+            //if (platformCharacterIs(ON_GROUND))
+			if (platformCharacterIs(20))
             {
                 sprite_index = sTunnelAttackL;
                 image_index = 0;
