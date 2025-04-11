@@ -1,0 +1,1 @@
+self.sprite_index = global.sNewNew;
