@@ -1,6 +1,3 @@
 function playSound(argument0) {
-	SS_PlaySound(argument0);
-
-
-
+	audio_play_sound(argument0, 2, 0);
 }

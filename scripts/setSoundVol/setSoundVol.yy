@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SS_LoopMusic",
+  "%Name":"setSoundVol",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SS_LoopMusic",
+  "name":"setSoundVol",
   "parent":{
-    "name":"supersound",
-    "path":"folders/Scripts/supersound.yy",
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

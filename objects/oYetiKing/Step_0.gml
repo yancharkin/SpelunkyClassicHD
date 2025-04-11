@@ -111,7 +111,7 @@ else if (status == ATTACK)
     attackTimer = 100;
     if (image_index >= 7 and image_index <= 12)
     {
-        if (not SS_IsSoundPlaying(global.sndYetiYell)) playSound(global.sndYetiYell);
+        if (not audio_is_playing(global.sndYetiYell)) playSound(global.sndYetiYell);
         with oIce
         {
             if (instance_exists(oYetiKing))

@@ -12,11 +12,11 @@ function menuDie() {
 	        global.plife = -99;
 	    }
 
-	    if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 10000);
-	    if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 10000);
-	    if (SS_IsSoundPlaying(global.musLush)) SS_SetSoundVol(global.musLush, 10000);
-	    if (SS_IsSoundPlaying(global.musTemple)) SS_SetSoundVol(global.musTemple, 10000);
-	    if (SS_IsSoundPlaying(global.musBoss)) SS_SetSoundVol(global.musBoss, 10000);
+	    if (audio_is_playing(global.musTitle)) setSoundVol(global.musTitle, 10000);
+	    if (audio_is_playing(global.musCave)) setSoundVol(global.musCave, 10000);
+	    if (audio_is_playing(global.musLush)) setSoundVol(global.musLush, 10000);
+	    if (audio_is_playing(global.musTemple)) setSoundVol(global.musTemple, 10000);
+	    if (audio_is_playing(global.musBoss)) setSoundVol(global.musBoss, 10000);
 	    stopAllMusic();
 	}
 

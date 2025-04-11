@@ -57,6 +57,6 @@ function scrGetKey(argument0) {
 	    case ord("X"): { return "X"; }
 	    case ord("Y"): { return "Y"; }
 	    case ord("Z"): { return "Z"; }
-	    default: { return string_upper(string(argument0));; }
+	    default: { return string_upper(string(argument0)); }
 	}
 }

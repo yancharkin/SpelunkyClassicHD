@@ -147,7 +147,7 @@ function characterStepEvent() {
 	            {
 	                xAcc -= 1;
 	                pushTimer += 10;
-	                //if (not SS_IsSoundPlaying(global.sndPush)) playSound(global.sndPush);
+	                //if (not audio_is_playing(global.sndPush)) playSound(global.sndPush);
 	            }
 	        }
 	        else if (kLeftPushedSteps > 2) and (facing=LEFT or approximatelyZero(xVel))
@@ -167,7 +167,7 @@ function characterStepEvent() {
 	            {
 	                xAcc += 1;
 	                pushTimer += 10;
-	                //if (not SS_IsSoundPlaying(global.sndPush)) playSound(global.sndPush);
+	                //if (not audio_is_playing(global.sndPush)) playSound(global.sndPush);
 	            }
 	        }
 	        else if (kRightPushedSteps > 2 or colSolidLeft) and (facing=RIGHT or approximatelyZero(xVel))

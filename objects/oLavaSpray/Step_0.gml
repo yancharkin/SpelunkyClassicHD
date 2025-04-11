@@ -17,4 +17,4 @@ if (y < -16 and status == 0)
     status += 1;
 }
 
-if (not SS_IsSoundPlaying(global.sndFlame)) playSound(global.sndFlame);
+if (not audio_is_playing(global.sndFlame)) playSound(global.sndFlame);

@@ -175,9 +175,9 @@ function scrLevelGen() {
 	                    }
 	                }
 	                else
-	                {
-	                    global.roomPath[i,j+1] = 9;
-	                }
+	                //{
+	                //    global.roomPath[i,j+1] = 9;
+	                //}
 	                global.snakePit = true;
 	                i = 99;
 	                j = 99;

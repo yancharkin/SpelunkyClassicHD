@@ -22,12 +22,12 @@ with(oScreen)
                     draw_set_color(c_black);
                     draw_rectangle(0, 0, global.display_w, global.display_h, false);
                     draw_set_alpha(1);
-                    if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 0);
-                    if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 0);
-                    if (SS_IsSoundPlaying(global.musLush)) SS_SetSoundVol(global.musLush, 0);
-                    if (SS_IsSoundPlaying(global.musIce)) SS_SetSoundVol(global.musIce, 0);
-                    if (SS_IsSoundPlaying(global.musTemple)) SS_SetSoundVol(global.musTemple, 0);
-                    if (SS_IsSoundPlaying(global.musBoss)) SS_SetSoundVol(global.musBoss, 0);
+                    if (audio_is_playing(global.musTitle)) setSoundVol(global.musTitle, 0);
+                    if (audio_is_playing(global.musCave)) setSoundVol(global.musCave, 0);
+                    if (audio_is_playing(global.musLush)) setSoundVol(global.musLush, 0);
+                    if (audio_is_playing(global.musIce)) setSoundVol(global.musIce, 0);
+                    if (audio_is_playing(global.musTemple)) setSoundVol(global.musTemple, 0);
+                    if (audio_is_playing(global.musBoss)) setSoundVol(global.musBoss, 0);
                     py = oPlayer1.y;
                     
                     with(all)
@@ -97,12 +97,12 @@ with(oScreen)
             global.pSurf2=0
             
             instance_activate_all();
-            if (SS_IsSoundPlaying(global.musTitle)) SS_SetSoundVol(global.musTitle, 2000 + 8000 * (global.musicVol/18));
-            if (SS_IsSoundPlaying(global.musCave)) SS_SetSoundVol(global.musCave, 2000 + 8000 * (global.musicVol/18));
-            if (SS_IsSoundPlaying(global.musLush)) SS_SetSoundVol(global.musLush, 2000 + 8000 * (global.musicVol/18));
-            if (SS_IsSoundPlaying(global.musIce)) SS_SetSoundVol(global.musIce, 2000 + 8000 * (global.musicVol/18));
-            if (SS_IsSoundPlaying(global.musTemple)) SS_SetSoundVol(global.musTemple, 2000 + 8000 * (global.musicVol/18));
-            if (SS_IsSoundPlaying(global.musBoss)) SS_SetSoundVol(global.musBoss, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musTitle)) setSoundVol(global.musTitle, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musCave)) setSoundVol(global.musCave, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musLush)) setSoundVol(global.musLush, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musIce)) setSoundVol(global.musIce, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musTemple)) setSoundVol(global.musTemple, 2000 + 8000 * (global.musicVol/18));
+            if (audio_is_playing(global.musBoss)) setSoundVol(global.musBoss, 2000 + 8000 * (global.musicVol/18));
             paused = false;
         }
     

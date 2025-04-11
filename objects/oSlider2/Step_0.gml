@@ -5,7 +5,7 @@ if (mouse_check_button(mb_left) and focus)
     if (x < 8) x = 8;
     y = 184;
     global.soundVol = floor(x / 8);
-    SS_SetSoundVol(global.sndJump, 2000 + 8000 * (global.soundVol/18));
+    setSoundVol(global.sndJump, 2000 + 8000 * (global.soundVol/18));
 }
 else
 {

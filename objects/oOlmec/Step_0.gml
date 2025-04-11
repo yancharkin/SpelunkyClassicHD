@@ -180,7 +180,7 @@ else if (status == DROWNING)
     yVel = 0.1;
     myGrav = 0;
     scrShake(10);
-    if (not SS_IsSoundPlaying(global.sndFlame)) playSound(global.sndFlame);
+    if (not audio_is_playing(global.sndFlame)) playSound(global.sndFlame);
 }
 
 if (isCollisionTop(1))

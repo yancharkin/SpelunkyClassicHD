@@ -56,7 +56,7 @@ function moveTo(argument0, argument1) {
 	          else
 	          {
 	            x += 1;             //we're free to move the moveable solid
-	            if (not SS_IsSoundPlaying(global.sndPush)) playSound(global.sndPush);
+	            if (not audio_is_playing(global.sndPush)) playSound(global.sndPush);
 	          }
 	        }
 	      }
@@ -84,7 +84,7 @@ function moveTo(argument0, argument1) {
 	          else
 	          {
 	            x-=1             //we're free to move the moveable solid
-	            if (not SS_IsSoundPlaying(global.sndPush)) playSound(global.sndPush);
+	            if (not audio_is_playing(global.sndPush)) playSound(global.sndPush);
 	          }
 	        }
 	      }

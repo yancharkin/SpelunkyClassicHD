@@ -69,7 +69,7 @@ function scrFireBow() {
     
 	        bowArmed = false;
 	        bowStrength = 0;
-	        if (SS_IsSoundPlaying(global.sndBowPull)) SS_StopSound(global.sndBowPull);
+	        if (audio_is_playing(global.sndBowPull)) audio_stop_sound(global.sndBowPull);
 	    }
 	}
 
