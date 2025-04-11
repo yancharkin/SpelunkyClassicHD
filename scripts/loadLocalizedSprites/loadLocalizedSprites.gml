@@ -7,6 +7,7 @@ function loadLocalizedSprites() {
 	global.sMoneySignNew = sprite_add(localizedImagesDir + "money_sign.png", 1, false, false, 0, 0);
 	global.sYellHelpNew = sprite_add(localizedImagesDir + "yell_help.png", 1, false, false, 0, 0);
 	global.sNewNew = sprite_add(localizedImagesDir + "new.png", 1, false, false, 0, 0);
+	global.sBigCollectNew = sprite_add(localizedImagesDir + "big_collect.png", 1, false, false, 0, 0);
 	if (instance_exists(oLevel5Sign)) {
 	    sLevel5SignNew = sprite_add(localizedImagesDir + "level5_sign.png", 1, false, false, 0, 0);
 	    oLevel5Sign.sprite_index = sLevel5SignNew;
@@ -44,5 +45,8 @@ function loadLocalizedSprites() {
 	}
 	if (instance_exists(oNew)) {
 	    oNew.sprite_index = global.sNewNew;
+	}
+	if (instance_exists(oBigCollect)) {
+	    oBigCollect.sprite_index = global.sBigCollectNew;
 	}
 }
