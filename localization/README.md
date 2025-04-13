@@ -23,7 +23,11 @@ To simplify the localization process, you can download [cheat builds](../CHEAT_B
 
     * Copy **text.json** from the **en** directory (or another completed translation) into your new directory.
     * Translate the text inside **text.json**.
-    * Tip: Try to keep the line lengths roughly the same as the original to maintain formatting. Ideally, each string should be no more than 40 characters to fit on a 4:3 screen, or 53 characters for 16:9.
+    * **Important!** Try to keep the line lengths roughly the same as the original to maintain formatting. The game’s internal resolution has a fixed height of 240px, and the width is calculated based on the display size. For a 4:3 display, this means 320px. The font width is 8px, so:
+        * On a 4:3 display, a maximum of 40 characters (including letters, spaces, and punctuation) will fit on a single line.
+        * On a 16:9 display, up to 53 characters will fit.
+        * Ideally, strings should be no more than 40 characters long.
+However, since 4:3 displays are increasingly rare, using strings up to 53 characters is usually acceptable. Anything longer may cause text to be cut off on many devices.
 
 _**For most languages, this is enough to get a working translaton. The game will use TTF font\* '7-12-serif' from the 'fonts' directory, allowing you to play the localized version. Other steps are optional.**_
 
