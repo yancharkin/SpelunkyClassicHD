@@ -23,7 +23,7 @@ To simplify the localization process, you can download [cheat builds](../CHEAT_B
 
     * Copy **text.json** from the **en** directory (or another completed translation) into your new directory.
     * Translate the text inside **text.json**.
-    * Tip: Try to keep the line lengths roughly the same as the original to maintain formatting.
+    * Tip: Try to keep the line lengths roughly the same as the original to maintain formatting. Ideally, each string should be no more than 40 characters to fit on a 4:3 screen, or 53 characters for 16:9.
 
 _**For most languages, this is enough to get a working translaton. The game will use TTF font\* '7-12-serif' from the 'fonts' directory, allowing you to play the localized version. Other steps are optional.**_
 
