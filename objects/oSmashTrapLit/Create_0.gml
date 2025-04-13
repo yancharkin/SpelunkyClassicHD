@@ -26,3 +26,8 @@ RIGHT = 0;
 DOWN = 1;
 LEFT = 2;
 UP = 3;
+
+colLeft = false;
+colRight = false;
+colTop = false;
+colBot = false;

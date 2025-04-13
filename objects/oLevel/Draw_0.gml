@@ -13,10 +13,10 @@ if (not global.darkLevel and global.messageTimer > 0)
 {
     draw_set_font(global.fontSmall);
     draw_set_color(c_white);
-    strLen = string_length(global.message)*global.fontSmallWidth;
+    strLen = string_length(global.message1)*global.fontSmallWidth;
     n = global.display_w - strLen;
     n = ceil(n / 2);
-    draw_text(view_xview[0]+n, view_yview[0]+216, string(global.message));
+    draw_text(view_xview[0]+n, view_yview[0]+216, string(global.message1));
     
     if (not isLevel("rTutorial")) draw_set_color(c_yellow);
     strLen = string_length(global.message2)*global.fontSmallWidth;

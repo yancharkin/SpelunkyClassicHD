@@ -6,5 +6,4 @@ if (global.html5Build) {
 
 with (oEnd3) {
 showFinalScore(drawStatus, fadeOut);
-
 }

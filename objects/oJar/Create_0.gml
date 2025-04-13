@@ -3,3 +3,8 @@ type = "Jar";
 makeActive();
 setCollisionBounds(-4, -6, 4, 6);
 breakPieces = true;
+destroy = false;
+colTop = false;
+colLeft = false;
+colRight = false;
+colBot = false;

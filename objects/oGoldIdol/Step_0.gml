@@ -18,9 +18,7 @@ if (isLevel())
             global.idols += 1;
             playSound(global.sndCoin);
             instance_create(x, y-8, oBigCollect);
-            global.message = tr("PLEASURE DOING BUSINESS!");
-            global.message2 = "";
-            global.messageTimer = 100;
+			trMessages("PLEASURE DOING BUSINESS!", "", 0, 0, 100);
             instance_destroy();
         }
     }

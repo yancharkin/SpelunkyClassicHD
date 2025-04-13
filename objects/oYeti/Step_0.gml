@@ -10,6 +10,7 @@ colLeft = false;
 colRight = false;
 colBot = false;
 colTop = false;
+
 if (isCollisionLeft(1)) colLeft = true;
 if (isCollisionRight(1)) colRight = true;
 if (isCollisionBottom(1)) colBot = true;

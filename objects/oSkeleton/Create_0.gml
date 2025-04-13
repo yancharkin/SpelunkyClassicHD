@@ -31,3 +31,6 @@ if (instance_exists(oPlayer1))
 
 shakeCounter = 0;
 shakeToggle = 1;
+
+colLeft = false;
+colRight = false;

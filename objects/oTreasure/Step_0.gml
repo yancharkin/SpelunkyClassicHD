@@ -6,6 +6,7 @@ if (x > __view_get( e__VW.XView, 0 )-16 and x < __view_get( e__VW.XView, 0 ) + _
     colLeft = false;
     colRight = false;
     colBot = false;
+	
     if (isCollisionLeft(1)) colLeft = true;
     if (isCollisionRight(1)) colRight = true;
     if (isCollisionBottom(1)) colBot = true;

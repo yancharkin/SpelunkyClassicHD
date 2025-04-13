@@ -17,7 +17,7 @@ function changeLocale2() {
 
 	global.locale2 = global.localesArray[newLocaleIndex];
 	if (global.locale2 == global.locale) changeLocale2();
-	global.message = "";
+	global.message1 = "";
 	global.message2 = "";
 
 }

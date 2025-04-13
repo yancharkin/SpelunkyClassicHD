@@ -6,12 +6,11 @@ draw_set_alpha(1);
 offsetY = 8 - global.fontSmallHeight;
 
 if (drawStatus > 0) {
-    drawTextHCentered(str1, "small", c_white, 0, 116-16+offsetY)
+    drawTextHCentered(tr(str1), "small", c_white, 0, 116-16+offsetY)
 }
 if (drawStatus > 1) {
-    drawTextHCentered(str2, "small", c_white, 0, 116+offsetY)
+    drawTextHCentered(tr(str2), "small", c_white, 0, 116+offsetY)
 }
 if (drawStatus > 2) {
-    drawTextHCentered(str3, "small", c_white, 0, 116+16+offsetY)
+    drawTextHCentered(tr(str3), "small", c_white, 0, 116+16+offsetY)
 }
-

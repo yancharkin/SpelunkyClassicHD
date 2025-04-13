@@ -153,7 +153,7 @@ if (global.html5Build) {
     if (global.messageTimer > 0) {
         y1 = view_yview[0] + 216 + 8 - global.fontSmallHeight;
         y2 = y1 + global.fontSmallHeight;
-        drawMessage(global.message, 'small', c_white, view_xview[0], y1, 1);
+        drawMessage(global.message1, 'small', c_white, view_xview[0], y1, 1);
         if (not isRoom("rTutorial")) {
             drawMessage(global.message2, 'small', c_yellow, view_xview[0], y2, 2);
         } else {

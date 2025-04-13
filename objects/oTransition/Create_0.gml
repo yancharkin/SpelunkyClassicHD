@@ -18,7 +18,7 @@ global.analogLUpPressed = false;
 instance_create(0, 0, oHtml5Gamepad);
 debugCounter = 0;
 
-global.message = "";
+global.message1 = "";
 global.message2 = "";
 
 drawPosX = 100;

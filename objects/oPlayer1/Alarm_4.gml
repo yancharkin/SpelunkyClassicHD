@@ -1,13 +1,8 @@
 if (global.lake)
 {
-    global.message = tr("YOU HEAR RUSHING WATER...");
-    global.message2 = "";
-    global.messageTimer = 200;
+	trMessages("YOU HEAR RUSHING WATER...", "", 0, 0, 200);
 }
 else if (global.sacrificePit)
 {
-    global.message = tr("I CAN HEAR PRAYERS TO KALI!");
-    global.message2 = "";
-    global.messageTimer = 200;
+	trMessages("I CAN HEAR PRAYERS TO KALI!", "", 0, 0, 200);
 }
-

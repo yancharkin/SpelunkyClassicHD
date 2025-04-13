@@ -14,3 +14,7 @@ yVel = 0;
 STATIC = 0;
 ACTIVE = 1;
 state = ACTIVE;
+
+colLeft = false;
+colRight = false;
+colBot = false;

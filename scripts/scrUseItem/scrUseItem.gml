@@ -522,9 +522,7 @@ function scrUseItem() {
 	            }
 	            else if (global.arrows <= 0)
 	            {
-	                global.message = tr("I'M OUT OF ARROWS!");
-	                global.message2 = "";
-	                global.messageTimer = 80;
+					trMessages("I'M OUT OF ARROWS!", "", 0, 0, 80);
 	            }
 	        }
 	        else if (holdItem.type == "Shotgun")
@@ -686,7 +684,4 @@ function scrUseItem() {
 	            holdItem.y = y;
 	        }
 	        if (holdItem == 0) pickupItemType = "";
-
-
-
 }

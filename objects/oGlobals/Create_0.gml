@@ -18,7 +18,7 @@ global.darkLevel = false;
 global.lake = false;
 
 //global.music = true;
-global.message = "";
+global.message1 = "";
 global.message2 = "";
 global.messageTimer = 0;
 global.darknessLerp = 0;

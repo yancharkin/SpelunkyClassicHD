@@ -46,3 +46,13 @@ angered = false;
 hasGun = true;
 firing = 0;
 firingMax = 30;
+
+message1 = "";
+message2 = "";
+messageHighlights = "";
+message2Highlights = "";
+
+colLeft = false;
+colRight = false;
+colBot = false;
+colTop = false;

@@ -60,7 +60,4 @@ function showFinalScore() {
 	{
 	    drawTextHCentered(tr("YOU SHALL BE REMEMBERED AS A HERO."), "small", c_white, -global.room_offset, 116);;
 	}
-
-
-
 }

@@ -8,7 +8,4 @@ function tr() {
 	} else {
 	    return string_upper(global.localizedTextMap[? argument[0]]);
 	}
-
-
-
 }

@@ -1324,44 +1324,6 @@ else if (kAttackPressed)
     }
 }
 
-/*
-if (isLevel() and kFlarePressed and active and not dead and not stunned)
-{
-    if (global.flares > 0)
-    {
-        flare = instance_create(x, y, oFlare);
-
-        // drop any item you're already carrying
-        if (holdItem)
-        {
-            if (facing == LEFT) holdItem.xVel = -1;
-            else holdItem.xVel = 1;
-            holdItem.yYel = -2;
-            holdItem.held = false;
-            holdItem = 0;
-            pickupItemType = "";
-        }
-
-        with flare { held = true; }
-        holdItem = flare;
-        playSound(global.sndIgnite);
-        global.darknessLerp = 1;
-        global.flares -= 1;
-
-        if (global.flares > 1) global.message = string(global.flares) + " FLARES REMAINING.";
-        else if (global.flares == 1) global.message = string(global.flares) + " FLARE REMAINING.";
-        else global.message = "NO MORE FLARES!";
-        global.message2 = "";
-        global.messageTimer = 80;
-    }
-    else
-    {
-        global.message = "NO MORE FLARES!";
-        global.message2 = "";
-        global.messageTimer = 80;
-    }
-}
-*/
 if (isLevel() and active and kPayPressed and not dead and not stunned)
 {
     if (isInShop(x, y) and instance_exists(oShopkeeper))
@@ -1375,23 +1337,23 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
             }
             else if (holdItem.cost > global.money)
             {
-                global.message = tr("YOU HAVEN'T GOT ENOUGH MONEY!");
-                global.message2 = "";
-                global.messageTimer = 80;
+                message1 = "YOU HAVEN'T GOT ENOUGH MONEY!";
+                message2 = "";
                 with holdItem { held = false; }
                 holdItem = 0;
                 pickupItemType = "";
                 n = 1;
+				trMessages(message1, message2, 0, 0, 80);
             }
             else
             {
                 if (isRealLevel()) global.itemsBought += 1;
                 global.money -= holdItem.cost;
                 scrStealItem();
-                //global.message = "THANK YOU!";
-                //global.message2 = "";
-                global.messageTimer = 80;
-                // holdItem = 0;
+                message1 = "THANK YOU!";
+                message2 = "";
+                trMessages(message1, message2, 0, 0, 80);
+                //holdItem = 0;
             }
         }
         
@@ -1407,21 +1369,21 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
                 if (isRealLevel()) global.diceGamesPlayed += 1;
                 bet = 1000 + global.currLevel * 500;
                 global.money -= 1000 + global.currLevel * 500;
-                global.message = tr(" YOU BET $") + string(1000 + global.currLevel * 500) + "!";
-                global.message2 = tr("NOW ROLL THE DICE!");
-                global.messageTimer = 200;
+                message1 = [" YOU BET $", string(1000 + global.currLevel * 500), "!"];
+                message2 = "NOW ROLL THE DICE!";
+                trMessages(message1, message2, 0, 0, 200);
             }
             else if (bet > 0)
             {
-                global.message = tr("ONE BET AT A TIME!");
-                global.message2 = tr("PLEASE ROLL THE DICE!");
-                global.messageTimer = 200;
+                message1 = "ONE BET AT A TIME!";
+                message2 = "PLEASE ROLL THE DICE!";
+				trMessages(message1, message2, 0, 0, 200);
             }
             else
             {
-                global.message = tr("YOU NEED $") + string(1000 + global.currLevel * 500) + tr(" TO BET!");
-                global.message2 = "";
-                global.messageTimer = 200;
+                message1 = ["YOU NEED $", string(1000 + global.currLevel * 500), (" TO BET!")];
+                message2 = "";
+                trMessages(message1, message2, 0, 0, 200);
             }
         }
         
@@ -1448,18 +1410,18 @@ if (isLevel() and active and kPayPressed and not dead and not stunned)
                     }
                     global.money -= getKissValue();
                     global.plife += 1;
-                    if (global.isDamsel) global.message = tr("NOW AIN'T HE SWEET!");
-                    else global.message = tr("NOW AIN'T SHE SWEET!");
-                    global.message2 = "";
-                    global.messageTimer = 200;
+                    if (global.isDamsel) message1 = "NOW AIN'T HE SWEET!";
+                    else message1 = "NOW AIN'T SHE SWEET!";
+                    message2 = "";
+					trMessages(message1, message2, 0, 0, 200);
                 }
             }
             else
             {
-                if (n == 0) global.message = tr("YOU NEED $") + string(getKissValue()) + "!";
-                else global.message = tr("YOU NEED $") + string(obj.cost) + "!";
-                global.message2 = tr("GET OUTTA HERE, DEADBEAT!");
-                global.messageTimer = 200;
+                if (n == 0) message1 = ["YOU NEED $", string(getKissValue()), "!"];
+                else message1 = ["YOU NEED $", string(obj.cost), "!"];
+                message2 = "GET OUTTA HERE, DEADBEAT!";
+                trMessages(message1, message2, 0, 0, 200);
             }
         }
     }
@@ -1898,9 +1860,9 @@ if (isLevel() or isRoom("rSun") or isRoom("rMoon") or isRoom("rStars"))
             active = true;
             dead = false;
             global.hasAnkh = false;
-            global.message = tr("THE ANKH SHATTERS!");
-            global.message2 = tr("YOU HAVE BEEN REVIVED!");
-            global.messageTimer = 150;
+            message1 = "THE ANKH SHATTERS!";
+            message2 = "YOU HAVE BEEN REVIVED!";
+            trMessages(message1, message2, 0, 0, 150);
             playSound(global.sndTeleport);
         }
         else
@@ -2039,9 +2001,9 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oBombBag, 0, 0) and not dead and not
         disp.sprite_index = sBombsGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = tr("YOU GOT 3 MORE BOMBS!");
-        global.message2 = "";
-        global.messageTimer = 120;
+        message1 = "YOU GOT 3 MORE BOMBS!";
+        message2 = "";
+        trMessages(message1, message2, 0, 0, 120);
     }
 }
 
@@ -2055,9 +2017,9 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oBombBox, 0, 0) and not dead and not
         disp.sprite_index = sBombsGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = tr("YOU GOT 12 MORE BOMBS!");
-        global.message2 = "";
-        global.messageTimer = 120;
+        message1 = "YOU GOT 12 MORE BOMBS!";
+        message2 = "";
+        trMessages(message1, message2, 0, 0, 120);
     }
 }
 
@@ -2071,9 +2033,9 @@ if (collision_rectangle(x-8, y-8, x+8, y+8, oRopePile, 0, 0) and not dead and no
         disp.sprite_index = sRopeGet;
         with obj { instance_destroy(); }
         playSound(global.sndPickup);
-        global.message = tr("YOU GOT 3 MORE ROPES!");
-        global.message2 = "";
-        global.messageTimer = 120;
+        message1 = "YOU GOT 3 MORE ROPES!";
+        message2 = "";
+        trMessages(message1, message2, 0, 0, 120);
     }
 }
 

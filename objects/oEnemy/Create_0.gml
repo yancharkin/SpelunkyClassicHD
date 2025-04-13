@@ -42,3 +42,6 @@ facing = 0;
 STUNNED = 98;
 DEAD = 99;
 bombID = 0;
+
+message1 = "";
+message2 = "";

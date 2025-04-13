@@ -100,5 +100,5 @@ xCHANGE2 = 12;
 
 if (isRoom("rOlmec")) active = false;
 
-/* */
-/*  */
+message1 = "";
+message2 = "";

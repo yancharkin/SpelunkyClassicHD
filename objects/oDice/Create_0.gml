@@ -6,3 +6,7 @@ heavy = true;
 rolled = false;
 rolling = false;
 value = rand(1,6);
+colLeft = false;
+colRight = false;
+colBot = false;
+colTop = false;

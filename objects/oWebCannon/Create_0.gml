@@ -3,6 +3,5 @@ type = "Web Cannon";
 makeActive()
 setCollisionBounds(-4, -4, 4, 4)
 cost = 2000;
-shopDesc = tr("A WEB CANNON");
-buyMessage = tr("A WEB CANNON FOR $") + string(cost) + ".";
-
+shopDesc = "A WEB CANNON";
+buyMessage = ["A WEB CANNON FOR $", string(cost), "."];

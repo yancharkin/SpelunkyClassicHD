@@ -29,9 +29,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT THE UDJAT EYE!");
-	    global.message2 = tr("YOU FEEL AWAKENED.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT THE UDJAT EYE!";
+	    message2 = "YOU FEEL AWAKENED.";
 	}
 	else if (holdItem.type == "Ankh")
 	{
@@ -40,9 +39,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT THE ANKH!");
-	    global.message2 = tr("YOU FEEL PROTECTED.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT THE ANKH!";
+	    message2 = "YOU FEEL PROTECTED.";
 	}
 	else if (holdItem.type == "Crown")
 	{
@@ -51,9 +49,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT THE HEDJET!");
-	    global.message2 = tr("IT GLOWS A BRILLIANT WHITE.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT THE HEDJET!";
+	    message2 = "IT GLOWS A BRILLIANT WHITE.";
 	}
 	else if (holdItem.type == "Kapala")
 	{
@@ -62,9 +59,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT THE KAPALA!");
-	    global.message2 = tr("IT THIRSTS FOR BLOOD...");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT THE KAPALA!";
+	    message2 = "IT THIRSTS FOR BLOOD...";
 	}
 	else if (holdItem.type == "Bomb Bag")
 	{
@@ -74,9 +70,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT 3 MORE BOMBS!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT 3 MORE BOMBS!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Bomb Box")
 	{
@@ -86,9 +81,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT 12 MORE BOMBS!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT 12 MORE BOMBS!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Paste")
 	{
@@ -97,9 +91,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT STICKY BOMBS!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT STICKY BOMBS!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Rope Pile")
 	{
@@ -109,9 +102,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT 3 MORE ROPES!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT 3 MORE ROPES!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Parachute")
 	{
@@ -120,9 +112,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT A PARACHUTE!");
-	    global.message2 = tr("IT WILL DEPLOY AUTOMATICALLY.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A PARACHUTE!";
+	    message2 = "IT WILL DEPLOY AUTOMATICALLY.";
 	}
 	else if (holdItem.type == "Spectacles")
 	{
@@ -131,9 +122,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT SPECTACLES!");
-	    global.message2 = tr("YOUR EYESIGHT SEEMS IMPROVED...");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT SPECTACLES!";
+	    message2 = "YOUR EYESIGHT SEEMS IMPROVED...";
 	}
 	else if (holdItem.type == "Gloves")
 	{
@@ -142,10 +132,12 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT CLIMBING GLOVES!");
-	    if (oPlayer1.pickupItemType == "Web Cannon") global.message2 = tr("YOUR SPIDER SENSE TINGLES!");
-	    else global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT CLIMBING GLOVES!";
+	    if (oPlayer1.pickupItemType == "Web Cannon") {
+			message2 = "YOUR SPIDER SENSE TINGLES!";
+		} else {
+			message2 = "";
+		}
 	}
 	else if (holdItem.type == "Mitt")
 	{
@@ -154,9 +146,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT A PITCHER'S MITT!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A PITCHER'S MITT!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Compass")
 	{
@@ -165,9 +156,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT A COMPASS!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A COMPASS!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Spring Shoes")
 	{
@@ -176,9 +166,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT SPRING SHOES!");
-	    global.message2 = tr("YOU FEEL BOUNCY.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT SPRING SHOES!";
+	    message2 = "YOU FEEL BOUNCY.";
 	}
 	else if (holdItem.type == "Spike Shoes")
 	{
@@ -187,9 +176,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT SPIKE SHOES!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT SPIKE SHOES!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Jordans")
 	{
@@ -198,9 +186,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT JORDANS!");
-	    global.message2 = tr("YOU FEEL LIGHT ON YOUR FEET.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT JORDANS!";
+	    message2 = "YOU FEEL LIGHT ON YOUR FEET.";
 	}
 	else if (holdItem.type == "Cape")
 	{
@@ -209,9 +196,9 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT A CAPE!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A CAPE!";
+	    message2 = "";
+
 	    if (global.hasJetpack)
 	    {
 	        obj = instance_create(x, y, oJetpack);
@@ -228,9 +215,8 @@ function scrStealItem() {
 	    with holdItem { instance_destroy(); }
 	    playSound(global.sndPickup);
 	    holdItem = 0;
-	    global.message = tr("YOU GOT A JETPACK!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A JETPACK!";
+	    message2 = "";
 	    if (global.hasCape)
 	    {
 	        obj = instance_create(x, y, oCapePickup);
@@ -247,9 +233,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A MACHETE!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A MACHETE!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Mattock" and holdItem.cost > 0)
 	{
@@ -257,9 +242,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A MATTOCK!");
-	    global.message2 = tr("IT SEEMS A BIT RUSTY.");
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A MATTOCK!";
+	    message2 = "IT SEEMS A BIT RUSTY.";
 	}
 	else if (holdItem.type == "Pistol" and holdItem.cost > 0)
 	{
@@ -267,9 +251,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A PISTOL!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A PISTOL!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Web Cannon" and holdItem.cost > 0)
 	{
@@ -277,9 +260,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A WEB CANNON!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A WEB CANNON!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Teleporter" and holdItem.cost > 0)
 	{
@@ -287,9 +269,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A TELEPORTER!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A TELEPORTER!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Shotgun" and holdItem.cost > 0)
 	{
@@ -297,9 +278,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT A SHOTGUN!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT A SHOTGUN!";
+	    message2 = "";
 	}
 	else if (holdItem.type == "Bow" and holdItem.cost > 0)
 	{
@@ -307,9 +287,8 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU GOT THE BOW AND ARROWS!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU GOT THE BOW AND ARROWS!";
+	    message2 = "";
 	    //global.arrows += 8;
 	}
 	else if (holdItem.type == "Damsel" and holdItem.cost > 0)
@@ -319,11 +298,12 @@ function scrStealItem() {
 	    holdItem.forSale = false;
 	    //disp = instance_create(holdItem.x, holdItem.y-14, oItemsGet);
 	    playSound(global.sndPickup);
-	    global.message = tr("YOU MUST BE IN LOVE!");
-	    global.message2 = "";
-	    global.messageTimer = 120;
+	    message1 = "YOU MUST BE IN LOVE!";
+	    message2 = "";
 	}
-
-
-
+	else {
+		message1 = "";
+		message2 = "";
+	}
+	trMessages(message1, message2, 0, 0, 120);
 }

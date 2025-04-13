@@ -9,8 +9,8 @@ invincible = false;
 swimming = false;
 heavy = true;
 cost = getKissValue() * 3;
-if (global.isDamsel) buyMessage = tr("I'LL LET YOU HAVE HIM FOR $") + string(cost) + "!";
-else buyMessage = tr("I'LL LET YOU HAVE HER FOR $") + string(cost) + "!";
+if (global.isDamsel) buyMessage = ["I'LL LET YOU HAVE HIM FOR $", string(cost), "!"];
+else buyMessage = ["I'LL LET YOU HAVE HER FOR $", string(cost), "!"];
 
 hp = 4;
 bloodLeft = 4;
@@ -38,3 +38,6 @@ stunMax = 120;
 
 bombID = 0;
 cimg = 0;
+
+message1 = "";
+message2 = "";

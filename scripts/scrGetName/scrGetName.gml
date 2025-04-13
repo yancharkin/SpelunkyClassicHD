@@ -25,42 +25,38 @@ function scrGetName() {
 	n = round(random_range(1,32));
 	switch(n)
 	{
-	    case 1: { return tr("AHKMED"); }
-	    case 2: { return tr("TERRY"); }
-	    case 3: { return tr("SMITHY"); }
-	    case 4: { return tr("LEON"); }
-	    case 5: { return tr("ALI"); }
-	    case 6: { return tr("ELBERT"); }
-	    case 7: { return tr("KAO"); }
-	    case 8: { return tr("DUKE"); }
-	    case 9: { return tr("TONY"); }
-	    case 10: { return tr("GUERT"); }
-	    case 11: { return tr("PANCHO"); }
-	    case 12: { return tr("EARL"); }
-	    case 13: { return tr("IVAN"); }
-	    case 14: { return tr("OLLIE"); }
-	    case 15: { return tr("SPOONY"); }
-	    case 16: { return tr("BOB"); }
-	    case 17: { return tr("RUDY"); }
-	    case 18: { return tr("JIMBO"); }
-	    case 19: { return tr("TOR"); }
-	    case 20: { return tr("WILLY"); }
-	    case 21: { return tr("HAMISH"); }
-	    case 22: { return tr("LAZLO"); }
-	    case 23: { return tr("WANG"); }
-	    case 24: { return tr("HERBIE"); }
-	    case 25: { return tr("ANDY"); }
-	    case 26: { return tr("DONG"); }
-	    case 27: { return tr("LEMMY"); }
-	    case 28: { return tr("BARNEY"); }
-	    case 29: { return tr("LOU"); }
-	    case 30: { return tr("TARN"); }
-	    case 31: { return tr("SLASH"); }
-	    case 32: { return tr("BROM"); }
+	    case 1: { return "AHKMED"; }
+	    case 2: { return "TERRY"; }
+	    case 3: { return "SMITHY"; }
+	    case 4: { return "LEON"; }
+	    case 5: { return "ALI"; }
+	    case 6: { return "ELBERT"; }
+	    case 7: { return "KAO"; }
+	    case 8: { return "DUKE"; }
+	    case 9: { return "TONY"; }
+	    case 10: { return "GUERT"; }
+	    case 11: { return "PANCHO"; }
+	    case 12: { return "EARL"; }
+	    case 13: { return "IVAN"; }
+	    case 14: { return "OLLIE"; }
+	    case 15: { return "SPOONY"; }
+	    case 16: { return "BOB"; }
+	    case 17: { return "RUDY"; }
+	    case 18: { return "JIMBO"; }
+	    case 19: { return "TOR"; }
+	    case 20: { return "WILLY"; }
+	    case 21: { return "HAMISH"; }
+	    case 22: { return "LAZLO"; }
+	    case 23: { return "WANG"; }
+	    case 24: { return "HERBIE"; }
+	    case 25: { return "ANDY"; }
+	    case 26: { return "DONG"; }
+	    case 27: { return "LEMMY"; }
+	    case 28: { return "BARNEY"; }
+	    case 29: { return "LOU"; }
+	    case 30: { return "TARN"; }
+	    case 31: { return "SLASH"; }
+	    case 32: { return "BROM"; }
 	}
-
-	//return tr("AHKMED");
-
-
-
+	//return "AHKMED";
 }

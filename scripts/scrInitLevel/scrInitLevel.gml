@@ -293,9 +293,5 @@ function scrInitLevel() {
 	        }
 	    */
 	}
-
 	global.temp3 = global.gameStart;
-
-
-
 }

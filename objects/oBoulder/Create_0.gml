@@ -8,3 +8,6 @@ RIGHT = 101;
 invincible = true;
 bounced = false;
 viscidTop = 1;
+
+colLeft = false;
+colRight = false;

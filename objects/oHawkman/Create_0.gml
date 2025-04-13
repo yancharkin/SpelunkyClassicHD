@@ -33,3 +33,8 @@ facing = RIGHT;
 
 shakeCounter = 0;
 shakeToggle = 1;
+
+colLeft = false;
+colRight = false;
+colBot = false;
+colTop = false;

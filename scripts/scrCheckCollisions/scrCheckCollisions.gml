@@ -52,7 +52,4 @@ function scrCheckCollisions() {
 	    if (abs(xVel) < 0.1) xVel = 0;
 	    else if (abs(xVel) != 0) xVel *= 0.3;
 	}
-
-
-
 }

@@ -4,45 +4,39 @@ if (isRoom("rTutorial"))
 }
 else if (global.snakePit)
 {
-    global.message = tr("I HEAR SNAKES... I HATE SNAKES!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "I HEAR SNAKES... I HATE SNAKES!";
+    message2 = "";
 }
 else if (global.cemetary and global.darkLevel)
 {
-    global.message = tr("THE DEAD ARE RESTLESS!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "THE DEAD ARE RESTLESS!";
+    message2 = "";
     if (global.lake) alarm[4] = 210;
 }
 else if (global.lake)
 {
-    global.message = tr("I CAN HEAR RUSHING WATER...");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "I CAN HEAR RUSHING WATER...";
+    message2 = "";
 }
 else if (global.yetiLair)
 {
-    global.message = tr("IT SMELLS LIKE WET FUR IN HERE!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "THERE'S A PSYCHIC PRESENCE HERE!";
+    message2 = "";
 }
 else if (global.alienCraft)
 {
-    global.message = tr("THERE'S A PSYCHIC PRESENCE HERE!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "IT'S THE LEGENDARY CITY OF GOLD!";
+	message2 = "";
 }
 else if (global.cityOfGold)
 {
-    global.message = tr("IT'S THE LEGENDARY CITY OF GOLD!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "IT'S THE LEGENDARY CITY OF GOLD!";
+	message2 = "";
     if (global.sacrificePit) alarm[4] = 210;
 }
 else if (global.sacrificePit)
 {
-    global.message = tr("I CAN HEAR PRAYERS TO KALI!");
-    global.message2 = "";
-    global.messageTimer = 200;
+    message1 = "I CAN HEAR PRAYERS TO KALI!";
+    message2 = "";
 }
+trMessages(message1, message2, 0, 0, 200);

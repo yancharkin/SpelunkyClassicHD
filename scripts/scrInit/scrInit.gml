@@ -24,7 +24,7 @@ function scrInit() {
 	initMusic();
 	getPlatform();
 
-	global.debugBuild = true;
+	global.debugBuild = false;
 	global.levelIndex = 0;
 	globalvar gamepad;
 	gamepad = instance_create(0, 0, oGamepad);
@@ -49,6 +49,14 @@ function scrInit() {
 	global.music = true;
 	global.musicVol = 15;
 	global.soundVol = 15;
+	
+	global.message1 = "";
+	global.message2 = "";
+	global.message1_src = "";
+	global.message2_src = "";
+	global.messageHighlights = 0;
+	global.message2Highlights = 0;
+	global.messageTimer= 0;
 
 	if (global.musicVol > 17) global.musicVol = 17;
 	if (global.musicVol < 0) global.musicVol = 0;

@@ -29,9 +29,7 @@ if (instance_exists(oPlayer1))
         if (not oLevel.musicFade)
         {
             oLevel.musicFade = true;
-            global.message = tr("A CHILL RUNS UP YOUR SPINE...");
-            global.message2 = tr("LET'S GET OUT OF HERE!");
-            global.messageTimer = 200;
+			trMessages("A CHILL RUNS UP YOUR SPINE...", "LET'S GET OUT OF HERE!", 0, 0, 200);
         }
     }
     
@@ -297,6 +295,9 @@ if (keyboard_check_pressed(global.keyLangVal) or
 			global.locale2 = locale_tmp;
 		    setLocale();
 		    loadLocalizedSprites();
+			if (global.message1_src != "") {
+				trMessages(global.message1_src, global.message2_src, global.messageHighlights, global.message2Highlights, global.messageTimer);
+			};
 		}
 }
 

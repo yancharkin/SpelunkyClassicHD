@@ -7,9 +7,13 @@ function isCollisionCharacterTop(argument0, argument1) {
 	//the solid must be hitting the character's bottom side, so...
 	oGame.collisionTempId=id
 	//w=argument1
-	 w=oGame.players[argument1]
-	if(argument1==0 or argument1==noone)
-	  w=oCharacter
+	
+	w=oCharacter
+	
+	//w=oGame.players[argument1]
+	//if(argument1==0 or argument1==noone)
+	//  w=oCharacter
+	
 	with w
 	{
 	  calculateCollisionBounds()
@@ -18,7 +22,4 @@ function isCollisionCharacterTop(argument0, argument1) {
 	    return 1
 	}
 	return 0
-
-
-
 }

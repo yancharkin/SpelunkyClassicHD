@@ -37,3 +37,8 @@ stickyYDiff = 0;
 
 if (global.hasSpectacles) depth = 51;
 else depth = 101;
+
+colLeft = false;
+colRight = false;
+colBot = false;
+colTop = false;

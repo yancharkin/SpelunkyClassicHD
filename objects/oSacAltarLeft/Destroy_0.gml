@@ -10,10 +10,7 @@ if (not cleanDeath and not global.cleanSolids)
 
 if (defile)
 {
-
-    global.message = tr("YOU DARE DEFILE MY ALTAR?");
-    global.message2 = tr("I WILL PUNISH YOU!");
-    global.messageTimer = 200;
+	trMessages("YOU DARE DEFILE MY ALTAR?", "I WILL PUNISH YOU!", 0, 0, 200);
     scrShake(10);
     global.favor -= 16;
     

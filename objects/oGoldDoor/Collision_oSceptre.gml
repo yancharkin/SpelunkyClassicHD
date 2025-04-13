@@ -16,8 +16,6 @@ if (other.held)
     }
     else
     {
-        global.message = tr("THE SCEPTRE FITS...");
-        global.message2 = tr("BUT NOTHING IS HAPPENING!");
-        global.messageTimer = 100;
+		trMessages("THE SCEPTRE FITS...", "BUT NOTHING IS HAPPENING!", 0, 0, 100);
     }
 }

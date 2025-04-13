@@ -174,7 +174,7 @@ function scrLevelGen() {
 	                        }
 	                    }
 	                }
-	                else
+	                //else
 	                //{
 	                //    global.roomPath[i,j+1] = 9;
 	                //}

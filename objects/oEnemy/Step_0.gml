@@ -140,10 +140,10 @@ if (status >= 98)
             instance_create(x+8, y+8, oFlame);
             playSound(global.sndSmallExplode);
             scrCreateBlood(x+8, y+8, 3);
-            global.message = tr("KALI ACCEPTS THE SACRIFICE!");
+            message1 = "KALI ACCEPTS THE SACRIFICE!";
             if (global.favor <= -8)
             {
-                global.message = tr("KALI DEVOURS THE SACRIFICE!");
+                message1 = "KALI DEVOURS THE SACRIFICE!";
             }
             else if (global.favor < 0)
             {
@@ -156,8 +156,8 @@ if (status >= 98)
                 if (status == 98) global.favor += favor;
                 else global.favor += favor/2;
             }
-            scrGetFavorMsg();
-            global.messageTimer = 200;
+            message2 = scrGetFavorMsg();
+			trMessages(message1, message2, 0, 0, 200);
             global.shake = 10;
             instance_destroy();
             }

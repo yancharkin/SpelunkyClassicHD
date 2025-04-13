@@ -1,5 +1,5 @@
 global.cleanSolids = false;
-global.message = "";
+global.message1 = "";
 global.message2 = "";
 window_set_cursor(cr_default);
 global.keepScore = false;

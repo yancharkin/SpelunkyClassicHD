@@ -186,9 +186,9 @@ function scrShopItemsGen() {
 	        {
 	            cost += (cost/100)*10*(global.currLevel-2);
 	            if (shopDesc == "") {
-	                buyMessage = tr("A ") + string_upper(type) + tr(" FOR $") + string(cost) + ".";
+	                buyMessage = ["A ", string_upper(type), " FOR $", string(cost), "."];
 	            } else {
-	                buyMessage = shopDesc + tr(" FOR $") + string(cost) + ".";
+	                buyMessage = [shopDesc, " FOR $", string(cost), "."];
 	            }
 	        }
 	    }
