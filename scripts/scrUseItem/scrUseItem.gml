@@ -245,8 +245,8 @@ function scrUseItem() {
 	            {
 	            if (facing == LEFT and firing == 0)
 	            {
-	                instance_create(x-9, y+1, oShotgunBlastLeft);
-	                obj = instance_create(x-9, y-2, oBullet);
+	                instance_create(x-12, y+1, oShotgunBlastLeft);
+	                obj = instance_create(x-12, y-2, oBullet);
 	                obj.xVel = (-1 * rand(6,8)) + xVel;
 	                if (obj.xVel >= -6) obj.xVel = -6;
 	                obj.yVel = 0;
@@ -260,8 +260,8 @@ function scrUseItem() {
 	            }
 	            else if (facing == RIGHT and firing == 0)
 	            {
-	                instance_create(x+9, y+1, oShotgunBlastRight);
-	                obj = instance_create(x+9, y-2, oBullet);
+	                instance_create(x+12, y+1, oShotgunBlastRight);
+	                obj = instance_create(x+12, y-2, oBullet);
 	                obj.xVel = rand(6,8) + xVel;
 	                if (obj.xVel < 6) obj.xVel = 6;
 	                obj.yVel = 0;
@@ -556,10 +556,10 @@ function scrUseItem() {
 	            {
 	            if (facing == LEFT and firing == 0)
 	            {
-	                instance_create(x-9, y+1, oShotgunBlastLeft);
+	                instance_create(x-12, y+1, oShotgunBlastLeft);
 	                repeat(6)
 	                {
-	                    obj = instance_create(x-9, y-2, oBullet);
+	                    obj = instance_create(x-12, y-2, oBullet);
 	                    obj.xVel = (-1 * rand(6,8)) + xVel;
 	                    if (obj.xVel >= -6) obj.xVel = -6;
 	                    obj.yVel = random(1) - random(1);
@@ -574,10 +574,10 @@ function scrUseItem() {
 	            }
 	            else if (facing == RIGHT and firing == 0)
 	            {
-	                instance_create(x+9, y+1, oShotgunBlastRight);
+	                instance_create(x+12, y+1, oShotgunBlastRight);
 	                repeat(6)
 	                {
-	                    obj = instance_create(x+9, y-2, oBullet);
+	                    obj = instance_create(x+12, y-2, oBullet);
 	                    obj.xVel = rand(6,8) + xVel;
 	                    if (obj.xVel < 6) obj.xVel = 6;
 	                    obj.yVel = random(1) - random(1);
