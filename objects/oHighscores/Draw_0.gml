@@ -1,5 +1,5 @@
 ini_open(getWorkingDirPath("spelunky.ini"));
-
+var strLen;
 if (oPlayer1.y < 156)
 {
     draw_set_font(global.fontSmall);
@@ -120,7 +120,8 @@ with oNew
 }
 draw_set_font(global.fontSmall);
 draw_set_color(c_yellow);
-draw_text(160, 32, string_hash_to_newline(tr("TOP DEFILERS")));
+strLen = string_length(tr("TOP DEFILERS"))*global.fontSmallWidth;
+draw_text(112 + int64(192 - strLen)/2, 32, string_hash_to_newline(tr("TOP DEFILERS")));
 draw_set_color(c_white);
 draw_text(128, 48, string_hash_to_newline(tr("MONEY:  ")  + string(ini_read_real("highscore","value1",0)-0)));
 draw_text(128, 64, string_hash_to_newline(tr("KILLS:  ") + string(ini_read_real("highscore","value3",0)-0)));
@@ -136,14 +137,14 @@ if (ini_read_real("highscore","value6",0)-0 > 0)
         s -= 60;
         m += 1;
     }
-    
+	var t = string(m) + ":" + string(s);
+	 if (s < 10) t = string(m) + ":0" + string(s);
     draw_set_color(c_white);
-    draw_text(128, 96, string_hash_to_newline(tr("TIME:  ")));
-    if (s < 10) draw_text(128+64, 96, string_hash_to_newline(string(m) + ":0" + string(s)));
-    else draw_text(128+64, 96, string_hash_to_newline(string(m) + ":" + string(s)));
+	draw_text(128, 96, string_hash_to_newline(tr("TIME:  ")) + string(t));
 }
 draw_set_color(c_yellow);
-draw_text(168, 112, string_hash_to_newline(tr("STATISTICS")));
+strLen = string_length(tr("STATISTICS"))*global.fontSmallWidth;
+draw_text(112 + int64(192 - strLen)/2, 112, string_hash_to_newline(tr("STATISTICS")));
 draw_set_color(c_white);
 draw_text(128, 128, string_hash_to_newline(tr("PLAYS:  ") + string(ini_read_real("highscore","value5",0)-0)));
 draw_text(128, 144, string_hash_to_newline(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0)));
