@@ -18,6 +18,7 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194) - Brazilian Portuguese
 - [bakustarver](https://github.com/bakustarver) - Ukrainian
 - [LeRetardatN](https://github.com/Lecodeurenretard) - French
+- [MasterPhW](mailto:masterphw@gmail.com) - German
 
 ## Links
 * [How to localize the game](localization)
