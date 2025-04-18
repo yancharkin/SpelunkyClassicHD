@@ -7,7 +7,4 @@ function checkUpPressed() {
 	} else {
 	    return false;
 	}
-
-
-
 }

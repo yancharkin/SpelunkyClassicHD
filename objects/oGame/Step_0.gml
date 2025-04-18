@@ -229,18 +229,12 @@ if (global.html5Build) {
     alarm[4] = 1;
 }
 
-/* */
-///Left analog stick and dpad in the menu
+/// Left analog stick and dpad in the menu
 
-if (!global.html5Build) {
-    var downPressed = gamepad_axis_value(global.joyid, gp_axislv) > 0.6;
-    var upPressed = gamepad_axis_value(global.joyid, gp_axislv) < -0.6;
-} else {
-    var downPressed = ((html5_gamepad_axis_value(global.joyid, 1) > 0.6) or
-            (html5_gamepad_axis_value(global.joyid, 5) > 0.6));
-    var upPressed = (html5_gamepad_axis_value(global.joyid, 1) < -0.6 or
-            (html5_gamepad_axis_value(global.joyid, 5) < -0.6));
-}
+var downPressed = gamepad_axis_value(global.joyid, gp_axislv) > 0.6;
+var upPressed = gamepad_axis_value(global.joyid, gp_axislv) < -0.6;
+var rightPressed = gamepad_axis_value(global.joyid, gp_axislh) > 0.6;
+var leftPressed = gamepad_axis_value(global.joyid, gp_axislh) < -0.6;
 
 if (downPressed) {
     if (global.analogLDownPreviousState == false) {
@@ -258,34 +252,23 @@ if (upPressed) {
 } else {
     global.analogLUpPreviousState = false;
 }
-alarm[3] = 1;
-
-
-// OBSOLETE on modern GameMaker (?)
-///"Fix" the jump touch button and jump keyboard key on Android
-/*
-if (instance_exists(oPlayer1)) {
-    if (keyboard_check(ord("J"))) {
-        oPlayer1.initialJumpAcc = -4;
-    } else if (global.mobileBuild and keyboard_check(global.keyJumpVal)) {
-        oPlayer1.initialJumpAcc = -4;
-    } else if (!global.mobileBuild and keyboard_check(global.keyJumpVal)) {
-        oPlayer1.initialJumpAcc = -2;
-    } else {    
-        if (!global.html5Build) {
-            if (gamepad.jump or
-                    gamepad_button_check(global.joyid, global.joyJumpVal) or
-                    (gamepad_button_value(global.joyid, global.joyJumpVal) > 0.6)) {
-                oPlayer1.initialJumpAcc = -2;
-            }
-        } else {
-            if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
-                oPlayer1.initialJumpAcc = -2;
-            }
-        }
+if (leftPressed) {
+    if (global.analogLLeftPreviousState == false) {
+        global.analogLLeftPressed = true;
+        global.analogLLeftPreviousState = true;
     }
+} else {
+    global.analogLLeftPreviousState = false;
 }
-*/
+if (rightPressed) {
+    if (global.analogLRightPreviousState == false) {
+        global.analogLRightPressed = true;
+        global.analogLRightPreviousState = true;
+    }
+} else {
+    global.analogLRightPreviousState = false;
+}
+alarm[3] = 1;
 
 if (keyboard_check_pressed(global.keyLangVal) or
 				gamepad_button_check_pressed(global.joyid, global.joyLangVal)) {

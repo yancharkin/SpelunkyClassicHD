@@ -7,7 +7,4 @@ function checkDownPressed() {
 	} else {
 	    return false;
 	}
-
-
-
 }
