@@ -4,7 +4,7 @@ if (!global.mobileBuild) {
     pressedKey = keyboard_key;
 } else {
     pressedKey = global.keyEscape;
-    for (var i = 2; i < 256; i++) { // on Android key press firt generate 0 or 1 for any key
+    for (var i = 2; i < 256; i++) { // on Android key press first generate 0 or 1 for any key
         if (keyboard_check_pressed(i)) {
             pressedKey = i;
         }
@@ -39,5 +39,6 @@ if (pressedKey != global.keyEscape) {
     }
 }
 
-status += 1;
+//status += 1;
+alarm[0] = alarmSec*fps;
 if (status > 11) room_goto(rTitle);

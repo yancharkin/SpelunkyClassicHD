@@ -4,7 +4,11 @@ var strLen = string_length(tr("PRESS KEY FOR"))*global.fontSmallWidth;
 var n = 160 - strLen;
 n = ceil(n / 2);
 draw_text(n, 32, string_hash_to_newline(tr("PRESS KEY FOR")));
-draw_text(8, 96, string_hash_to_newline(tr("ESC TO KEEP SAME.")));
+draw_text(8, 96, string_hash_to_newline(tr("ESC TO KEEP SAME")));
+var strKeepLen = string_length(tr("ESC TO KEEP SAME"))*global.fontSmallWidth;
+draw_set_color(c_white);
+draw_text(16+strKeepLen, 96, string_hash_to_newline(string(int64(alarm[0]/fps)+1)));
+draw_set_color(c_yellow);
 draw_text(8, 104, string_hash_to_newline(tr("CURRENT: ")));
 var currVal
 
