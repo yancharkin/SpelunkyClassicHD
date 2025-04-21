@@ -21,6 +21,4 @@ function drawText() {
 	draw_set_color(color);
 	draw_text(posX, posY, string_hash_to_newline(text));
 
-
-
 }

@@ -42,8 +42,13 @@ if (global.html5Build) {
         maxIndexGame = 6;
     }
 } else {
-    maxIndexTitle = 7;
-    maxIndexGame = 6;
+	if (global.mobileBuild) {
+		maxIndexTitle = 9;
+	    maxIndexGame = 8;
+	} else {
+		maxIndexTitle = 7;
+	    maxIndexGame = 6;
+	}
 }
 
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;

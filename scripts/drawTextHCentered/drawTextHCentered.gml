@@ -23,7 +23,4 @@ function drawTextHCentered() {
 	posX = ceil((global.display_w - strLen) / 2);
 	draw_set_color(color);
 	draw_text(posX + offsetX, posY, string_hash_to_newline(text));
-
-
-
 }

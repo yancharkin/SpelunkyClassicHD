@@ -1,59 +1,66 @@
 function enableTouchInput() {
-	scale_level = global.display_h / 240;
-	vkey_size = 32 * scale_level;
 	
+	if (array_length(global.touchButtons) > 0) {
+		for (var i = 0; i < array_length(global.touchButtons);  i += 1) {
+			virtual_key_delete(global.touchButtons[i]);
+		};
+	};
+	
+	var vkey_size = global.vkeySize  * global.display_h / 240;
+	var touchOffsetH = global.touchOffsetH * vkey_size;
 	var touchDebug = false;
-	var keys = [];
 	
 	// Left
-	array_push(keys, virtual_key_add(global.touchCorrectionH, global.display_h - (2*vkey_size) - global.touchCorrectionV, vkey_size, vkey_size, global.keyLeftVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH , global.display_h - 2.5*vkey_size, vkey_size, vkey_size, global.keyLeftVal));
 	// Up + Left
-	array_push(keys, virtual_key_add(global.touchCorrectionH, global.display_h - (3*vkey_size) - global.touchCorrectionV/3, vkey_size, vkey_size, global.keyLeftVal));
-	virtual_key_add(global.touchCorrectionH, global.display_h - (3*vkey_size) - global.touchCorrectionV/3, vkey_size, vkey_size, global.keyUpVal);
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyLeftVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyUpVal));
 	// Up
-	array_push(keys, virtual_key_add(vkey_size + global.touchCorrectionH, global.display_h - (3*vkey_size) - global.touchCorrectionV/3, vkey_size, vkey_size, global.keyUpVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + vkey_size, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyUpVal));
 	// Up + Right
-	array_push(keys, virtual_key_add(2*vkey_size + global.touchCorrectionH, global.display_h - (3*vkey_size) - global.touchCorrectionV/3, vkey_size, vkey_size, global.keyRightVal));
-	virtual_key_add(2*vkey_size + global.touchCorrectionH, global.display_h - (3*vkey_size) - global.touchCorrectionV/3, vkey_size, vkey_size, global.keyUpVal);
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyRightVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyUpVal));
 	// Right
-	array_push(keys, virtual_key_add(2*vkey_size + global.touchCorrectionH, global.display_h - (2*vkey_size) - global.touchCorrectionV, vkey_size, vkey_size, global.keyRightVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 2.5*vkey_size, vkey_size, vkey_size, global.keyRightVal));
 	// Down + Right
-	array_push(keys, virtual_key_add(2*vkey_size + global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size, global.keyRightVal))
-	virtual_key_add(2*vkey_size + global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size, global.keyDownVal);
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyRightVal))
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyDownVal));
 	// Down
-	array_push(keys, virtual_key_add(vkey_size + global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size, global.keyDownVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + vkey_size, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyDownVal));
 	// Down + left
-	array_push(keys, virtual_key_add(global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size, global.keyLeftVal));
-	virtual_key_add(global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size, global.keyDownVal);
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyLeftVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyDownVal));
 	// Attack
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH -  (2.5*vkey_size), global.display_h - global.touchCorrectionV - vkey_size, vkey_size, vkey_size, global.keyAttackVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w -  touchOffsetH - 2*vkey_size, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyAttackVal));
 	// Jump
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, global.display_h - global.touchCorrectionV - vkey_size, vkey_size, vkey_size, global.keyJumpVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - 3*vkey_size, global.display_h - 2.5*vkey_size, vkey_size, vkey_size, global.keyJumpVal));
 	// Item
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - (2.5*vkey_size), global.display_h - global.touchCorrectionV/2 - (2.5*vkey_size), vkey_size, vkey_size, global.keyItemVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - vkey_size, global.display_h - 2.5*vkey_size, vkey_size, vkey_size, global.keyItemVal));
 	// Run
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, global.display_h - global.touchCorrectionV/2 - (2.5*vkey_size), vkey_size, vkey_size, global.keyRunVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - 2*vkey_size, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyRunVal));
 	// Pause
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 0 + global.touchCorrectionV, vkey_size, vkey_size, vk_escape));
-	virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 0 + global.touchCorrectionV, vkey_size, vkey_size, global.keyStartVal);
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 4.5*vkey_size, vkey_size, vkey_size, vk_escape));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH, global.display_h - 4.5*vkey_size, vkey_size, vkey_size,  global.keyStartVal));
 	// Language
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, vkey_size + global.touchCorrectionV/2, vkey_size, vkey_size, global.keyLangVal));
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + 2*vkey_size, global.display_h - 4.5*vkey_size, vkey_size, vkey_size, global.keyLangVal));
 	// Pay
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 2*vkey_size + global.touchCorrectionV/2, vkey_size, vkey_size, global.keyPayVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - 2*vkey_size, global.display_h - 2.5*vkey_size, vkey_size, vkey_size, global.keyPayVal));
 	// Rope
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 3*vkey_size + global.touchCorrectionV/3, vkey_size, vkey_size, global.keyRopeVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - 4*vkey_size, global.display_h - 1.5*vkey_size, vkey_size, vkey_size, global.keyRopeVal));
 	// Bomb
-	array_push(keys, virtual_key_add(global.display_w - global.touchCorrectionH - vkey_size, 4*vkey_size + global.touchCorrectionV/4, vkey_size, vkey_size, global.keyBombVal));
+	array_push(global.touchButtons, virtual_key_add(global.display_w - touchOffsetH - 4*vkey_size, global.display_h - 3.5*vkey_size, vkey_size, vkey_size, global.keyBombVal));
 	// Debug buttons
 	if (global.debugBuild) {
-	    array_push(keys, virtual_key_add(global.display_w/2 - 2*vkey_size - global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size,  vk_f2));
-	    array_push(keys, virtual_key_add(global.display_w/2 - vkey_size - global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size,  vk_f3));
-	    array_push(keys, virtual_key_add(global.display_w/2 - global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size,  vk_f4));
-	    array_push(keys, virtual_key_add(global.display_w/2 + vkey_size - global.touchCorrectionH, global.display_h - vkey_size - global.touchCorrectionV, vkey_size, vkey_size,  vk_f5));
+	    array_push(global.touchButtons, virtual_key_add(global.display_w - 4.5*vkey_size, 0.5*vkey_size, vkey_size, vkey_size,  vk_f2));
+	    array_push(global.touchButtons, virtual_key_add(global.display_w - 3.5*vkey_size, 0.5*vkey_size, vkey_size, vkey_size,  vk_f3));
+	    array_push(global.touchButtons, virtual_key_add(global.display_w - 2.5*vkey_size, 0.5*vkey_size, vkey_size, vkey_size,  vk_f4));
+	    array_push(global.touchButtons, virtual_key_add(global.display_w - 1.5*vkey_size, 0.5*vkey_size, vkey_size, vkey_size,  vk_f5));
 	}
 	if (touchDebug) {
-		for (var i = 0; i < array_length(keys);  i += 1) {
-			virtual_key_show(keys[i]);
-		};
+		if (array_length(global.touchButtons) > 0) {
+			for (var i = 0; i < array_length(global.touchButtons);  i += 1) {
+				virtual_key_show(global.touchButtons[i]);
+			}
+		}
 	}
 }

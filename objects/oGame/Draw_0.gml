@@ -145,24 +145,11 @@ action_color(-100);
 //}
 
 /// Draw HUD (HTML5)
-if (global.html5Build) {
-    scrDrawHUD();
-    drawTouchControls();
-    showMessages();
-    /*
-    if (global.messageTimer > 0) {
-        y1 = view_yview[0] + 216 + 8 - global.fontSmallHeight;
-        y2 = y1 + global.fontSmallHeight;
-        drawMessage(global.message1, 'small', c_white, view_xview[0], y1, 1);
-        if (not isRoom("rTutorial")) {
-            drawMessage(global.message2, 'small', c_yellow, view_xview[0], y2, 2);
-        } else {
-            drawMessage(global.message2, 'small', c_white, view_xview[0], y2, 2);
-        }
-        global.messageTimer -= 1;
-    }
-    */
-}
+//if (global.html5Build) {
+//    scrDrawHUD();
+//    drawTouchControls();
+//    showMessages();
+//}
 
 /* */
 /*  */

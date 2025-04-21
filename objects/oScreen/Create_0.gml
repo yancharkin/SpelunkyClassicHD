@@ -23,26 +23,6 @@ darkSurf = surface_create(screen_w,screen_h);
 h = 240;
 global.screenAspectRatio = (screen_w/screen_h);
 w = round(240 * global.screenAspectRatio);
-global.touchCorrectionH = 0;
-global.touchCorrectionV = 0;
-/* OBSOLETE on modern GameMaker
-// use all screen space if possible
-if ((global.screenAspectRatio >= 1.333333333) and (global.screenAspectRatio <= 1.875)) {
-    w = round(240 * global.screenAspectRatio);
-    global.touchCorrectionH = 0;
-    global.touchCorrectionV = 0;
-} else {
-    if (global.screenAspectRatio > 1.875) {
-        w = 450;
-        global.touchCorrectionH = ((w - 320)/8);
-        global.touchCorrectionV = 0;
-    } else if (global.screenAspectRatio < 1.333333333) {
-        w = 320;
-        global.touchCorrectionH = 0;
-        global.touchCorrectionV = ((screen_h - 240)/10);
-    }
-}
-*/
 
 // set up rooms
 global.room_offset = ((w - 320)/2);

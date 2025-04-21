@@ -33,8 +33,8 @@ function scrInit() {
 
 	// Defaults
 	global.touchControlsVisibility = 0;
-	if (global.mobileBuild) global.touchControlsVisibility = 1;
-	global.touchVisChangeBy = 1;
+	if (global.mobileBuild) global.touchControlsVisibility = 0.5;
+	global.touchVisChangeBy = 0.5;
 	global.toggleRun = false;
 	global.firstLaunch = true;
 	global.locale = "en";
@@ -43,6 +43,7 @@ function scrInit() {
 	global.locale2ChangeBy = 1;
 	global.fullscreen = false;
 	global.toggleRunEnabled = false;
+	if (global.mobileBuild) global.toggleRunEnabled = true;
 	global.graphicsHigh = true;
 	global.downToRun = true;
 	global.gamepadOn = false;
@@ -57,6 +58,12 @@ function scrInit() {
 	global.messageHighlights = 0;
 	global.message2Highlights = 0;
 	global.messageTimer= 0;
+	
+	global.touchButtons = [];
+	global.touchOffsetH = 0.5;
+	global.touchOffsetChangeBy = 0.5;
+	global.vkeySize = 32;
+	global.vkeySizeChangeBy = 8;
 
 	if (global.musicVol > 17) global.musicVol = 17;
 	if (global.musicVol < 0) global.musicVol = 0;

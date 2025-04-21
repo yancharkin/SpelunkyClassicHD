@@ -370,7 +370,7 @@
     "SCREEN SCALING CODE": "КОД МАСШТАБИРОВАНИЯ",
     "BETA TESTING BY": "БЕТА ТЕСТИРОВАНИЕ",
     "PRESS KEY FOR": "НАЖМИ КЛАВИШУ ДЛЯ",
-    "ESC TO KEEP SAME.": "ESC - НЕ МЕНЯТЬ",
+    "ESC TO KEEP SAME": "ESC - НЕ МЕНЯТЬ",
     "CURRENT: ": "СЕЙЧАС: ",
     "UP": "ВВЕРХ",
     "DOWN": "ВНИЗ",
@@ -392,5 +392,7 @@
     "PRESS ANY BUTTON": "НАЖМИ ЛЮБУЮ КНОПКУ",
     "WAIT TO KEEP SAME: ": "НЕ МЕНЯТЬ - ПОДОЖДИ: ",
     "SPELUNKY CLASSIC HD BY": "SPELUNKY CLASSIC HD ОТ",
-    "CONTRIBUTORS": "ПРИ УЧАСТИИ"
+    "CONTRIBUTORS": "ПРИ УЧАСТИИ",
+    "TOUCH BUTTONS SIZE": "РАЗМЕР ТАЧ-КНОПОК",
+    "TOUCH BUTTONS OFFSET": "ОТСТУП ТАЧ-КНОПОК"
 }
