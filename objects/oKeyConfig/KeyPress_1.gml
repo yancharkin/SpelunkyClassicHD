@@ -1,15 +1,4 @@
-var pressedKey;
-
-if (!global.mobileBuild) {
-    pressedKey = keyboard_key;
-} else {
-    pressedKey = global.keyEscape;
-    for (var i = 2; i < 256; i++) { // on Android key press first generate 0 or 1 for any key
-        if (keyboard_check_pressed(i)) {
-            pressedKey = i;
-        }
-    }
-}
+var pressedKey  = keyboard_key;
 
 if (pressedKey != global.keyEscape) {
     if (status == 0) {

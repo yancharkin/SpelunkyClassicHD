@@ -463,8 +463,6 @@ function __global_object_depths() {
 	global.__objectDepths[455] = 0; // oRoom
 	global.__objectDepths[460] = 0; // oPressStart
 	global.__objectDepths[462] = 0; // oDebug
-	global.__objectDepths[463] = 0; // oHtml5Gamepad
-
 
 	global.__objectNames[0] = "oMenu";
 	global.__objectNames[1] = "oDrawnSprite";
@@ -924,8 +922,6 @@ function __global_object_depths() {
 	global.__objectNames[455] = "oRoom";
 	global.__objectNames[460] = "oPressStart";
 	global.__objectNames[462] = "oDebug";
-	global.__objectNames[463] = "oHtml5Gamepad";
-
 
 	// create another array that has the correct entries
 	var len = array_length(global.__objectDepths);

@@ -1,19 +1,7 @@
 function checkJump() {
-	if (!global.html5Build) {
-	    if (gamepad.jump or
-	            gamepad_button_check(global.joyid, global.joyJumpVal) or
-	            (gamepad_button_value(global.joyid, global.joyJumpVal) > 0.6) or
-	            keyboard_check(global.keyJumpVal)) {
-	        return true;
-	    } else {
-	        return false;
-	    }
+	if (gamepad.jump or keyboard_check(global.keyJumpVal)) {
+	    return true;
 	} else {
-	    if (html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
-	            keyboard_check(global.keyJumpVal)) {
-	        return true;
-	    } else {
-	        return false;
-	    }   
+	    return false;
 	}
 }

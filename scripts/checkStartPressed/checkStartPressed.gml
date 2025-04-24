@@ -1,12 +1,7 @@
 function checkStartPressed() {
-	if (gamepad_button_check_pressed(global.joyid, global.joyStartVal) or
-	        global.bStartPressed or
-	        keyboard_check_pressed(vk_escape)) {
+	if (gamepad.startPressed or keyboard_check_pressed(global.keyStartVal)) {
 	    return true;
 	} else {
 	    return false;
 	}
-
-
-
 }

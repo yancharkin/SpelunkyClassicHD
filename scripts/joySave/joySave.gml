@@ -7,20 +7,20 @@ function joySave() {
 	    joyMap = json2dsmap(getWorkingDirPath("gamepad.json"));
 	}
 
-	ds_map_replace(joyMap, "joyJumpVal", int64(global.joyJumpVal));
-	ds_map_replace(joyMap, "joyAttackVal", int64(global.joyAttackVal));
-	ds_map_replace(joyMap, "joyItemVal", int64(global.joyItemVal));
-	ds_map_replace(joyMap, "joyRunVal", int64(global.joyRunVal));
-	ds_map_replace(joyMap, "joyBombVal", int64(global.joyBombVal));
-	ds_map_replace(joyMap, "joyRopeVal", int64(global.joyRopeVal));
-	ds_map_replace(joyMap, "joyFlareVal", int64(global.joyFlareVal));
-	ds_map_replace(joyMap, "joyPayVal", int64(global.joyPayVal));
-	ds_map_replace(joyMap, "joyStartVal", int64(global.joyStartVal));
-	ds_map_replace(joyMap, "joyLeftVal", int64(global.joyLeftVal));
-	ds_map_replace(joyMap, "joyRightVal", int64(global.joyRightVal));
-	ds_map_replace(joyMap, "joyUpVal", int64(global.joyUpVal));
-	ds_map_replace(joyMap, "joyDownVal", int64(global.joyDownVal));
-	ds_map_replace(joyMap, "joyLangVal", int64(global.joyLangVal));
+	ds_map_replace(joyMap, "joyJumpVal", string(global.joyJumpVal));
+	ds_map_replace(joyMap, "joyAttackVal", string(global.joyAttackVal));
+	ds_map_replace(joyMap, "joyItemVal", string(global.joyItemVal));
+	ds_map_replace(joyMap, "joyRunVal", string(global.joyRunVal));
+	ds_map_replace(joyMap, "joyBombVal", string(global.joyBombVal));
+	ds_map_replace(joyMap, "joyRopeVal", string(global.joyRopeVal));
+	ds_map_replace(joyMap, "joyFlareVal", string(global.joyFlareVal));
+	ds_map_replace(joyMap, "joyPayVal", string(global.joyPayVal));
+	ds_map_replace(joyMap, "joyStartVal", string(global.joyStartVal));
+	ds_map_replace(joyMap, "joyLeftVal", string(global.joyLeftVal));
+	ds_map_replace(joyMap, "joyRightVal", string(global.joyRightVal));
+	ds_map_replace(joyMap, "joyUpVal", string(global.joyUpVal));
+	ds_map_replace(joyMap, "joyDownVal", string(global.joyDownVal));
+	ds_map_replace(joyMap, "joyLangVal", string(global.joyLangVal));
 
 	dsmap2json(joyMap, getWorkingDirPath("gamepad.json"));
 	ds_map_destroy(joyMap);

@@ -42,5 +42,5 @@ if (fadeOut)
     }
 }
 
-if (gamepad.select) event_perform(ev_keypress, vk_f5);
+//if (gamepad.select) event_perform(ev_keypress, vk_f5);
 

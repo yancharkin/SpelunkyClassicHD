@@ -32,6 +32,8 @@ itemPressed = false;
 itemReleased = false;
 
 run = false;
+runReleased = false;
+runPressed = false;
 
 bomb = false;
 bombPressed = false;
@@ -49,7 +51,10 @@ pay = false;
 payPressed = false;
 payReleased = false;
 
+lang = false;
+langPressed = false;
+langReleased = false;
+
 select = false;
 
 count=0;
-

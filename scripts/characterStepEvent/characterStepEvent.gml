@@ -34,7 +34,7 @@ function characterStepEvent() {
 	    kRun = 0;
 	// kRun=runKey
 	else
-	    kRun=0
+	    kRun=0;
   
 	kJump = checkJump();
 	kJumpPressed = checkJumpPressed();
@@ -129,7 +129,14 @@ function characterStepEvent() {
 	    runKey = true;
 	}
 
-	if (not runKey or (not kLeft and not kRight)) runHeld = 0;
+	if (os_type == os_android) {
+		if (not checkRun()  or (not checkLeft() and not checkRight())) {
+			runHeld = 0;
+			runKey = 0;
+		}
+	} else {
+		if (not runKey or (not kLeft and not kRight)) runHeld = 0;
+	}
 
 	// allows the character to run left and right
 	// if state!=DUCKING and state!=LOOKING_UP and state!=CLIMBING

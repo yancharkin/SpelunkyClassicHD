@@ -65,6 +65,8 @@ function scrInit() {
 	global.vkeySize = 32;
 	global.vkeySizeChangeBy = 8;
 
+	global.assignedButtons = [-1];
+
 	if (global.musicVol > 17) global.musicVol = 17;
 	if (global.musicVol < 0) global.musicVol = 0;
 	if (global.soundVol > 17) global.soundVol = 17;

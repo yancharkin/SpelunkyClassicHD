@@ -8,22 +8,11 @@ if (!global.gamepadOn) exit;
 
 startReleased = false;
 startPressed = false;
-if (start)
-{
-    if (scrNotTrigger(global.joyStartVal))
-        start = gamepad_button_check(global.joyid, global.joyStartVal);
-    else
-        start = gamepad_button_value(global.joyid, global.joyStartVal) > 0.6;
-        
+if (start) {
+    start = gamepadButtonCheck(global.joyStartVal);
     if (not start) startReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyStartVal))
-        start = gamepad_button_check(global.joyid, global.joyStartVal);
-    else
-        start = gamepad_button_value(global.joyid, global.joyStartVal) > 0.6;
-        
+} else {
+	start = gamepadButtonCheck(global.joyStartVal)
     if (start) startPressed = true;
 }
 
@@ -33,16 +22,11 @@ else
 
 leftReleased = false;
 leftPressed = false;
-if (left)
-{
-    left = (gamepad_button_check(global.joyid, global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
-
+if (left) {
+	left = (gamepadButtonCheck(global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
     if (not left) leftReleased = true;
-}
-else
-{
-    left = (gamepad_button_check(global.joyid, global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
-    
+} else {
+    left = (gamepadButtonCheck(global.joyLeftVal) || gamepad_axis_value(global.joyid, gp_axislh) < -0.6);
     if (left) leftPressed = true;
 }
 
@@ -52,16 +36,11 @@ else
 
 rightReleased = false;
 rightPressed = false;
-if (right)
-{
-    right = (gamepad_button_check(global.joyid, global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
-
+if (right) {
+	right = (gamepadButtonCheck(global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
     if (not right) rightReleased = true;
-}
-else
-{
-    right = (gamepad_button_check(global.joyid, global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
-    
+} else {
+	right = (gamepadButtonCheck(global.joyRightVal) || gamepad_axis_value(global.joyid, gp_axislh) > 0.6);
     if (right) rightPressed = true;
 }
 
@@ -71,16 +50,12 @@ else
 
 upReleased = false;
 upPressed = false;
-if (up)
-{
-    up = (gamepad_button_check(global.joyid, global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
-
+if (up) {
+	up = (gamepadButtonCheck(global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
     if (not up) upReleased = true;
 }
-else
-{
-    up = (gamepad_button_check(global.joyid, global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
-    
+else {
+    up = (gamepadButtonCheck(global.joyUpVal) || gamepad_axis_value(global.joyid, gp_axislv) < -0.6);
     if (up) upPressed = true;
 }
 
@@ -90,16 +65,11 @@ else
 
 downReleased = false;
 downPressed = false;
-if (down)
-{
-    down = (gamepad_button_check(global.joyid, global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
-
+if (down) {
+	down = (gamepadButtonCheck(global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
     if (not down) downReleased = true;
-}
-else
-{
-    down = (gamepad_button_check(global.joyid, global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
-    
+} else{
+    down = (gamepadButtonCheck(global.joyDownVal) || gamepad_axis_value(global.joyid, gp_axislv) > 0.6);
     if (down) downPressed = true;
 }
 
@@ -109,22 +79,11 @@ else
 
 jumpReleased = false;
 jumpPressed = false;
-if (jump)
-{
-    if (scrNotTrigger(global.joyJumpVal))
-        jump = gamepad_button_check(global.joyid, global.joyJumpVal);
-    else
-        jump = gamepad_button_value(global.joyid, global.joyJumpVal) > 0.6;
-    
+if (jump) {
+	jump = gamepadButtonCheck(global.joyJumpVal);
     if (not jump) jumpReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyJumpVal))
-        jump = gamepad_button_check(global.joyid, global.joyJumpVal);
-    else
-        jump = gamepad_button_value(global.joyid, global.joyJumpVal) > 0.6;
-    
+} else {
+	jump = gamepadButtonCheck(global.joyJumpVal);
     if (jump) jumpPressed = true;
 }
 
@@ -134,22 +93,11 @@ else
 
 attackReleased = false;
 attackPressed = false;
-if (attack)
-{
-    if (scrNotTrigger(global.joyAttackVal))
-        attack = gamepad_button_check(global.joyid, global.joyAttackVal);
-    else
-        attack = gamepad_button_value(global.joyid, global.joyAttackVal) > 0.6;
-    
+if (attack) {
+    attack = gamepadButtonCheck(global.joyAttackVal);
     if (not attack) attackReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyAttackVal))
-        attack = gamepad_button_check(global.joyid, global.joyAttackVal);
-    else
-        attack = gamepad_button_value(global.joyid, global.joyAttackVal) > 0.6;
-    
+} else {
+    attack = gamepadButtonCheck(global.joyAttackVal);
     if (attack) attackPressed = true;
 }
 
@@ -159,22 +107,11 @@ else
 
 itemReleased = false;
 itemPressed = false;
-if (item)
-{
-    if (scrNotTrigger(global.joyItemVal))
-        item = gamepad_button_check(global.joyid, global.joyItemVal);
-    else
-        item = gamepad_button_value(global.joyid, global.joyItemVal) > 0.6;
-    
+if (item) {
+    item = gamepadButtonCheck(global.joyItemVal);
     if (not item) itemReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyItemVal))
-        item = gamepad_button_check(global.joyid, global.joyItemVal);
-    else
-        item = gamepad_button_value(global.joyid, global.joyItemVal) > 0.6;
-    
+} else {
+    item = gamepadButtonCheck(global.joyItemVal);
     if (item) itemPressed = true;
 }
 
@@ -182,10 +119,15 @@ else
 // RUN
 ////////////
 
-if (scrNotTrigger(global.joyRunVal))
-    run = gamepad_button_check(global.joyid, global.joyRunVal);
-else
-    run = gamepad_button_value(global.joyid, global.joyRunVal) > 0.6;
+runReleased = false;
+runPressed = false;
+if (run) {
+	run = gamepadButtonCheck(global.joyRunVal)
+    if (not run) runReleased = true;
+} else {
+	run = gamepadButtonCheck(global.joyRunVal)
+    if (run) runPressed = true;
+}
 
 ////////////
 // BOMB
@@ -193,22 +135,11 @@ else
 
 bombReleased = false;
 bombPressed = false;
-if (bomb)
-{
-    if (scrNotTrigger(global.joyBombVal))
-        bomb = gamepad_button_check(global.joyid, global.joyBombVal);
-    else
-        bomb = gamepad_button_check(global.joyid, global.joyBombVal) > 0.6;
-    
+if (bomb) {
+    bomb = gamepadButtonCheck(global.joyBombVal);
     if (not bomb) bombReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyBombVal))
-        bomb = gamepad_button_check(global.joyid, global.joyBombVal);
-    else
-        bomb = gamepad_button_check(global.joyid, global.joyBombVal) > 0.6;
-    
+} else {
+    bomb = gamepadButtonCheck(global.joyBombVal);
     if (bomb) bombPressed = true;
 }
 
@@ -218,22 +149,11 @@ else
 
 ropeReleased = false;
 ropePressed = false;
-if (rope)
-{
-    if (scrNotTrigger(global.joyRopeVal))
-        rope = gamepad_button_check(global.joyid, global.joyRopeVal);
-    else
-        rope = gamepad_button_value(global.joyid, global.joyRopeVal) > 0.6;
-    
+if (rope) {
+    rope = gamepadButtonCheck(global.joyRopeVal);
     if (not rope) ropeReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyRopeVal))
-        rope = gamepad_button_check(global.joyid, global.joyRopeVal);
-    else
-        rope = gamepad_button_value(global.joyid, global.joyRopeVal) > 0.6;
-    
+} else {
+    rope = gamepadButtonCheck(global.joyRopeVal);
     if (rope) ropePressed = true;
 }
 
@@ -243,22 +163,11 @@ else
 
 flareReleased = false;
 flarePressed = false;
-if (flare)
-{
-    if (scrNotTrigger(global.joyFlareVal))
-        flare = gamepad_button_check(global.joyid, global.joyFlareVal);
-    else
-        flare = gamepad_button_value(global.joyid, global.joyFlareVal) > 0.6;
-    
+if (flare) {
+    flare = gamepadButtonCheck(global.joyFlareVal);
     if (not flare) flareReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyFlareVal))
-        flare = gamepad_button_check(global.joyid, global.joyFlareVal);
-    else
-        flare = gamepad_button_value(global.joyid, global.joyFlareVal) > 0.6;
-    
+} else {
+    flare = gamepadButtonCheck(global.joyFlareVal);
     if (flare) flarePressed = true;
 }
 
@@ -268,27 +177,29 @@ else
 
 payReleased = false;
 payPressed = false;
-if (pay)
-{
-    if (scrNotTrigger(global.joyPayVal))
-        pay = gamepad_button_check(global.joyid, global.joyPayVal);
-    else
-        pay = gamepad_button_value(global.joyid, global.joyPayVal) > 0.6;
-    
+if (pay) {
+    pay = gamepadButtonCheck(global.joyPayVal);
     if (not pay) payReleased = true;
-}
-else
-{
-    if (scrNotTrigger(global.joyPayVal))
-        pay = gamepad_button_check(global.joyid, global.joyPayVal);
-    else
-        pay = gamepad_button_value(global.joyid, global.joyPayVal) > 0.6;
-    
+} else {
+    pay = gamepadButtonCheck(global.joyPayVal);
     if (pay) payPressed = true;
+}
+
+/////////////
+// LANG
+/////////////
+
+langReleased = false;
+langPressed = false;
+if (lang) {
+    lang = gamepadButtonCheck(global.joyLangVal);
+    if (not lang) langReleased = true;
+} else {
+	lang = gamepadButtonCheck(global.joyLangVal);
+    if (lang) langPressed = true;
 }
 
 ////////////
 // SELECT
 ////////////
-select = gamepad_button_check_pressed(global.joyid, gp_select);
-
+//select = gamepad_button_check_pressed(global.joyid, gp_select);

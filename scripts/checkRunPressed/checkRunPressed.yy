@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrNotTrigger",
+  "%Name":"checkRunPressed",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrNotTrigger",
+  "name":"checkRunPressed",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

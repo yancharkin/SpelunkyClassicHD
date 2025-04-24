@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"checkLangPressed",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"checkLangPressed",
+  "parent":{
+    "name":"Control",
+    "path":"folders/Scripts/Control.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

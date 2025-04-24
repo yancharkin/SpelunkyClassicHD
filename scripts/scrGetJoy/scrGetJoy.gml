@@ -29,60 +29,38 @@ function scrGetJoy() {
 	        return string_upper(global.gamepadMapping[? string(argument[0])]);
 	    }
 	} else {
-	    if (!global.html5Build) {
-	        //var gamepadDesc = gamepad_get_description(global.joyid);
-	        // Xbox 360
-	        switch (argument[0]) {
-	            case gp_face1: return "A";
-	            case gp_face2: return "B";
-	            case gp_face3: return "X";
-	            case gp_face4: return "Y";
-	            case gp_start: return "START";
-	            case gp_select: return "BACK";
-	            case gp_stickl: return "LSTICK";
-	            case gp_stickr: return "RSTICK";
-	            case gp_shoulderl: return "LB";
-	            case gp_shoulderr: return "RB";
-	            case gp_shoulderlb: return "LT";
-	            case gp_shoulderrb: return "RT";
-	            case gp_padl: return  "LEFT";
-	            case gp_padr: return "RIGHT";
-	            case gp_padu: return  "UP";
-	            case gp_padd: return  "DOWN";
-	            default: return string(argument[0]);
-	        }
-	        /*
-	        if ((string_pos('X-Box', gamepadDesc) != 0) or
-	                (string_pos('Xbox', gamepadDesc) != 0) or 
-	                (string_pos('X360', gamepadDesc) != 0)) 
-	                or global.mobileBuild {
-	            switch (argument[0]) {
-	                case gp_face1: return "A";
-	                case gp_face2: return "B";
-	                case gp_face3: return "X";
-	                case gp_face4: return "Y";
-	                case gp_start: return "START";
-	                case gp_select: return "BACK";
-	                case gp_stickl: return "LSTICK";
-	                case gp_stickr: return "RSTICK";
-	                case gp_shoulderl: return "LB";
-	                case gp_shoulderr: return "RB";
-	                case gp_shoulderlb: return "LT";
-	                case gp_shoulderrb: return "RT";
-	                case gp_padl: return  "LEFT";
-	                case gp_padr: return "RIGHT";
-	                case gp_padu: return  "UP";
-	                case gp_padd: return  "DOWN";
-	            }
-	        } else {
-	            return string(argument[0]);
-	        }
-	        */
-	    } else {
-	        return string(html5_gamepad_get_button_name(global.joyid, argument[0]));
-	    }
+		switch (argument[0]) {
+			case "h0-8": return "LEFT";
+			case "h0-2": return "RIGHT";
+			case "h0-1": return "UP";
+			case "h0-4": return "DOWN";
+			default: return string(argument[0]);
+		}
+		/* This will not works as in the current version simple buttons numbers used to identify the button (0 - n_of_buttons)
+	    var gamepadDesc = gamepad_get_description(global.joyid);
+		if ((string_pos("X-Box", gamepadDesc) != 0) or
+					(string_pos("Xbox", gamepadDesc) != 0) or 
+					(string_pos("X360", gamepadDesc) != 0)) {
+		    switch (argument[0]) {
+		        case gp_face1: return "A";
+		        case gp_face2: return "B";
+		        case gp_face3: return "X";
+		        case gp_face4: return "Y";
+		        case gp_start: return "START";
+		        case gp_select: return "BACK";
+		        case gp_stickl: return "LSTICK";
+		        case gp_stickr: return "RSTICK";
+		        case gp_shoulderl: return "LB";
+		        case gp_shoulderr: return "RB";
+		        case gp_shoulderlb: return "LT";
+		        case gp_shoulderrb: return "RT";
+		        case gp_padl: return  "LEFT";
+		        case gp_padr: return "RIGHT";
+		        case gp_padu: return  "UP";
+		        case gp_padd: return  "DOWN";
+		        default: return string(argument[0]);
+			}
+	    } 
+		*/
 	}
-
-
-
 }
