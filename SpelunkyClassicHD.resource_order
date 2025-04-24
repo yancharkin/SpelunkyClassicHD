@@ -612,6 +612,7 @@
     {"name":"configLoad","order":47,"path":"scripts/configLoad/configLoad.yy",},
     {"name":"configSave","order":48,"path":"scripts/configSave/configSave.yy",},
     {"name":"draw_surface_pSurf","order":31,"path":"scripts/draw_surface_pSurf/draw_surface_pSurf.yy",},
+    {"name":"drawCredits","order":68,"path":"scripts/drawCredits/drawCredits.yy",},
     {"name":"drawHighlightedMessage","order":36,"path":"scripts/drawHighlightedMessage/drawHighlightedMessage.yy",},
     {"name":"drawMessage","order":37,"path":"scripts/drawMessage/drawMessage.yy",},
     {"name":"drawText","order":34,"path":"scripts/drawText/drawText.yy",},

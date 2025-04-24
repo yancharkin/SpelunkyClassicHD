@@ -13,12 +13,12 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - better gamepads support
 
 ## Translators
-- [grheavy](mailto:grheavy@hushmail.com) - Spanish
-- [Spenĉjo](https://github.com/Rajzin) - Esperanto
-- [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194) - Brazilian Portuguese
-- [bakustarver](https://github.com/bakustarver) - Ukrainian
-- [LeRetardatN](https://github.com/Lecodeurenretard) - French
-- [MasterPhW](mailto:masterphw@gmail.com) - German
+- Spanish: [grheavy](mailto:grheavy@hushmail.com), [BRNBot3k](https://github.com/BRNBot3k)
+- Esperanto: [Spenĉjo](https://github.com/Rajzin)
+- Brazilian Portuguese: [Gabriel Albuquerque Ferreira](https://github.com/ngc-5194)
+- Ukrainian: [bakustarver](https://github.com/bakustarver)
+- French: [LeRetardatN](https://github.com/Lecodeurenretard)
+- German: [MasterPhW](mailto:masterphw@gmail.com)
 
 ## Links
 * [How to localize the game](localization)

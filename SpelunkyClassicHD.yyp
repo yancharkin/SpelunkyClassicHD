@@ -816,6 +816,7 @@
     {"id":{"name":"configSave","path":"scripts/configSave/configSave.yy",},},
     {"id":{"name":"draw_background_stretched","path":"scripts/draw_background_stretched/draw_background_stretched.yy",},},
     {"id":{"name":"draw_surface_pSurf","path":"scripts/draw_surface_pSurf/draw_surface_pSurf.yy",},},
+    {"id":{"name":"drawCredits","path":"scripts/drawCredits/drawCredits.yy",},},
     {"id":{"name":"drawHighlightedMessage","path":"scripts/drawHighlightedMessage/drawHighlightedMessage.yy",},},
     {"id":{"name":"drawMessage","path":"scripts/drawMessage/drawMessage.yy",},},
     {"id":{"name":"drawText","path":"scripts/drawText/drawText.yy",},},
