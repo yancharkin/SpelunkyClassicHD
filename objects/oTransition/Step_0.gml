@@ -1,59 +1,4 @@
-/// @description Gamepad in HTML5
-    //Up/Down
-    if (global.html5Build) {
-    var downPressed = ((html5_gamepad_axis_value(global.joyid, 1) > 0.6) or
-            (html5_gamepad_axis_value(global.joyid, 5) > 0.6));
-    var upPressed = (html5_gamepad_axis_value(global.joyid, 1) < -0.6 or
-            (html5_gamepad_axis_value(global.joyid, 5) < -0.6));
-    
-    if (downPressed) {
-        if (global.analogLDownPreviousState == false) {
-            global.analogLDownPressed = true;
-            global.analogLDownPreviousState = true;
-        }
-    } else {
-        global.analogLDownPreviousState = false;
-    }
-    if (upPressed) {
-        if (global.analogLUpPreviousState == false) {
-            global.analogLUpPressed = true;
-            global.analogLUpPreviousState = true;
-        }
-    } else {
-        global.analogLUpPreviousState = false;
-    }
-    //Start
-    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
-        if (global.bStartPreviousState == false) {
-            global.bStartPressed = true;
-            global.bStartPreviousState = true;
-        }
-    } else {
-        global.bStartPreviousState = false;
-    }
-    //Attack
-    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
-        global.bAttackReleasedPreviousState = false;
-        if (global.bAttackPressedPreviousState == false) {
-            global.bAttackPressed = true;
-            global.bAttackPressedPreviousState = true;
-        }
-    } else {
-        global.bAttackPressedPreviousState = false;
-        if (global.bAttackReleasedPreviousState == false) {
-            global.bAttackReleased = true;
-            global.bAttackReleasedPreviousState = true;
-        }
-    }
-    alarm[3] = 1;
-}
-
-if (!global.html5Build) {
-    var skipCondition = checkAttackPressed() or checkStartPressed();
-} else {
-    var skipCondition = global.bAttackPressed or global.bStartPressed or
-            checkAttackPressed() or checkStartPressed();
-}
+var skipCondition = checkAttackPressed() or checkStartPressed();
 
 if (skipCondition) {
     n = 0;
@@ -139,4 +84,3 @@ if (drawLoot == 2)
 }
 
 debugCounter += 1;
-

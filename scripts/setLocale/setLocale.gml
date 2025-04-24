@@ -53,11 +53,12 @@ function setLocale() {
 	        fontInfo = json2dsmap(working_directory + "locale/fonts/" + fontName + "/font.json");
 	    }
 	    fontDir = working_directory + "locale/fonts/" + fontName + "/font/";
-	    if (!global.html5Build) {
-	        fontName = fontName + ".ttf";
-	    } else {
-	        fontName = fontName + ".woff";
-	    }
+		fontName = fontName + ".ttf";
+	    //if (!global.html5Build) {
+	    //    fontName = fontName + ".ttf";
+	    //} else {
+	    //    fontName = fontName + ".woff";
+	    //}
 	    fontPath = fontDir + fontName;
 	    global.fontSmallWidth = int64(fontInfo[? "fontWidth"]);
 	    global.fontSmallHeight = int64(fontInfo[? "fontHeight"]);

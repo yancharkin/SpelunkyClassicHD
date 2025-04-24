@@ -3,19 +3,6 @@ if ((global.mobileBuild) or (global.html5Build)) {
     enableTouchInput();
 }
 
-/// Gamepad in HTML5
-global.bStartPressed = false;
-global.bStartPreviousState = false;
-global.bAttackPressed = false;
-global.bAttackPressedPreviousState = false;
-
-//Left analog stick
-global.analogLDownPreviousState = false;
-global.analogLUpPreviousState = false;
-global.analogLDownPressed = false;
-global.analogLUpPressed = false;
-
-instance_create(0, 0, oHtml5Gamepad);
 debugCounter = 0;
 
 global.message1 = "";

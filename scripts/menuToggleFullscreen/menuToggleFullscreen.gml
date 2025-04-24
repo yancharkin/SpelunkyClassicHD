@@ -1,6 +1,5 @@
 /// @description menuToggleFullscreen
 function menuToggleFullscreen() {
-
 	global.fullscreen = !global.fullscreen;
 	if (global.fullscreen) {
 	    if (!global.html5Build) {
@@ -28,7 +27,4 @@ function menuToggleFullscreen() {
 	        }
 	    }
 	}
-
-
-
 }

@@ -1,45 +1,29 @@
+/// scrDrawHUD()
+/// Draw the HUD.  This is called in the Draw GUI Event of oGame.
+
+/**********************************************************************************
+	Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+    
+	This file is part of Spelunky.
+
+	You can redistribute and/or modify Spelunky, including its source code, under
+	the terms of the Spelunky User License.
+
+	Spelunky is distributed in the hope that it will be entertaining and useful,
+	but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+
+	The Spelunky User License should be available in "Game Information", which
+	can be found in the Resource Explorer, or as an external file called COPYING.
+	If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+    
+***********************************************************************************/
 function scrDrawHUD() {
-	//
-	// scrDrawHUD()
-	//
-	// Draw the HUD.  This is called in the Draw GUI Event of oGame.
-	//
 
-	/**********************************************************************************
-	    Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
-    
-	    This file is part of Spelunky.
+	condition3 = (view_current==7);
 
-	    You can redistribute and/or modify Spelunky, including its source code, under
-	    the terms of the Spelunky User License.
-
-	    Spelunky is distributed in the hope that it will be entertaining and useful,
-	    but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
-
-	    The Spelunky User License should be available in "Game Information", which
-	    can be found in the Resource Explorer, or as an external file called COPYING.
-	    If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
-    
-	***********************************************************************************/
-
-	// Hack to make HUD work in HTML5
-	// no idea why it doesn't work :(
-	if (!global.html5Build) {
-	    condition3 = (view_current==7);
-	} else {
-	    condition3 = true;
-	}
-
-	if (global.drawHUD && instance_exists(oPlayer1) && condition3)
-	{
-	    if (!global.html5Build) {
-	        vxv = 0;
-	        vyv = 0;
-	    } else {
-	        vxv = __view_get( e__VW.XView, 0 );
-	        vyv = __view_get( e__VW.YView, 0 );    
-	    }
-    
+	if (global.drawHUD && instance_exists(oPlayer1) && condition3) {
+	    vxv = 0;
+	    vyv = 0;
 	    lifeX = vxv+8;
 	    bombX = vxv+64;
 	    ropeX = vxv+120;
@@ -196,8 +180,4 @@ function scrDrawHUD() {
 	        drawText("+" + string(global.collect), "small", c_yellow, moneyX, vyv+8+16);
 	    }
 	}
-
-
-
-
 }

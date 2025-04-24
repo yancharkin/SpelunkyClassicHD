@@ -8,7 +8,4 @@ function quitGame() {
 	        electronQuit();
 	    }
 	}
-
-
-
 }

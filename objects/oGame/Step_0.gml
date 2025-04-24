@@ -127,95 +127,7 @@ if (instance_exists(oPlayer1))
     }
 }
 
-// GAMEPAD PAUSE
-if (gamepad_button_check_pressed(global.joyid, global.joyStartVal)) event_perform(ev_keypress, vk_escape);
-
-///Gamepad in HTML5
-
-if (global.html5Build) {
-    //Start
-    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
-        if (global.bStartPreviousState == false) {
-            global.bStartPressed = true;
-            global.bStartPreviousState = true;
-        }
-    } else {
-        global.bStartPreviousState = false;
-    }
-    //Jump
-    if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
-        global.bJumpReleasedPreviousState = false;
-        if (global.bJumpPressedPreviousState == false) {
-            global.bJumpPressed = true;
-            global.bJumpPressedPreviousState = true;
-        }
-    } else {
-        global.bJumpPressedPreviousState = false;
-        if (global.bJumpReleasedPreviousState == false) {
-            global.bJumpReleased = true;
-            global.bJumpReleasedPreviousState = true;
-        }
-    }
-    //Attack
-    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
-        global.bAttackReleasedPreviousState = false;
-        if (global.bAttackPressedPreviousState == false) {
-            global.bAttackPressed = true;
-            global.bAttackPressedPreviousState = true;
-        }
-    } else {
-        global.bAttackPressedPreviousState = false;
-        if (global.bAttackReleasedPreviousState == false) {
-            global.bAttackReleased = true;
-            global.bAttackReleasedPreviousState = true;
-        }
-    }
-    alarm[4] = 1;
-}
-
-/// Left analog stick and dpad in the menu
-
-var downPressed = gamepad_axis_value(global.joyid, gp_axislv) > 0.6;
-var upPressed = gamepad_axis_value(global.joyid, gp_axislv) < -0.6;
-var rightPressed = gamepad_axis_value(global.joyid, gp_axislh) > 0.6;
-var leftPressed = gamepad_axis_value(global.joyid, gp_axislh) < -0.6;
-
-if (downPressed) {
-    if (global.analogLDownPreviousState == false) {
-        global.analogLDownPressed = true;
-        global.analogLDownPreviousState = true;
-    }
-} else {
-    global.analogLDownPreviousState = false;
-}
-if (upPressed) {
-    if (global.analogLUpPreviousState == false) {
-        global.analogLUpPressed = true;
-        global.analogLUpPreviousState = true;
-    }
-} else {
-    global.analogLUpPreviousState = false;
-}
-if (leftPressed) {
-    if (global.analogLLeftPreviousState == false) {
-        global.analogLLeftPressed = true;
-        global.analogLLeftPreviousState = true;
-    }
-} else {
-    global.analogLLeftPreviousState = false;
-}
-if (rightPressed) {
-    if (global.analogLRightPreviousState == false) {
-        global.analogLRightPressed = true;
-        global.analogLRightPreviousState = true;
-    }
-} else {
-    global.analogLRightPreviousState = false;
-}
-alarm[3] = 1;
-
-if (keyboard_check_pressed(global.keyLangVal) or
-				gamepad_button_check_pressed(global.joyid, global.joyLangVal)) {
+if (checkLangPressed()) {
 		if (!paused) {
 		    var locale_tmp = global.locale;
 			global.locale = global.locale2;
@@ -228,15 +140,8 @@ if (keyboard_check_pressed(global.keyLangVal) or
 		}
 }
 
-/* */
-///Check input in the menu
-
 //Pause
-
-if (keyboard_check_pressed(global.keyStartVal) or
-        keyboard_check_pressed(vk_escape) or
-        global.bStartPressed or
-        gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
+if (keyboard_check_pressed(global.keyStartVal) or gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
         if (not paused) {
             instance_deactivate_all(true);
@@ -246,16 +151,13 @@ if (keyboard_check_pressed(global.keyStartVal) or
             paused = false;
             instance_activate_all();
             audio_resume_all();
-
-            // Fix player falling through floor in html5 version
-            if (global.html5Build and instance_exists(oPlayer1)) {
-                oPlayer1.y -= 1;
-            }
         }
     }
 }
 
+///Check input in the menu
 if (paused) {
+	gamepadInMenu();
     if (checkDownPressed()) {
         menuItemIndex += 1;
         if (isRoom("rTitle")) {
@@ -273,6 +175,7 @@ if (paused) {
     } else if (checkJumpPressed()) {
         paused = false;
         instance_activate_all();
+		audio_resume_all();
     } else if (checkAttackPressed())
 			or (keyboard_check_pressed(global.keyEnter) or checkRightPressed() or checkLeftPressed()) {
         if (isRoom("rTitle")) {
@@ -454,18 +357,5 @@ if (paused) {
             }
         }
         configSave()
-    }
-}
-
-/* */
-///Change locale (HTML5)
-if (global.html5Build) {
-    if (localeChanged) {
-        setLocale();
-        localeChanged = false;
-    }
-    if (!paused) and (changeSprites) {
-        loadLocalizedSprites();
-        changeSprites = false;
     }
 }

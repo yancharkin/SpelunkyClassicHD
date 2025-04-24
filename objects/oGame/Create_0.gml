@@ -54,29 +54,6 @@ if (global.html5Build) {
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
 firstMenuItemGameY = (240 - global.fontSmallHeight - 20 * maxIndexGame) / 2;
 
-//Left analog stick in the menu
-global.analogLDownPreviousState = false;
-global.analogLUpPreviousState = false;
-global.analogLDownPressed = false;
-global.analogLUpPressed = false;
-
-//for HTML5
-localeChanged = false;
-changeSprites = false;
-
-//Gamepad in HTML5
-instance_create(0, 0, oHtml5Gamepad);
-global.bStartPressed = false;
-global.bStartPreviousState = false;
-global.bJumpPressed = false;
-global.bJumpPressedPreviousState = false;
-global.bJumpReleased = false;
-global.bJumpReleasedPreviousState = false;
-global.bAttackPressed = false;
-global.bAttackPressedPreviousState = false;
-global.bAttackReleased = false;
-global.bAttackReleasedPreviousState = false;
-
 //TouchInput
 if ((global.mobileBuild) or (global.html5Build)) {
     enableTouchInput();

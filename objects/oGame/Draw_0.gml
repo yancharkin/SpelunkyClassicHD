@@ -144,12 +144,5 @@ action_color(-100);
 //draw_text(oPlayer1.x, oPlayer1.y-48, string_hash_to_newline(string(oPlayer1.y-oXMarket.y)));
 //}
 
-/// Draw HUD (HTML5)
-//if (global.html5Build) {
-//    scrDrawHUD();
-//    drawTouchControls();
-//    showMessages();
-//}
-
 /* */
 /*  */

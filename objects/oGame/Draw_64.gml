@@ -119,15 +119,9 @@ if (paused) {
             }
         }
     }
-    if (global.html5Build) drawTouchControls();
-} else {
-	if (global.mobileBuild) {
-		drawTouchControls();
-    };
 }
 
+if ((global.html5Build) or  (global.mobileBuild)) drawTouchControls();
 display_set_gui_size(global.display_w,global.display_h);
-if (!global.html5Build) {
-    scrDrawHUD();
-    showMessages();
-}
+scrDrawHUD();
+showMessages();

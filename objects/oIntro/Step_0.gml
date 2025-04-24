@@ -1,18 +1,7 @@
-var skipCondition;
-if (!global.html5Build) {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
+var skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or
             checkAttackPressed() or
             checkStartPressed());
-} else {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
-            keyboard_check_pressed(global.keyEscape) or
-            html5_gamepad_button_check(global.joyid, global.joyJumpVal) or
-            html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
-            html5_gamepad_button_check(global.joyid, global.joyStartVal) or
-            checkAttackPressed() or
-            checkStartPressed());
-}
 
 if (skipCondition) {
     if (not instance_exists(oPDummy3)) fadeIn = true;

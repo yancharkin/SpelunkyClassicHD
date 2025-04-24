@@ -1,5 +1,0 @@
-/// @description Left analog stick in the menu
-global.analogLDownPressed = false;
-global.analogLUpPressed = false;
-global.analogLLeftPressed = false;
-global.analogLRightPressed = false;

@@ -1,8 +1,4 @@
-if (!global.html5Build) {
-    var skipCondition = checkAttackPressed();
-} else {
-    var skipCondition = global.bAttackPressed or checkAttackPressed();
-}
+var skipCondition = checkAttackPressed();
 
 if (skipCondition) {
     if (talk == 3) or (talk == 4) or (talk == 5) {
@@ -89,4 +85,3 @@ if (skipCondition) {
         downHeld = 0;
     }
 }
-

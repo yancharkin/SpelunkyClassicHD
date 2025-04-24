@@ -39,13 +39,8 @@ function scrSetupWalls(argument0) {
 	        sprite_index = sCaveUp;
 	        if (global.graphicsHigh)
 	        {
-	            if (global.html5Build) {
-	                if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-5, 3);
-	                else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-5, 3);
-	            } else {
-	                if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-16, 3);
-	                else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-16, 3);
-	            }
+	            if (rand(1,3) < 3) tile_add2(bgCaveTop, 0, 0, 16, 16, x, y-16, 3);
+	            else tile_add2(bgCaveTop, 16, 0, 16, 16, x, y-16, 3);
 	        }
 	        // instance_create(x, y-16, oCaveTop);
 	    }
@@ -103,13 +98,8 @@ function scrSetupWalls(argument0) {
         
 	        if (not collision_point(x, y+16, oSolid, 0, 0) and global.graphicsHigh)
 	        {
-	            if (global.html5Build) {
-	                if (rand(1,12) == 1) tile_add2(bgCaveTop2, 53, 0, 16, 16, x, y+16, 3);
-	                else if (rand(1,12) == 1) tile_add2(bgCaveTop2_2, 0, 0, 16, 16, x, y+16, 3);
-	            } else {
-	                if (rand(1,12) == 1) tile_add2(bgCaveTop2, 48, 0, 16, 16, x, y+16, 3);
-	                else if (rand(1,12) == 1) tile_add2(bgCaveTop2, 64, 0, 16, 16, x, y+16, 3);
-	            }
+	            if (rand(1,12) == 1) tile_add2(bgCaveTop2, 48, 0, 16, 16, x, y+16, 3);
+	            else if (rand(1,12) == 1) tile_add2(bgCaveTop2, 64, 0, 16, 16, x, y+16, 3);
 	        }
 	        //instance_create(x, y+16, oLushBottom);
 	    }
@@ -133,15 +123,8 @@ function scrSetupWalls(argument0) {
 	        sprite_index = sDarkUp;
 	        if (global.graphicsHigh)
 	        {
-	            //if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y/*-16*/, 3);
-	            //else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y/*-16*/, 3);
-	            if (global.html5Build) {
-	                if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-5, 3);
-	                else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-5, 3);
-	            } else {
-	                if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-16, 3);
-	                else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-16, 3);
-	            }
+	            if (rand(1,3) < 3) tile_add2(bgCaveTop3, 0, 0, 16, 16, x, y-16, 3);
+	            else tile_add2(bgCaveTop3, 16, 0, 16, 16, x, y-16, 3);
 	        }
 	    }
 
@@ -230,13 +213,8 @@ function scrSetupWalls(argument0) {
 	        sprite_index = sGTempleUp;
 	        if (global.graphicsHigh)
 	        {
-	            if (global.html5Build) {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
-	            } else {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
-	            }
+	            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+	            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
 	        }
 	        if (not left and not right)
 	        {
@@ -270,13 +248,8 @@ function scrSetupWalls(argument0) {
 	        sprite_index = sTempleUp;
 	        if (global.graphicsHigh)
 	        {
-	            if (global.html5Build) {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
-	            } else {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
-	            }
+	            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+	            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
 	        }
 	        if (not left and not right)
 	        {
@@ -324,13 +297,8 @@ function scrSetupWalls(argument0) {
 	        sprite_index = sGTempleUp;
 	        if (global.graphicsHigh)
 	        {
-	            if (global.html5Build) {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-3, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-3, 3);
-	            } else {
-	                if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
-	                else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
-	            }
+	            if (rand(1,4) == 1) tile_add2(bgCaveTop4, 0, 0, 16, 16, x, y-16, 3);
+	            else if (rand(1,4) == 1) tile_add2(bgCaveTop4, 16, 0, 16, 16, x, y-16, 3);
 	        }
 	        if (not left and not right)
 	        {

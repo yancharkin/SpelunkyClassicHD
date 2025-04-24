@@ -1,8 +1,4 @@
 /// @description Draw touch controls (HTML5)
-/// @param HTML5
-if (global.html5Build) {
-    drawTouchControls();
-}
 
 draw_set_font(global.fontSmall);
 draw_set_color(c_white);

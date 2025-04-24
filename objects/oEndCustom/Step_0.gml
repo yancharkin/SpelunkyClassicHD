@@ -1,56 +1,6 @@
-/// @description Gamepad in HTML5
-if (global.html5Build) {
-    //Start
-    if (html5_gamepad_button_check(global.joyid, global.joyStartVal)) {
-        if (global.bStartPreviousState == false) {
-            global.bStartPressed = true;
-            global.bStartPreviousState = true;
-        }
-    } else {
-        global.bStartPreviousState = false;
-    }
-    //Jump
-    if (html5_gamepad_button_check(global.joyid, global.joyJumpVal)) {
-        global.bJumpReleasedPreviousState = false;
-        if (global.bJumpPressedPreviousState == false) {
-            global.bJumpPressed = true;
-            global.bJumpPressedPreviousState = true;
-        }
-    } else {
-        global.bJumpPressedPreviousState = false;
-        if (global.bJumpReleasedPreviousState == false) {
-            global.bJumpReleased = true;
-            global.bJumpReleasedPreviousState = true;
-        }
-    }
-    //Attack
-    if (html5_gamepad_button_check(global.joyid, global.joyAttackVal)) {
-        global.bAttackReleasedPreviousState = false;
-        if (global.bAttackPressedPreviousState == false) {
-            global.bAttackPressed = true;
-            global.bAttackPressedPreviousState = true;
-        }
-    } else {
-        global.bAttackPressedPreviousState = false;
-        if (global.bAttackReleasedPreviousState == false) {
-            global.bAttackReleased = true;
-            global.bAttackReleasedPreviousState = true;
-        }
-    }
-    alarm[6] = 1;
-}
-
-var skipCondition;
-if (!global.html5Build) {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
-            keyboard_check_pressed(global.keyEscape) or 
-            checkAttackPressed() or checkStartPressed());
-} else {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
-            keyboard_check_pressed(global.keyEscape) or
-            global.bAttackPressed or global.bStartPressed or
-            checkAttackPressed() or checkStartPressed());
-}
+var skipCondition = (keyboard_check_pressed(global.keyEnter) or
+        keyboard_check_pressed(global.keyEscape) or 
+        checkAttackPressed() or checkStartPressed());
 
 if (skipCondition) {
     if (drawStatus == 7)
@@ -95,4 +45,3 @@ if (fadeOut)
     if (fadeLevel < 1) fadeLevel += 0.1;
     else drawStatus = 8;
 }
-

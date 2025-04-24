@@ -1,12 +1,5 @@
-var skipCondition;
-if (!global.html5Build) {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
+var skipCondition = (keyboard_check_pressed(global.keyEnter) or
             keyboard_check_pressed(global.keyEscape) or checkAttack());
-} else {
-    skipCondition = (keyboard_check_pressed(global.keyEnter) or
-            html5_gamepad_button_check(global.joyid, global.joyAttackVal) or
-            keyboard_check_pressed(global.keyEscape) or checkAttack());
-}
 
 if (skipCondition) {
     if (instance_exists(oCamel))

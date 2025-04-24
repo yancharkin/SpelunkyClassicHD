@@ -2087,22 +2087,10 @@ if (collision_point(x, y, oExit, 0, 0))
 }
 
 global.xmoney += global.money - money;
-/* */
+
 ///Check keyboard input
-if (!global.html5Build) {
-if (keyboard_check_pressed(global.keyRunVal) or
-        gamepad_button_check_pressed(global.joyid, global.joyRunVal)) {
-        if (global.toggleRunEnabled) {
-            global.toggleRun = !global.toggleRun;
-        }
-    }
-} else {
-    if (keyboard_check_pressed(global.keyRunVal) or (global.bRunPressed)) {
-        if (global.toggleRunEnabled) {
-            global.toggleRun = !global.toggleRun;
-        }
+if checkRunPressed() {
+    if (global.toggleRunEnabled) {
+        global.toggleRun = !global.toggleRun;
     }
 }
-
-/* */
-/*  */
