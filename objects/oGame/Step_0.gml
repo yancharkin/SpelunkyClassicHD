@@ -144,7 +144,9 @@ if (checkLangPressed()) {
 if (keyboard_check_pressed(global.keyStartVal) or gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
         if (not paused) {
-			playerDepth = 174.8*(global.currLevel-1)+(oPlayer1.y+8)*0.34;
+			if (instance_exists(oPlayer1)) {
+				playerDepth = 174.8*(global.currLevel-1)+(oPlayer1.y+8)*0.34;
+			};
             instance_deactivate_all(true);
             audio_pause_all();
             paused = true;

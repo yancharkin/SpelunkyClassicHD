@@ -9,5 +9,5 @@ function getPlatform() {
 	        global.html5Mobile = true;
 	    }
 	}
-	global.html5StandaloneBuild = true; // have to set this manually for PWA and Electron
+	global.html5StandaloneBuild = false; // have to set this manually for PWA and Electron
 }

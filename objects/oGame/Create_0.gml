@@ -10,6 +10,7 @@ paused = false;
 damsel = false;
 idol = false;
 altar = false;
+playerDepth = 0;
 
 // Black Market
 genClothingShop = false;
