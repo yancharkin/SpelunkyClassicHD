@@ -33,7 +33,7 @@ function scrInit() {
 
 	// Defaults
 	global.touchControlsVisibility = 0;
-	if (global.mobileBuild) global.touchControlsVisibility = 0.5;
+	if (global.mobileBuild or global.html5Mobile) global.touchControlsVisibility = 0.5;
 	global.touchVisChangeBy = 0.5;
 	global.toggleRun = false;
 	global.firstLaunch = true;

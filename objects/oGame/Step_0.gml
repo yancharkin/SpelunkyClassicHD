@@ -144,6 +144,7 @@ if (checkLangPressed()) {
 if (keyboard_check_pressed(global.keyStartVal) or gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
         if (not paused) {
+			playerDepth = 174.8*(global.currLevel-1)+(oPlayer1.y+8)*0.34;
             instance_deactivate_all(true);
             audio_pause_all();
             paused = true;
@@ -186,92 +187,132 @@ if (paused) {
                     break;
                 }
                 case 1: {
-                    instance_activate_all();
-                    room_goto(rKeyConfig);
+					if (global.mobileBuild) {
+	                    paused = false;
+	                    instance_activate_all();
+	                    room_goto(rJoyConfig);
+					} else {
+	                    instance_activate_all();
+	                    room_goto(rKeyConfig);
+					};
                     break;
                 }
-                case 2: {               
-                    if (global.html5Build) {
-                        global.joyid = html5_gamepad_next(global.joyid);
-                    } else {
-                        paused = false;
-                        instance_activate_all();
-                        room_goto(rJoyConfig);
-                    }
+                case 2: {
+					if (global.mobileBuild) {
+						global.toggleRunEnabled = !global.toggleRunEnabled;
+					} else {
+	                    paused = false;
+	                    instance_activate_all();
+	                    room_goto(rJoyConfig);
+					}
                     break;
                 }
                 case 3: {
-                    if (global.html5Build) {
-                        paused = false;
-                        instance_activate_all();
-                        room_goto(rJoyConfigHtml5);
-                     } else {
-                        global.toggleRunEnabled = !global.toggleRunEnabled;
-                     }
-                    break;
-                }
-                case 4: {
-                    if (global.html5Build) {
+					if (global.mobileBuild) {
 						global.touchVisChangeBy = 0.5;
 						if (checkLeftPressed()) global.touchVisChangeBy = -0.5;
                         menuTouchControls();
-                    } else if (global.mobileBuild) {
-							global.touchVisChangeBy = 0.5;
-							if (checkLeftPressed()) global.touchVisChangeBy = -0.5;
-                            menuTouchControls();
-                    } else {
-                        menuToggleFullscreen();
-                    }
+					} else {
+						global.toggleRunEnabled = !global.toggleRunEnabled;
+					 }
                     break;
                 }
-				case 5: {
+                case 4: {
 					if (global.mobileBuild) {
 						global.vkeySizeChangeBy = 8;
 						if (checkLeftPressed()) global.vkeySizeChangeBy = -8;
 	                    resizeTouchButtons();
 					} else {
-						global.localeChangeBy = 1;
-						if (checkLeftPressed()) global.localeChangeBy = -1;
-	                    menuLanguage();
+						if (global.html5Build) {
+							global.touchVisChangeBy = 0.5;
+							if (checkLeftPressed()) global.touchVisChangeBy = -0.5;
+	                        menuTouchControls();
+	                    } else {
+	                        menuToggleFullscreen();
+	                    }
+					}
+                    break;
+                }
+				case 5: {
+					if (global.mobileBuild) {
+						global.touchOffsetChangeBy = 0.5;
+						if (checkLeftPressed()) global.touchOffsetChangeBy = -0.5;
+	                    changeTouchOffset()
+					} else {
+						if (global.html5Build) {
+							global.vkeySizeChangeBy = 8;
+							if (checkLeftPressed()) global.vkeySizeChangeBy = -8;
+		                    resizeTouchButtons();
+						} else {
+							global.localeChangeBy = 1;
+							if (checkLeftPressed()) global.localeChangeBy = -1;
+		                    menuLanguage();
+						}
 					}
                     break;
                 }
 				case 6: {
 					if (global.mobileBuild) {
-						global.touchOffsetChangeBy = 0.5;
-						if (checkLeftPressed()) global.touchOffsetChangeBy = -0.5;
-	                    changeTouchOffset();
+						global.localeChangeBy = 1;
+						if (checkLeftPressed()) global.localeChangeBy = -1;
+						menuLanguage();
 					} else {
-						global.locale2ChangeBy = 1;
-						if (checkLeftPressed()) global.locale2ChangeBy = -1;
-						changeLocale2();
+						if (global.html5Build) {
+							global.touchOffsetChangeBy = 0.5;
+							if (checkLeftPressed()) global.touchOffsetChangeBy = -0.5;
+		                    changeTouchOffset()
+						} else {
+							global.locale2ChangeBy = 1;
+							if (checkLeftPressed()) global.locale2ChangeBy = -1;
+							changeLocale2();
+						}
 					}
                     break;
                 }
                 case 7: {
-                    if (global.mobileBuild) {
-						global.localeChangeBy = 1;
-						if (checkLeftPressed()) global.localeChangeBy = -1;
-	                    menuLanguage();
-                    } else {
-                            quitGame();
-                    }
-                    break;
+					if (global.mobileBuild) {
+						global.locale2ChangeBy = 1;
+						if (checkLeftPressed()) global.locale2ChangeBy = -1;
+						changeLocale2();
+					} else {
+						if (global.html5Build) {
+							menuToggleFullscreen();
+	                    } else {
+							game_end();
+	                    }
+					}
+					break;
                 }
                case 8: {
-                    if (global.mobileBuild) {
+					if (global.mobileBuild) {
+	                    instance_activate_all();
+	                    audio_stop_all();
+	                    game_restart();
+					} else {
+						if (global.html5Build) {
+							global.localeChangeBy = 1;
+							if (checkLeftPressed()) global.localeChangeBy = -1;
+							menuLanguage();
+	                    }
+					}
+                    break;
+                }
+                case 9: {
+					if (global.html5Build) {
 						global.locale2ChangeBy = 1;
 						if (checkLeftPressed()) global.locale2ChangeBy = -1;
 						changeLocale2();
                     }
                     break;
-                }
-                case 9: {
-                    if (global.mobileBuild) {
-                        instance_activate_all();
-                        audio_stop_all();
-                        game_restart();
-                    }
+				}
+                case 10: {
+					if (global.html5StandaloneBuild) {
+						game_end();
+					} else {
+	                    instance_activate_all();
+	                    audio_stop_all();
+	                    game_restart();
+					}
                     break;
                 }
             }
@@ -287,71 +328,31 @@ if (paused) {
                     break;
                 }
                 case 2: {
-                    if (global.mobileBuild) {
-						global.touchVisChangeBy = 0.5;
-						if (checkLeftPressed()) global.touchVisChangeBy = -0.5;
-                        menuTouchControls();
-                    } else {
-                        menuToggleFullscreen();
-                    }
-                    break;
-                }
-			case 3: {
 					if (global.mobileBuild) {
-						global.vkeySizeChangeBy = 8;
-						if (checkLeftPressed()) global.vkeySizeChangeBy = -8;
-	                    resizeTouchButtons();
+						menuDie();
 					} else {
-						global.localeChangeBy = 1;
-						if (checkLeftPressed()) global.localeChangeBy = -1;
-	                    menuLanguage();
+						menuToggleFullscreen();
 					}
                     break;
                 }
+				case 3: {
+                    if (global.mobileBuild) {
+		                instance_activate_all();
+		                audio_stop_all();
+		                game_restart();
+					} else {
+						menuDie();
+					}
+			        break;
+				}
 				case 4: {
-					if (global.mobileBuild) {
-						global.touchOffsetChangeBy = 0.5;
-						if (checkLeftPressed()) global.touchOffsetChangeBy = -0.5;
-	                    changeTouchOffset();
+                    if (global.html5Build and  (not global.html5StandaloneBuild)) {
+		                instance_activate_all();
+		                audio_stop_all();
+		                game_restart();
 					} else {
-						global.locale2ChangeBy = 1;
-						if (checkLeftPressed()) global.locale2ChangeBy = -1;
-						changeLocale2();
-					}
-                    break;
-                }
-                case 5: {
-					if (global.mobileBuild) {
-						global.localeChangeBy = 1;
-						if (checkLeftPressed()) global.localeChangeBy = -1;
-	                    menuLanguage();
-					} else {
-                        menuDie();
-                    }
-                    break;
-                }
-                case 6: {
-                    if (global.mobileBuild) {
-						global.locale2ChangeBy = 1;
-						if (checkLeftPressed()) global.locale2ChangeBy = -1;
-						changeLocale2();
-                    } else {
-                        quitGame();
-                    }
-                    break;
-                }
-               case 7: {
-                    if (global.mobileBuild) {
-						menuDie();;
-                    }
-                    break;
-                }
-               case 8: {
-                    if (global.mobileBuild) {
-                        instance_activate_all();
-                        audio_stop_all();
-                        game_restart();
-                    }
+						game_end();
+					}	
                     break;
                 }
             }

@@ -1,5 +1,4 @@
-/// @description Draw touch controls (HTML5)
-
+/// @description
 draw_set_font(global.fontSmall);
 draw_set_color(c_white);
 if (instance_exists(oTunnelMan))

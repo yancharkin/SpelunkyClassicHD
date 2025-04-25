@@ -433,7 +433,6 @@ function __global_object_depths() {
 	global.__objectDepths[425] = 0; // oGamepad
 	global.__objectDepths[426] = 0; // oKeyConfig
 	global.__objectDepths[427] = 0; // oJoyConfig
-	global.__objectDepths[428] = 0; // oJoyConfigHtml5
 	global.__objectDepths[429] = 0; // oScreen
 	global.__objectDepths[430] = 999999; // oScreenFirst
 	global.__objectDepths[431] = -999999; // oScreenLast
@@ -892,7 +891,6 @@ function __global_object_depths() {
 	global.__objectNames[425] = "oGamepad";
 	global.__objectNames[426] = "oKeyConfig";
 	global.__objectNames[427] = "oJoyConfig";
-	global.__objectNames[428] = "oJoyConfigHtml5";
 	global.__objectNames[429] = "oScreen";
 	global.__objectNames[430] = "oScreenFirst";
 	global.__objectNames[431] = "oScreenLast";

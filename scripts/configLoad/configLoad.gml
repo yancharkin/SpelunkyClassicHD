@@ -14,10 +14,11 @@ function configLoad() {
 	global.keyRopeVal = ord("S");
 	global.keyFlareVal = ord("F");
 	global.keyPayVal = ord("P");
+	global.keyLangVal = ord("L");
 	global.keyStartVal = vk_escape;
 	global.keyEscape = vk_escape;
 	global.keyEnter = vk_enter;
-	global.keyLangVal = ord("L");
+	if (global.html5Build) global.keyStartVal = vk_tab;
 
 	global.joyJumpVal = gp_face1;
 	global.joyAttackVal = gp_face2;
@@ -43,7 +44,7 @@ function configLoad() {
 	    global.toggleRunEnabled = is_undefined(settingsMap[? "toggleRunEnabled"]) ? global.toggleRunEnabled : settingsMap[? "toggleRunEnabled"];
 	    global.firstLaunch = is_undefined(settingsMap[? "firstLaunch"]) ? global.firstLaunch : settingsMap[? "firstLaunch"];
 	    global.touchControlsVisibility = is_undefined(settingsMap[? "touchControlsVisibility"]) ? global.touchControlsVisibility : real(settingsMap[? "touchControlsVisibility"]);
-		if !(global.mobileBuild or global.html5Build) global.touchControlsVisibility = 0;
+		if ((not global.mobileBuild) and (not global.html5Mobile)) global.touchControlsVisibility = 0;
 		global.vkeySize = is_undefined(settingsMap[? "touchButtonsSize"]) ? global.vkeySize : int64(settingsMap[? "touchButtonsSize"]);
 		global.touchOffsetH = is_undefined(settingsMap[? "touchOffsetH"]) ? global.touchOffsetH : real(settingsMap[? "touchOffsetH"]);
 	    ds_map_destroy(settingsMap);

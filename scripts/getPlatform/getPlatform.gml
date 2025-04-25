@@ -1,17 +1,13 @@
 /// @description getPlatform
 function getPlatform() {
-
-	global.html5Build = !(os_browser == browser_not_a_browser);
 	global.mobileBuild = (os_type == os_android) or (os_type == os_ios);
-
-	if (global.html5Build) {
-	    global.electronBuild = isElectron();
-	} else {
-	    global.electronBuild = false;
+	global.html5Build = (os_type == os_gxgames);
+	global.html5Mobile = false;
+	if (os_type == os_gxgames) {
+	    var _info = os_get_info();
+	    if (_info[? "mobile"]) {
+	        global.html5Mobile = true;
+	    }
 	}
-
-	global.browserBuild = ((global.html5Build) and (!global.electronBuild));
-
-
-
+	global.html5StandaloneBuild = true; // have to set this manually for PWA and Electron
 }

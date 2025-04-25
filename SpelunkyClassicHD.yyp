@@ -10,7 +10,6 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Basis","folderPath":"folders/Objects/Basis.yy","name":"Basis","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Blocks","folderPath":"folders/Objects/Blocks.yy","name":"Blocks","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -266,8 +265,6 @@
   },
   "name":"SpelunkyClassicHD",
   "resources":[
-    {"id":{"name":"electronExtension","path":"extensions/electronExtension/electronExtension.yy",},},
-    {"id":{"name":"html5Extension","path":"extensions/html5Extension/html5Extension.yy",},},
     {"id":{"name":"oAlien","path":"objects/oAlien/oAlien.yy",},},
     {"id":{"name":"oAlienBoss","path":"objects/oAlienBoss/oAlienBoss.yy",},},
     {"id":{"name":"oAlienBossTile","path":"objects/oAlienBossTile/oAlienBossTile.yy",},},
@@ -819,6 +816,7 @@
     {"id":{"name":"drawCredits","path":"scripts/drawCredits/drawCredits.yy",},},
     {"id":{"name":"drawHighlightedMessage","path":"scripts/drawHighlightedMessage/drawHighlightedMessage.yy",},},
     {"id":{"name":"drawMessage","path":"scripts/drawMessage/drawMessage.yy",},},
+    {"id":{"name":"drawStats","path":"scripts/drawStats/drawStats.yy",},},
     {"id":{"name":"drawText","path":"scripts/drawText/drawText.yy",},},
     {"id":{"name":"drawTextHCentered","path":"scripts/drawTextHCentered/drawTextHCentered.yy",},},
     {"id":{"name":"drawTouchControls","path":"scripts/drawTouchControls/drawTouchControls.yy",},},
@@ -880,7 +878,6 @@
     {"id":{"name":"platformCharacterIs","path":"scripts/platformCharacterIs/platformCharacterIs.yy",},},
     {"id":{"name":"playMusic","path":"scripts/playMusic/playMusic.yy",},},
     {"id":{"name":"playSound","path":"scripts/playSound/playSound.yy",},},
-    {"id":{"name":"quitGame","path":"scripts/quitGame/quitGame.yy",},},
     {"id":{"name":"rand","path":"scripts/rand/rand.yy",},},
     {"id":{"name":"resizeTouchButtons","path":"scripts/resizeTouchButtons/resizeTouchButtons.yy",},},
     {"id":{"name":"room_set_view","path":"scripts/room_set_view/room_set_view.yy",},},

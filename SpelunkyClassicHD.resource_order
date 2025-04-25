@@ -1,6 +1,5 @@
 {
   "FolderOrderSettings":[
-    {"name":"Extensions","order":96,"path":"folders/Extensions.yy",},
     {"name":"Objects","order":93,"path":"folders/Objects.yy",},
     {"name":"Blocks","order":3,"path":"folders/Objects/Blocks.yy",},
     {"name":"Characters","order":8,"path":"folders/Objects/Characters.yy",},
@@ -80,7 +79,6 @@
     {"name":"Tile Sets","order":85,"path":"folders/Tile Sets.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"html5Extension","order":2,"path":"extensions/html5Extension/html5Extension.yy",},
     {"name":"oAlien","order":23,"path":"objects/oAlien/oAlien.yy",},
     {"name":"oAlienBoss","order":24,"path":"objects/oAlienBoss/oAlienBoss.yy",},
     {"name":"oAlienBossTile","order":22,"path":"objects/oAlienBossTile/oAlienBossTile.yy",},
@@ -615,6 +613,7 @@
     {"name":"drawCredits","order":68,"path":"scripts/drawCredits/drawCredits.yy",},
     {"name":"drawHighlightedMessage","order":36,"path":"scripts/drawHighlightedMessage/drawHighlightedMessage.yy",},
     {"name":"drawMessage","order":37,"path":"scripts/drawMessage/drawMessage.yy",},
+    {"name":"drawStats","order":69,"path":"scripts/drawStats/drawStats.yy",},
     {"name":"drawText","order":34,"path":"scripts/drawText/drawText.yy",},
     {"name":"drawTextHCentered","order":35,"path":"scripts/drawTextHCentered/drawTextHCentered.yy",},
     {"name":"drawTouchControls","order":24,"path":"scripts/drawTouchControls/drawTouchControls.yy",},
@@ -670,7 +669,6 @@
     {"name":"onOffMusic","order":56,"path":"scripts/onOffMusic/onOffMusic.yy",},
     {"name":"platformCharacterIs","order":7,"path":"scripts/platformCharacterIs/platformCharacterIs.yy",},
     {"name":"playSound","order":1,"path":"scripts/playSound/playSound.yy",},
-    {"name":"quitGame","order":54,"path":"scripts/quitGame/quitGame.yy",},
     {"name":"rand","order":26,"path":"scripts/rand/rand.yy",},
     {"name":"resizeTouchButtons","order":63,"path":"scripts/resizeTouchButtons/resizeTouchButtons.yy",},
     {"name":"scrCheckCollisions","order":13,"path":"scripts/scrCheckCollisions/scrCheckCollisions.yy",},

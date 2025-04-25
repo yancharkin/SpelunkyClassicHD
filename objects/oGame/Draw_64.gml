@@ -15,6 +15,7 @@ if (paused) {
     var color7 = c_white;
     var color8 = c_white;
 	var color9 = c_white;
+	var color10 = c_white;
     switch (menuItemIndex) {
         case 0: { color0 = c_yellow; break; }
         case 1: { color1 = c_yellow; break; }
@@ -26,6 +27,7 @@ if (paused) {
         case 7: { color7 = c_yellow; break; }
         case 8: { color8 = c_yellow; break; }
 		case 9: { color9 = c_yellow; break; }
+		case 10: { color10 = c_yellow; break; }
     }
 
 	var strMusic = tr("OFF");
@@ -41,37 +43,49 @@ if (paused) {
     if (isRoom("rTitle")) {
         if (global.html5Build) {
             drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemTitleY);
-            drawTextHCentered(tr("KEYBOARD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
-            drawTextHCentered(tr("GAMEPAD") + " <" + string(global.joyid) + ">", "small", color2, 0, firstMenuItemTitleY+40);
-            drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color3, 0, firstMenuItemTitleY+60);
-            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color4, 0, firstMenuItemTitleY+80);
-            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color5, 0, firstMenuItemTitleY+100);
-            if (global.mobileBuild) {
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color6, 0, firstMenuItemTitleY+120);
-                drawTextHCentered(tr("RESTART"), "small", color7, 0, firstMenuItemTitleY+140);
-            } else if (global.browserBuild) {
-                drawTextHCentered(tr("TOGGLE FULLSCREEN"), "small", color6, 0, firstMenuItemTitleY+120);
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color7, 0, firstMenuItemTitleY+140);
-                drawTextHCentered(tr("RESTART"), "small", color8, 0, firstMenuItemTitleY+160);
-            //} else if (global.electronBuild) {
-            } else {        
-                drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color6, 0, firstMenuItemTitleY+120);    
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color7, 0, firstMenuItemTitleY+140);
-                drawTextHCentered(tr("QUIT"), "small", color8, 0, firstMenuItemTitleY+160);
-            }
-        } else {
-            drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemTitleY);
-            drawTextHCentered(tr("KEYBOARD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
-            drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color2, 0, firstMenuItemTitleY+40);
-            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color3, 0, firstMenuItemTitleY+60);
-            if (global.mobileBuild) {
-                drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string_format(global.touchControlsVisibility, 1, 1) + ">", "small", color4, 0, firstMenuItemTitleY+80);
+	        if (global.mobileBuild) {
+				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
+	            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color2, 0, firstMenuItemTitleY+40);
+	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color3, 0, firstMenuItemTitleY+60);
+				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color4, 0, firstMenuItemTitleY+80);
+				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color5, 0, firstMenuItemTitleY+100);
+				drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color6, 0, firstMenuItemTitleY+120);
+				drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color7, 0, firstMenuItemTitleY+140);
+	            drawTextHCentered(tr("RESTART"), "small", color8, 0, firstMenuItemTitleY+160);
+			} else {
+				drawTextHCentered(tr("KEYBOARD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
+				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color2, 0, firstMenuItemTitleY+40);
+	            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color3, 0, firstMenuItemTitleY+60);
+	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color4, 0, firstMenuItemTitleY+80);
 				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color5, 0, firstMenuItemTitleY+100);
 				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color6, 0, firstMenuItemTitleY+120);
-                drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color7, 0, firstMenuItemTitleY+140);
-                drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color8, 0, firstMenuItemTitleY+160);
-				drawTextHCentered(tr("RESTART"), "small", color9, 0, firstMenuItemTitleY+180);
+			    if (global.html5StandaloneBuild) {
+			        drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color7, 0, firstMenuItemTitleY+140);
+					drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color8, 0, firstMenuItemTitleY+160);
+					drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color9, 0, firstMenuItemTitleY+180);
+			        drawTextHCentered(tr("QUIT"), "small", color10, 0, firstMenuItemTitleY+200);
+				} else {        
+					drawTextHCentered(tr("TOGGLE FULLSCREEN"), "small", color7, 0, firstMenuItemTitleY+140);
+			        drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color8, 0, firstMenuItemTitleY+160);
+					drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color9, 0, firstMenuItemTitleY+180);
+			        drawTextHCentered(tr("RESTART"), "small", color10, 0, firstMenuItemTitleY+200);
+				}
+			}
+        } else {
+            drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemTitleY);
+            if (global.mobileBuild) {
+				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
+				drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color2, 0, firstMenuItemTitleY+40);
+                drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string_format(global.touchControlsVisibility, 1, 1) + ">", "small", color3, 0, firstMenuItemTitleY+60);
+				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color4, 0, firstMenuItemTitleY+80);
+				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color5, 0, firstMenuItemTitleY+100);
+                drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color6, 0, firstMenuItemTitleY+120);
+                drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color7, 0, firstMenuItemTitleY+140);
+				drawTextHCentered(tr("RESTART"), "small", color8, 0, firstMenuItemTitleY+160);
             } else {
+				drawTextHCentered(tr("KEYBOARD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
+				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color2, 0, firstMenuItemTitleY+40);
+				drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color3, 0, firstMenuItemTitleY+60);
                 drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color4, 0, firstMenuItemTitleY+80);
                 drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color5, 0, firstMenuItemTitleY+100);
 				drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color6, 0, firstMenuItemTitleY+120);
@@ -79,45 +93,26 @@ if (paused) {
             }
         }
     } else {
-        if (global.html5Build) {
-            drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemGameY);
-            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color1, 0, firstMenuItemGameY+20);
-            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color2, 0, firstMenuItemGameY+40);
-            if (global.mobileBuild) {
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr("DIE!"), "small", color4, 0, firstMenuItemGameY+80);
-                drawTextHCentered(tr("RESTART"), "small", color5, 0, firstMenuItemGameY+100);
-            } else if (global.browserBuild) {
-                drawTextHCentered(tr("TOGGLE FULLSCREEN"), "small", color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color4, 0, firstMenuItemGameY+80);
-                drawTextHCentered(tr("DIE!"), "small", color5, 0, firstMenuItemGameY+100);
-                drawTextHCentered(tr("RESTART"), "small", color6, 0, firstMenuItemGameY+120);
-            //} else if (global.electronBuild) {
-            } else {
-                drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color3, 0, firstMenuItemGameY+60);
-                drawTextHCentered(tr("LANGUAGE") + " <" + strLocaleName + ">", "small", color4, 0, firstMenuItemGameY+80);
-                drawTextHCentered(tr("DIE!"), "small", color5, 0, firstMenuItemGameY+100);
-                drawTextHCentered(tr("QUIT"), "small", color6, 0, firstMenuItemGameY+120);
-            }
-        } else {
-            drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemGameY);
-            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color1, 0, firstMenuItemGameY+20);
-            if (global.mobileBuild) {
-                drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color2, 0, firstMenuItemGameY+40);
-				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color3, 0, firstMenuItemGameY+60);
-				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color4, 0, firstMenuItemGameY+80);
-                drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color5, 0, firstMenuItemGameY+100);
-				drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color6, 0, firstMenuItemGameY+120);
-                drawTextHCentered(tr("DIE!"), "small", color7, 0, firstMenuItemGameY+140);
-                drawTextHCentered(tr("RESTART"), "small", color8, 0, firstMenuItemGameY+160);
-            } else {
-                drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color2, 0, firstMenuItemGameY+40);
-                drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color3, 0, firstMenuItemGameY+60);
-				drawTextHCentered(tr("LANGUAGE") + " 2 <" + strLocaleName2 + ">", "small", color4, 0, firstMenuItemGameY+80);
-                drawTextHCentered(tr("DIE!"), "small", color5, 0, firstMenuItemGameY+100);
-                drawTextHCentered(tr("QUIT"), "small", color6, 0, firstMenuItemGameY+120);
-            }
-        }
+        drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemGameY);
+        drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color1, 0, firstMenuItemGameY+20);
+		if (global.html5Build or global.mobileBuild) {
+			if (global.mobileBuild) {
+				 drawTextHCentered(tr("DIE!"), "small", color2, 0, firstMenuItemGameY+40);
+				 drawTextHCentered(tr("RESTART"), "small", color3, 0, firstMenuItemGameY+60);
+			} else if (not global.html5StandaloneBuild) {
+				drawTextHCentered(tr("TOGGLE FULLSCREEN"), "small", color2, 0, firstMenuItemGameY+40);
+				drawTextHCentered(tr("DIE!"), "small", color3, 0, firstMenuItemGameY+60);
+				drawTextHCentered(tr("RESTART"), "small", color4, 0, firstMenuItemGameY+80);
+			} else {
+				drawTextHCentered(tr("TOGGLE FULLSCREEN"), "small", color2, 0, firstMenuItemGameY+40);
+				drawTextHCentered(tr("DIE!"), "small", color3, 0, firstMenuItemGameY+60);
+				drawTextHCentered(tr("QUIT"), "small", color4, 0, firstMenuItemGameY+80);
+			}
+		} else {
+			drawTextHCentered(tr("FULLSCREEN") + " <" + strFullscreen + ">", "small", color2, 0, firstMenuItemGameY+40);
+			drawTextHCentered(tr("DIE!"), "small", color3, 0, firstMenuItemGameY+60);
+			drawTextHCentered(tr("QUIT"), "small", color4, 0, firstMenuItemGameY+80);
+		}
     }
 }
 

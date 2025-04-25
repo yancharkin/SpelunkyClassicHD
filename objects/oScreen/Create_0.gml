@@ -58,24 +58,17 @@ conf_y = (h - 120 - 32)/2;
 
 room_set_view(rKeyConfig,0,true,-conf_x,-conf_y,w,h,0,0,w,h,0,0,0,0,noone);
 room_set_view(rJoyConfig,0,true,-conf_x,-conf_y,w,h,0,0,w,h,0,0,0,0,noone);
-room_set_view(rJoyConfigHtml5,0,true,-conf_x,-conf_y,w,h,0,0,w,h,0,0,0,0,noone);
 
 window_set_size(screen_w, screen_h);
 if (global.fullscreen){
-    if (!global.html5Build) {
-        window_set_size(screen_w, screen_h);
-        window_set_fullscreen(true);
-    } else {
-        if (global.electronBuild) {
-            newSize = electronSetFullscreen(true);
-            window_set_size(newSize[0], newSize[1]);
-        }
-    }
+    window_set_size(screen_w, screen_h);
+    window_set_fullscreen(true);
 }
 
 if (!global.html5Build) {
     window_set_size(800, 800/global.screenAspectRatio);
 }
+
 surface_resize(application_surface, w, h);
 __view_set( e__VW.WView, 0, w );
 __view_set( e__VW.WPort, 0, w );

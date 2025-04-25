@@ -17,16 +17,3 @@ if (global.kaliPunish >= 2)
 }
 
 stopAllMusic();
-
-///Gamepad in HTML5
-global.bStartPressed = false;
-global.bStartPreviousState = false;
-global.bJumpPressed = false;
-global.bJumpPressedPreviousState = false;
-global.bJumpReleased = false;
-global.bJumpReleasedPreviousState = false;
-global.bAttackPressed = false;
-global.bAttackPressedPreviousState = false;
-global.bAttackReleased = false;
-global.bAttackReleasedPreviousState = false;
-

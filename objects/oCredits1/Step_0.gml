@@ -45,6 +45,6 @@ else if (fadeOut)
     if (fadeLevel < 1) fadeLevel += 0.1;
     else
     {
-        quitGame();
+        game_end();
     }
 }

@@ -33,22 +33,14 @@ menuItemIndex = 0;
 //Debug
 if (global.debugBuild) instance_create(0, 0, oDebug);
 
-if (global.html5Build) {
-    if (global.mobileBuild) {
-        maxIndexTitle = 7;
-        maxIndexGame = 5;
-    } else {
-        maxIndexTitle = 8;
-        maxIndexGame = 6;
-    }
+
+if (not global.mobileBuild) {
+	maxIndexTitle = 7;
+	maxIndexGame = 4;
+	if (global.html5Build) maxIndexTitle = 10;
 } else {
-	if (global.mobileBuild) {
-		maxIndexTitle = 9;
-	    maxIndexGame = 8;
-	} else {
-		maxIndexTitle = 7;
-	    maxIndexGame = 6;
-	}
+	maxIndexTitle = 8;
+	maxIndexGame = 3;
 }
 
 firstMenuItemTitleY = (240 - global.fontSmallHeight - 20 * maxIndexTitle) / 2;
