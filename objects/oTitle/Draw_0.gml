@@ -13,4 +13,3 @@ if (instance_exists(oPlayer1)) {
         drawTextHCentered(tr("WELCOME TO THE SHORTCUT HOUSE!"), "small", c_white, 0, 224);
     }
 }
-

@@ -47,7 +47,7 @@ if (paused) {
 	        if (global.mobileBuild) {
 				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
 	            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color2, 0, firstMenuItemTitleY+40);
-	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color3, 0, firstMenuItemTitleY+60);
+	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string_format(global.touchControlsVisibility, 1, 1) + ">", "small", color3, 0, firstMenuItemTitleY+60);
 				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color4, 0, firstMenuItemTitleY+80);
 				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color5, 0, firstMenuItemTitleY+100);
 				drawTextHCentered(tr("LANGUAGE") + " 1 <" + strLocaleName + ">", "small", color6, 0, firstMenuItemTitleY+120);
@@ -57,7 +57,7 @@ if (paused) {
 				drawTextHCentered(tr("KEYBOARD CONFIGURATION"), "small", color1, 0, firstMenuItemTitleY+20);
 				drawTextHCentered(tr("GAMEPAD CONFIGURATION"), "small", color2, 0, firstMenuItemTitleY+40);
 	            drawTextHCentered(tr("TOGGLEABLE RUN BUTTON") + " <" + strToggleRunEnabled + ">", "small", color3, 0, firstMenuItemTitleY+60);
-	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string(global.touchControlsVisibility) + ">", "small", color4, 0, firstMenuItemTitleY+80);
+	            drawTextHCentered(tr("TOUCH CONTROLS VISIBILITY") + " <" + string_format(global.touchControlsVisibility, 1, 1) + ">", "small", color4, 0, firstMenuItemTitleY+80);
 				drawTextHCentered(tr("TOUCH BUTTONS SIZE") + " <" + string(global.vkeySize) + ">", "small", color5, 0, firstMenuItemTitleY+100);
 				drawTextHCentered(tr("TOUCH BUTTONS OFFSET") + " <" + string_format(global.touchOffsetH, 1, 1) + ">", "small", color6, 0, firstMenuItemTitleY+120);
 			    if (global.html5StandaloneBuild) {

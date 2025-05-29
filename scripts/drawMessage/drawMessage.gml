@@ -12,7 +12,7 @@ function drawMessage() {
 	var offsetX = argument[3];
 	var posY = argument[4];
 	var messageN = argument[5];
-	if (global.messageBackground) {
+	if (global.messageBackground and global.locale != "ar") {
 	    strLen = string_length(text)*global.fontSmallWidth;
 	    posX = ceil((global.display_w - strLen) / 2);
 	    if (strLen != 0) {
