@@ -20,20 +20,20 @@ function configLoad() {
 	global.keyEnter = vk_enter;
 	if (global.html5Build) global.keyStartVal = vk_tab;
 
-	global.joyJumpVal = gp_face1;
-	global.joyAttackVal = gp_face2;
-	global.joyItemVal = gp_face3;
-	global.joyRunVal = gp_shoulderlb;
-	global.joyBombVal = gp_shoulderl;
-	global.joyRopeVal = gp_shoulderr;
-	global.joyFlareVal = gp_face4;
-	global.joyPayVal = gp_shoulderrb;
-	global.joyStartVal = gp_start;
-	global.joyLeftVal = gp_padl;
-	global.joyRightVal = gp_padr;
-	global.joyUpVal = gp_padu;
-	global.joyDownVal = gp_padd;
-	global.joyLangVal = gp_stickr;
+	global.joyJumpVal = -1;
+	global.joyAttackVal = -1;
+	global.joyItemVal = -1;
+	global.joyRunVal = -1;
+	global.joyBombVal = -1;
+	global.joyRopeVal = -1;
+	global.joyFlareVal = -1;
+	global.joyPayVal = -1;
+	global.joyStartVal = -1;
+	global.joyLeftVal = -1;
+	global.joyRightVal = -1;
+	global.joyUpVal = -1;
+	global.joyDownVal = -1;
+	global.joyLangVal = -1;
 
 	if (file_exists(getWorkingDirPath("settings.json"))) {
 	    var settingsMap = json2dsmap(getWorkingDirPath("settings.json"));
