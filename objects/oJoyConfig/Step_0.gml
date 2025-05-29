@@ -14,6 +14,11 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 		alarm[0] = alarmSec*fps;
 	}
 } else {
+	if (!buttonsVisible) {
+		 oJoyConfigClearBtn.visible = true;
+		 oJoyConfigSkipBtn.visible = true;
+		 buttonsVisible = true;
+	}
 	var joyKey = checkJoyButton();
 	if (joy) {
 	    if (joyKey != -1) {
@@ -37,8 +42,9 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 	// Prevent assignment of one button to the multiple actions
 	if (array_contains(global.assignedButtons, joyKey)) joyPressed = false;
 
-	if (joyPressed){
-		array_push(global.assignedButtons, joyKey); 
+	if (joyPressed or clearBtnPressed) {
+		if (joyPressed) array_push(global.assignedButtons, joyKey);
+		if (clearBtnPressed) joyKey = -1;
 	    if (status == 0) {
 			global.joyJumpVal = joyKey;
 	    } else if (status == 1) {
@@ -68,7 +74,7 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 	    }
 	}
 
-	if (joyPressed or keyboard_check_pressed(vk_escape) or alarm[0] == alarmSec*fps) {
+	if (joyPressed or clearBtnPressed or keyboard_check_pressed(vk_escape) or alarm[0] == alarmSec*fps) {
 		status += 1;
 		alarm[0] = alarmSec*fps;
 		if (gamepad.attackPressed) gamepad.attackPressed = false;
@@ -76,6 +82,9 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 		//if (os_type == os_windows) {
 		//	if (status > 8) room_goto(rTitle);
 		//}
-		if (status > 12) room_goto(rTitle);
+		if (status > 12) {
+			window_set_cursor(cr_none);
+			room_goto(rTitle);
+		}
 	}
 }

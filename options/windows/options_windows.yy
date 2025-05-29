@@ -9,7 +9,7 @@
   "option_windows_copy_exe_to_dest":false,
   "option_windows_description_info":"A modified version of Derek Yu's game Spelunky Classic.",
   "option_windows_disable_sandbox":true,
-  "option_windows_display_cursor":false,
+  "option_windows_display_cursor":true,
   "option_windows_display_name":"SpelunkyClassicHD",
   "option_windows_enable_steam":false,
   "option_windows_executable_name":"${project_name}.exe",
