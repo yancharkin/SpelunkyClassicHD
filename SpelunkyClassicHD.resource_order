@@ -844,6 +844,7 @@
     {"name":"sound_volume","order":3,"path":"scripts/sound_volume/sound_volume.yy",},
     {"name":"startMusic","order":2,"path":"scripts/startMusic/startMusic.yy",},
     {"name":"stopAllMusic","order":3,"path":"scripts/stopAllMusic/stopAllMusic.yy",},
+    {"name":"string_has_digits","order":71,"path":"scripts/string_has_digits/string_has_digits.yy",},
     {"name":"string_height_scribble_ext","order":3,"path":"scripts/string_height_scribble_ext/string_height_scribble_ext.yy",},
     {"name":"string_height_scribble","order":2,"path":"scripts/string_height_scribble/string_height_scribble.yy",},
     {"name":"string_length_scribble","order":4,"path":"scripts/string_length_scribble/string_length_scribble.yy",},

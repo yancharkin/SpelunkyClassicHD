@@ -140,4 +140,5 @@ function scrInit() {
 	getLocales();
 	setLocale();
 	loadLocalizedSprites();
+	scribble_font_set_default("fnt_7_12");
 }
