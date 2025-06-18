@@ -21,6 +21,8 @@ function scrInit() {
 	    If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 
 	***********************************************************************************/
+	#macro game_speed game_get_speed(gamespeed_fps)
+
 	initMusic();
 	getPlatform();
 

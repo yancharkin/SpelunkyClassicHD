@@ -14,8 +14,8 @@ if (global.gameStart and instance_exists(oCharacter) and isLevel())
 {
     if (not oCharacter.dead)
     {
-        global.time += room_speed;
-        global.xtime += room_speed;
+        global.time += game_speed;
+        global.xtime += game_speed;
     }
 }
 
