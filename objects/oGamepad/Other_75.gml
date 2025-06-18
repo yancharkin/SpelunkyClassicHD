@@ -4,7 +4,7 @@ var ev_type = ds_map_find_value(async_load, "event_type");
 var pad_ind = ds_map_find_value(async_load, "pad_index");
 
 if (ev_type == "gamepad discovered") {
-	if (gamepad_is_connected(pad_ind)) {
+	if (gamepad_is_connected(pad_ind) and !global.gamepadOn) { // if more than 1 gamepads detected at the same time, use only the first
 		global.joyid = pad_ind;
 		global.gamepadOn = true;
 	}
