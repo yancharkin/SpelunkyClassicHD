@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sCompass",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"230fc280-d6f4-4dc4-afa1-d1c12e0b58ef","name":"230fc280-d6f4-4dc4-afa1-d1c12e0b58ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"230fc280-d6f4-4dc4-afa1-d1c12e0b58ef","name":"230fc280-d6f4-4dc4-afa1-d1c12e0b58ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sLevel9Sign",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aaa8ac7c-9afc-4140-b5e8-27d171a9b592","name":"aaa8ac7c-9afc-4140-b5e8-27d171a9b592","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aaa8ac7c-9afc-4140-b5e8-27d171a9b592","name":"aaa8ac7c-9afc-4140-b5e8-27d171a9b592","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

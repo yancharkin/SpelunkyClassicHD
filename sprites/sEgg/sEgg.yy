@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sEgg",
   "bboxMode":0,
   "bbox_bottom":7,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b1f8c96e-511d-44bc-9ad4-f2fd14a16d5d","name":"b1f8c96e-511d-44bc-9ad4-f2fd14a16d5d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b1f8c96e-511d-44bc-9ad4-f2fd14a16d5d","name":"b1f8c96e-511d-44bc-9ad4-f2fd14a16d5d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

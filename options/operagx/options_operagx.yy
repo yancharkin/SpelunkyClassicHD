@@ -1,5 +1,5 @@
 {
-  "$GMOperaGXOptions":"",
+  "$GMOperaGXOptions":"v1",
   "%Name":"Opera GX",
   "name":"Opera GX",
   "option_operagx_display_cursor":true,
@@ -23,6 +23,7 @@
   "option_operagx_team_id":"ebf439bf-649b-4135-bb2a-5206bba2c31b",
   "option_operagx_team_name":"yancharkin",
   "option_operagx_texture_page":"2048x2048",
+  "option_operagx_transparent_background":false,
   "option_operagx_version":"1.2.1.0",
   "resourceType":"GMOperaGXOptions",
   "resourceVersion":"2.0",

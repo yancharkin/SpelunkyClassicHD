@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sIceCaveman",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d30ad9c5-df67-4d5d-b8f2-1cdc460f423d","name":"d30ad9c5-df67-4d5d-b8f2-1cdc460f423d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d30ad9c5-df67-4d5d-b8f2-1cdc460f423d","name":"d30ad9c5-df67-4d5d-b8f2-1cdc460f423d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

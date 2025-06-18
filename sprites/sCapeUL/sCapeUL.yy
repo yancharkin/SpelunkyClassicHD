@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sCapeUL",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5080cfd6-bb43-4d20-a72a-cfcab2e56b8d","name":"5080cfd6-bb43-4d20-a72a-cfcab2e56b8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e67e0c4e-b666-44db-940e-53ac9c689dbc","name":"e67e0c4e-b666-44db-940e-53ac9c689dbc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5080cfd6-bb43-4d20-a72a-cfcab2e56b8d","name":"5080cfd6-bb43-4d20-a72a-cfcab2e56b8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e67e0c4e-b666-44db-940e-53ac9c689dbc","name":"e67e0c4e-b666-44db-940e-53ac9c689dbc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

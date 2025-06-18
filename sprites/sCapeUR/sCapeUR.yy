@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sCapeUR",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9ad94051-cd67-42b6-b6f2-642cd618a74a","name":"9ad94051-cd67-42b6-b6f2-642cd618a74a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c3690b50-4798-4260-ab9d-63855402a724","name":"c3690b50-4798-4260-ab9d-63855402a724","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9ad94051-cd67-42b6-b6f2-642cd618a74a","name":"9ad94051-cd67-42b6-b6f2-642cd618a74a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c3690b50-4798-4260-ab9d-63855402a724","name":"c3690b50-4798-4260-ab9d-63855402a724","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

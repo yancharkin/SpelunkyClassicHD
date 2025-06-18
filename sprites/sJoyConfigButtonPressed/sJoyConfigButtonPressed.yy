@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sJoyConfigButtonPressed",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b57ed3bc-6386-472c-b14c-5a2567c22f7a","name":"b57ed3bc-6386-472c-b14c-5a2567c22f7a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b57ed3bc-6386-472c-b14c-5a2567c22f7a","name":"b57ed3bc-6386-472c-b14c-5a2567c22f7a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

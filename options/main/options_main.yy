@@ -1,7 +1,8 @@
 {
-  "$GMMainOptions":"v3",
+  "$GMMainOptions":"v4",
   "%Name":"Main",
   "name":"Main",
+  "option_allow_instance_change":true,
   "option_audio_error_behaviour":true,
   "option_author":"",
   "option_collision_compatibility":false,

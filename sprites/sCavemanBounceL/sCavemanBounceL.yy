@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sCavemanBounceL",
   "bboxMode":0,
   "bbox_bottom":13,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7e5a5b28-b3ff-4b53-827b-bdc43333ed51","name":"7e5a5b28-b3ff-4b53-827b-bdc43333ed51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7e5a5b28-b3ff-4b53-827b-bdc43333ed51","name":"7e5a5b28-b3ff-4b53-827b-bdc43333ed51","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

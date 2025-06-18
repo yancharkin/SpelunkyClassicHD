@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sVampireDHeldL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2ec13ca6-36e0-4877-a3c0-a91c2f2e929a","name":"2ec13ca6-36e0-4877-a3c0-a91c2f2e929a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2ec13ca6-36e0-4877-a3c0-a91c2f2e929a","name":"2ec13ca6-36e0-4877-a3c0-a91c2f2e929a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

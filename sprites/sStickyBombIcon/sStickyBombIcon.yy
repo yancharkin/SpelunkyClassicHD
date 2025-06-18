@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sStickyBombIcon",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f667b1eb-5dc4-4f80-a5b8-3be436cfcdf5","name":"f667b1eb-5dc4-4f80-a5b8-3be436cfcdf5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f667b1eb-5dc4-4f80-a5b8-3be436cfcdf5","name":"f667b1eb-5dc4-4f80-a5b8-3be436cfcdf5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
