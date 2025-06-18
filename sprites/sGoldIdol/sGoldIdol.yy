@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sGoldIdol",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"bcf54a56-4f96-4e6a-a151-c8e87c90cb47","name":"bcf54a56-4f96-4e6a-a151-c8e87c90cb47","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"bcf54a56-4f96-4e6a-a151-c8e87c90cb47","name":"bcf54a56-4f96-4e6a-a151-c8e87c90cb47","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

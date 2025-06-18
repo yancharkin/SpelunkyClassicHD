@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sParachuteIcon",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"b45fa97b-eba2-47af-a466-ebb619d05f3e","name":"b45fa97b-eba2-47af-a466-ebb619d05f3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"b45fa97b-eba2-47af-a466-ebb619d05f3e","name":"b45fa97b-eba2-47af-a466-ebb619d05f3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

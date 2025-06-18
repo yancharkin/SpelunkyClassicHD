@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sHawkDieLL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2a0863ce-a30c-43ac-bd6c-e69d2fb061e3","name":"2a0863ce-a30c-43ac-bd6c-e69d2fb061e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2a0863ce-a30c-43ac-bd6c-e69d2fb061e3","name":"2a0863ce-a30c-43ac-bd6c-e69d2fb061e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

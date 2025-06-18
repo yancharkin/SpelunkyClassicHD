@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sMacheteLeft",
   "bboxMode":0,
   "bbox_bottom":8,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"6335cc84-2c19-46eb-a6f1-b6ed995c90e4","name":"6335cc84-2c19-46eb-a6f1-b6ed995c90e4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6335cc84-2c19-46eb-a6f1-b6ed995c90e4","name":"6335cc84-2c19-46eb-a6f1-b6ed995c90e4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

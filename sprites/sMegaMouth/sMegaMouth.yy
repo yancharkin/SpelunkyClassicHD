@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sMegaMouth",
   "bboxMode":0,
   "bbox_bottom":30,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"534ec171-1891-41e4-9141-63c9f6fc4bc1","name":"534ec171-1891-41e4-9141-63c9f6fc4bc1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"534ec171-1891-41e4-9141-63c9f6fc4bc1","name":"534ec171-1891-41e4-9141-63c9f6fc4bc1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

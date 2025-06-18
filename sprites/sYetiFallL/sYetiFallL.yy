@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sYetiFallL",
   "bboxMode":0,
   "bbox_bottom":12,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"a1ec4f1f-d1d8-478a-90f0-18cb5a5fca1e","name":"a1ec4f1f-d1d8-478a-90f0-18cb5a5fca1e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a1ec4f1f-d1d8-478a-90f0-18cb5a5fca1e","name":"a1ec4f1f-d1d8-478a-90f0-18cb5a5fca1e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

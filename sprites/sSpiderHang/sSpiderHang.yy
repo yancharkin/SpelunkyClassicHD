@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSpiderHang",
   "bboxMode":0,
   "bbox_bottom":9,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"d84f2f93-2336-4cfd-ad02-35a6518f49f8","name":"d84f2f93-2336-4cfd-ad02-35a6518f49f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d84f2f93-2336-4cfd-ad02-35a6518f49f8","name":"d84f2f93-2336-4cfd-ad02-35a6518f49f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

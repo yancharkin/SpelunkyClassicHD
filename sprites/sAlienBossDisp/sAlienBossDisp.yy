@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sAlienBossDisp",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e03f37b9-348e-4e6d-9806-75a3380f06b3","name":"e03f37b9-348e-4e6d-9806-75a3380f06b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e03f37b9-348e-4e6d-9806-75a3380f06b3","name":"e03f37b9-348e-4e6d-9806-75a3380f06b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sMoai3",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"8d3b9bc6-9da1-46b4-839e-71eb3ebaaae6","name":"8d3b9bc6-9da1-46b4-839e-71eb3ebaaae6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8d3b9bc6-9da1-46b4-839e-71eb3ebaaae6","name":"8d3b9bc6-9da1-46b4-839e-71eb3ebaaae6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

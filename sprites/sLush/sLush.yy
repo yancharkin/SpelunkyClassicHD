@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sLush",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"ab1f5dcb-2c44-4947-aac0-37b78e1079b0","name":"ab1f5dcb-2c44-4947-aac0-37b78e1079b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ab1f5dcb-2c44-4947-aac0-37b78e1079b0","name":"ab1f5dcb-2c44-4947-aac0-37b78e1079b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sGraveAsh",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"aedfc05f-1fad-47f6-9816-6492ae46d87f","name":"aedfc05f-1fad-47f6-9816-6492ae46d87f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"aedfc05f-1fad-47f6-9816-6492ae46d87f","name":"aedfc05f-1fad-47f6-9816-6492ae46d87f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

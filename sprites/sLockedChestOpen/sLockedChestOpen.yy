@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sLockedChestOpen",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2b7fdb8f-39c9-4878-905a-9682e57dfb67","name":"2b7fdb8f-39c9-4878-905a-9682e57dfb67","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2b7fdb8f-39c9-4878-905a-9682e57dfb67","name":"2b7fdb8f-39c9-4878-905a-9682e57dfb67","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sVampireFallL",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"8f9a505e-bd78-45eb-bf39-a6189a6b00d5","name":"8f9a505e-bd78-45eb-bf39-a6189a6b00d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8f9a505e-bd78-45eb-bf39-a6189a6b00d5","name":"8f9a505e-bd78-45eb-bf39-a6189a6b00d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

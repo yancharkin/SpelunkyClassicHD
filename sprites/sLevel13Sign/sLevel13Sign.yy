@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sLevel13Sign",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"c3bc0a85-4fdd-4c01-b28b-1f5f642d333f","name":"c3bc0a85-4fdd-4c01-b28b-1f5f642d333f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c3bc0a85-4fdd-4c01-b28b-1f5f642d333f","name":"c3bc0a85-4fdd-4c01-b28b-1f5f642d333f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

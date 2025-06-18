@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sWhipPreR",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"62d63fe5-a456-4c8d-b61e-18d034ccce3e","name":"62d63fe5-a456-4c8d-b61e-18d034ccce3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"62d63fe5-a456-4c8d-b61e-18d034ccce3e","name":"62d63fe5-a456-4c8d-b61e-18d034ccce3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

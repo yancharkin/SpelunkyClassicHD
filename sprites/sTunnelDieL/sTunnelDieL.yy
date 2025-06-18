@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sTunnelDieL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"31caa15e-9c3b-41ed-9f28-f33f4ca69695","name":"31caa15e-9c3b-41ed-9f28-f33f4ca69695","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"31caa15e-9c3b-41ed-9f28-f33f4ca69695","name":"31caa15e-9c3b-41ed-9f28-f33f4ca69695","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

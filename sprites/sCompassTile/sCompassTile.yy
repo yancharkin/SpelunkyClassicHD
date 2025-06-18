@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sCompassTile",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"97c8c97d-9c15-4c2e-a4a6-b27492fbd60b","name":"97c8c97d-9c15-4c2e-a4a6-b27492fbd60b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"97c8c97d-9c15-4c2e-a4a6-b27492fbd60b","name":"97c8c97d-9c15-4c2e-a4a6-b27492fbd60b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

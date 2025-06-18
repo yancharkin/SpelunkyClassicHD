@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sTreeBranchDeadL",
   "bboxMode":0,
   "bbox_bottom":9,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"200a7354-fa37-4089-bb3f-bfedae27e840","name":"200a7354-fa37-4089-bb3f-bfedae27e840","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"200a7354-fa37-4089-bb3f-bfedae27e840","name":"200a7354-fa37-4089-bb3f-bfedae27e840","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

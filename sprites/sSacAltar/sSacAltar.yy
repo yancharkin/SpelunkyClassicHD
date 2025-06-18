@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSacAltar",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"61ce9d2a-e996-4722-b37d-3792f9e6f8aa","name":"61ce9d2a-e996-4722-b37d-3792f9e6f8aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"f8225592-cbf3-4d02-835b-8702423e1dec","name":"f8225592-cbf3-4d02-835b-8702423e1dec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"61ce9d2a-e996-4722-b37d-3792f9e6f8aa","name":"61ce9d2a-e996-4722-b37d-3792f9e6f8aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f8225592-cbf3-4d02-835b-8702423e1dec","name":"f8225592-cbf3-4d02-835b-8702423e1dec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sIce",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"6ed2a3cf-8a56-4d48-b418-193d9bcbd90f","name":"6ed2a3cf-8a56-4d48-b418-193d9bcbd90f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6ed2a3cf-8a56-4d48-b418-193d9bcbd90f","name":"6ed2a3cf-8a56-4d48-b418-193d9bcbd90f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

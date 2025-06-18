@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"bgAlienShip3",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"d9c1b5dd-58d1-48ca-909e-70b71220ecae","name":"d9c1b5dd-58d1-48ca-909e-70b71220ecae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d9c1b5dd-58d1-48ca-909e-70b71220ecae","name":"d9c1b5dd-58d1-48ca-909e-70b71220ecae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

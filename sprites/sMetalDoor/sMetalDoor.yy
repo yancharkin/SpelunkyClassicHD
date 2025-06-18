@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sMetalDoor",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"ae0e94d5-6d4b-4499-96ab-da9438c94a01","name":"ae0e94d5-6d4b-4499-96ab-da9438c94a01","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ae0e94d5-6d4b-4499-96ab-da9438c94a01","name":"ae0e94d5-6d4b-4499-96ab-da9438c94a01","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

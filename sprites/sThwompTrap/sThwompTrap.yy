@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sThwompTrap",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"cb90b31a-3185-47c7-a3ac-9880b3ca7d0a","name":"cb90b31a-3185-47c7-a3ac-9880b3ca7d0a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"cb90b31a-3185-47c7-a3ac-9880b3ca7d0a","name":"cb90b31a-3185-47c7-a3ac-9880b3ca7d0a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

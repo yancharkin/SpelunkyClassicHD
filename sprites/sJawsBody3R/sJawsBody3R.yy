@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sJawsBody3R",
   "bboxMode":0,
   "bbox_bottom":30,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2735576d-6ff8-48c5-a2e2-a7bedaee514b","name":"2735576d-6ff8-48c5-a2e2-a7bedaee514b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2735576d-6ff8-48c5-a2e2-a7bedaee514b","name":"2735576d-6ff8-48c5-a2e2-a7bedaee514b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

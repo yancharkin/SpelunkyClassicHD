@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sBall",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f3682b2d-5fd8-4886-a365-b3dfb35fe44c","name":"f3682b2d-5fd8-4886-a365-b3dfb35fe44c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f3682b2d-5fd8-4886-a365-b3dfb35fe44c","name":"f3682b2d-5fd8-4886-a365-b3dfb35fe44c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

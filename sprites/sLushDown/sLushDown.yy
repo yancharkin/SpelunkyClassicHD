@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sLushDown",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"ca3c82c5-9fdb-49d8-b8a4-f954cd60619f","name":"ca3c82c5-9fdb-49d8-b8a4-f954cd60619f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"ca3c82c5-9fdb-49d8-b8a4-f954cd60619f","name":"ca3c82c5-9fdb-49d8-b8a4-f954cd60619f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

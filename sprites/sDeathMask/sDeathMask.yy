@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sDeathMask",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"6f0348d7-47bf-4e34-bd2c-4c81bd1d0581","name":"6f0348d7-47bf-4e34-bd2c-4c81bd1d0581","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6f0348d7-47bf-4e34-bd2c-4c81bd1d0581","name":"6f0348d7-47bf-4e34-bd2c-4c81bd1d0581","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

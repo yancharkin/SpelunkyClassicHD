@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSignCraps",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"f35b9cde-9af6-42b7-bea9-ce294c23daa2","name":"f35b9cde-9af6-42b7-bea9-ce294c23daa2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f35b9cde-9af6-42b7-bea9-ce294c23daa2","name":"f35b9cde-9af6-42b7-bea9-ce294c23daa2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

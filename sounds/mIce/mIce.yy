@@ -1,17 +1,15 @@
 {
-  "$GMSound":"v2",
+  "$GMSound":"",
   "%Name":"mIce",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "channelFormat":1,
+  "bitRate":128,
   "compression":1,
-  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.0,
-  "exportDir":"",
   "name":"mIce",
   "parent":{
     "name":"Music",
@@ -22,5 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mIce",
+  "type":1,
   "volume":0.82,
 }

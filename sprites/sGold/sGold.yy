@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sGold",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"c311ee01-ae0e-4df8-8a43-7582d4a64ce0","name":"c311ee01-ae0e-4df8-8a43-7582d4a64ce0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c311ee01-ae0e-4df8-8a43-7582d4a64ce0","name":"c311ee01-ae0e-4df8-8a43-7582d4a64ce0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

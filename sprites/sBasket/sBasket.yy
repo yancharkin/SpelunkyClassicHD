@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sBasket",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"a171258b-7b8e-4610-8b6e-9a6dfae0ae8f","name":"a171258b-7b8e-4610-8b6e-9a6dfae0ae8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a171258b-7b8e-4610-8b6e-9a6dfae0ae8f","name":"a171258b-7b8e-4610-8b6e-9a6dfae0ae8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

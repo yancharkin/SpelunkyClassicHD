@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sBoulder",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"c3e25f8d-9c09-4ea4-b061-e66a218e6125","name":"c3e25f8d-9c09-4ea4-b061-e66a218e6125","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c3e25f8d-9c09-4ea4-b061-e66a218e6125","name":"c3e25f8d-9c09-4ea4-b061-e66a218e6125","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

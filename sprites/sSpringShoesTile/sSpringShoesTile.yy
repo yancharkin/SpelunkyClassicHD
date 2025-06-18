@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSpringShoesTile",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"57bfdb42-8b3c-4cad-b835-36c826eb9c75","name":"57bfdb42-8b3c-4cad-b835-36c826eb9c75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"57bfdb42-8b3c-4cad-b835-36c826eb9c75","name":"57bfdb42-8b3c-4cad-b835-36c826eb9c75","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

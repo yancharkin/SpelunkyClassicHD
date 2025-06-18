@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sPalmTree",
   "bboxMode":0,
   "bbox_bottom":127,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"da8c4cfb-01a0-45db-8cc2-e7c3e51c1c7f","name":"da8c4cfb-01a0-45db-8cc2-e7c3e51c1c7f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"da8c4cfb-01a0-45db-8cc2-e7c3e51c1c7f","name":"da8c4cfb-01a0-45db-8cc2-e7c3e51c1c7f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

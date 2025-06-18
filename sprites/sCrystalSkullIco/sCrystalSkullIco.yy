@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sCrystalSkullIco",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"08f03787-8fd4-41f4-a188-78fdeb69e33c","name":"08f03787-8fd4-41f4-a188-78fdeb69e33c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"08f03787-8fd4-41f4-a188-78fdeb69e33c","name":"08f03787-8fd4-41f4-a188-78fdeb69e33c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

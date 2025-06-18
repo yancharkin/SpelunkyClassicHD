@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sCavemanDieLL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e13fdc01-3dce-40ad-b6e0-3f227b7602dd","name":"e13fdc01-3dce-40ad-b6e0-3f227b7602dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e13fdc01-3dce-40ad-b6e0-3f227b7602dd","name":"e13fdc01-3dce-40ad-b6e0-3f227b7602dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sVampireLeft",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"302893d1-bfd4-4a96-906a-4fa313ccf9bb","name":"302893d1-bfd4-4a96-906a-4fa313ccf9bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"302893d1-bfd4-4a96-906a-4fa313ccf9bb","name":"302893d1-bfd4-4a96-906a-4fa313ccf9bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

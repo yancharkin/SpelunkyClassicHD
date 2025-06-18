@@ -1,17 +1,15 @@
 {
-  "$GMSound":"v2",
+  "$GMSound":"",
   "%Name":"mCave",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "channelFormat":1,
+  "bitRate":128,
   "compression":1,
-  "compressionQuality":4,
   "conversionMode":0,
   "duration":0.0,
-  "exportDir":"",
   "name":"mCave",
   "parent":{
     "name":"Music",
@@ -22,5 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"mCave",
+  "type":1,
   "volume":0.82,
 }

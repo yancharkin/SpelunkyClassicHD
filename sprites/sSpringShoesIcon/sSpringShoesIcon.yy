@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSpringShoesIcon",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"2e3aeda8-4ce0-42c0-b1c8-33d26a55907b","name":"2e3aeda8-4ce0-42c0-b1c8-33d26a55907b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"2e3aeda8-4ce0-42c0-b1c8-33d26a55907b","name":"2e3aeda8-4ce0-42c0-b1c8-33d26a55907b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

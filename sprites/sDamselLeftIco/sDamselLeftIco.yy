@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sDamselLeftIco",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"44624c3c-3f0b-47c7-8ffa-f5a4df765eb8","name":"44624c3c-3f0b-47c7-8ffa-f5a4df765eb8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"44624c3c-3f0b-47c7-8ffa-f5a4df765eb8","name":"44624c3c-3f0b-47c7-8ffa-f5a4df765eb8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

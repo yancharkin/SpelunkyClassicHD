@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sAlienFloor",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"9fb54ac5-51f4-4c11-bbd6-0944736407d9","name":"9fb54ac5-51f4-4c11-bbd6-0944736407d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"9fb54ac5-51f4-4c11-bbd6-0944736407d9","name":"9fb54ac5-51f4-4c11-bbd6-0944736407d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSpikeShoes",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"5d5d52bf-22e4-455d-8e6e-e88c7a2ef5cd","name":"5d5d52bf-22e4-455d-8e6e-e88c7a2ef5cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5d5d52bf-22e4-455d-8e6e-e88c7a2ef5cd","name":"5d5d52bf-22e4-455d-8e6e-e88c7a2ef5cd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

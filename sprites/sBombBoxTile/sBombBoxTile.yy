@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sBombBoxTile",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"0c3b6b41-5648-44ed-b2d7-f9e688e7f9b3","name":"0c3b6b41-5648-44ed-b2d7-f9e688e7f9b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"0c3b6b41-5648-44ed-b2d7-f9e688e7f9b3","name":"0c3b6b41-5648-44ed-b2d7-f9e688e7f9b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

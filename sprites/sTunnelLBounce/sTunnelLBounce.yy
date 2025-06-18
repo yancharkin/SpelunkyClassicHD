@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sTunnelLBounce",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"1cb08f77-ee4e-4e0e-add6-e82ff492dbec","name":"1cb08f77-ee4e-4e0e-add6-e82ff492dbec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1cb08f77-ee4e-4e0e-add6-e82ff492dbec","name":"1cb08f77-ee4e-4e0e-add6-e82ff492dbec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

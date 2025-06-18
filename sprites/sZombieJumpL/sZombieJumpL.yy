@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sZombieJumpL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"d65c6946-c88c-4469-a362-8d7c7af5e6fa","name":"d65c6946-c88c-4469-a362-8d7c7af5e6fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d65c6946-c88c-4469-a362-8d7c7af5e6fa","name":"d65c6946-c88c-4469-a362-8d7c7af5e6fa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

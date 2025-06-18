@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sDesertNight",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"d6743aaa-50bc-41bc-8bb7-ec3a926b8a2e","name":"d6743aaa-50bc-41bc-8bb7-ec3a926b8a2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"d6743aaa-50bc-41bc-8bb7-ec3a926b8a2e","name":"d6743aaa-50bc-41bc-8bb7-ec3a926b8a2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

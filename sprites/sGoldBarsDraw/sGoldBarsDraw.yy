@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sGoldBarsDraw",
   "bboxMode":0,
   "bbox_bottom":12,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"19998344-39b3-4c96-b80d-f6ae0b3864a8","name":"19998344-39b3-4c96-b80d-f6ae0b3864a8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"19998344-39b3-4c96-b80d-f6ae0b3864a8","name":"19998344-39b3-4c96-b80d-f6ae0b3864a8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

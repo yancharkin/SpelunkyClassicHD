@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sDieLR",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"bb8dfc81-0a49-4fd1-a635-10f068e8c4d9","name":"bb8dfc81-0a49-4fd1-a635-10f068e8c4d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"bb8dfc81-0a49-4fd1-a635-10f068e8c4d9","name":"bb8dfc81-0a49-4fd1-a635-10f068e8c4d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

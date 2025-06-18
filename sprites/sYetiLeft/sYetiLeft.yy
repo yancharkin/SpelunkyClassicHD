@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sYetiLeft",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e5c2f8d8-5901-454f-b3f9-3d7d0caeb3fb","name":"e5c2f8d8-5901-454f-b3f9-3d7d0caeb3fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e5c2f8d8-5901-454f-b3f9-3d7d0caeb3fb","name":"e5c2f8d8-5901-454f-b3f9-3d7d0caeb3fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

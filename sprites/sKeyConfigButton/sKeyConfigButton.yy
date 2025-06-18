@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sKeyConfigButton",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e8103a52-2136-4e27-b91c-ba7b25dfda23","name":"e8103a52-2136-4e27-b91c-ba7b25dfda23","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e8103a52-2136-4e27-b91c-ba7b25dfda23","name":"e8103a52-2136-4e27-b91c-ba7b25dfda23","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

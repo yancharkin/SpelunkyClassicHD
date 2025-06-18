@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sAlienBossDead",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"a2f071ff-eb28-4cb4-8d3b-460e688b4788","name":"a2f071ff-eb28-4cb4-8d3b-460e688b4788","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a2f071ff-eb28-4cb4-8d3b-460e688b4788","name":"a2f071ff-eb28-4cb4-8d3b-460e688b4788","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

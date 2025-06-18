@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sCaveTop2",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"5ff5b3f5-e640-40a1-a2d8-ab3fc0f467e2","name":"5ff5b3f5-e640-40a1-a2d8-ab3fc0f467e2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5ff5b3f5-e640-40a1-a2d8-ab3fc0f467e2","name":"5ff5b3f5-e640-40a1-a2d8-ab3fc0f467e2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

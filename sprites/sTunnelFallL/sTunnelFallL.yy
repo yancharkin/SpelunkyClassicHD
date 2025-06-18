@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sTunnelFallL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e124f511-71c0-4cbb-9c89-d15c5c839fe9","name":"e124f511-71c0-4cbb-9c89-d15c5c839fe9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e124f511-71c0-4cbb-9c89-d15c5c839fe9","name":"e124f511-71c0-4cbb-9c89-d15c5c839fe9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

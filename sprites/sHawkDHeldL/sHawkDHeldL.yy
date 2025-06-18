@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sHawkDHeldL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"1e419276-7d5f-4c73-bc9a-4d03d7c013bf","name":"1e419276-7d5f-4c73-bc9a-4d03d7c013bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"1e419276-7d5f-4c73-bc9a-4d03d7c013bf","name":"1e419276-7d5f-4c73-bc9a-4d03d7c013bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

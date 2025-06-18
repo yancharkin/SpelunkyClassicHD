@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sGiantSpiderJump",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"4d1c6fb7-0df5-4fa2-a17d-1a6824b39989","name":"4d1c6fb7-0df5-4fa2-a17d-1a6824b39989","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"4d1c6fb7-0df5-4fa2-a17d-1a6824b39989","name":"4d1c6fb7-0df5-4fa2-a17d-1a6824b39989","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sDamselHoldL",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"71af79be-d1fe-4ee6-98d1-60e86f024fe6","name":"71af79be-d1fe-4ee6-98d1-60e86f024fe6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"71af79be-d1fe-4ee6-98d1-60e86f024fe6","name":"71af79be-d1fe-4ee6-98d1-60e86f024fe6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v2",
+  "$GMSprite":"",
   "%Name":"sSpearTrap2",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e06124fc-8ea8-4f13-804a-e6c3143e94ae","name":"e06124fc-8ea8-4f13-804a-e6c3143e94ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e06124fc-8ea8-4f13-804a-e6c3143e94ae","name":"e06124fc-8ea8-4f13-804a-e6c3143e94ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
