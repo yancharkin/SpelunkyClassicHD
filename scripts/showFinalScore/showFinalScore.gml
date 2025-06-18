@@ -58,6 +58,6 @@ function showFinalScore() {
 
 	if (drawStatus == 8)
 	{
-	    drawTextHCentered(tr("YOU SHALL BE REMEMBERED AS A HERO."), "small", c_white, -global.room_offset, 116);;
+	    drawTextHCentered(tr("YOU SHALL BE REMEMBERED AS A HERO."), "small", c_white, -global.room_offset, 116);
 	}
 }

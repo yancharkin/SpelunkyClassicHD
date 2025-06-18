@@ -122,7 +122,6 @@
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"icon.png","CopyToMask":32,"filePath":"datafiles","name":"icon.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"index.html","CopyToMask":32,"filePath":"datafiles","name":"index.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"fonts.json","CopyToMask":9223372036854775807,"filePath":"datafiles/locale","name":"fonts.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"font.json","CopyToMask":9223372036854775807,"filePath":"datafiles/locale/fonts/7-12-serif","name":"font.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"7-12-serif.ttf","CopyToMask":1047548110,"filePath":"datafiles/locale/fonts/7-12-serif/font","name":"7-12-serif.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -287,7 +286,6 @@
     {"$GMIncludedFile":"","%Name":"tutorial_sign.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/uk/images","name":"tutorial_sign.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"yell_help.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/uk/images","name":"yell_help.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"text.json","CopyToMask":-1,"filePath":"datafiles/locale/locales/uk","name":"text.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"spelunky.ini","CopyToMask":-1,"filePath":"datafiles","name":"spelunky.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
