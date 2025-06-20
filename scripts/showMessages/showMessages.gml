@@ -1,8 +1,8 @@
 /// @description showMessages
 function showMessages() {
 	if (global.messageTimer > 0) {
-		y1 = 216 - global.fontSmallHeight;
-		y2 = y1 + 2*global.fontSmallHeight;
+		y1 = 216 + 8 - global.fontSmallHeight;
+		y2 = y1 + global.fontSmallHeight;
 		if (is_array(global.message1)) {
 		    drawHighlightedMessage(global.message1, 0, y1, 1);
 		} else {
