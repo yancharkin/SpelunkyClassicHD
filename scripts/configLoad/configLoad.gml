@@ -18,7 +18,7 @@ function configLoad() {
 	global.keyStartVal = vk_escape;
 	global.keyEscape = vk_escape;
 	global.keyEnter = vk_enter;
-	if (global.html5Build) global.keyStartVal = vk_tab;
+	if ((global.html5Build) and (not global.html5StandaloneBuild)) global.keyStartVal = vk_tab;
 
 	global.joyJumpVal = -1;
 	global.joyAttackVal = -1;
