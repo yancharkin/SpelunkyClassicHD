@@ -5,22 +5,20 @@ if (oPlayer1.y < 156)
     draw_set_font(global.fontSmall);
     draw_set_color(c_yellow);
 	strLen = string_length(tr("SECRET CHALLENGES"))*global.fontSmallWidth;
-	draw_text(112 + int64(192 - strLen)/2, 32, string_hash_to_newline(tr("SECRET CHALLENGES")));
-    //draw_text(128+16, 32, string_hash_to_newline(tr("SECRET CHALLENGES")));
+	draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 32, string_hash_to_newline(tr("SECRET CHALLENGES")));
     draw_set_color(c_white);
     tMini1 = floor(ini_read_real("highscore","value10",0) / 10000);
     tMini2 = floor((ini_read_real("highscore","value10",0)-(tMini1*10000)) / 100);
     tMini3 = floor(ini_read_real("highscore","value10",0)-(tMini1*10000)-(tMini2*100));
-    draw_text(120, 48, string_hash_to_newline(tr("SUN:   ") + string(tMini1)));
-    draw_text(120, 64, string_hash_to_newline(tr("MOON:  ") + string(tMini2)));
-    draw_text(120, 80, string_hash_to_newline(tr("STARS: ") + string(tMini3)));
+    draw_text(global.room_offset + 120, 48, string_hash_to_newline(tr("SUN:   ") + string(tMini1)));
+    draw_text(global.room_offset + 120, 64, string_hash_to_newline(tr("MOON:  ") + string(tMini2)));
+    draw_text(global.room_offset + 120, 80, string_hash_to_newline(tr("STARS: ") + string(tMini3)));
     
     if (oPlayer1.y < 48+16)
     {
         draw_set_color(c_yellow);
 		strLen = string_length(tr("SUN ROOM"))*global.fontSmallWidth;
-		draw_text(112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("SUN ROOM")));
-        //draw_text(168, 96, string_hash_to_newline(tr("SUN ROOM")));
+		draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("SUN ROOM")));
         draw_set_color(c_white);
         if (tMoney >= sunGold)
         {
@@ -33,23 +31,22 @@ if (oPlayer1.y < 156)
             }
             else
             {
-                draw_text(120, 112, string_hash_to_newline(tr("KEEP YOURSELF AND")));
-                draw_text(120, 128, string_hash_to_newline(tr("THE DAMSEL ALIVE")));
-                draw_text(120, 144, string_hash_to_newline(tr("FOR AS LONG AS")));
-                draw_text(120, 160, string_hash_to_newline(tr("POSSIBLE!")));
+                draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("KEEP YOURSELF AND")));
+                draw_text(global.room_offset + 120, 128, string_hash_to_newline(tr("THE DAMSEL ALIVE")));
+                draw_text(global.room_offset + 120, 144, string_hash_to_newline(tr("FOR AS LONG AS")));
+                draw_text(global.room_offset + 120, 160, string_hash_to_newline(tr("POSSIBLE!")));
             }
         }
         else
         {
-            draw_text(120, 112, string_hash_to_newline(tr("LOCKED.")));
+            draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("LOCKED.")));
         }
     }
     else if (oPlayer1.y < 80+16)
     {
         draw_set_color(c_yellow);
 		strLen = string_length(tr("MOON ROOM"))*global.fontSmallWidth;
-		draw_text(112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("MOON ROOM")));
-        //draw_text(168, 96, string_hash_to_newline(tr("MOON ROOM")));
+		draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("MOON ROOM")));
         draw_set_color(c_white);
         if (tTime > 0 and tTime <= moonGold)
         {
@@ -62,22 +59,21 @@ if (oPlayer1.y < 156)
             }
             else
             {
-                draw_text(120, 112, string_hash_to_newline(tr("SHOOT THE MOVING")));
-                draw_text(120, 128, string_hash_to_newline(tr("TARGETS WITH YOUR")));
-                draw_text(120, 144, string_hash_to_newline(tr("BOW AND ARROWS!")));
+                draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("SHOOT THE MOVING")));
+                draw_text(global.room_offset + 120, 128, string_hash_to_newline(tr("TARGETS WITH YOUR")));
+                draw_text(global.room_offset + 120, 144, string_hash_to_newline(tr("BOW AND ARROWS!")));
             }
         }
         else
         {
-            draw_text(120, 112, string_hash_to_newline(tr("LOCKED.")));
+            draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("LOCKED.")));
         }
     }
     else if (oPlayer1.y < 112+16)
     {
         draw_set_color(c_yellow);
-        //draw_text(168, 96, string_hash_to_newline(tr("STARS ROOM")));
 		strLen = string_length(tr("STARS ROOM"))*global.fontSmallWidth;
-		draw_text(112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("STARS ROOM")));
+		draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("STARS ROOM")));
         draw_set_color(c_white);
         if (tKills >= starsGold)
         {
@@ -90,30 +86,29 @@ if (oPlayer1.y < 156)
             }
             else
             {
-                draw_text(120, 112, string_hash_to_newline(tr("KILL AS MANY ANGRY")));
-                draw_text(120, 128, string_hash_to_newline(tr("SHOPKEEPERS AS YOU CAN")));
-                draw_text(120, 144, string_hash_to_newline(tr("BEFORE THEY GET YOU!")));
+                draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("KILL AS MANY ANGRY")));
+                draw_text(global.room_offset + 120, 128, string_hash_to_newline(tr("SHOPKEEPERS AS YOU CAN")));
+                draw_text(global.room_offset + 120, 144, string_hash_to_newline(tr("BEFORE THEY GET YOU!")));
             }
         }
         else
         {
-            draw_text(120, 112, string_hash_to_newline(tr("LOCKED.")));
+            draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("LOCKED.")));
         }
     }
     else if (oPlayer1.y < 160)
     {
         draw_set_color(c_yellow);
 		strLen = string_length(tr("CHANGING ROOM"))*global.fontSmallWidth;
-		draw_text(112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("CHANGING ROOM")));
-        //draw_text(160, 96, string_hash_to_newline(tr("CHANGING ROOM")));
+		draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 96, string_hash_to_newline(tr("CHANGING ROOM")));
         draw_set_color(c_white);
         if (tSaves >= 8)
         {
-            draw_text(120, 112, string_hash_to_newline(tr("LADY IN RED...")));
+            draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("LADY IN RED...")));
         }
         else
         {
-            draw_text(120, 112, string_hash_to_newline(tr("LOCKED.")));
+            draw_text(global.room_offset + 120, 112, string_hash_to_newline(tr("LOCKED.")));
         }
         with oNew
         {
@@ -131,11 +126,11 @@ with oNew
 draw_set_font(global.fontSmall);
 draw_set_color(c_yellow);
 strLen = string_length(tr("TOP DEFILERS"))*global.fontSmallWidth;
-draw_text(112 + int64(192 - strLen)/2, 32, string_hash_to_newline(tr("TOP DEFILERS")));
+draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 32, string_hash_to_newline(tr("TOP DEFILERS")));
 draw_set_color(c_white);
-draw_text(120, 48, string_hash_to_newline(tr("MONEY:  ")  + string(ini_read_real("highscore","value1",0)-0)));
-draw_text(120, 64, string_hash_to_newline(tr("KILLS:  ") + string(ini_read_real("highscore","value3",0)-0)));
-draw_text(120, 80, string_hash_to_newline(tr("SAVES:  ") + string(ini_read_real("highscore","value4",0)-0)));
+draw_text(global.room_offset + 120, 48, string_hash_to_newline(tr("MONEY:  ")  + string(ini_read_real("highscore","value1",0)-0)));
+draw_text(global.room_offset + 120, 64, string_hash_to_newline(tr("KILLS:  ") + string(ini_read_real("highscore","value3",0)-0)));
+draw_text(global.room_offset + 120, 80, string_hash_to_newline(tr("SAVES:  ") + string(ini_read_real("highscore","value4",0)-0)));
 // only display time if won
 if (ini_read_real("highscore","value6",0)-0 > 0)
 {
@@ -150,15 +145,15 @@ if (ini_read_real("highscore","value6",0)-0 > 0)
 	var t = string(m) + ":" + string(s);
 	 if (s < 10) t = string(m) + ":0" + string(s);
     draw_set_color(c_white);
-	draw_text(120, 96, string_hash_to_newline(tr("TIME:  ")) + string(t));
+	draw_text(global.room_offset + 120, 96, string_hash_to_newline(tr("TIME:  ")) + string(t));
 }
 draw_set_color(c_yellow);
 strLen = string_length(tr("STATISTICS"))*global.fontSmallWidth;
-draw_text(112 + int64(192 - strLen)/2, 112, string_hash_to_newline(tr("STATISTICS")));
+draw_text(global.room_offset + 112 + int64(192 - strLen)/2, 112, string_hash_to_newline(tr("STATISTICS")));
 draw_set_color(c_white);
-draw_text(120, 128, string_hash_to_newline(tr("PLAYS:  ") + string(ini_read_real("highscore","value5",0)-0)));
-draw_text(120, 144, string_hash_to_newline(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0)));
-draw_text(120, 160, string_hash_to_newline(tr("WINS:   ") + string(ini_read_real("highscore","value6",0)-0)));
+draw_text(global.room_offset + 120, 128, string_hash_to_newline(tr("PLAYS:  ") + string(ini_read_real("highscore","value5",0)-0)));
+draw_text(global.room_offset + 120, 144, string_hash_to_newline(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0)));
+draw_text(global.room_offset + 120, 160, string_hash_to_newline(tr("WINS:   ") + string(ini_read_real("highscore","value6",0)-0)));
 
 block = instance_nearest(160, 240, oPushBlock);
 if (not oButtonHighscore.pushed and block.x > 160)
