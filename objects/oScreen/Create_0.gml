@@ -22,6 +22,11 @@ darkSurf = surface_create(screen_w,screen_h);
 
 h = 240;
 global.screenAspectRatio = (screen_w/screen_h);
+if (global.screenAspectRatio < 1.333333333) {
+	global.screenAspectRatio = 1.333333333;
+} else if (global.screenAspectRatio > 2.333333333) {
+	global.screenAspectRatio = 2.333333333;
+}
 w = round(240 * global.screenAspectRatio);
 
 // set up rooms
