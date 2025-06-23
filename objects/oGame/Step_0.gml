@@ -19,6 +19,20 @@ if (global.gameStart and instance_exists(oCharacter) and isLevel())
     }
 }
 
+// Touch Controls Visibility
+if (keyboard_check(vk_f7) and keyboard_check(global.keyPayVal)) {
+	touchControlsVisibilityTimer += 1;
+} else {
+	touchControlsVisibilityTimer = 0;
+}
+if (touchControlsVisibilityTimer >= 1*game_speed/2) {
+	if (global.mobileBuild or global.html5Build) {
+		global.touchVisChangeBy = -0.5;
+	    menuTouchControls();
+	}
+	touchControlsVisibilityTimer = 0;
+}
+
 // Cheats
 if (keyboard_check_pressed(vk_f8)) toggleCheats();
 

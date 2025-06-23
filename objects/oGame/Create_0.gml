@@ -12,6 +12,8 @@ idol = false;
 altar = false;
 playerDepth = 0;
 
+ touchControlsVisibilityTimer = 0;
+
 // Black Market
 genClothingShop = false;
 genBombShop = false;
@@ -24,7 +26,7 @@ if (instance_number(oGame) > 1) instance_destroy();
 moveableSolidGrav = 1; // how fast moveable solids should accelerate downwards
 time = 1;
 
-// sound_loop(sndMusicTest);
+// sound_loop(sndzMusicTest);
 
 if (global.gameStart) scrInitLevel();
 
