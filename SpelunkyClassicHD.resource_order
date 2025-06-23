@@ -851,6 +851,7 @@
     {"name":"tile_add2","order":27,"path":"scripts/tile_add2/tile_add2.yy",},
     {"name":"tile_delete","order":1,"path":"scripts/tile_delete/tile_delete.yy",},
     {"name":"tile_layer_find","order":2,"path":"scripts/tile_layer_find/tile_layer_find.yy",},
+    {"name":"toggleCheats","order":72,"path":"scripts/toggleCheats/toggleCheats.yy",},
     {"name":"toggleMusic","order":55,"path":"scripts/toggleMusic/toggleMusic.yy",},
     {"name":"tr","order":44,"path":"scripts/tr/tr.yy",},
     {"name":"trMessages","order":62,"path":"scripts/trMessages/trMessages.yy",},

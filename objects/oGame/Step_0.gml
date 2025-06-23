@@ -19,6 +19,9 @@ if (global.gameStart and instance_exists(oCharacter) and isLevel())
     }
 }
 
+// Cheats
+if (keyboard_check_pressed(vk_f8)) toggleCheats();
+
 // GHOST
 if (instance_exists(oPlayer1))
 {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"toggleCheats",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"toggleCheats",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
