@@ -16,10 +16,11 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 
 ## Hidden/Non-Obvious Features
 1. To change touch controls visibility hold 👁 + $ simultaneously for half a second
-2. Custom configuration directory:
+2. The language key/button allows quick switching between two languages, which can be useful for language learners
+3. Custom configuration directory:
     - Windows: if portable or portable.txt exists in the game directory, configs save here as well
     - Linux: respects XDG_CONFIG_HOME environment variable
-3. Gamepad buttons custom names
+4. Gamepad buttons custom names
     - Navigate to config directory:
         - Windows: C:\users\USER_NAME\AppData\Local\SpelunkyClassicHD
         - Linux: ~/.config/SpelunkyClassicHD
