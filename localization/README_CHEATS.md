@@ -1,6 +1,6 @@
-# Cheat builds
+# Cheats
 
-These builds are primarily made to make localization easier but, of course, could also be used just to have fun :)
+To enable cheats press F8 or tap the invisible zone at the top-center of the screen.
 
 ## What you can do with them:
 - **F2 / Touch Button 1**: move between levels
@@ -8,7 +8,7 @@ These builds are primarily made to make localization easier but, of course, coul
 - **F4 / Touch Button 3**: switch between items bundles
 - **F5 / Touch Button 4**: summon items bundle
 
-![screenshot](screenshots/screenshot_01.png)
+<p align="center"><img src="../screenshots/screenshot_02.png" width="80%"></p>
 
 ## Items bundles:
 ### Bundle 1

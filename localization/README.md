@@ -1,6 +1,6 @@
 # How to localize the game
 
-To simplify the localization process, you can download [cheat builds](../CHEAT_BUILDS.md) from the [releases page](https://github.com/yancharkin/SpelunkyClassicHD/releases).
+To simplify the localization process, you can use [cheats](README_CHEATS.md) .
 
 ## Step 1
 

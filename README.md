@@ -2,15 +2,40 @@
 
 A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game [Spelunky Classic](https://spelunkyworld.com/original.html). Based on the source code published in **Humble Weekly Bundle: Play and Create with GameMaker** (not original 1.1 release).
 
-![screenshot](screenshots/screenshot_00.png)
+<p align="center">
+    <img src="screenshots/screenshot_00.png" width="48%">
+    <img src="screenshots/screenshot_01.png" width="48%">
+</p>
 
 ## New in this version:
 - builds for different operating systems
-- different aspect ratios (originally 4:3 only)
+- different aspect ratios up to 21:9 (originally 4:3 only)
 - touch input
-- support for translations
-- proper in-game menu
 - better gamepads support
+- support for translations
+
+## Hidden/Non-Obvious Features
+1. To change touch controls visibility hold 👁 + $ simultaneously for half a second
+2. Custom configuration directory:
+    - Windows: if portable or portable.txt exists in the game directory, configs save here as well
+    - Linux: respects XDG_CONFIG_HOME environment variable
+3. Gamepad buttons custom names
+    - Navigate to config directory:
+        - Windows: C:\users\USER_NAME\AppData\Local\SpelunkyClassicHD
+        - Linux: ~/.config/SpelunkyClassicHD
+    - Copy gamepad.json and rename to gamepadmapping.json
+    - Swap keys/values in the new file and adjust names. For example to rename "1" to "A":
+        - Original (gamepad.json):
+
+            ```json
+            { "joyJumpVal": "1" }
+            ```
+
+        - New (gamepadmapping.json):
+
+            ```json
+            { "1": "A" }
+            ```
 
 ## Translators
 - Spanish: [grheavy](mailto:grheavy@hushmail.com), [BRNBot3k](https://github.com/BRNBot3k)
@@ -23,4 +48,4 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 ## Links
 * [How to localize the game](localization)
 * [HTML5 version](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
-* [Page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
+* [Itch](https://yancharkin.itch.io/spelunky-classic-hd)
