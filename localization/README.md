@@ -85,4 +85,4 @@ _**TTF fonts look very different from the default font. They are useful for quic
 
 ## Questions?
 
-If something is unclear, feel free to ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/1757542/translation-how-to-localize-the-game).
+If something is unclear, feel free to ask questions [here](https://github.com/yancharkin/SpelunkyClassicHD/discussions/12) or [here](https://itch.io/t/5021511/translation-how-to-localize-the-game).
