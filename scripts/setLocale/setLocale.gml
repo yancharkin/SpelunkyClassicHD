@@ -70,6 +70,8 @@ function setLocale() {
 	    global.fontSmall = font_add(fontPath, global.fontSmallHeight, false, false, 0, 255);
 	    ds_map_destroy(fontInfo);
 	}
+	
+	if (global.locale == "ar")  global.fontOffsetY = 0;
 
 	//loadText
 	var localizedTextFile = localeDir + "/text.json";

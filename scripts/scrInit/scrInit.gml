@@ -143,4 +143,15 @@ function scrInit() {
 	setLocale();
 	loadLocalizedSprites();
 	scribble_font_set_default("fnt_7_12");
+	
+	// Default large font (for HUD)
+	var charsetDir = working_directory + "locale/locales/en/charset/";
+	var charsetFile = file_text_open_read(charsetDir + "charset");
+	var charset = file_text_read_string(charsetFile);
+	file_text_close(charsetFile);
+	var chars_n = string_length(charset);
+	var fontSprite = sprite_add(charsetDir + "charset_small.png", chars_n, false, false, 0, 0);
+	var fontLargeSprite = sprite_add(charsetDir + "charset.png", chars_n, false, false, 0, 0);
+	global.fontSmallDefault = font_add_sprite_ext(fontSprite, charset, false, 0);
+	global.fontLargeDefault = font_add_sprite_ext(fontLargeSprite, charset, false, 0);
 }

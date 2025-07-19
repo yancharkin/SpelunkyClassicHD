@@ -1,12 +1,16 @@
 function drawStats(){
 	if (isLevel() and (global.currLevel > 0)) {
-		draw_set_color(c_ltgray);
-		draw_set_font(global.fontSmall);
-		draw_text(8, 8, string_hash_to_newline(tr("LEVEL ") + string(global.currLevel)));
-	    draw_text(8, 16, string_hash_to_newline(tr("DEPTH: ") + string(playerDepth) + tr(" FEET")));
-		draw_set_color(c_gray);
-	    draw_text(8, 32, string_hash_to_newline(tr("MONEY:  ") + string(global.money)));
-	    draw_text(8, 40, string_hash_to_newline(tr("KILLS:  ") + string(global.kills)));
+		if (global.locale != "ar") {
+			drawText(tr("LEVEL ") + string(global.currLevel), "small", c_ltgray, 8, 8);
+			drawText(tr("DEPTH: ") + string(playerDepth) + tr(" FEET"), "small", c_ltgray, 8, 16);
+			drawText(tr("MONEY:  ") + string(global.money), "small", c_gray, 8, 32);
+		    drawText(tr("KILLS:  ") + string(global.kills), "small", c_gray, 8, 40);
+		} else {
+			drawTextRtl(tr("LEVEL ") + string(global.currLevel), c_ltgray, 8);
+			drawTextRtl(tr("DEPTH: ") + string(playerDepth) + tr(" FEET"), c_ltgray, 16);
+			drawTextRtl(tr("MONEY:  ") + string(global.money), c_gray, 32);
+		    drawTextRtl(tr("KILLS:  ") + string(global.kills), c_gray, 40);
+		}
 		var s = global.xtime;
         s = floor(s / 1000);
         var m = 0;
@@ -25,7 +29,12 @@ function drawStats(){
         }
         if (s2 < 10) s2 = "0" + string(s2);
         else s2 = string(s2);
-        draw_text(8, 48, string_hash_to_newline(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2));
-		draw_text(8, 56, string_hash_to_newline(tr("SAVES:  ") + string(global.damsels)));
+		if (global.locale != "ar") {
+			drawText(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2, "small", c_gray, 8, 48);
+			drawText(tr("SAVES:  ") + string(global.damsels), "small", c_gray, 8, 56);
+		} else {
+			drawTextRtl(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2, c_gray, 48);
+			drawTextRtl(tr("SAVES:  ") + string(global.damsels), c_gray, 56);
+		}
 	};
 }

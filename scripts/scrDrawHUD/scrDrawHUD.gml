@@ -31,14 +31,14 @@ function scrDrawHUD() {
 	    draw_sprite(sHeart, -1, lifeX, vyv+8);
 	    life = global.plife;
 	    if (life < 0) life = 0;
-	    drawText(life, "large", c_white, lifeX+16, vyv+8+global.fontOffsetY);
+	    drawText(life, "largeDefault", c_white, lifeX+16, vyv+8+global.fontOffsetY);
 	    if (global.hasStickyBombs) draw_sprite(sStickyBombIcon, -1, bombX, vyv+8);
 	    else draw_sprite(sBombIcon, -1, bombX, vyv+8);
-	    drawText(global.bombs, "large", c_white, bombX+16, vyv+8+global.fontOffsetY);
+	    drawText(global.bombs, "largeDefault", c_white, bombX+16, vyv+8+global.fontOffsetY);
 	    draw_sprite(sRopeIcon, -1, ropeX, vyv+8);
-	    drawText(global.rope, "large", c_white, ropeX+16, vyv+8+global.fontOffsetY);
+	    drawText(global.rope, "largeDefault", c_white, ropeX+16, vyv+8+global.fontOffsetY);
 	    draw_sprite(global.sMoneySignNew,  -1, moneyX, vyv+6);
-	    drawText(global.money, "large", c_white, moneyX+16, vyv+8+global.fontOffsetY);
+	    drawText(global.money, "largeDefault", c_white, moneyX+16, vyv+8+global.fontOffsetY);
 
 	    if (isRoom("rOlmec")) { global.exitX = 640; global.exitY = 544; }
     
@@ -77,7 +77,7 @@ function scrDrawHUD() {
 	    draw_sprite(sHoldItemIcon, -1, vxv+8, vyv+24);
 	    if (oPlayer1.pickupItemType!= "")
 	    {
-	             if (oPlayer1.pickupItemType== "Rock") draw_sprite(sRock, -1, vxv+8+8, vyv+24+8);
+			if (oPlayer1.pickupItemType== "Rock") draw_sprite(sRock, -1, vxv+8+8, vyv+24+8);
 	        else if (oPlayer1.pickupItemType== "Jar") draw_sprite(sJar, -1, vxv+8+8, vyv+24+8);
 	        else if (oPlayer1.pickupItemType== "Skull") draw_sprite(sSkull, -1, vxv+8+8, vyv+24+8);
 	        else if (oPlayer1.pickupItemType== "Fish Bone") draw_sprite(sFishBone, -1, vxv+8+8, vyv+24+8);
@@ -177,7 +177,7 @@ function scrDrawHUD() {
 	        }
 	    }
 	         if (global.collect > 0) {
-	        drawText("+" + string(global.collect), "small", c_yellow, moneyX, vyv+8+16);
+	        drawText("+" + string(global.collect), "smallDefault", c_yellow, moneyX, vyv+8+16);
 	    }
 	}
 }

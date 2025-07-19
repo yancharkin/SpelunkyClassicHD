@@ -1,3 +1,8 @@
+function drawTextRtlHs(text, color, pY) {
+		var strLen = string_length(text)*global.fontSmallWidth;
+		drawText(text, "small", color, global.room_offset + 104 + int64(192 - strLen), pY);
+}
+
 with oScreen { canPause = true; }
 
 global.currLevel = 1;

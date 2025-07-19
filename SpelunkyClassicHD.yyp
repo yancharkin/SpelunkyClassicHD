@@ -906,6 +906,7 @@
     {"id":{"name":"drawStats","path":"scripts/drawStats/drawStats.yy",},},
     {"id":{"name":"drawText","path":"scripts/drawText/drawText.yy",},},
     {"id":{"name":"drawTextHCentered","path":"scripts/drawTextHCentered/drawTextHCentered.yy",},},
+    {"id":{"name":"drawTextRtl","path":"scripts/drawTextRtl/drawTextRtl.yy",},},
     {"id":{"name":"drawTouchControls","path":"scripts/drawTouchControls/drawTouchControls.yy",},},
     {"id":{"name":"dsmap2json","path":"scripts/dsmap2json/dsmap2json.yy",},},
     {"id":{"name":"enableTouchInput","path":"scripts/enableTouchInput/enableTouchInput.yy",},},

@@ -676,6 +676,7 @@
     {"name":"drawStats","order":69,"path":"scripts/drawStats/drawStats.yy",},
     {"name":"drawText","order":34,"path":"scripts/drawText/drawText.yy",},
     {"name":"drawTextHCentered","order":35,"path":"scripts/drawTextHCentered/drawTextHCentered.yy",},
+    {"name":"drawTextRtl","order":73,"path":"scripts/drawTextRtl/drawTextRtl.yy",},
     {"name":"drawTouchControls","order":24,"path":"scripts/drawTouchControls/drawTouchControls.yy",},
     {"name":"dsmap2json","order":46,"path":"scripts/dsmap2json/dsmap2json.yy",},
     {"name":"enableTouchInput","order":12,"path":"scripts/enableTouchInput/enableTouchInput.yy",},
