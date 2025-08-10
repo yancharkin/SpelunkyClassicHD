@@ -165,6 +165,11 @@ if (checkLangPressed()) {
 }
 
 //Pause
+if os_is_paused() and not paused {
+    instance_deactivate_all(true);
+    audio_pause_all();
+    paused = true;
+}
 if (keyboard_check_pressed(global.keyStartVal) or gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
     if (not isRoom("rIntro")) {
         if (not paused) {
