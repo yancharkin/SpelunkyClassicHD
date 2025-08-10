@@ -1,4 +1,3 @@
-/// @description  Pause menu
 if (paused) {
 	draw_set_color(c_black);
 	draw_rectangle(0, 0, global.display_w, global.display_h, false);
@@ -121,3 +120,4 @@ if ((global.html5Build) or  (global.mobileBuild)) drawTouchControls();
 display_set_gui_size(global.display_w,global.display_h);
 scrDrawHUD();
 showMessages();
+showEndMessage();
