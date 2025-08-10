@@ -13,9 +13,9 @@ if (oPlayer1.y < 156)
 		drawText(tr("MOON:  ") + string(tMini2), "small", c_white, global.room_offset + 120, 64);
 		drawText(tr("STARS: ") + string(tMini3), "small", c_white, global.room_offset + 120, 80);
 	} else {
-		drawTextRtlHs(tr("SUN:   ") + string(tMini1), c_white, 48);
-		drawTextRtlHs(tr("MOON:  ") + string(tMini2), c_white, 64);
-		drawTextRtlHs(tr("STARS: ") + string(tMini3), c_white, 80);
+		drawTextRtlHs(tr("SUN:   ") + string(tMini1), c_white, 0, 48);
+		drawTextRtlHs(tr("MOON:  ") + string(tMini2), c_white, 0, 64);
+		drawTextRtlHs(tr("STARS: ") + string(tMini3), c_white, 0, 80);
 	}
     
     if (oPlayer1.y < 48+16)
@@ -39,10 +39,10 @@ if (oPlayer1.y < 156)
 	                drawText(tr("FOR AS LONG AS"), "small", c_white, global.room_offset + 120, 144);
 	                drawText(tr("POSSIBLE!"), "small", c_white, global.room_offset + 120, 160);
 				} else {
-					drawTextRtlHs(tr("KEEP YOURSELF AND"), c_white, 112);
-	                drawTextRtlHs(tr("THE DAMSEL ALIVE"), c_white, 128);
-	                drawTextRtlHs(tr("FOR AS LONG AS"), c_white, 144);
-	                drawTextRtlHs(tr("POSSIBLE!"), c_white, 160);
+					drawTextRtlHs(tr("KEEP YOURSELF AND"), c_white, 0, 112);
+	                drawTextRtlHs(tr("THE DAMSEL ALIVE"), c_white, 0, 128);
+	                drawTextRtlHs(tr("FOR AS LONG AS"), c_white, 0, 144);
+	                drawTextRtlHs(tr("POSSIBLE!"), c_white, 0, 160);
 				}
             }
         }
@@ -51,7 +51,7 @@ if (oPlayer1.y < 156)
             if (global.locale != "ar") {
 				drawText(tr("LOCKED."), "small", c_white, global.room_offset + 120, 112);
 			} else {
-				drawTextRtlHs(tr("LOCKED."), c_white, 112);
+				drawTextRtlHs(tr("LOCKED."), c_white, 0, 112);
 			}
         }
     }
@@ -75,9 +75,9 @@ if (oPlayer1.y < 156)
 	                drawText(tr("TARGETS WITH YOUR"), "small",  c_white, global.room_offset + 120, 128);
 	                drawText(tr("BOW AND ARROWS!"), "small",  c_white, global.room_offset + 120, 144);
 				} else {
-					drawTextRtlHs(tr("SHOOT THE MOVING"), c_white, 112);
-	                drawTextRtlHs(tr("TARGETS WITH YOUR"), c_white, 128);
-	                drawTextRtlHs(tr("BOW AND ARROWS!"), c_white, 144);
+					drawTextRtlHs(tr("SHOOT THE MOVING"), c_white, 0, 112);
+	                drawTextRtlHs(tr("TARGETS WITH YOUR"), c_white, 0, 128);
+	                drawTextRtlHs(tr("BOW AND ARROWS!"), c_white, 0, 144);
 				}
             }
         }
@@ -86,7 +86,7 @@ if (oPlayer1.y < 156)
             if (global.locale != "ar") {
 				drawText(tr("LOCKED."), "small", c_white, global.room_offset + 120, 112);
 			} else {
-				drawTextRtlHs(tr("LOCKED."), c_white, 112);
+				drawTextRtlHs(tr("LOCKED."), c_white, 0, 112);
 			}
         }
     }
@@ -110,9 +110,9 @@ if (oPlayer1.y < 156)
 	                drawText(tr("SHOPKEEPERS AS YOU CAN"), "small", c_white, global.room_offset + 120, 128);
 	                drawText(tr("BEFORE THEY GET YOU!"), "small", c_white, global.room_offset + 120, 144);
 				} else {
-					drawTextRtlHs(tr("KILL AS MANY ANGRY"), c_white, 112);
-	                drawTextRtlHs(tr("SHOPKEEPERS AS YOU CAN"), c_white, 128);
-	                drawTextRtlHs(tr("BEFORE THEY GET YOU!"), c_white, 144);
+					drawTextRtlHs(tr("KILL AS MANY ANGRY"), c_white, 0, 112);
+	                drawTextRtlHs(tr("SHOPKEEPERS AS YOU CAN"), c_white, 0, 128);
+	                drawTextRtlHs(tr("BEFORE THEY GET YOU!"), c_white, 0, 144);
 				}
             }
         }
@@ -121,7 +121,7 @@ if (oPlayer1.y < 156)
             if (global.locale != "ar") {
 				drawText(tr("LOCKED."), "small", c_white, global.room_offset + 120, 112);
 			} else {
-				drawTextRtlHs(tr("LOCKED."), c_white, 112);
+				drawTextRtlHs(tr("LOCKED."), c_white, 0, 112);
 			}
         }
     }
@@ -134,7 +134,7 @@ if (oPlayer1.y < 156)
 			if (global.locale != "ar") {
 				drawText(tr("LADY IN RED..."), "small", c_white, global.room_offset + 120, 112);
 			} else {
-				drawTextRtlHs(tr("LADY IN RED..."), c_white, 112);
+				drawTextRtlHs(tr("LADY IN RED..."), c_white, 0, 112);
 			}
         }
         else
@@ -142,7 +142,7 @@ if (oPlayer1.y < 156)
             if (global.locale != "ar") {
 				drawText(tr("LOCKED."), "small", c_white, global.room_offset + 120, 112);
 			} else {
-				drawTextRtlHs(tr("LOCKED."), c_white, 112);
+				drawTextRtlHs(tr("LOCKED."), c_white, 0, 112);
 			}
         }
         with oNew
@@ -166,9 +166,9 @@ if (global.locale != "ar") {
 	drawText(tr("KILLS:  ") + string(tKills), "small",  c_white, global.room_offset + 120, 64);
 	drawText(tr("SAVES:  ") + string(tSaves), "small",  c_white, global.room_offset + 120, 80);
 } else {
-	drawTextRtlHs(tr("MONEY:  ")  + string(tMoney), c_white, 48);
-	drawTextRtlHs(tr("KILLS:  ") + string(tKills), c_white, 64);
-	drawTextRtlHs(tr("SAVES:  ") + string(tSaves), c_white, 80);
+	drawTextRtlHs(tr("MONEY:  ")  + string(tMoney), c_white, 0, 48);
+	drawTextRtlHs(tr("KILLS:  ") + string(tKills), c_white, 8, 64);
+	drawTextRtlHs(tr("SAVES:  ") + string(tSaves), c_white, 0, 80);
 }
 
 // only display time if won
@@ -187,7 +187,7 @@ if (ini_read_real("highscore","value6",0)-0 > 0)
 	 if (global.locale != "ar") {
 		drawText(tr("TIME:  ") + string(t), "small", c_white, global.room_offset + 120, 96);
 	 } else {
-		 drawTextRtlHs(tr("TIME:  ") + string(t), c_white, 96);
+		 drawTextRtlHs(tr("TIME:  ") + string(t), c_white, 0, 96);
 	 }
 }
 
@@ -198,9 +198,9 @@ if (global.locale != "ar") {
 	drawText(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0), "small",  c_white, global.room_offset + 120, 144);
 	drawText(tr("WINS:   ") + string(ini_read_real("highscore","value6",0)-0), "small",  c_white, global.room_offset + 120, 160);
 } else {
-	drawTextRtlHs(tr("PLAYS:  ") + string(ini_read_real("highscore","value5",0)-0), c_white, 128);
-	drawTextRtlHs(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0), c_white, 144);
-	drawTextRtlHs(tr("WINS:   ") + string(ini_read_real("highscore","value6",0)-0), c_white, 160);
+	drawTextRtlHs(tr("PLAYS:  ") + string(ini_read_real("highscore","value5",0)-0), c_white, 0, 128);
+	drawTextRtlHs(tr("DEATHS: ") + string(ini_read_real("highscore","value7",0)-0), c_white, 0, 144);
+	drawTextRtlHs(tr("WINS:   ") + string(ini_read_real("highscore","value6",0)-0), c_white, 0, 160);
 }
 var block = instance_nearest(160, 240, oPushBlock);
 if (not oButtonHighscore.pushed and block.x > 160)

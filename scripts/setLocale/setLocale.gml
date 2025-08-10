@@ -1,6 +1,5 @@
 /// @description setLocale
 function setLocale() {
-
 	if (global.firstLaunch) {
 	    var osLocale = os_get_language();
 	    if (ds_map_exists(global.localesMap, osLocale)) {
@@ -71,10 +70,11 @@ function setLocale() {
 	    ds_map_destroy(fontInfo);
 	}
 	
-	if (global.locale == "ar")  global.fontOffsetY = 0;
+	if (global.locale == "ar")  {
+		global.fontOffsetY = 0;
+	}
 
 	//loadText
 	var localizedTextFile = localeDir + "/text.json";
 	global.localizedTextMap = json2dsmap(localizedTextFile);
-
 }

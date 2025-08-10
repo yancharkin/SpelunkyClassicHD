@@ -31,6 +31,9 @@ function drawText() {
 			draw_text(posX, posY, string_hash_to_newline(text));
 		} else {
 			var textAr = scribble(text);
+			if (fontSize == "large") {
+				textAr.starting_format(global.scribbleLargeFont, color);
+			}
 			strLen = textAr.get_width();
 			textAr.blend(color, 1);
 			textAr.draw(posX, posY);

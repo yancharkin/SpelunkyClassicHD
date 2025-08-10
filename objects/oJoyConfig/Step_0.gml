@@ -71,6 +71,8 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 	        global.joyUpVal = joyKey;
 	    } else if (status == 12) {
 	        global.joyDownVal = joyKey;
+	    } else if (status == 13) {
+	        global.joyRestartVal = joyKey;
 	    }
 	}
 
@@ -79,10 +81,10 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 		alarm[0] = alarmSec*fps;
 		if (gamepad.attackPressed) gamepad.attackPressed = false;
 		if (gamepad.startPressed) gamepad.startPressed = false;
-		//if (os_type == os_windows) {
-		//	if (status > 8) room_goto(rTitle);
-		//}
-		if (status > 12) {
+		if (status > 12 and not global.debugBuild) {
+			window_set_cursor(cr_none);
+			room_goto(rTitle);
+		} else if (status > 13) {
 			window_set_cursor(cr_none);
 			room_goto(rTitle);
 		}

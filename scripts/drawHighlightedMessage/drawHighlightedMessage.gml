@@ -17,12 +17,13 @@ function drawHighlightedMessage() {
 	    text += message[i];
 	}
 	
-	if (global.messageBackground) {
+	//if (global.messageBackground) {
+	if (global.messageBackground and global.locale != "ar") {
 		if (global.locale != "ar") {
 			strLen = string_length(text)*global.fontSmallWidth;
 		} else {
 			var textAr = scribble(text);
-			strLen = textAr.get_width();
+			strLen = textAr.get_width() + 16;
 		}
 		posX = ceil((global.display_w - strLen) / 2);
 		if (strLen != 0) {

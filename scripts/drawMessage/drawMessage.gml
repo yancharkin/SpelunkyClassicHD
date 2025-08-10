@@ -12,8 +12,8 @@ function drawMessage() {
 	var offsetX = argument[3];
 	var posY = argument[4];
 	var messageN = argument[5];
-	//if (global.messageBackground and global.locale != "ar") {
-	if (global.messageBackground) {
+	//if (global.messageBackground) {
+	if (global.messageBackground and global.locale != "ar") {
 	    strLen = string_length(text)*global.fontSmallWidth;
 	    posX = ceil((global.display_w - strLen) / 2);
 	    if (strLen != 0) {
@@ -24,6 +24,10 @@ function drawMessage() {
 	        by1 = posY;
 	        bx2 = bx1 + strLen;
 	        by2 = by1 + global.fontSmallHeight;
+			 //if (global.locale == "ar") {
+				// bx1 = 0;
+				// bx2 = global.display_w;
+			 //}
 	        draw_set_color(c_black);
 	        draw_rectangle(bx1, by1, bx2, by2, false);
 	    }

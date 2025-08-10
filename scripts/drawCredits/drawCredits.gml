@@ -1,84 +1,64 @@
-function drawCredits() {
+function drawCredits(color1, color2) {
+	var X1 = 16;
+	var X2 = 32;
+	var X3 = 144;
+	if (global.locale == "ar") {
+		X1 = global.display_w - 16;
+		X2 = global.display_w - 32;
+		X3 = global.display_w - 144;
+	}
 	if (drawStatus == 1) {
-	    draw_set_font(global.fontLarge);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline("SPELUNKY"));
+		drawTextUni("SPELUNKY", "large", color1, X1, 16);
 	} else if (drawStatus == 2) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("A GAME BY")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline("DEREK YU"));
+		drawTextUni(tr("A GAME BY"), "small", color1, X1, 16);
+		drawTextUni("DEREK YU", "small", color2, X2, 32);
 	} else if (drawStatus == 3) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("PLATFORM ENGINE")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline("MARTIN PIECYK"));
-	    draw_set_color(c_yellow);
-	    draw_text(16, 48, string_hash_to_newline(tr("SOUND EFFECTS MADE USING")));
-	    draw_set_color(c_white);
-	    draw_text(32, 64, string_hash_to_newline("DR PETTER'S SFXR"));
-	    draw_set_color(c_yellow);
-	    draw_text(16, 80, string_hash_to_newline(tr("SCREEN SCALING CODE")));
-	    draw_set_color(c_white);
-	    draw_text(32, 96, string_hash_to_newline("CHEVYRAY"));
+		drawTextUni(tr("PLATFORM ENGINE"), "small", color1, X1, 16);
+		drawTextUni("MARTIN PIECYK", "small", color2, X2, 32);
+		drawTextUni(tr("SOUND EFFECTS MADE USING"), "small", color1, X1, 48);
+		drawTextUni("DR PETTER'S SFXR", "small", color2, X2, 64);
+		drawTextUni(tr("SCREEN SCALING CODE"), "small", color1, X1, 80);
+
+		drawTextUni("CHEVYRAY", "small", color2, X2, 96);
 	} else if (drawStatus == 4) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("MUSIC BY")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline("GEORGE BUZINKAI"));
-	    draw_text(32, 40, string_hash_to_newline("JONATHAN PERRY"));
+		drawTextUni(tr("MUSIC BY"), "small", color1, X1, 16);
+		drawTextUni("GEORGE BUZINKAI", "small", color2, X2, 32);
+		drawTextUni("JONATHAN PERRY", "small", color2, X2, 40);
 	} else if (drawStatus == 5) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("BETA TESTING BY")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline("ANNABELLE K."));
-	    draw_text(32, 40, string_hash_to_newline("BENZIDO"));
-	    draw_text(32, 48, string_hash_to_newline("CHUTUP"));
-	    draw_text(32, 56, string_hash_to_newline("CORPUS"));
-	    draw_text(32, 64, string_hash_to_newline("GENERALVALTER"));
-	    draw_text(32, 72, string_hash_to_newline(tr("GUERT")));
-	    draw_text(32, 80, string_hash_to_newline("GRAHAM GORING"));
-	    draw_text(32, 88, string_hash_to_newline("HAOWAN"));
-	    draw_text(32, 96, string_hash_to_newline("HIDEOUS"));
-	    draw_text(32, 104, string_hash_to_newline("INANE"));
-		draw_text(32, 112, string_hash_to_newline("INCREPARE"));
-	    draw_text(144, 32, string_hash_to_newline(tr("KAO")));
-	    draw_text(144, 40, string_hash_to_newline("MARK JOHNS"));
-	    draw_text(144, 48, string_hash_to_newline("MELLY"));
-	    draw_text(144, 56, string_hash_to_newline("PAUL ERES"));
-	    draw_text(144, 64, string_hash_to_newline("SUPER JOE"));
-	    draw_text(144, 72, string_hash_to_newline("TANTAN"));
-	    draw_text(144, 80, string_hash_to_newline("TEAM QUIGGAN"));
-	    draw_text(144, 88, string_hash_to_newline(tr("TERRY")));
-	    draw_text(144, 96, string_hash_to_newline("XION"));
-	    draw_text(144, 104, string_hash_to_newline("ZAPHOS"));
+		drawTextUni(tr("BETA TESTING BY"), "small", color1, X1, 16);
+	    var testers = [
+			"ANNABELLE K.", "BENZIDO", "CHUTUP", "CORPUS", "GENERALVALTER", "GUERT", "GRAHAM GORING",
+			"HAOWAN", "HIDEOUS", "INANE", "INCREPARE", "KAO", "MARK JOHNS", "MELLY", "PAUL ERES",
+			"SUPER JOE", "TANTAN", "TEAM QUIGGAN", "TERRY", "XION", "ZAPHOS"
+		]
+		for (var i = 0; i < array_length(testers); i++;) {
+			var testerName = testers[i];
+			var pX = X2;
+			var pY = 32 + 8*i
+			if (i >= 11) {
+				pX = X3;
+				pY = 32 + 8*i - 88
+			}
+			drawTextUni(testerName, "small", color2, pX, pY);
+		};
+
 	} else if (drawStatus == 6) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("SPELUNKY CLASSIC HD BY")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline("YANCHARKIN"));
-	    draw_set_color(c_yellow);
-	    draw_text(16, 48, string_hash_to_newline(tr("CONTRIBUTORS")));
-	    draw_set_color(c_white);
-		draw_text(32, 64, string_hash_to_newline("NKRAPIVIN"));
-		draw_text(32, 72, string_hash_to_newline("GRHEAVY"));
-		draw_text(32, 80, string_hash_to_newline("SPENCJO"));
-		draw_text(32, 88, string_hash_to_newline("GABRIEL ALBUQUERQUE FERREIRA "));
-		draw_text(32, 96, string_hash_to_newline("BAKUSTARVER"));
-		draw_text(32, 104, string_hash_to_newline("LERETARDATN"));
-		draw_text(32, 112, string_hash_to_newline("MASTERPHW"));
-		draw_text(32, 120, string_hash_to_newline("BRNBOT3K"));
+		drawTextUni(tr("SPELUNKY CLASSIC HD BY"), "small", color1, X1, 16);
+		drawTextUni("YANCHARKIN", "small", color2, X2, 32);
+		drawTextUni(tr("CONTRIBUTORS"), "small", color1, X1, 48);
+	    var hd_contributors  = [
+			"NKRAPIVIN", "GRHEAVY", "SPENCJO", "GABRIEL ALBUQUERQUE FERREIRA", "BAKUSTARVER",
+			"LERETARDATN", "MASTERPHW", "BRNBOT3K", "V9TN"
+		]
+		for (var i = 0; i < array_length(hd_contributors); i++;) {
+			var contributorName = hd_contributors[i];
+			var pX = X2;
+			var pY = 64 + 8*i
+			drawTextUni(contributorName, "small", color2, pX, pY);
+		};
 	} else if (drawStatus == 7) {
-	    draw_set_font(global.fontSmall);
-	    draw_set_color(c_yellow);
-	    draw_text(16, 16, string_hash_to_newline(tr("THANKS FOR PLAYING!")));
-	    draw_set_color(c_white);
-	    draw_text(32, 32, string_hash_to_newline(tr("SEE YOU NEXT ADVENTURE!")));
+		drawTextUni(tr("THANKS FOR PLAYING!"), "small", color1, X1, 16);
+		drawTextUni(tr("SEE YOU NEXT ADVENTURE!"), "small", color2, X2, 32);
 	}
 
 	if (fadeIn or fadeOut) {

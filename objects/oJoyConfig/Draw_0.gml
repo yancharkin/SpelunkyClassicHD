@@ -1,146 +1,74 @@
 var currVal = "";
-var strLen;
-var n;
+var strCurrLen = string_length(tr("CURRENT: "))*global.fontSmallWidth;
 
-//if (status == -1) {
-//    draw_set_font(global.fontLarge);
-//    draw_set_color(c_white);
-//    strLen = string_length(tr("PRESS ANY BUTTON"))*global.fontLargeWidth;
-//    n = 160 - strLen;
-//    n = ceil(n / 2);
-//    draw_text(n, 60, string_hash_to_newline(tr("PRESS ANY BUTTON")));
-//	draw_text(72, 76, string_hash_to_newline(string(int64(alarm[0]/fps)+1)));
-//} else {
 if (status > -1) {
-	draw_set_font(global.fontSmall);
-	draw_set_color(c_yellow);
-	strLen = string_length(tr("PRESS BUTTON FOR"))*global.fontSmallWidth;
-	n = 160 - strLen;
-	n = ceil(n / 2);
-	draw_text(n, 32, string_hash_to_newline(tr("PRESS BUTTON FOR")));
-	draw_text(8, 96, string_hash_to_newline(tr("WAIT TO KEEP SAME: ")));
+	drawTextHCenteredConf(tr("PRESS BUTTON FOR"), "small", c_yellow, 0, 32);
 	var strKeepLen = string_length(tr("WAIT TO KEEP SAME: "))*global.fontSmallWidth;
-	draw_set_color(c_white);
-	draw_text(8+strKeepLen, 96, string_hash_to_newline(string(int64(alarm[0]/fps)+1)));
-	draw_set_color(c_yellow);
-	draw_text(8, 104, string_hash_to_newline(tr("CURRENT: ")));
-
+	if (global.locale != "ar") {
+		drawText(tr("WAIT TO KEEP SAME: "), "small", c_yellow, 8, 96);
+		drawText(string(int64(alarm[0]/fps)+1), "small", c_white, 8+strKeepLen, 96);
+		drawText(tr("CURRENT: "), "small", c_yellow, 8, 104);
+	} else {
+		drawText(tr("WAIT TO KEEP SAME: "), "small", c_yellow, 184 - strKeepLen, 96);
+		drawText(string(int64(alarm[0]/fps)+1), "small", c_white, 184 - strKeepLen - 16, 96);
+		drawText(tr("CURRENT: "), "small", c_yellow, 176 -  strCurrLen, 104);
+	}
 	if ((!gamepad_is_connected(global.joyid)) and 
 		    (string_length(gamepad_get_description(global.joyid)) < 1)) {
-		draw_set_color(c_red);
-		draw_text(8, 88, string_hash_to_newline(tr("NO GAMEPAD FOUND!")));
+		//drawText(tr("NO GAMEPAD FOUND!"), "small", c_red, 8, 88);
+		drawTextHCenteredConf(tr("NO GAMEPAD FOUND!"), "small", c_red, 0, 80);
 	}
 };
 
 if (status == 0) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("JUMP"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("JUMP")));
+	drawTextHCenteredConf(tr("JUMP"), "large", c_white, 0, 48);
     currVal = global.joyJumpVal;
 } else if (status == 1) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("ACTION"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("ACTION")));
+	drawTextHCenteredConf(tr("ACTION"), "large", c_white, 0, 48);
     currVal = global.joyAttackVal;
 } else if (status == 2) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("SWITCH"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("SWITCH")));
+	drawTextHCenteredConf(tr("SWITCH"), "large", c_white, 0, 48);
     currVal = global.joyItemVal;
 } else if (status == 3) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("RUN"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("RUN")));
+	drawTextHCenteredConf(tr("RUN"), "large", c_white, 0, 48);
     currVal = global.joyRunVal;
 } else if (status == 4) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("BOMB"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("BOMB")));
+	drawTextHCenteredConf(tr("BOMB"), "large", c_white, 0, 48);
     currVal = global.joyBombVal;
 } else if (status == 5) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("ROPE"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("ROPE")));
+	drawTextHCenteredConf(tr("ROPE"), "large", c_white, 0, 48);
     currVal = global.joyRopeVal;
 } else if (status == 6) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("PURCHASE"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("PURCHASE")));
+	drawTextHCenteredConf(tr("PURCHASE"), "large", c_white, 0, 48);
     currVal = global.joyPayVal;
 } else if (status == 7) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("START"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("START")));
+	drawTextHCenteredConf(tr("START"), "large", c_white, 0, 48);
     currVal = global.joyStartVal;
 } else if (status == 8) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("LANGUAGE"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("LANGUAGE")));
+	drawTextHCenteredConf(tr("LANGUAGE"), "large", c_white, 0, 48);
     currVal = global.joyLangVal;
 } else if (status == 9) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("LEFT"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("LEFT")));
+	drawTextHCenteredConf(tr("LEFT"), "large", c_white, 0, 48);
     currVal = global.joyLeftVal;
 } else if (status == 10) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("RIGHT"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("RIGHT")));
+	drawTextHCenteredConf(tr("RIGHT"), "large", c_white, 0, 48);
     currVal = global.joyRightVal;
 } else if (status == 11) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("UP"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("UP")));
+	drawTextHCenteredConf(tr("UP"), "large", c_white, 0, 48);
     currVal = global.joyUpVal;
 } else if (status == 12) {
-    draw_set_font(global.fontLarge);
-    draw_set_color(c_white);
-    strLen = string_length(tr("DOWN"))*global.fontLargeWidth;
-    n = 160 - strLen;
-    n = ceil(n / 2);
-    draw_text(n, 40, string_hash_to_newline(tr("DOWN")));
+	drawTextHCenteredConf(tr("DOWN"), "large", c_white, 0, 48);
     currVal = global.joyDownVal;
+} else if (status == 13) {
+	drawTextHCenteredConf(tr("RESTART"), "large", c_white, 0, 48);
+    currVal = global.joyRestartVal;
 }
 
 if ((status != -1) and (currVal != "")) {
-	draw_set_font(global.fontSmall);
-	//draw_text(80, 104, string_hash_to_newline(scrGetJoy(currVal)));
-	var strCurrLen = string_length(tr("CURRENT: "))*global.fontSmallWidth;
-	draw_text(8+strCurrLen, 104, string_hash_to_newline(string_upper(scrGetJoy(currVal))));
+	if (global.locale != "ar") {
+		drawText(string_upper(scrGetJoy(currVal)), "small", c_white, 8+strCurrLen, 104);
+	} else {
+		var strBtnLen = string_length(scrGetJoy(currVal))*global.fontSmallWidth;
+		drawText(string_upper(scrGetJoy(currVal)), "small", c_white, 176 -  strCurrLen - strBtnLen - 8, 104);
+	}
 }

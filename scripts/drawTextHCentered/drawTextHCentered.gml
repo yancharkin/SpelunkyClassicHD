@@ -35,6 +35,9 @@ function drawTextHCentered() {
 			text = string_replace_all(text, "]", "<");
 		};
 		var textAr = scribble(text);
+		if (fontSize == "large") {
+			textAr.starting_format(global.scribbleLargeFont, color);
+		}
 		strLen = textAr.get_width();
 		posX = ceil((global.display_w - textAr.get_width()) / 2);
 		//if ((isMessage) and (strLen != 0)) {

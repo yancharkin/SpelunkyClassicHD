@@ -139,10 +139,9 @@ function scrInit() {
 	setSoundVol(global.sndTFall, 2000 + 8000 * (global.soundVol/18));
 
 	configLoad();
-	getLocales();
-	setLocale();
-	loadLocalizedSprites();
+
 	scribble_font_set_default("fnt_7_12");
+	global.scribbleLargeFont = "fnt_7_12_large"
 	
 	// Default large font (for HUD)
 	var charsetDir = working_directory + "locale/locales/en/charset/";
@@ -154,4 +153,8 @@ function scrInit() {
 	var fontLargeSprite = sprite_add(charsetDir + "charset.png", chars_n, false, false, 0, 0);
 	global.fontSmallDefault = font_add_sprite_ext(fontSprite, charset, false, 0);
 	global.fontLargeDefault = font_add_sprite_ext(fontLargeSprite, charset, false, 0);
+	
+	getLocales();
+	setLocale();
+	loadLocalizedSprites();
 }

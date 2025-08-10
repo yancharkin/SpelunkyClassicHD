@@ -80,7 +80,7 @@ if ((x > __view_get( e__VW.XView, 0 )-20 and x < __view_get( e__VW.XView, 0 )+__
 	            message1 = item.buyMessage;
 				message2[0] = "PRESS ";
 	            if (global.touchControlsVisibility > 0) {
-	                message2[1] = "$";               
+	                message2[1] = tr("$");               
 	            } else if (global.gamepadOn) {
 	                message2[1] = scrGetJoy(global.joyPayVal);
 	            } else {
@@ -145,7 +145,7 @@ if ((x > __view_get( e__VW.XView, 0 )-20 and x < __view_get( e__VW.XView, 0 )+__
 	        {
 	            message2[0] = "PRESS ";
 	            if (global.touchControlsVisibility > 0) {
-	                message2[1] = "$";
+	                message2[1] = tr("$");
 	            } else if (global.gamepadOn) {
 	                message2[1] = scrGetJoy(global.joyPayVal);
 	            } else {
@@ -158,17 +158,17 @@ if ((x > __view_get( e__VW.XView, 0 )-20 and x < __view_get( e__VW.XView, 0 )+__
 	        }
 	        else if (style == "Kissing")
 	        {
-	            message2[0] = "$";
+	            message2[0] = tr("$");
 	            message2[1] = string(getKissValue());
 	            message2[2] = " A KISS. PRESS ";
 	            if (global.touchControlsVisibility > 0) {
-	                message2[3] = "$";
+	                message2[3] = tr("$");
 	            } else if (global.gamepadOn) {
 	                message2[3] = scrGetJoy(global.joyPayVal);
 	            } else {
 	                message2[3] = scrGetKey(global.keyPayVal);
 	            }
-	            message2[4] = ".";
+	            //message2[4] = ".";
 	            message2Highlights[0] = 3;
 	        }
 	        else {

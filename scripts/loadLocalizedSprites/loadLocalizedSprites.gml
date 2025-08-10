@@ -36,6 +36,8 @@ function loadLocalizedSprites() {
 	if (instance_exists(oTutorialSign)) {
 	    sTutorialSignNew = sprite_add(localizedImagesDir + "tutorial_sign.png", 1, false, false, 0, 0);
 	    oTutorialSign.sprite_index = sTutorialSignNew;
+		oTutorialSign.x = 320;
+		if (global.locale == "ar") oTutorialSign.x = 297;
 	}
 	if (instance_exists(oResetSign)) {
 	    sResetSignNew = sprite_add(localizedImagesDir + "reset_sign.png", 1, false, false, 0, 0);

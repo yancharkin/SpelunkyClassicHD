@@ -2,11 +2,18 @@
 /// @param drawStatus
 /// @param  fadeOut
 function showFinalScore() {
-
 	var drawStatus = argument[0];
 	var fadeOut = argument[1];
-
-	screenCenter = ceil(global.display_w / 2);
+	var screenCenter = ceil(global.display_w / 2);
+	var lblX;
+	var valX;
+	if (global.locale != "ar") {
+		lblX = screenCenter - global.room_offset - 96;
+		valX = screenCenter - global.room_offset + 64;
+	} else {
+		lblX = screenCenter - global.room_offset + 96;
+		valX = screenCenter - global.room_offset - 96;
+	}
 
 	if (drawStatus > 0)
 	{
@@ -18,7 +25,7 @@ function showFinalScore() {
 	}
 	if (drawStatus > 2)
 	{
-	    drawTextHCentered("$" + string(moneyCount), "large", c_white, -global.room_offset, 72);
+	    drawTextHCentered(tr("$") + string(moneyCount), "large", c_white, -global.room_offset, 72);
 	}
 	if (drawStatus > 4)
 	{
@@ -30,22 +37,26 @@ function showFinalScore() {
 	        s -= 60;
 	        m += 1;
 	    }
-	    drawText(tr("TIME:  "), "small", c_yellow, screenCenter-global.room_offset-96, 96);
+	    drawTextUni(tr("TIME:  "), "small", c_yellow, lblX, 96);
 	    if (s < 10) {
-	        drawText(string(m) + ":0" + string(s), "small", c_white, screenCenter-global.room_offset+64, 96);
+	        drawText(string(m) + ":0" + string(s), "small", c_white, valX, 96);
 	    } else {
-	        drawText(string(m) + ":" + string(s), "small", c_white, screenCenter-global.room_offset+64, 96);
+	        drawText(string(m) + ":" + string(s), "small", c_white, valX, 96);
 	    }
 	}
 	if (drawStatus > 5)
 	{
-	    drawText(tr("KILLS:  "), "small", c_yellow, screenCenter-global.room_offset-96, 96+8);
-	    drawText(global.kills, "small", c_white, screenCenter-global.room_offset+64, 96+8);
+		if (global.locale != "ar") {
+			drawTextUni(tr("KILLS:  "), "small", c_yellow, lblX, 96+8);
+		} else {
+			drawTextUni(tr("KILLS:  "), "small", c_yellow, lblX+8, 96+8);
+		}
+	    drawText(global.kills, "small", c_white, valX, 96+8);
 	}
 	if (drawStatus > 6)
 	{
-	    drawText(tr("SAVES:  "), "small", c_yellow, screenCenter-global.room_offset-96, 96+16);
-	    drawText(global.damsels, "small", c_white, screenCenter-global.room_offset+64, 96+16);
+	    drawTextUni(tr("SAVES:  "), "small", c_yellow, lblX, 96+16);
+	    drawText(global.damsels, "small", c_white, valX, 96+16);
 	}
 
 	if (fadeOut)

@@ -1,6 +1,12 @@
-function drawTextRtlHs(text, color, pY) {
-		var strLen = string_length(text)*global.fontSmallWidth;
-		drawText(text, "small", color, global.room_offset + 104 + int64(192 - strLen), pY);
+function drawTextRtlHs(text, color, offsetX, pY) {
+	var textArray = [text]
+	if (string_pos("#", text) > 0) textArray = string_split(text, "#");
+	 // same result as hash_to_new_line but keep correct alignment
+	for (var i = 0; i < array_length(textArray); i++;) {
+		var line = textArray[i];
+		var strLen = string_length(line)*global.fontSmallWidth;
+		drawText(line, "small", color, global.room_offset + 104 + int64(192 - strLen + offsetX), pY + 16*i);
+	}
 }
 
 with oScreen { canPause = true; }

@@ -1,57 +1,33 @@
 drawTouchControls();
 
-draw_set_font(global.fontSmall);
-draw_set_color(c_white);
+//draw_set_font(global.fontSmall);
+//draw_set_color(c_white);
 if (instance_exists(oTunnelMan))
 {
     person = instance_nearest(176, 176, oTunnelMan);
     if (person.talk == 1)
     {
-        strLen = string_length(tr("HEY THERE! I'M THE TUNNEL MAN!"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 208, string_hash_to_newline(tr("HEY THERE! I'M THE TUNNEL MAN!")));
-        strLen = string_length(tr("I DIG SHORTCUTS."))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("I DIG SHORTCUTS.")));
+		drawTextHCentered(tr("HEY THERE! I'M THE TUNNEL MAN!"), "small", c_white, 0, 208);
+		drawTextHCentered(tr("I DIG SHORTCUTS."), "small", c_white, 0, 216);
     }
     else if (person.talk == 2)
     {
-        strLen = string_length(tr("CAN YOU LEND ME A LITTLE MONEY?"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 208, string_hash_to_newline(tr("CAN YOU LEND ME A LITTLE MONEY?")));
-        if (isRoom("rTransition1x") or isRoom("rTransition3x")) strLen = string_length(tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."))*global.fontSmallWidth;
-        else strLen = string_length(tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT."))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        if (isRoom("rTransition1x") or isRoom("rTransition3x")) draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT.")));
-        else draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT.")));
-        draw_set_color(c_yellow);
-        draw_text(global.room_offset + n, 224, string_hash_to_newline(tr("DONATE: ") + string(oTunnelMan.donate)));
-        draw_set_color(c_white);
+		drawTextHCentered(tr("CAN YOU LEND ME A LITTLE MONEY?"), "small", c_white, 0, 208);
+		if (isRoom("rTransition1x") or isRoom("rTransition3x")) drawTextHCentered(tr("I NEED $") + string(global.tunnel1) + tr(" FOR A NEW SHORTCUT."), "small", c_white, 0, 216);
+        else drawTextHCentered(tr("I NEED $") + string(global.tunnel2) + tr(" FOR A NEW SHORTCUT."), "small", c_white, 0, 216);
+		drawTextHCentered(tr("DONATE: ") + string(oTunnelMan.donate), "small", c_yellow, 0, 224);
     }
     else if (person.talk == 3)
     {
-        strLen = string_length(tr("THANKS! YOU WON'T REGRET IT!"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("THANKS! YOU WON'T REGRET IT!")));
+		drawTextHCentered(tr("THANKS! YOU WON'T REGRET IT!"), "small", c_white, 0, 216);
     }
     else if (person.talk == 4)
     {
-        strLen = string_length(tr("I'LL NEVER GET THIS SHORTCUT BUILT!"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("I'LL NEVER GET THIS SHORTCUT BUILT!")));
+		drawTextHCentered(tr("I'LL NEVER GET THIS SHORTCUT BUILT!"), "small", c_white, 0, 216);
     }
     else if (person.talk == 5)
     {
-        strLen = string_length(tr("ONE SHORTCUT, COMING UP!"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("ONE SHORTCUT, COMING UP!")));
+		drawTextHCentered(tr("ONE SHORTCUT, COMING UP!"), "small", c_white, 0, 216);
     }
 }
 else if (instance_exists(oDamselKiss))
@@ -59,10 +35,7 @@ else if (instance_exists(oDamselKiss))
     person = instance_nearest(176, 176, oDamselKiss);
     if (person.kissed)
     {
-        strLen = string_length(tr("MY HERO!"))*global.fontSmallWidth;
-        n = 320 - strLen;
-        n = ceil(n / 2);
-        draw_text(global.room_offset + n, 216, string_hash_to_newline(tr("MY HERO!")));
+		drawTextHCentered(tr("MY HERO!"), "small", c_white, 0, 216);
     }
 }
 /* debug
@@ -73,19 +46,31 @@ else
 }
 */
 
-draw_set_color(c_yellow);
-if (global.customLevel) draw_text(global.room_offset + 32, 48, string_hash_to_newline(global.customLevelName + tr(" COMPLETED!")));
-else if (global.currLevel-1 < 1) draw_text(global.room_offset + 32, 48, string_hash_to_newline(tr("TUTORIAL CAVE COMPLETED!")));
-else draw_text(global.room_offset + 32, 48, string_hash_to_newline(tr("LEVEL ") + string(global.currLevel-1) + tr(" COMPLETED!")));
-draw_set_color(c_white);
-draw_text(global.room_offset + 32, 64, string_hash_to_newline(tr("TIME  = ")));
-draw_text(global.room_offset + 32, 80, string_hash_to_newline(tr("LOOT  = ")));
-draw_text(global.room_offset + 32, 96, string_hash_to_newline(tr("KILLS = ")));
-draw_text(global.room_offset + 32, 112, string_hash_to_newline(tr("MONEY = ")));
+if (global.locale != "ar") {
+	if (global.customLevel) drawText(global.customLevelName + tr(" COMPLETED!"), "small", c_yellow, global.room_offset + 32, 48);
+	else if (global.currLevel-1 < 1) drawText(tr("TUTORIAL CAVE COMPLETED!"),"small",  c_yellow, global.room_offset + 32, 48);
+	else drawText(tr("LEVEL ") + string(global.currLevel-1) + tr(" COMPLETED!"),"small",  c_yellow, global.room_offset + 32, 48);
+} else {
+	drawTextRtlTransition(tr("TIME  = "), c_white, 0, 64);
+	if (global.customLevel) drawTextRtlTransition(global.customLevelName + tr(" COMPLETED!"), c_yellow, 0, 48);
+	else if (global.currLevel-1 < 1) drawTextRtlTransition(tr("TUTORIAL CAVE COMPLETED!"), c_yellow, 0, 48);
+	else drawTextRtlTransition(tr("LEVEL ") + string(global.currLevel-1) + tr(" COMPLETED!"), c_yellow, 0, 48);
+}
+if (global.locale != "ar") {
+	drawText(tr("TIME  = "),"small",  c_white, global.room_offset + 32, 64);
+	drawText(tr("LOOT  = "),"small",  c_white, global.room_offset + 32, 80);
+	drawText(tr("KILLS = "),"small",  c_white, global.room_offset + 32, 96);
+	drawText(tr("MONEY = "),"small",  c_white, global.room_offset + 32, 112);
+} else {
+	drawTextRtlTransition(tr("TIME  = "), c_white, 0, 64);
+	drawTextRtlTransition(tr("LOOT  = "), c_white, 0, 80);
+	drawTextRtlTransition(tr("KILLS = "), c_white, 8, 96);
+	drawTextRtlTransition(tr("MONEY = "),c_white, 0, 112);
+}
 
 if (drawLoot >= 1 and not isLoot)
 {
-    draw_text(global.room_offset + 96, 80, string_hash_to_newline(tr("NONE")));
+	drawText(tr("NONE"),"small",  c_white, global.room_offset + 96, 80);
 }
 
 if (drawLoot > -2)
@@ -111,21 +96,17 @@ if (drawLoot > -2)
         s2 -= 60;
         m2 += 1;
     }
-    
-    if (s < 10 and s2 < 10) draw_text(global.room_offset + 96, 64, string_hash_to_newline(string(m) + ":0" + string(s) + " / " + string(m2) + ":0" + string(s2)));
-    else if (s < 10) draw_text(global.room_offset + 96, 64, string_hash_to_newline(string(m) + ":0" + string(s) + " / " + string(m2) + ":" + string(s2)));
-    else if (s2 < 10) draw_text(global.room_offset + 96, 64, string_hash_to_newline(string(m) + ":" + string(s) + " / " + string(m2) + ":0" + string(s2)));
-    else draw_text(global.room_offset + 96, 64, string_hash_to_newline(string(m) + ":" + string(s) + " / " + string(m2) + ":" + string(s2)));
+    if (s < 10 and s2 < 10) drawText(string(m) + ":0" + string(s) + " / " + string(m2) + ":0" + string(s2),"small",  c_white, global.room_offset + 96, 64);
+    else if (s < 10) drawText(string(m) + ":0" + string(s) + " / " + string(m2) + ":" + string(s2),"small",  c_white, global.room_offset + 96, 64);
+    else if (s2 < 10) drawText(string(m) + ":" + string(s) + " / " + string(m2) + ":0" + string(s2),"small",  c_white, global.room_offset + 96, 64);
+    else drawText(string(m) + ":" + string(s) + " / " + string(m2) + ":" + string(s2),"small",  c_white, global.room_offset + 96, 64);
 }
 
 if (drawLoot == 2)
 {
     if (not isKills)
     {
-        draw_text(global.room_offset + 96, 96, string_hash_to_newline(tr("NONE")));
+		drawText(tr("NONE"),"small", c_white, global.room_offset + 96, 96)
     }
-    draw_text(global.room_offset + 96, 112, string_hash_to_newline("$" + string(moneyCount) + " / $" + string(global.money)));
+	drawText(tr("$") + string(moneyCount) + " / " + tr("$") + string(global.money),"small",  c_white, global.room_offset + 96, 112);
 }
-
-/* */
-/*  */

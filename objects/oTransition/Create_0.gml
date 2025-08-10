@@ -1,3 +1,8 @@
+function drawTextRtlTransition(text, color, offsetX, pY) {
+		var strLen = string_length(text)*global.fontSmallWidth;
+		drawText(text, "small", color, global.display_w - global.room_offset -  strLen - 24 +offsetX, pY);
+}
+
 ///TouchInput
 if ((global.mobileBuild) or (global.html5Build)) {
     enableTouchInput();

@@ -6,10 +6,10 @@ function drawStats(){
 			drawText(tr("MONEY:  ") + string(global.money), "small", c_gray, 8, 32);
 		    drawText(tr("KILLS:  ") + string(global.kills), "small", c_gray, 8, 40);
 		} else {
-			drawTextRtl(tr("LEVEL ") + string(global.currLevel), c_ltgray, 8);
-			drawTextRtl(tr("DEPTH: ") + string(playerDepth) + tr(" FEET"), c_ltgray, 16);
-			drawTextRtl(tr("MONEY:  ") + string(global.money), c_gray, 32);
-		    drawTextRtl(tr("KILLS:  ") + string(global.kills), c_gray, 40);
+			drawTextRtl(tr("LEVEL ") + string(global.currLevel), "small", c_ltgray, 0, 8);
+			drawTextRtl(tr("DEPTH: ") + string(playerDepth) + tr(" FEET"), "small",  c_ltgray, 0, 16);
+			drawTextRtl(tr("MONEY:  ") + string(global.money), "small", c_gray,  0, 32);
+		    drawTextRtl(tr("KILLS:  ") + string(global.kills), "small", c_gray, -8, 40);
 		}
 		var s = global.xtime;
         s = floor(s / 1000);
@@ -33,8 +33,8 @@ function drawStats(){
 			drawText(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2, "small", c_gray, 8, 48);
 			drawText(tr("SAVES:  ") + string(global.damsels), "small", c_gray, 8, 56);
 		} else {
-			drawTextRtl(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2, c_gray, 48);
-			drawTextRtl(tr("SAVES:  ") + string(global.damsels), c_gray, 56);
+			drawTextRtl(tr("TIME:  ") + string(m) + ":" + s + " / " + string(m2) + ":" + s2, "small",  c_gray, 0, 48);
+			drawTextRtl(tr("SAVES:  ") + string(global.damsels), "small",  c_gray, 0, 56);
 		}
 	};
 }
