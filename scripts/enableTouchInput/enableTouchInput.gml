@@ -10,6 +10,8 @@ function enableTouchInput() {
 	var touchOffsetH = global.touchOffsetH * vkey_size;
 	var touchDebug = false;
 	
+	// Instant restart
+	array_push(global.touchButtons, virtual_key_add(touchOffsetH + vkey_size , global.display_h - 4.75*vkey_size, vkey_size, vkey_size, global.keyRestartVal));
 	// Touch Controls Visibility
 	array_push(global.touchButtons, virtual_key_add(touchOffsetH + vkey_size , global.display_h - 2.5*vkey_size, vkey_size, vkey_size, vk_f7));
 	// CheatEnabler

@@ -35,6 +35,13 @@ if (touchControlsVisibilityTimer >= 1*game_speed/2) {
 
 // Cheats
 if (keyboard_check_pressed(vk_f8)) toggleCheats();
+// Instant restart
+if (global.debugBuild) {
+	if (keyboard_check_pressed(global.keyRestartVal) or  gamepad_button_check_pressed(global.joyid, global.joyRestartVal)) {
+	        scrClearGlobals();
+	        room_goto(rLevel);
+	}
+}
 
 // GHOST
 if (instance_exists(oPlayer1))
@@ -306,7 +313,8 @@ if (paused) {
 					if (global.mobileBuild) {
 	                    instance_activate_all();
 	                    audio_stop_all();
-	                    game_restart();
+						scrClearGlobals();
+						room_goto(rLevel);
 					} else {
 						if (global.html5Build) {
 							global.localeChangeBy = 1;
@@ -330,7 +338,8 @@ if (paused) {
 					} else {
 	                    instance_activate_all();
 	                    audio_stop_all();
-	                    game_restart();
+						scrClearGlobals();
+						room_goto(rLevel);
 					}
                     break;
                 }
@@ -358,7 +367,8 @@ if (paused) {
                     if (global.mobileBuild) {
 		                instance_activate_all();
 		                audio_stop_all();
-		                game_restart();
+						scrClearGlobals();
+						room_goto(rLevel);
 					} else {
 						menuDie();
 					}
@@ -368,7 +378,8 @@ if (paused) {
                     if (global.html5Build and  (not global.html5StandaloneBuild)) {
 		                instance_activate_all();
 		                audio_stop_all();
-		                game_restart();
+						scrClearGlobals();
+						room_goto(rLevel);
 					} else {
 						game_end();
 					}	

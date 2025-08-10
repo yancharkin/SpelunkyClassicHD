@@ -17,6 +17,7 @@ function drawTouchControls() {
 		}
 	    if (global.debugBuild) {
 			draw_sprite_ext(sTouchCheat, 0, global.display_w - 4.5*vkey_size, 0.5*vkey_size, img_scale, img_scale, 0, -1, global.touchControlsVisibility);
+			draw_sprite_ext(sTouchRestart, 0, touchOffsetH + vkey_size, global.display_h - 4.75*vkey_size, img_scale, img_scale, 0, -1, global.touchControlsVisibility);
 	    }
 	}
 }

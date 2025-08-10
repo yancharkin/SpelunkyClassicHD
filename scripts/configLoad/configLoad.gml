@@ -18,6 +18,7 @@ function configLoad() {
 	global.keyStartVal = vk_escape;
 	global.keyEscape = vk_escape;
 	global.keyEnter = vk_enter;
+	global.keyRestartVal = vk_f5;
 	if ((global.html5Build) and (not global.html5StandaloneBuild)) global.keyStartVal = vk_tab;
 
 	global.joyJumpVal = -1;
@@ -34,6 +35,7 @@ function configLoad() {
 	global.joyUpVal = -1;
 	global.joyDownVal = -1;
 	global.joyLangVal = -1;
+	global.joyRestartVal = -1;
 
 	if (file_exists(getWorkingDirPath("settings.json"))) {
 	    var settingsMap = json2dsmap(getWorkingDirPath("settings.json"));
@@ -65,6 +67,7 @@ function configLoad() {
 	    global.keyFlareVal =  is_undefined(keysMap[? "keyFlareVal"]) ? global.keyFlareVal : int64(keysMap[? "keyFlareVal"]);
 	    global.keyPayVal =  is_undefined(keysMap[? "keyPayVal"]) ? global.keyPayVal : int64(keysMap[? "keyPayVal"]);
 		global.keyLangVal =  is_undefined(keysMap[? "keyLangVal"]) ? global.keyLangVal : int64(keysMap[? "keyLangVal"]);
+		global.keyRestartVal =  is_undefined(keysMap[? "keyRestartVal "]) ? global.keyRestartVal  : int64(keysMap[? "keyRestartVal "]);
 	    ds_map_destroy(keysMap);
 	}
 
@@ -84,6 +87,7 @@ function configLoad() {
 		global.joyUpVal =  is_undefined(joyMap[? "joyUpVal"]) ? global.joyUpVal : getJoyBtnOrAxisId(joyMap[? "joyUpVal"]);
 		global.joyDownVal =  is_undefined(joyMap[? "joyDownVal"]) ? global.joyDownVal : getJoyBtnOrAxisId(joyMap[? "joyDownVal"]);
 		global.joyLangVal =  is_undefined(joyMap[? "joyLangVal"]) ? global.joyLangVal : getJoyBtnOrAxisId(joyMap[? "joyLangVal"]);
+		global.joyRestartVal =  is_undefined(joyMap[? "joyRestartVal "]) ? global.joyRestartVal  : getJoyBtnOrAxisId(joyMap[? "joyRestartVal "]);
 	    ds_map_destroy(joyMap);
 	}
 

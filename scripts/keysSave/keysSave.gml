@@ -1,11 +1,9 @@
 /// @description keysSave
 function keysSave() {
-	
 	var keysMap = ds_map_create();
 	if (file_exists(getWorkingDirPath("keys.json"))) {
 	    keysMap = json2dsmap(getWorkingDirPath("keys.json"));
 	}
-	
 	ds_map_replace(keysMap, "keyUpVal", int64(global.keyUpVal));
 	ds_map_replace(keysMap, "keyDownVal", int64(global.keyDownVal));
 	ds_map_replace(keysMap, "keyLeftVal", int64(global.keyLeftVal));
@@ -19,8 +17,7 @@ function keysSave() {
 	ds_map_replace(keysMap, "keyFlareVal", int64(global.keyFlareVal));
 	ds_map_replace(keysMap, "keyPayVal", int64(global.keyPayVal));
 	ds_map_replace(keysMap, "keyLangVal", int64(global.keyLangVal));
-
+	ds_map_replace(keysMap, "keyRestartVal", int64(global.keyRestartVal));
 	dsmap2json(keysMap, getWorkingDirPath("keys.json"));
 	ds_map_destroy(keysMap);
-
 }
