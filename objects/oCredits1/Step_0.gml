@@ -45,6 +45,11 @@ else if (fadeOut)
     if (fadeLevel < 1) fadeLevel += 0.1;
     else
     {
-        game_end();
+		if (not global.mobileBuild and not global.html5Build) {
+			game_end();
+		} else {
+		    sound_stop_all()
+			room_goto(rHighscores);
+		}
     }
 }
