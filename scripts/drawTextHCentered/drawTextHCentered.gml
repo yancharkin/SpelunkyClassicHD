@@ -40,10 +40,7 @@ function drawTextHCentered() {
 		}
 		strLen = textAr.get_width();
 		posX = ceil((global.display_w - textAr.get_width()) / 2);
-		//if ((isMessage) and (strLen != 0)) {
-		//	scribble("[c_black][offset,0,1]" + text).draw(posX + offsetX, posY);
-		//	scribble("[c_black][offset,0,-1]" + text).draw(posX + offsetX, posY);
-		//}
+
 		textAr.blend(color, 1);
 		textAr.draw(posX + offsetX, posY);
 	}
