@@ -2,7 +2,7 @@ var currVal = "";
 var strCurrLen = string_length(tr("CURRENT: "))*global.fontSmallWidth;
 
 if (status == -3) and  (gamepads_n > 1) {
-	drawTextHCenteredConf(tr("SELECT GAMEPAD"), "small", c_yellow, 0, 32);
+	drawTextHCenteredConf(tr("GAMEPAD"), "small", c_yellow, 0, 32);
 	//drawTextHCenteredConf(string_upper(string_remove_redundant_spaces(gamepads[gamepad_i][1])), "small", c_white, 0, 56);
 	drawTextHCenteredConf("<" + string_upper(string_remove_redundant_spaces(gamepads[global.gamepad_i][1])) + ">", "large", c_white, 0, 48);
 }

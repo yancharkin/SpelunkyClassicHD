@@ -171,19 +171,19 @@ if os_is_paused() and not paused {
     paused = true;
 }
 if (keyboard_check_pressed(global.keyStartVal) or gamepad_button_check_pressed(global.joyid, global.joyStartVal)) {
-    if (not isRoom("rIntro")) {
-        if (not paused) {
+    if (not paused) {
+		if (not isRoom("rIntro")) {
 			if (instance_exists(oPlayer1)) {
 				playerDepth = 174.8*(global.currLevel-1)+(oPlayer1.y+8)*0.34;
 			};
-            instance_deactivate_all(true);
-            audio_pause_all();
-            paused = true;
-        } else {
-            paused = false;
-            instance_activate_all();
-            audio_resume_all();
-        }
+	        instance_deactivate_all(true);
+	        audio_pause_all();
+	        paused = true;
+		}
+    } else {
+        paused = false;
+        instance_activate_all();
+        audio_resume_all();
     }
 }
 
@@ -192,14 +192,14 @@ if (paused) {
 	gamepadInMenu();
     if (checkDownPressed()) {
         menuItemIndex += 1;
-        if (isRoom("rTitle")) {
+        if (isRoom("rTitle") or isRoom("rIntro")) {
             if (menuItemIndex > maxIndexTitle) menuItemIndex = 0;
         } else { 
             if (menuItemIndex > maxIndexGame) menuItemIndex = 0;
         }
     } else if (checkUpPressed()) {
         menuItemIndex -= 1;
-        if (isRoom("rTitle")) {
+        if (isRoom("rTitle") or isRoom("rIntro")) {
             if (menuItemIndex < 0) menuItemIndex = maxIndexTitle;
         } else {
             if (menuItemIndex < 0) menuItemIndex = maxIndexGame;
@@ -210,7 +210,7 @@ if (paused) {
 		audio_resume_all();
     } else if (checkAttackPressed())
 			or (keyboard_check_pressed(global.keyEnter) or checkRightPressed() or checkLeftPressed()) {
-        if (isRoom("rTitle")) {
+        if (isRoom("rTitle") or isRoom("rIntro")) {
             switch (menuItemIndex) {
                 case 0: {
                     toggleMusic();

@@ -40,7 +40,7 @@ if (paused) {
     var strLocaleName = string_upper(global.localesMap[? global.locale]);
 	var strLocaleName2 = string_upper(global.localesTr[$ global.locale][$ global.locale2]);
 
-    if (isRoom("rTitle")) {
+    if (isRoom("rTitle") or isRoom("rIntro")) {
         if (global.html5Build) {
             drawTextHCentered(tr("MUSIC") + " <" + strMusic + ">", "small", color0, 0, firstMenuItemTitleY);
 	        if (global.mobileBuild) {
