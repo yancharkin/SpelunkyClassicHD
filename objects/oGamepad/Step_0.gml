@@ -1,6 +1,6 @@
 /// @description Do gamepad stuff.
 
-if (!global.gamepadOn) exit;
+//if (!global.gamepadOn) exit;
 
 /////////////
 // START

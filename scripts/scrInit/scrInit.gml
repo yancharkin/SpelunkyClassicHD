@@ -49,6 +49,8 @@ function scrInit() {
 	global.graphicsHigh = true;
 	global.downToRun = true;
 	global.gamepadOn = false;
+	global.savedGamepadFound = false;
+	global.gamepad_i = 0;
 	global.music = true;
 	global.musicVol = 15;
 	global.soundVol = 15;

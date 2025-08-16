@@ -1,6 +1,5 @@
 /// @description configLoad
-function configLoad() {
-	
+function configLoad(isJoyConfScreen = false) {
 	//Default controls
 	global.keyUpVal = vk_up;
 	global.keyDownVal = vk_down;
@@ -36,6 +35,7 @@ function configLoad() {
 	global.joyDownVal = -1;
 	global.joyLangVal = -1;
 	global.joyRestartVal = -1;
+	if (!isJoyConfScreen) global.joySaved = -1;
 
 	if (file_exists(getWorkingDirPath("settings.json"))) {
 	    var settingsMap = json2dsmap(getWorkingDirPath("settings.json"));
@@ -72,23 +72,29 @@ function configLoad() {
 	}
 
 	if (file_exists(getWorkingDirPath("gamepad.json"))) {
-	    var joyMap = json2dsmap(getWorkingDirPath("gamepad.json"));
-	    global.joyJumpVal =  is_undefined(joyMap[? "joyJumpVal"]) ? global.joyJumpVal : getJoyBtnOrAxisId(joyMap[? "joyJumpVal"]);
-	    global.joyAttackVal =  is_undefined(joyMap[? "joyAttackVal"]) ? global.joyAttackVal : getJoyBtnOrAxisId(joyMap[? "joyAttackVal"]);
-	    global.joyItemVal =  is_undefined(joyMap[? "joyItemVal"]) ? global.joyItemVal : getJoyBtnOrAxisId(joyMap[? "joyItemVal"]);
-	    global.joyRunVal =  is_undefined(joyMap[? "joyRunVal"]) ? global.joyRunVal : getJoyBtnOrAxisId(joyMap[? "joyRunVal"]);
-	    global.joyBombVal =  is_undefined(joyMap[? "joyBombVal"]) ? global.joyBombVal : getJoyBtnOrAxisId(joyMap[? "joyBombVal"]);
-	    global.joyRopeVal =  is_undefined(joyMap[? "joyRopeVal"]) ? global.joyRopeVal : getJoyBtnOrAxisId(joyMap[? "joyRopeVal"]);
-	    global.joyFlareVal =  is_undefined(joyMap[? "joyFlareVal"]) ? global.joyFlareVal : getJoyBtnOrAxisId(joyMap[? "joyFlareVal"]);
-	    global.joyPayVal =  is_undefined(joyMap[? "joyPayVal"]) ? global.joyPayVal : getJoyBtnOrAxisId(joyMap[? "joyPayVal"]);
-	    global.joyStartVal =  is_undefined(joyMap[? "joyStartVal"]) ? global.joyStartVal : getJoyBtnOrAxisId(joyMap[? "joyStartVal"]);
-		global.joyLeftVal =  is_undefined(joyMap[? "joyLeftVal"]) ? global.joyLeftVal : getJoyBtnOrAxisId(joyMap[? "joyLeftVal"]);
-		global.joyRightVal =  is_undefined(joyMap[? "joyRightVal"]) ? global.joyRightVal : getJoyBtnOrAxisId(joyMap[? "joyRightVal"]);
-		global.joyUpVal =  is_undefined(joyMap[? "joyUpVal"]) ? global.joyUpVal : getJoyBtnOrAxisId(joyMap[? "joyUpVal"]);
-		global.joyDownVal =  is_undefined(joyMap[? "joyDownVal"]) ? global.joyDownVal : getJoyBtnOrAxisId(joyMap[? "joyDownVal"]);
-		global.joyLangVal =  is_undefined(joyMap[? "joyLangVal"]) ? global.joyLangVal : getJoyBtnOrAxisId(joyMap[? "joyLangVal"]);
-		global.joyRestartVal =  is_undefined(joyMap[? "joyRestartVal "]) ? global.joyRestartVal  : getJoyBtnOrAxisId(joyMap[? "joyRestartVal "]);
-	    ds_map_destroy(joyMap);
+	    var joyAll = json2dsmap(getWorkingDirPath("gamepad.json"));
+		if (!isJoyConfScreen) global.joySaved =  is_undefined(joyAll[? "joySaved"]) ? global.joySaved  : joyAll[? "joySaved"];
+		if ((global.joySaved != -1) and !is_undefined(joyAll[? global.joySaved])) {
+			var joyMapStr = joyAll[? global.joySaved];
+			var joyMap = json_decode(joyMapStr);
+		    global.joyJumpVal =  is_undefined(joyMap[? "joyJumpVal"]) ? global.joyJumpVal : getJoyBtnOrAxisId(joyMap[? "joyJumpVal"]);
+		    global.joyAttackVal =  is_undefined(joyMap[? "joyAttackVal"]) ? global.joyAttackVal : getJoyBtnOrAxisId(joyMap[? "joyAttackVal"]);
+		    global.joyItemVal =  is_undefined(joyMap[? "joyItemVal"]) ? global.joyItemVal : getJoyBtnOrAxisId(joyMap[? "joyItemVal"]);
+		    global.joyRunVal =  is_undefined(joyMap[? "joyRunVal"]) ? global.joyRunVal : getJoyBtnOrAxisId(joyMap[? "joyRunVal"]);
+		    global.joyBombVal =  is_undefined(joyMap[? "joyBombVal"]) ? global.joyBombVal : getJoyBtnOrAxisId(joyMap[? "joyBombVal"]);
+		    global.joyRopeVal =  is_undefined(joyMap[? "joyRopeVal"]) ? global.joyRopeVal : getJoyBtnOrAxisId(joyMap[? "joyRopeVal"]);
+		    global.joyFlareVal =  is_undefined(joyMap[? "joyFlareVal"]) ? global.joyFlareVal : getJoyBtnOrAxisId(joyMap[? "joyFlareVal"]);
+		    global.joyPayVal =  is_undefined(joyMap[? "joyPayVal"]) ? global.joyPayVal : getJoyBtnOrAxisId(joyMap[? "joyPayVal"]);
+		    global.joyStartVal =  is_undefined(joyMap[? "joyStartVal"]) ? global.joyStartVal : getJoyBtnOrAxisId(joyMap[? "joyStartVal"]);
+			global.joyLeftVal =  is_undefined(joyMap[? "joyLeftVal"]) ? global.joyLeftVal : getJoyBtnOrAxisId(joyMap[? "joyLeftVal"]);
+			global.joyRightVal =  is_undefined(joyMap[? "joyRightVal"]) ? global.joyRightVal : getJoyBtnOrAxisId(joyMap[? "joyRightVal"]);
+			global.joyUpVal =  is_undefined(joyMap[? "joyUpVal"]) ? global.joyUpVal : getJoyBtnOrAxisId(joyMap[? "joyUpVal"]);
+			global.joyDownVal =  is_undefined(joyMap[? "joyDownVal"]) ? global.joyDownVal : getJoyBtnOrAxisId(joyMap[? "joyDownVal"]);
+			global.joyLangVal =  is_undefined(joyMap[? "joyLangVal"]) ? global.joyLangVal : getJoyBtnOrAxisId(joyMap[? "joyLangVal"]);
+			global.joyRestartVal =  is_undefined(joyMap[? "joyRestartVal"]) ? global.joyRestartVal  : getJoyBtnOrAxisId(joyMap[? "joyRestartVal"]);
+		    ds_map_destroy(joyMap);
+		}
+		ds_map_destroy(joyAll);
 	}
 
 	if (file_exists(getWorkingDirPath("gamepadmapping.json"))) {

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"string_remove_redundant_spaces",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"string_remove_redundant_spaces",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

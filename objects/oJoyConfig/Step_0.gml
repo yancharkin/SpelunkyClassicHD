@@ -1,6 +1,27 @@
 var joyReleased = false;
 var joyPressed = false;
 
+if (status == -3) {
+	if ((gamepads_n <= 1) or keyboard_check_pressed(vk_escape)
+			or keyboard_check_pressed(global.keyEnter)
+			or keyboard_check_pressed(global.keyAttackVal)
+			or keyboard_check_pressed(global.keyJumpVal)
+			or alarm[0] == alarmSec*fps) {
+		status += 1;
+	} else {
+		if (keyboard_check_pressed(global.keyRightVal)) {
+			global.gamepad_i += 1;
+			if (global.gamepad_i >= gamepads_n) global.gamepad_i = 0;
+		} else if (keyboard_check_pressed(global.keyLeftVal)) {
+			global.gamepad_i -= 1;
+			if (global.gamepad_i < 0) global.gamepad_i = gamepads_n-1;
+		}
+		global.joyid = gamepads[global.gamepad_i][0];
+		global.joySaved = gamepads[global.gamepad_i][1];
+	}
+	configLoad(true);
+}
+
 if (status == -2) { // do not catch input from gamepad here to prevent assigning previously pressed button (while selecting menu item)
 	if (keyboard_check_pressed(vk_escape) or (alarm[0] == 4.5*fps)) {
 		status += 1;
@@ -13,7 +34,7 @@ if (status == -2) { // do not catch input from gamepad here to prevent assigning
 		status += 1;
 		alarm[0] = alarmSec*fps;
 	}
-} else {
+} else if (status > -2) {
 	if (!buttonsVisible) {
 		 oJoyConfigClearBtn.visible = true;
 		 oJoyConfigSkipBtn.visible = true;

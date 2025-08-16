@@ -1,6 +1,12 @@
 var currVal = "";
 var strCurrLen = string_length(tr("CURRENT: "))*global.fontSmallWidth;
 
+if (status == -3) and  (gamepads_n > 1) {
+	drawTextHCenteredConf(tr("SELECT GAMEPAD"), "small", c_yellow, 0, 32);
+	//drawTextHCenteredConf(string_upper(string_remove_redundant_spaces(gamepads[gamepad_i][1])), "small", c_white, 0, 56);
+	drawTextHCenteredConf("<" + string_upper(string_remove_redundant_spaces(gamepads[global.gamepad_i][1])) + ">", "large", c_white, 0, 48);
+}
+
 if (status > -1) {
 	drawTextHCenteredConf(tr("PRESS BUTTON FOR"), "small", c_yellow, 0, 32);
 	var strKeepLen = string_length(tr("WAIT TO KEEP SAME: "))*global.fontSmallWidth;
@@ -15,7 +21,6 @@ if (status > -1) {
 	}
 	if ((!gamepad_is_connected(global.joyid)) and 
 		    (string_length(gamepad_get_description(global.joyid)) < 1)) {
-		//drawText(tr("NO GAMEPAD FOUND!"), "small", c_red, 8, 88);
 		drawTextHCenteredConf(tr("NO GAMEPAD FOUND!"), "small", c_red, 0, 80);
 	}
 };
