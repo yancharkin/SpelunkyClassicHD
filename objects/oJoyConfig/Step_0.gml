@@ -17,7 +17,7 @@ if (status == -3) {
 			if (global.gamepad_i < 0) global.gamepad_i = gamepads_n-1;
 		}
 		global.joyid = gamepads[global.gamepad_i][0];
-		global.joySaved = gamepads[global.gamepad_i][1];
+		global.joySaved = gamepads[global.gamepad_i][1] + "," + gamepads[global.gamepad_i][2];
 	}
 	configLoad(true);
 }

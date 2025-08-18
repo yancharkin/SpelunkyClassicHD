@@ -8,10 +8,12 @@ function findGamepads() {
 	if gamepad_count > 0 {
 		for (var i = 0; i < gamepad_count; i++) {
 			gamepad_description = gamepad_get_description(i);
+			gamepad_guid = gamepad_get_guid(i);
 		    if (gamepad_is_connected(i) and string_length(gamepad_description) > 1) {
-				gamepads[j] = [i, gamepad_description];
+				gamepads[j] = [i, gamepad_description, gamepad_guid];
+				gamepad_id = gamepad_description + "," + gamepad_guid
 				if (!global.gamepadOn) {
-					if (gamepad_description == global.joySaved and !global.savedGamepadFound) {
+					if (gamepad_id == global.joySaved and !global.savedGamepadFound) {
 						global.gamepadOn = true;
 						global.savedGamepadFound = true;
 						global.joyid = i;
@@ -23,7 +25,7 @@ function findGamepads() {
 		}
 		if (!global.savedGamepadFound) {
 			global.joyid = gamepads[0][0];
-			global.joySaved = gamepads[0][1];
+			global.joySaved = gamepads[0][1] + "," + gamepads[0][2];
 			global.gamepadOn = true;
 		}
 	}
