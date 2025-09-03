@@ -23,18 +23,21 @@ function findGamepads() {
 				j += 1;
 		    }
 		}
-		if (!global.savedGamepadFound) {
-			global.joyid = gamepads[0][0];
-			global.joySaved = gamepads[0][1] + "," + gamepads[0][2];
-			global.gamepadOn = true;
+		gamepads_n = array_length(gamepads);
+		if (gamepads_n == 0) {
+			global.gamepadOn = false;
+			global.joyid = -1;
+		} else {
+			if (!global.savedGamepadFound) {
+				global.joyid = gamepads[0][0];
+				global.joySaved = gamepads[0][1] + "," + gamepads[0][2];
+				global.gamepadOn = true;
+			}
+			if (global.gamepadOn)  {
+				gamepad_set_button_threshold(global.joyid, 1); // we need this to be pretty high, as analogue triggers are treated like analogue triggers and not like buttons!
+				configLoad(true);
+				joySave();
+			}
 		}
 	}
-	gamepads_n = array_length(gamepads);
-	if (global.gamepadOn)  gamepad_set_button_threshold(global.joyid, 1); // we need this to be pretty high, as analogue triggers are treated like analogue triggers and not like buttons!
-	if (array_length(gamepads) == 0) {
-		global.gamepadOn = false;
-		global.joyid = -1;
-	}
-	configLoad(true);
-	joySave();
 }
