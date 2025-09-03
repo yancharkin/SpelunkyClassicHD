@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sOlmecSlam",
   "bboxMode":0,
   "bbox_bottom":7,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9eaf08cb-1a5f-4ade-b688-5d4d3043e595","name":"9eaf08cb-1a5f-4ade-b688-5d4d3043e595","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9eaf08cb-1a5f-4ade-b688-5d4d3043e595","name":"9eaf08cb-1a5f-4ade-b688-5d4d3043e595","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sSpiderDrown",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aab9c9e6-5fe5-4016-b46d-fe40bc705002","name":"aab9c9e6-5fe5-4016-b46d-fe40bc705002","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aab9c9e6-5fe5-4016-b46d-fe40bc705002","name":"aab9c9e6-5fe5-4016-b46d-fe40bc705002","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

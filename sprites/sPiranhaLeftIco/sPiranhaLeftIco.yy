@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sPiranhaLeftIco",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"57d578f6-0616-4a89-bdcf-8495bdd58a09","name":"57d578f6-0616-4a89-bdcf-8495bdd58a09","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"57d578f6-0616-4a89-bdcf-8495bdd58a09","name":"57d578f6-0616-4a89-bdcf-8495bdd58a09","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

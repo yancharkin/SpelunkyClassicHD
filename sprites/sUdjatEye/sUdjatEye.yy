@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sUdjatEye",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5eede139-e3ba-4ad5-96de-96f48b0b4009","name":"5eede139-e3ba-4ad5-96de-96f48b0b4009","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5eede139-e3ba-4ad5-96de-96f48b0b4009","name":"5eede139-e3ba-4ad5-96de-96f48b0b4009","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

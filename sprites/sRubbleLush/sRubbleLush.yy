@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sRubbleLush",
   "bboxMode":0,
   "bbox_bottom":6,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5c2e50c5-8fba-4bac-ad91-e6cfe72cd9b4","name":"5c2e50c5-8fba-4bac-ad91-e6cfe72cd9b4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5c2e50c5-8fba-4bac-ad91-e6cfe72cd9b4","name":"5c2e50c5-8fba-4bac-ad91-e6cfe72cd9b4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

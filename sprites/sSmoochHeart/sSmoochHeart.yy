@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sSmoochHeart",
   "bboxMode":0,
   "bbox_bottom":13,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1986d237-caaa-4e6f-8797-9de6fefa21e3","name":"1986d237-caaa-4e6f-8797-9de6fefa21e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"fde93a4d-7da2-4352-bb08-ba34e14b3b6f","name":"fde93a4d-7da2-4352-bb08-ba34e14b3b6f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1986d237-caaa-4e6f-8797-9de6fefa21e3","name":"1986d237-caaa-4e6f-8797-9de6fefa21e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fde93a4d-7da2-4352-bb08-ba34e14b3b6f","name":"fde93a4d-7da2-4352-bb08-ba34e14b3b6f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

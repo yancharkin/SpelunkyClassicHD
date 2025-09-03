@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"bgKaliHeads",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d9b44e93-f6e6-4416-9b11-816e9da5e98c","name":"d9b44e93-f6e6-4416-9b11-816e9da5e98c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d9b44e93-f6e6-4416-9b11-816e9da5e98c","name":"d9b44e93-f6e6-4416-9b11-816e9da5e98c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

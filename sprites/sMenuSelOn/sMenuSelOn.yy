@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sMenuSelOn",
   "bboxMode":0,
   "bbox_bottom":7,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c72b9d48-fb8a-4203-9815-d7bc8e694d0b","name":"c72b9d48-fb8a-4203-9815-d7bc8e694d0b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c72b9d48-fb8a-4203-9815-d7bc8e694d0b","name":"c72b9d48-fb8a-4203-9815-d7bc8e694d0b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

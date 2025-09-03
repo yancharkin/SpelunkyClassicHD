@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sMonkeyHangL",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ff4c78ce-5b70-4e7e-b0ee-bf1413ff71d9","name":"ff4c78ce-5b70-4e7e-b0ee-bf1413ff71d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ff4c78ce-5b70-4e7e-b0ee-bf1413ff71d9","name":"ff4c78ce-5b70-4e7e-b0ee-bf1413ff71d9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

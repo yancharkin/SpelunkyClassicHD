@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sDieLFall",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"8afb6601-d4a1-4c68-b1c5-fd2f272f3f23","name":"8afb6601-d4a1-4c68-b1c5-fd2f272f3f23","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8afb6601-d4a1-4c68-b1c5-fd2f272f3f23","name":"8afb6601-d4a1-4c68-b1c5-fd2f272f3f23","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

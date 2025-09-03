@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sMushroom8",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c63b83d1-d5c8-4a91-acdb-2c6c6c7cbd54","name":"c63b83d1-d5c8-4a91-acdb-2c6c6c7cbd54","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c63b83d1-d5c8-4a91-acdb-2c6c6c7cbd54","name":"c63b83d1-d5c8-4a91-acdb-2c6c6c7cbd54","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

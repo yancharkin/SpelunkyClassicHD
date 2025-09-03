@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"bgDiceSign",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0a0d22bb-8b79-4bf6-8ebc-fac277e768c9","name":"0a0d22bb-8b79-4bf6-8ebc-fac277e768c9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0a0d22bb-8b79-4bf6-8ebc-fac277e768c9","name":"0a0d22bb-8b79-4bf6-8ebc-fac277e768c9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

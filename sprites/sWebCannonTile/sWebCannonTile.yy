@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sWebCannonTile",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3c847298-ec80-4a22-8deb-1ab1ddc461c8","name":"3c847298-ec80-4a22-8deb-1ab1ddc461c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3c847298-ec80-4a22-8deb-1ab1ddc461c8","name":"3c847298-ec80-4a22-8deb-1ab1ddc461c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

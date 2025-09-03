@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sRuby",
   "bboxMode":0,
   "bbox_bottom":3,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0d6f6261-9a75-4c6a-8e15-ad6cd20f17bb","name":"0d6f6261-9a75-4c6a-8e15-ad6cd20f17bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0d6f6261-9a75-4c6a-8e15-ad6cd20f17bb","name":"0d6f6261-9a75-4c6a-8e15-ad6cd20f17bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

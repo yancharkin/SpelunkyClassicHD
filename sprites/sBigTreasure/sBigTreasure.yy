@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sBigTreasure",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"25d071b1-81d1-4317-b9d9-f4c35c88d710","name":"25d071b1-81d1-4317-b9d9-f4c35c88d710","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"25d071b1-81d1-4317-b9d9-f4c35c88d710","name":"25d071b1-81d1-4317-b9d9-f4c35c88d710","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

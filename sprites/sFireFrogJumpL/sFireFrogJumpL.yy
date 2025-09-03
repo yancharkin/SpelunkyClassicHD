@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sFireFrogJumpL",
   "bboxMode":0,
   "bbox_bottom":13,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"177bd8f8-0fed-4bb2-bfc7-118c0c7c842d","name":"177bd8f8-0fed-4bb2-bfc7-118c0c7c842d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"177bd8f8-0fed-4bb2-bfc7-118c0c7c842d","name":"177bd8f8-0fed-4bb2-bfc7-118c0c7c842d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sLoadButton",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"220b79d9-7c33-425d-9b4f-a6f86ecb1a09","name":"220b79d9-7c33-425d-9b4f-a6f86ecb1a09","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"220b79d9-7c33-425d-9b4f-a6f86ecb1a09","name":"220b79d9-7c33-425d-9b4f-a6f86ecb1a09","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

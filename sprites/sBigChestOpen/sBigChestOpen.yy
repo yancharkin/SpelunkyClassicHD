@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sBigChestOpen",
   "bboxMode":0,
   "bbox_bottom":47,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b4dd087c-82e6-44e1-9667-e00b56dfc3aa","name":"b4dd087c-82e6-44e1-9667-e00b56dfc3aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b4dd087c-82e6-44e1-9667-e00b56dfc3aa","name":"b4dd087c-82e6-44e1-9667-e00b56dfc3aa","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

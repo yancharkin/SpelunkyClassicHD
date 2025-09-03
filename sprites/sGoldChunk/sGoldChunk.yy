@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sGoldChunk",
   "bboxMode":0,
   "bbox_bottom":3,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6bf074ca-24a1-4d56-b8f5-5a432dadd9f1","name":"6bf074ca-24a1-4d56-b8f5-5a432dadd9f1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6bf074ca-24a1-4d56-b8f5-5a432dadd9f1","name":"6bf074ca-24a1-4d56-b8f5-5a432dadd9f1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

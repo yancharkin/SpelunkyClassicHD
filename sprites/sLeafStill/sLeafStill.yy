@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sLeafStill",
   "bboxMode":0,
   "bbox_bottom":7,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f3f6fae6-5b3d-47c7-9bbe-1793cafc67a2","name":"f3f6fae6-5b3d-47c7-9bbe-1793cafc67a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f3f6fae6-5b3d-47c7-9bbe-1793cafc67a2","name":"f3f6fae6-5b3d-47c7-9bbe-1793cafc67a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

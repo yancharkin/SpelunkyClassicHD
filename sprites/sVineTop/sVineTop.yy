@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sVineTop",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"836d8f15-2fbb-4f1f-a167-9e105c45aa2a","name":"836d8f15-2fbb-4f1f-a167-9e105c45aa2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"836d8f15-2fbb-4f1f-a167-9e105c45aa2a","name":"836d8f15-2fbb-4f1f-a167-9e105c45aa2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

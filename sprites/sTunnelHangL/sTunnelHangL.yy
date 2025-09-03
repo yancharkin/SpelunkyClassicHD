@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sTunnelHangL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c95dc5ec-2c84-4e2f-94ab-c43ed71af3a2","name":"c95dc5ec-2c84-4e2f-94ab-c43ed71af3a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c95dc5ec-2c84-4e2f-94ab-c43ed71af3a2","name":"c95dc5ec-2c84-4e2f-94ab-c43ed71af3a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

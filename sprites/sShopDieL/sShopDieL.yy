@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sShopDieL",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3096e3a7-f18e-43b2-a39c-8a335fe27a50","name":"3096e3a7-f18e-43b2-a39c-8a335fe27a50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3096e3a7-f18e-43b2-a39c-8a335fe27a50","name":"3096e3a7-f18e-43b2-a39c-8a335fe27a50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

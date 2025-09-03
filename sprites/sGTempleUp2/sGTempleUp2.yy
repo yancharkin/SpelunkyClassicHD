@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sGTempleUp2",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a8d4a0ad-d4bd-41e6-a5a5-c1e14072cda1","name":"a8d4a0ad-d4bd-41e6-a5a5-c1e14072cda1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a8d4a0ad-d4bd-41e6-a5a5-c1e14072cda1","name":"a8d4a0ad-d4bd-41e6-a5a5-c1e14072cda1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

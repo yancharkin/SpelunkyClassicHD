@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sGiantTikiHead",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"422d4aee-dc5b-4d83-95fb-b5a4afffe7e3","name":"422d4aee-dc5b-4d83-95fb-b5a4afffe7e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"422d4aee-dc5b-4d83-95fb-b5a4afffe7e3","name":"422d4aee-dc5b-4d83-95fb-b5a4afffe7e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sYetiKingDisp",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e03a2bc5-5dd1-43d4-8c61-497bb82fe5ae","name":"e03a2bc5-5dd1-43d4-8c61-497bb82fe5ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e03a2bc5-5dd1-43d4-8c61-497bb82fe5ae","name":"e03a2bc5-5dd1-43d4-8c61-497bb82fe5ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sSmashTrap",
   "bboxMode":0,
   "bbox_bottom":15,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"205a62c1-bd6f-402e-928f-bd6f5c3f3f15","name":"205a62c1-bd6f-402e-928f-bd6f5c3f3f15","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"205a62c1-bd6f-402e-928f-bd6f5c3f3f15","name":"205a62c1-bd6f-402e-928f-bd6f5c3f3f15","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

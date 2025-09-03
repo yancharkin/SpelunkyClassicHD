@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sSpectacles",
   "bboxMode":0,
   "bbox_bottom":11,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f70ced5e-c6b2-45bf-859b-8c4ac0781bdb","name":"f70ced5e-c6b2-45bf-859b-8c4ac0781bdb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f70ced5e-c6b2-45bf-859b-8c4ac0781bdb","name":"f70ced5e-c6b2-45bf-859b-8c4ac0781bdb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
