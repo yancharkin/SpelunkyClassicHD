@@ -45,6 +45,7 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - Ukrainian: [bakustarver](https://github.com/bakustarver)
 - French: [LeRetardatN](https://github.com/Lecodeurenretard)
 - German: [MasterPhW](mailto:masterphw@gmail.com)
+- Arabic: [v9tn](https://github.com/v9tn)
 
 ## Links
 * [How to localize the game](localization)
