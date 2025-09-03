@@ -17,7 +17,7 @@ function configLoad(isJoyConfScreen = false) {
 	global.keyStartVal = vk_escape;
 	global.keyEscape = vk_escape;
 	global.keyEnter = vk_enter;
-	global.keyRestartVal = vk_f5;
+	global.keyRestartVal = vk_f6;
 	if ((global.html5Build) and (not global.html5StandaloneBuild)) global.keyStartVal = vk_tab;
 
 	global.joyJumpVal = -1;
