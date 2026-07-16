@@ -1,5 +1,8 @@
-# Spelunky Classic HD
+# Spelunky Classic HD (GM Beta archive)
 
+**This branch contains (old) code written using GameMaker Beta (before switching to GameMaker LTS).**
+
+<del>
 A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game [Spelunky Classic](https://spelunkyworld.com/original.html). Based on the source code published in **Humble Weekly Bundle: Play and Create with GameMaker** (not original 1.1 release).
 
 <p align="center">
@@ -51,3 +54,4 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 * [How to localize the game](localization)
 * [HTML5 version](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
 * [Itch](https://yancharkin.itch.io/spelunky-classic-hd)
+</del>
