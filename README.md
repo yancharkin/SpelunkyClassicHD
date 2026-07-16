@@ -1,5 +1,8 @@
-# Spelunky Classic HD
+# Spelunky Classic HD (GMS 1.4 archive)
 
+**This branch contains (old) code written using GameMaker Studio 1.4.**
+
+<del>
 **This project is no longer under development. You can ask questions, I'll try to answer them, but do not expect new features or bug fixes. You can still report bugs, though it's unlikely that those bugs will be fixed. Your bug reports will be useful only if someday someone decides to continue development. So it's up to you to decide if it's worth your time to report bugs.**
 
 ![screenshot](screenshots/screenshot_00.png)
@@ -26,3 +29,4 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 * [Page on Itch](https://yancharkin.itch.io/spelunky-classic-hd)
 * [HTML5 version: Linux (amd64, arm64, armv7l), macOS, Windows (x64) builds](https://github.com/yancharkin/SpelunkyClassicHDhtml5)
 * [How to localize the game](localization)
+</del>
