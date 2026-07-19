@@ -48,7 +48,7 @@ function drawCredits(color1, color2) {
 		drawTextUni(tr("CONTRIBUTORS"), "small", color1, X1, 48);
 	    var hd_contributors  = [
 			"NKRAPIVIN", "GRHEAVY", "SPENCJO", "GABRIEL ALBUQUERQUE FERREIRA", "BAKUSTARVER",
-			"LERETARDATN", "MASTERPHW", "BRNBOT3K", "V9TN"
+			"LERETARDATN", "MASTERPHW", "BRNBOT3K", "V9TN", "ARIRANGIA"
 		]
 		for (var i = 0; i < array_length(hd_contributors); i++;) {
 			var contributorName = hd_contributors[i];

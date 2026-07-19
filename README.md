@@ -46,6 +46,7 @@ A modified version of [Derek Yu's](https://en.wikipedia.org/wiki/Derek_Yu) game 
 - French: [LeRetardatN](https://github.com/Lecodeurenretard)
 - German: [MasterPhW](mailto:masterphw@gmail.com)
 - Arabic: [v9tn](https://github.com/v9tn)
+- Greek: [arirangia](https://itch.io/profile/arirangia)
 
 ## Links
 * [How to localize the game](localization)

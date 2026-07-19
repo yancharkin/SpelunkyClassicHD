@@ -24,6 +24,8 @@ function loadLocalizedSprites() {
 	if (instance_exists(oQuitSign)) {
 	    sQuitSignNew = sprite_add(localizedImagesDir + "quit_sign.png", 1, false, false, 0, 0);
 	    oQuitSign.sprite_index = sQuitSignNew;
+		oQuitSign.x = 560;
+		if (global.locale == "el") oQuitSign.x = 541;
 	}
 	if (instance_exists(oScoresSign)) {
 	    sScoresSignNew = sprite_add(localizedImagesDir + "scores_sign.png", 1, false, false, 0, 0);
@@ -38,6 +40,7 @@ function loadLocalizedSprites() {
 	    oTutorialSign.sprite_index = sTutorialSignNew;
 		oTutorialSign.x = 320;
 		if (global.locale == "ar") oTutorialSign.x = 297;
+		if (global.locale == "el") oTutorialSign.x = 313;
 	}
 	if (instance_exists(oResetSign)) {
 	    sResetSignNew = sprite_add(localizedImagesDir + "reset_sign.png", 1, false, false, 0, 0);
