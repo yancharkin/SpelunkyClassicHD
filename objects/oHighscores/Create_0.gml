@@ -1,11 +1,22 @@
-function drawTextRtlHs(text, color, offsetX, pY) {
+function drawTextWithHash(text, fontSize, color, pX, pY) {
 	var textArray = [text]
 	if (string_pos("#", text) > 0) textArray = string_split(text, "#");
-	 // same result as hash_to_new_line but keep correct alignment
+	// same result as hash_to_new_line but keep correct alignment
 	for (var i = 0; i < array_length(textArray); i++;) {
 		var line = textArray[i];
 		var strLen = string_length(line)*global.fontSmallWidth;
-		drawText(line, "small", color, global.room_offset + 104 + int64(192 - strLen + offsetX), pY + 16*i);
+		// Y position not really properly calculated :(
+		drawText(line, "small", color, pX, pY + 2 + 1.3*global.fontSmallHeight*i);
+	}
+}
+
+function drawTextRtlHs(text, color, offsetX, pY) {
+	var textArray = [text]
+	if (string_pos("#", text) > 0) textArray = string_split(text, "#");
+	for (var i = 0; i < array_length(textArray); i++;) {
+		var line = textArray[i];
+		var strLen = string_length(line)*global.fontSmallWidth;
+		drawText(line, "small", color, global.room_offset + 104 + int64(192 - strLen + offsetX), pY + 2 + 1.3*global.fontSmallHeight*i);
 	}
 }
 
