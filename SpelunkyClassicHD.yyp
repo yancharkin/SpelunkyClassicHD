@@ -175,6 +175,7 @@
     {"$GMIncludedFile":"","%Name":"charset","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/charset","name":"charset","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"charset_small.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/charset","name":"charset_small.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"charset.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/charset","name":"charset.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"font.json","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/charset","name":"font.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"big_collect.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/images","name":"big_collect.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"level13_sign.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/images","name":"level13_sign.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"level5_sign.png","CopyToMask":-1,"filePath":"datafiles/locale/locales/el/images","name":"level5_sign.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
