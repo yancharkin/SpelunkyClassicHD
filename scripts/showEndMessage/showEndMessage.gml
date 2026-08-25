@@ -63,7 +63,7 @@ function showEndMessage(){
 	                {
 	                    if (oMoonRoom.highscore) str = tr("YOU SET A NEW RECORD!");
 	                    else str = tr("BETTER LUCK NEXT TIME...");
-	                    drawTextHCentered(str, "small", c_yellow,0, 64+16);
+	                    drawTextHCentered(str, "small", c_yellow, 0, 64+16);
 	                }
 	            }
 	        }
@@ -71,10 +71,10 @@ function showEndMessage(){
 	        {
 	            if (drawStatus > 0)
 	            {
-	                drawTextHCentered(tr("FINISHED!"), "large", 0, 32+16);
+	                drawTextHCentered(tr("FINISHED!"), "large", c_yellow, 0, 32+16);
 	            }
 	            if (drawStatus > 1)
-	{
+	            {
 	                if (oStarsRoom.highscore) str = tr("YOU SET A NEW RECORD!");
 	                else str = tr("BETTER LUCK NEXT TIME...");
 	                drawTextHCentered(str, "small", c_yellow, 0, 64+16);
